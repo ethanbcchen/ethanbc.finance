@@ -1,0 +1,1572 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBulletCxSpFirst, li.MsoListBulletCxSpFirst, div.MsoListBulletCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBulletCxSpMiddle, li.MsoListBulletCxSpMiddle, div.MsoListBulletCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBulletCxSpLast, li.MsoListBulletCxSpLast, div.MsoListBulletCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;background:#1B365D;padding:
+  9.0pt 12.0pt 9.0pt 12.0pt'>
+  <p class=MsoNormal><b><span lang=EN-US style='font-size:15.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:white'>DEEP LEARNING STUDY NOTES:
+  PATRICK'S PBD TRADING STRATEGY<br>
+  </span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+  font-family:"微軟正黑體",sans-serif;color:#E0E8F5'>深度學習筆記：德國冠軍交易員 Patrick 的 PBD 機構級交易策略</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1B365D'>一、核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>This video
+breaks down the high-stability trading system of German top trader Patrick, a
+two-time champion and leading contender in the Robbins World Cup Trading
+Championship (who tripled his account by October with an exceptional win rate).
+Unlike aggressive gamblers, Patrick prioritizes institutional liquidity and
+strict risk control. His methodology relies on two core tools: Weekly Volume
+Profile (</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"MS Mincho",serif;color:#2B4C7E'>成交量分布圖</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>) to identify where institutional capital accumulates (the 70%
+Value Area), and 15-minute candlestick charts using his mentor Tom's PBD
+(Impulse-Consolidation Box) method. By waiting for price to travel from afar
+into fresh weekly Value Area boundaries or historical consolidation zones,
+drawing entity-based consolidation boxes ('P' for upward impulse, 'b' for
+downward impulse), and executing counter-impulse breakouts, false breakouts, or
+range bounces, he achieves asymmetric Risk-to-Reward Ratios (minimum 1.5R to
+2R+) while capping single-trade risk at 1%. Ultimately, sustainable
+profitability stems from combining macro institutional auction zones with micro
+price-action confirmation and disciplined position scaling.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>本影片深度解析德國頂尖交易員 Patrick 的高穩定性交易系統。他曾兩度奪得羅賓斯世界盃交易錦標賽（Robbins
+World Cup Trading Championship）冠軍，並在當年十月前將比賽帳戶翻逾三倍。不同於高風險賭徒，Patrick 專注於追蹤「大資金成交密集區」與嚴格風控。其核心體系結合兩大工具：利用「週線成交量分布圖（Weekly
+Volume Profile）」鎖定佔 70% 成交量的價值區（Value Area）邊界，並切換至「15 分鐘 K 線圖」運用導師 Tom 的 PBD（推動與盤整方框）戰法。透過等待價格從遠處觸及新鮮價值區、繪製實體盤整方框（上推盤整為
+P，下推盤整為 b），並執行反推動突破、假突破回收或區間來回操作，將單筆風險嚴格控制在 1% 以內，創造出 1.5 倍至 2 倍以上的盈虧比，展現出機構級邏輯與紀律執行的穩定獲利模型。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>2. Key Concepts &amp; Definitions (with Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1B365D'>二、知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoListBulletCxSpFirst style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:00:02] Robbins World Cup
+Trading Championship (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>羅賓斯世界盃交易錦標賽</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): A prestigious real-money global futures and forex trading
+competition where Patrick placed in the top five 11 times and won twice.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:00:02] Robbins World Cup Trading
+Championship (羅賓斯世界盃交易錦標賽)：全球極具公信力的實盤期貨與外匯交易大賽，Patrick 曾 11 次打入前五名並兩度奪冠。</span></p>
+
+<p class=MsoListBulletCxSpMiddle style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:00:55] Visible Range Volume
+Profile / Fixed Range Volume Profile (VRVP </span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>可見範圍成交量分布圖</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> / FRVP </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>固定範圍成交量分布圖</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): TradingView
+indicators that display traded volume across horizontal price levels over a
+specific timeframe to locate institutional liquidity.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:00:55] Visible Range Volume Profile /
+Fixed Range Volume Profile (VRVP 可見範圍成交量分布圖 / FRVP 固定範圍成交量分布圖)：TradingView 技術指標，用於顯示特定週期內各價位的成交量分布，藉此鎖定大資金密集換手的位置。</span></p>
+
+<p class=MsoListBulletCxSpMiddle style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:01:20] Value Area / VA (</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>價值區</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): The price range where
+70% of a week's total trading volume occurred, bounded by the Value Area High
+(VAH </span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"MS Mincho",serif;color:#2B4C7E'>價值區上沿</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>) and Value Area Low (VAL </span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>價值區下沿</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:01:20] Value Area / VA (價值區)：一週內 70% 成交量所集中的價格區間，由價值區上沿（VAH）與價值區下沿（VAL）界定。</span></p>
+
+<p class=MsoListBulletCxSpMiddle style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:01:57] PBD Method (PBD </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>戰法</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> / </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>推動盤整方框模型</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): A
+price-action framework learned from mentor Tom that maps an impulsive move
+followed by a horizontal consolidation box on the 15-minute chart.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:01:57] PBD Method (PBD 戰法 / 推動盤整方框模型)：源自導師
+Tom 的價格行為框架，在 15 分鐘圖上標記「單邊推動（Impulse）」與隨後的「橫盤方框（Box）」。</span></p>
+
+<p class=MsoListBulletCxSpMiddle style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:02:16] 'P' Formation (</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>大寫</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> P </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>型態</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): An upward impulsive
+price move followed by sideways consolidation at the top, resembling the letter
+'P'.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:02:16] 'P' Formation (大寫 P 型態)：價格一口氣向上推動後在高位橫盤整理，整體K線結構神似英文字母大寫「P」。</span></p>
+
+<p class=MsoListBulletCxSpMiddle style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:02:18] 'b' Formation (</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>小寫</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> b </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>型態</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): A downward impulsive
+price move followed by sideways consolidation at the bottom, resembling the
+lowercase letter 'b'.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:02:18] 'b' Formation (小寫 b 型態)：價格一口氣向下推動後在低位橫盤整理，整體K線結構神似英文字母小寫「b」。</span></p>
+
+<p class=MsoListBulletCxSpMiddle style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:03:06] False Breakout /
+Liquidity Sweep (</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"MS Mincho",serif;color:#2B4C7E'>假突破</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): When a candle closes outside the consolidation box boundary
+but quickly reclaims back inside the box, signaling a trap and high-probability
+reversal.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:03:06] False Breakout / Liquidity Sweep (假突破)：K線收盤突破方框邊界後未能延續，反而迅速收回方框內部，形成誘多或誘空的極佳反轉訊號。</span></p>
+
+<p class=MsoListBulletCxSpLast style='margin-top:2.0pt;margin-right:0cm;
+margin-bottom:5.0pt;margin-left:18.0pt;line-height:125%'><span lang=EN-US
+style='font-family:Symbol'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:04:29] Risk-to-Reward Ratio
+/ R:R (</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"MS Mincho",serif;color:#2B4C7E'>盈虧比</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): The ratio of potential profit to maximum stop-loss risk;
+Patrick requires at least 1.5R and ideally 2R or higher for every setup.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>[00:04:29] Risk-to-Reward Ratio / R:R (盈虧比)：潛在獲利空間與最大止損風險的比值；Patrick
+要求所有交易的盈虧比至少達 1.5 倍，理想為 2 倍以上。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>3. Knowledge Architecture Mind Map (Text Version)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1B365D'>三、知識架構圖解（文字版）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Patrick's PBD
+Institutional Trading System<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>Patrick 的 PBD 機構級交易系統</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  ├── 1. Macro
+Location: Weekly Volume Profile (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>週線成交量分布定位</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  ├── 一、宏觀定位：週線成交量分布圖（尋找大資金區間）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     ├──
+Identify 70% Value Area (VAH &amp; VAL) + Historical Consolidation Zones<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     ├── 標記 70% 價值區上下沿（VAH / VAL）與左側歷史橫盤老位置</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     └──
+Filter Rule: Price must approach from afar (Fresh Zones only)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     └── 過濾原則：價格必須「從遠處打過來」（近期剛觸及的失效區不用）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  ├── 2. Micro
+Structure: 15-Min PBD Box Construction (15</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>分鐘圖</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> PBD </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>畫框</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  ├── 二、微觀結構：15 分鐘圖繪製 PBD 方框</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     ├──
+Impulse (</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"MS Mincho",serif;color:#2B4C7E'>推動</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>) -&gt; Consolidation (</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>橫盤半天至一天</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     ├── 一口氣推動後進入橫盤整理（通常維持半天至一天）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     ├──
+Box Rules: Draw using Candle Bodies (</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>實體</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>), ignore wicks; 3 touches = stronger<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     ├── 畫框規則：僅採計 K 線實體（開收盤價），忽略影線；邊界觸碰三次更可靠</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     └──
+Formations: Upward + Hold = 'P'; Downward + Hold = 'b'<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     └── 型態分類：上推橫盤為「P」；下推橫盤為「b」</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  ├── 3.
+Execution Triggers: Three Entry Scenarios (</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>三種進場觸發情境</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  ├── 三、進場執行：三種情境分類操作</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     ├──
+Scenario A (Breakout): Candle closes outside box -&gt; Counter-impulse
+preferred<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     ├── 情境一（突破方框）：K線實體收在框外（最愛「反推動方向」突破；同向需大推動）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     │    
+└── Sub-type: False Breakout (Close outside then reclaim inside; downward sweep
+only)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     │     └── 子類型（假突破）：收出框外又收回框內（尤其是跌破下沿收回做多；上衝不做）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     ├──
+Scenario B (Range Trading): Wide box with 3+ touches -&gt; Fade edges<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     ├── 情境二（框內來回）：寬幅方框來回碰觸三次後，下沿掛多、上沿掛空</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  │     └──
+Scenario C (Direct Zone Limit): Price hits fresh macro zone from afar -&gt;
+Limit order<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  │     └── 情境三（直接掛單）：不等方框，價格從遠處首次打到價值區邊界直接掛限價單</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>  └── 4. Risk
+&amp; Trade Management (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>風控與倉位管理</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>  └── 四、風控與倉位管理（長久生存核心）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>        ├──
+Position Sizing: Max 1% risk per trade; lot size rounded to multiples of 3<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>        ├── 倉位計算：單筆最大虧損不超過 1%，手數湊成 3 的倍數以便分批</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>        ├──
+Take-Profit Scaling: Split into 3 parts (Near edge / Trailing / Final target)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>        ├── 分批止盈：拆成三份（第一份近端邊界、第二份看走勢、第三份最終目標）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>        └──
+Trailing Stop: Move stop-loss ONLY in profit direction (behind new boxes)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>        └── 移動止損：止損只能往獲利方向推（移至新橫盤方框外側），絕不放寬</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>4. Mental Models &amp; Underlying Logic<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1B365D'>四、底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>1.
+Institutional Auction Market Theory (</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>機構拍賣市場理論</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'> — Why &amp; How)<br>
+Markets spend 70% of the time consolidating inside value ranges where big money
+executes large orders. Once liquidity in a range is exhausted, institutions
+push price aggressively to a new level to find fresh liquidity. Instead of
+chasing mid-range noise, Patrick waits at the edges of institutional liquidity
+pools.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>市場有 70% 的時間在區間內震盪，這是大資金進行大額成交的場所；當區間內的單子不夠成交時，大資金會將價格推向下一站尋找流動性。Patrick
+不在區間中央追價，而是守株待兔於大資金密集區的邊緣。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>2.
+Multi-Timeframe Confluence: Macro Map + Micro Trigger (</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>多週期共振：宏觀地圖</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> + </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>微觀扳機</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>)<br>
+Weekly Volume Profile defines 'Where' to trade (high-probability structural
+zones), while the 15-minute PBD box defines 'When' to pull the trigger (precise
+order-flow shift and tight stop-loss placement).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>週線成交量分布圖解決「在哪裡交易」的空間定位問題，而 15 分鐘 PBD 方框則解決「何時扣扳機」的進場時機與極小止損定位問題。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>3. Asymmetric
+Payoff &amp; Probabilistic Survival (</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>不對稱盈虧與機率生存思維</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>)<br>
+Even with a 50% baseline win rate, consecutive losing streaks are
+mathematically inevitable. By capping risk at 1% per trade and enforcing a
+minimum 1.5R–2R reward-to-risk ratio, a single winning trade covers multiple
+losses, ensuring survival and compounding.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>即使勝率有五成，連續虧損在統計上也遲早會發生。透過單筆嚴控 1% 風險與強制執行 1.5 至
+2 倍以上的盈虧比，一筆大賺即可覆蓋多次小賠，確保帳戶在長期機率中穩健複利。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>5. Detailed Breakdown by Core Modules (with Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1B365D'>五、詳細重點拆解（保留原始時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 1: Macro Zone Identification via Weekly Volume Profile
+[00:00:55 - 00:01:56]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組一：利用週線成交量分布圖標記宏觀關鍵區域 [00:00:55
+- 00:01:56]</span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Concept
+  Explanation / 概念解釋】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Using Weekly Volume Profile to locate the 70% Value Area
+  (VAH/VAL) and historical horizontal shelves where institutional orders
+  cluster.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>透過週線級別的成交量分布圖，找出佔一週 70% 成交量的價值區上下沿（VAH/VAL）及左側歷史橫盤老位置。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Key
+  Steps / 關鍵步驟與操作流程】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>1. Open the Weekly chart on TradingView and add Visible Range
+  Volume Profile (or Fixed Range Volume Profile for free users).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>1. 打開 TradingView 週線圖，載入「可見範圍成交量分布圖」（免費版可用左側工具欄第五項的「固定範圍成交量分布圖」手動框選）。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>2. Mark the Value Area High (VAH) and
+  Value Area Low (VAL) as price bands, plus historical consolidation levels on
+  the left.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>2. 標出上週價值區上沿（VAH）與下沿（VAL）畫成價格帶，並標記左側歷史橫盤老位置。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>3. Apply the 'Freshness Filter': Only
+  trade zones when price travels from afar; ignore zones recently tested within
+  the past few days (e.g., Crude Oil at $77 on Aug 9 was skipped in favor of
+  $85.53).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>3. 執行「新鮮度過濾」：區域必須等價格「從遠處打過來」才有效；前幾天剛到過、還沒走遠的位置直接放棄（例如
+  8 月 9 日美油在 77 美元剛測過上沿便放棄，改等上方 85.53 美元老位置）。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Formulas
+  &amp; Terms / 重要公式與專有名詞】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Visible Range Volume Profile (VRVP </span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>可見範圍成交量分布圖</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Fixed
+  Range Volume Profile (FRVP </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>固定範圍成交量分布圖</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), Value Area (</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>價值區</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'> 70% </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>成交量區間</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>可見範圍成交量分布圖（VRVP）、固定範圍成交量分布圖（FRVP）、價值區（Value
+  Area，涵蓋 70% 成交量）。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Common
+  Pitfalls / 常見誤區與注意事項】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Trading stale zones that price has been hovering around for
+  days, which leads to choppy false signals.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>切忌在價格已經黏著震盪好幾天的「非新鮮區域」反覆掛單，這會導致頻繁被掃損。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 2: 15-Minute PBD Box Construction Rules [00:01:57 -
+00:02:29]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組二：15 分鐘圖 PBD 方框繪製標準 [00:01:57 -
+00:02:29]</span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Concept
+  Explanation / 概念解釋】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Translating price movement into a two-phase visual structure:
+  a sharp single-leg Impulse followed by a horizontal Consolidation Box.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>在 15 分鐘週期上，將價格走勢拆解為「一口氣走出的推動段（Impulse）」與隨後的「橫盤整理方框（Box）」。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Key
+  Steps / 關鍵步驟與操作流程】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>1. Switch to the 15-minute chart as price approaches a macro
+  zone.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>1. 當價格接近宏觀區域時，切換至 15 分鐘 K 線圖。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>2. Identify an uninterrupted impulse move
+  followed by sideways consolidation lasting roughly half a day to one full
+  day.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>2. 確認價格是「一口氣」推動過來的，並在推動結束後橫盤約半天至一天。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>3. Draw the box strictly using Candle
+  Bodies (Open to Close), ignoring occasional wicks.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>3. 畫方框時嚴格以「K 線實體（開盤價到收盤價）」為準，偶爾衝出去的上下影線不計入框內。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>4. Classify the shape: Upward impulse +
+  box = 'P'; Downward impulse + box = 'b'. Confirm reliability when price
+  touches box edges 3 times.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>4. 判斷型態：往上推再橫住為大寫「P」，往下推再橫住為小寫「b」；若價格在框內來回碰邊達三次，方框可靠性大幅提升。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Formulas
+  &amp; Terms / 重要公式與專有名詞】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>PBD Method (</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>推動盤整戰法</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), Candle Body (K</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>線實體</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), Wick/Shadow (</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>影線</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), 'P' &amp; 'b' Formations (P</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>型與</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>b</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>型結構</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>PBD 戰法、K 線實體（開收盤區間）、影線（不計入方框）、P 型態（上推盤整）與 b
+  型態（下推盤整）。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Common
+  Pitfalls / 常見誤區與注意事項】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Including extreme wicks when drawing the box, which
+  artificially widens the range and delays breakout confirmation.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>畫框時把偶發的長影線包進去，會導致方框過寬，使後續突破訊號嚴重滯後。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 3: Three Execution Scenarios &amp; Entry Triggers
+[00:02:30 - 00:03:34]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組三：三種進場情境與觸發機制 [00:02:30 -
+00:03:34]</span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Concept
+  Explanation / 概念解釋】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Adapting entry tactics based on whether price breaks out of
+  the box, stays trapped inside a wide box, or spikes straight into a macro
+  zone.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>根據價格「突破方框」、「困在寬幅方框內」或「直接打到宏觀區域」，採取三種對應的精準進場策略。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Key
+  Steps / 關鍵步驟與操作流程】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>1. Scenario 1 (Box Breakout): Wait for a 15m candle body to
+  close outside the box. Counter-impulse breakouts are preferred ('P' breaks
+  down = Short; 'b' breaks up = Long). Same-direction breakouts require a
+  massive initial impulse. Confirm with a higher close (long) or
+  retest/re-break (short), or place limit orders on box-edge retests. If price
+  breaks out and quickly closes back inside (False Breakout, especially
+  downward sweep &amp; reclaim), trade the reversal.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>1. 情境一（出了方框）：必須等 K 線「收盤」收在方框外面才算有效。最喜歡「反推動方向」突破（P
+  跌破下沿做空；b 突破上沿做多）；若順推動方向突破，則要求前置推動幅度必須遠大於方框。進場常等確認（向上需下一根收更高；向下等反彈再跌破前低，或提前在方框邊緣掛限價單等回測）。若突破後未延續反而收回框內（假突破），則反向操作（跌破下沿又收回做多是最佳機會；上衝收回則不做）。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>2. Scenario 2 (Range Bounce): In wide
+  boxes with 3+ edge touches, place limit buy orders at the bottom and limit
+  sell orders at the top.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>2. 情境二（一直不出方框）：針對極寬且能來回走好幾趟的方框，等價格來回碰邊三次後，在下沿掛多單、上沿掛空單來回操作。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>3. Scenario 3 (Direct Macro Limit): When price
+  approaches a fresh weekly Value Area edge from afar without forming a box,
+  place a direct limit order (Short at VAH, Long at VAL).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>3. 情境三（不等方框直接掛單）：價格從遠處直接打到週線價值區邊界時，直接在區域上掛限價單（漲上來掛空、跌下來掛多）。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Formulas
+  &amp; Terms / 重要公式與專有名詞】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Counter-Impulse Breakout (</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>反推動突破</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Retest
+  Limit Order (</span><span lang=EN-US style='font-size:9.5pt;line-height:120%;
+  font-family:"MS Mincho",serif;color:#2B4C7E'>回測限價單</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), False Breakout Reclaim (</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>假突破收回</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>反推動突破（最優訊號）、回測方框邊緣掛單、假突破收回（僅做下破收回做多）。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Common
+  Pitfalls / 常見誤區與注意事項】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Chasing a candle that moves too fast without a confirmation
+  pullback, or trading upward false breakouts (which Patrick explicitly
+  avoids).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>行情走太快沒等到回測確認就盲目追單，或是去做「向上衝出又收回」的假突破空單（Patrick
+  明確不做此類）。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 4: Stop-Loss Placement &amp; Target Projection [00:03:35
+- 00:04:43]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組四：止損定位與止盈目標測算 [00:03:35 -
+00:04:43]</span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Concept
+  Explanation / 概念解釋】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Defining objective invalidation points outside structural
+  boundaries and projecting profit targets using origin points or measured
+  moves.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>在結構邊界外側設定客觀止損點，並依據推動起點、對側價值區或等距測幅設定止盈目標。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Key
+  Steps / 關鍵步驟與操作流程】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>1. Breakout Trades: Place stop-loss outside the opposite side
+  of the box. For counter-impulse trades, target the origin of the impulse
+  (ideal if aligned with the opposite Value Area edge). For same-direction
+  trades at All-Time Highs with no left reference, duplicate the impulse length
+  upward (Measured Move).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>1. 突破方框單：止損放方框另一側外面（做空放上沿上、做多放下沿下）。反推動突破的目標看「這段推動開始的地方」（若正好也是價值區另一邊最理想）；同方向突破且前方無歷史參考（如歷史新高）時，將前面推動段原樣複製一份量出等距目標。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>2. False Breakout Trades: Place a tight
+  stop-loss just beyond the false breakout wick/extreme; hold beyond the
+  opposite box edge.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>2. 假突破單：止損放在衝出去那一下的外面（極小止損），目標不必停在方框對邊，可繼續持有。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>3. Range Bounce Trades: Stop-loss outside
+  recent swing high/low; take 100% profit at the opposite box edge.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>3. 框內來回單：止損放最近高低點外面，目標為方框對邊，到達即全平。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>4. Direct Zone Trades: Stop-loss outside
+  the zone; move stop to breakeven once price bounces out. If no chart
+  reference exists, reverse-engineer stop-loss from target (e.g., 800-point
+  target = max 200-point stop) to maintain &gt;= 1.5R–2R.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>4. 直接區域掛單：止損放區域外面，價格彈出區域後立即將止損推至進場價保本。若前方無圖表參照，則從目標倒推止損（如目標賺
+  800 點，止損最多放 200 點），確保所有單子盈虧比至少 1.5 倍、最好 2 倍以上。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Formulas
+  &amp; Terms / 重要公式與專有名詞】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Measured Move (</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>等距推動複製測幅</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), Breakeven Stop (</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>保本止損</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), Reverse-Engineered Stop-Loss (</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>目標倒推止損法</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>等距推動測幅、保本止損（推至進場價）、目標倒推止損法。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Common
+  Pitfalls / 常見誤區與注意事項】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Taking a trade where structural stop-loss distance yields a Risk-to-Reward
+  ratio below 1.5R.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>在止損空間過大、導致潛在盈虧比低於 1.5 倍的情況下勉強進場。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 5: Position Sizing, 3-Part Scaling &amp; Trailing Rules
+[00:04:44 - 00:05:06]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組五：倉位控制、三等份分批止盈與移動止損 [00:04:44 -
+00:05:06]</span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Concept
+  Explanation / 概念解釋】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Mathematical position sizing capped at 1% account risk, paired
+  with a 3-tranche exit system to lock in gains while capturing trend
+  extensions.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>透過單筆 1% 風險上限反推下單手數，並將倉位拆為三等份分批止盈，兼顧落袋為安與波段延伸。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Key
+  Steps / 關鍵步驟與操作流程】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>1. Calculate Lot Size: Determine stop-loss distance before
+  entry -&gt; Calculate max dollar loss (1% of account) -&gt; Divide by loss
+  per lot -&gt; Round to a multiple of 3.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>1. 計算手數：下單前先定好止損距離 -&gt; 算出帳戶 1% 最多能虧多少錢
+  -&gt; 除以一手打到止損虧多少錢得出手數 -&gt; 湊成「3 的倍數」方便分批。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>2. Scale Out in 3 Parts (except range
+  trades): Part 1 at the nearest box/zone edge; Part 2 managed dynamically
+  based on price action; Part 3 at the final target.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>2. 分三份止盈（框內來回單除外）：第一份在離進場最近的方框或區域邊緣平倉；第二份視盤面走勢靈活處理；第三份留到最終目標。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>3. Trailing Stop Discipline: Never widen
+  a stop-loss. Only move it in the profitable direction, specifically trailing behind
+  newly formed consolidation boxes along the trend.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>3. 移動止損鐵律：止損只能往賺錢的方向挪動，絕對不能放寬；當價格走出去又橫出新方框時，將止損推至新方框外側保護利潤。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Formulas
+  &amp; Terms / 重要公式與專有名詞】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>1% Risk Rule (</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>單筆</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'> 1% </span><span lang=EN-US style='font-size:9.5pt;line-height:
+  120%;font-family:"MS Mincho",serif;color:#2B4C7E'>風控法則</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), 3-Part Scaling (</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>三等份分批止盈</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), Box-to-Box Trailing Stop (</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>階梯方框移動止損</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>單筆 1% 風險上限、三等份分批止盈、階梯方框移動止損。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Common
+  Pitfalls / 常見誤區與注意事項】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Widening stop-loss when price approaches invalidation, or
+  trading full size without splitting exits.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>價格逼近止損時心存僥倖放寬止損，或全倉進出導致心態失衡。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 6: Live Case Studies &amp; Championship Adjustments
+[00:05:07 - 00:07:09]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組六：實戰案例拆解與錦標賽激進調整策略 [00:05:07 -
+00:07:09]</span></b></p>
+
+<div align=center>
+
+<table class=MsoTableGrid border=1 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse;border:none'>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Concept
+  Explanation / 概念解釋】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border:solid windowtext 1.0pt;
+  border-left:none;background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Applying the 4-step workflow to DAX Futures (Short) and US
+  Crude Oil (Long), plus how Patrick adapts parameters for competition
+  pressure.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>透過「德指期貨空單」與「美原油多單」還原四步實戰流程，並揭露其在世界盃錦標賽中的參數微調。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Key
+  Steps / 關鍵步驟與操作流程】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>1. DAX Futures Short (Aug 4–6): Weekly VAH/VAL defined. On Aug
+  4, DAX rallied and consolidated overnight right above VAH, forming a 'P' box.
+  Aug 5 morning 15m candle closed below box -&gt; Shorted with stop above box
+  -&gt; Hit target at impulse origin / VAL on Aug 6 for ~4R, followed by a VAL
+  bounce long and box-retest short.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>1. 德指期貨空單案例（8/4–8/6）：確認週線價值區邊界後，8 月 4 日中午德指一路上漲並在價值區上沿上方橫盤一夜形成「P」型方框；5
+  日早上 15 分鐘 K 線收盤跌破方框下沿（反推動突破），進場做空並將止損放方框上方，目標看推動起點兼價值區下沿，盈虧比約 4 倍，6 日上午順利止盈（隨後下沿反彈做多與回測方框做空皆有二次機會）。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>2. Crude Oil Long (Aug 4–10): Weekly VAL
+  ~$74.50. Price dropped from $82.30 to $75+ and consolidated for 2 days in a
+  'b' box ($74.20–$75.90) right on VAL. Aug 5 closed above box -&gt; Retested
+  inside without hitting $74.20 stop -&gt; Aug 6 broke out again -&gt; Hit VAH
+  ($78.50) that night and final target $82.30 on Aug 10.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>2. 美原油多單案例（8/4–8/10）：週線價值區下沿在 74.5 美元左右；8 月
+  4 日美油從 82.3 美元一口氣跌至 75 美元多並橫盤兩天，形成落在價值區下沿的小寫「b」方框（74.2–75.9 美元）；5 日收盤突破方框上沿，回測未破
+  74.2 止損，6 日下午再度收出上沿並一路上攻，當晚先達價值區上沿 78.5 美元，8 月 10 日精準抵達起跌點 82.3 美元止盈。<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "Calibri",sans-serif;color:#2B4C7E'>3. Championship Tweaks: (a) Increase risk
+  per trade from 1% to 2–3%; (b) Skip small intraday scalps due to high
+  commissions, focusing only on large-range setups; (c) Close positions by
+  evening (rarely hold overnight) and scale out early due to large size and
+  competition pressure, achieving a 60%–78% win rate.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>3. 比賽模式三大調整：(1) 單筆風險適度放大至 2%–3%；(2) 因手續費高昂，放棄小短線，只挑大空間波段；(3)
+  因倉位重且比賽壓力大，基本傍晚即平倉極少過夜，並提早分批止盈，使比賽勝率高達 60% 甚至 78%。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Formulas
+  &amp; Terms / 重要公式與專有名詞】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:white;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>DAX Futures (</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"MS Mincho",serif;color:#2B4C7E'>德國</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>DAX</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  120%;font-family:"MS Mincho",serif;color:#2B4C7E'>指數期貨</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>), US Crude Oil / WTI (</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"MS Mincho",serif;
+  color:#2B4C7E'>美國原油期貨</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:120%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Overnight
+  Risk (</span><span lang=EN-US style='font-size:9.5pt;line-height:120%;
+  font-family:"MS Mincho",serif;color:#2B4C7E'>隔夜風險</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>).<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>德指期貨（DAX）、美原油（WTI）、隔夜風險控管。</span></p>
+  </td>
+ </tr>
+ <tr>
+  <td width=173 valign=top style='width:129.6pt;border:solid windowtext 1.0pt;
+  border-top:none;background:#F0F4F8;padding:4.0pt 6.0pt 4.0pt 6.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:normal'><b><span
+  lang=EN-US style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#1B365D'>【Common
+  Pitfalls / 常見誤區與注意事項】</span></b></p>
+  </td>
+  <td width=490 valign=top style='width:367.2pt;border-top:none;border-left:
+  none;border-bottom:solid windowtext 1.0pt;border-right:solid windowtext 1.0pt;
+  background:#FAFBFD;padding:4.0pt 7.0pt 4.0pt 7.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm;line-height:120%'><span
+  lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+  color:#2B4C7E'>Copying Patrick's 2–3% championship risk size in a regular
+  personal account without his elite execution discipline.<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:120%;font-family:
+  "微軟正黑體",sans-serif;color:#222222'>在一般個人帳戶中盲目照搬他的「比賽激進倉位（2%–3% 風險）」，而忽略他日常僅冒
+  1% 風險的穩健原則。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>6. Practical Action Items<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1B365D'>六、實操行動清單</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>1. Configure
+Weekly Volume Profile Workspace (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#2B4C7E'>建置週線成交量分布圖看盤環境</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>)<br>
+Add Visible Range Volume Profile (or Fixed Range Volume Profile) to your Weekly
+charts on TradingView and mark the 70% Value Area High (VAH), Value Area Low
+(VAL), and historical consolidation shelves.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>在 TradingView 週線圖載入「可見範圍成交量分布圖」（或固定範圍成交量分布圖），標記出
+70% 價值區上下沿（VAH/VAL）及左側歷史橫盤老位置。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>2. Apply the
+'Freshness Filter' Before Every Session (</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>盤前執行「區域新鮮度」過濾</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>)<br>
+Eliminate any support/resistance level that price has already tested within the
+last few days; set price alerts only at untouched zones located far from
+current price.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>剔除近幾天價格剛碰觸過且尚未走遠的區域，僅在距離現價較遠、尚未被測試的「新鮮區域」設定價格警報。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>3. Practice
+Drawing Strict Body-Only PBD Boxes on 15m Charts (</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>在</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> 15 </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>分鐘圖練習繪製「純實體」</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>PBD </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>方框</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>)<br>
+Backtest 20 historical setups by identifying single-leg impulses followed by
+half-day consolidations, drawing boxes strictly from candle open-to-close
+bodies while ignoring wicks.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>回測 20 組歷史走勢，練習辨識一口氣推動後的半日橫盤區間，嚴格只用 K 線實體（開收盤價）畫框並忽略上下影線。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>4. Build a
+Pre-Trade Position Size &amp; 3-Tranche Calculator (</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>建立盤前倉位與三等份分批計算表</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>)<br>
+Calculate exact lot sizes before entry using (Account Equity × 1%) ÷ Stop-Loss
+Risk per Lot, rounding down to a multiple of 3 for systematic 3-part scaling.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>每次下單前使用公式「（帳戶總資金 × 1%）÷ 單手止損金額」精算手數，並將手數湊成 3 的倍數以執行標準三等份分批止盈。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>5. Enforce a
+Minimum 1.5R Filter &amp; Box-Trailing Journal (</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>執行</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> 1.5 </span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#2B4C7E'>倍盈虧比過濾與階梯移動止損日誌</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>)<br>
+Reject any setup with a Risk-to-Reward ratio below 1.5R, and log every trade's
+stop-loss adjustments to ensure stops are only trailed behind newly formed
+consolidation boxes.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>堅決過濾盈虧比低於 1.5 倍的交易機會，並在交易日誌中檢核止損是否僅往獲利方向推移至新橫盤方框外側。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>7. Concept Self-Assessment (Quiz &amp; Review)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1B365D'>七、觀念自我檢測（單選題）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q1. When
+drawing a PBD consolidation box on the 15-minute chart, which price points
+should be used?<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>問題 1：在 15 分鐘圖繪製 PBD 盤整方框時，應以哪個價格位置為準？</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>A) Highest and
+lowest wicks<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(最高與最低影線)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>B) Candle
+bodies: Open and Close prices<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(K線實體：開盤價與收盤價)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>C) 20-period
+Moving Average<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(20週期移動平均線)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>D) Previous
+day's high and low<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(前一日最高與最低價)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q2. Which
+breakout scenario does Patrick favor the most?<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>問題 2：在方框突破的進場情境中，Patrick 最偏好哪一種走勢？</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>A) Breakout in
+the same direction as a weak impulse<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(順著微弱推動方向突破)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>B) Upward
+false breakout that reclaims inside the box<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(向上衝出方框又收回的假突破)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>C)
+Counter-impulse breakout: 'P' breaking down or 'b' breaking up<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(反推動突破：P 型跌破下沿或 b 型突破上沿)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>D) Entering
+immediately before any candle closes outside the box<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(K線尚未收盤在框外即提前市價追單)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q3. Why does
+Patrick adjust his calculated position size to a multiple of 3?<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>問題 3：為什麼 Patrick 會將計算出的下單手數湊成「3 的倍數」？</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>A) To reduce broker
+commission fees by 30%<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(為了減少 30% 的券商手續費)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>B) To execute
+his 3-part take-profit scaling strategy<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(為了方便執行「分三份止盈」的出場策略)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>C) Because
+Futures exchanges require multiples of 3<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(因為期貨交易所強制規定手數必須為 3 的倍數)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>D) To triple
+his risk per trade to 3% on every setup<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(為了將每筆交易風險固定放大至 3%)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q4. Under what
+condition is a weekly Value Area boundary considered INVALID for trading?<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>問題 4：在什麼情況下，週線價值區的邊界會被 Patrick 視為無效而放棄操作？</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>A) When price
+approaches it from a long distance away<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(當價格從遠處第一次打過來時)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>B) When price
+already tested it a few days ago and hasn't moved far away<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(當價格前幾天剛到過且還沒走遠時)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>C) When a 'P'
+or 'b' consolidation box forms right on the boundary<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(當邊界上正好形成 P 或 b 盤整方框時)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>D) When the
+Risk-to-Reward ratio exceeds 3R<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(當潛在盈虧比超過 3 倍時)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q5. How does
+Patrick adjust his strategy when competing in the Robbins World Cup
+Championship?<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>問題 5：在參加羅賓斯世界盃交易錦標賽時，Patrick 會對交易手法做出哪項調整？</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>A) Widens his
+stop-loss whenever a trade goes against him<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(當行情不利時放寬止損空間)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>B) Holds
+trades overnight for weeks to maximize swap interest<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(將倉位持倉過夜數週以賺取隔夜利息)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>C) Increases
+risk to 2–3%, avoids small scalps due to fees, and closes positions by evening<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(單筆風險提至 2%–3%、避開高手續費小短線，且基本傍晚平倉極少過夜)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>D) Switches
+from 15-minute charts to 1-minute charts<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>(將週期從 15 分鐘圖切換至 1 分鐘圖)</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Cambria",serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;background:whitesmoke;
+  padding:6.0pt 8.0pt 6.0pt 8.0pt'>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><b><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#888888'>【Answer Key / 參考答案解析 — 隱蔽檢核區】<br>
+  <br>
+  </span></b></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  3.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#999999'>Q1: B — Candle bodies
+  (Open and Close prices) are used; occasional wicks are ignored.<br>
+  </span><span lang=EN-US style='font-size:9.0pt;line-height:115%;font-family:
+  "微軟正黑體",sans-serif;color:#999999'>Q1：B — 畫框時嚴格按 K 線實體（開盤價到收盤價），偶爾衝出去的影線不算。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  3.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#999999'>Q2: C — Counter-impulse
+  breakouts ('P' breaking down to short, 'b' breaking up to long) are his
+  favorite.<br>
+  </span><span lang=EN-US style='font-size:9.0pt;line-height:115%;font-family:
+  "微軟正黑體",sans-serif;color:#999999'>Q2：C — 跟前面推動方向反著出的突破（P 跌破下沿做空、b 突破上沿做多）是他最喜歡的高勝率訊號。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  3.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#999999'>Q3: B — Rounding lot
+  size to a multiple of 3 allows clean execution of his 3-part take-profit
+  scaling.<br>
+  </span><span lang=EN-US style='font-size:9.0pt;line-height:115%;font-family:
+  "微軟正黑體",sans-serif;color:#999999'>Q3：B — 湊成 3 的倍數是為了方便將倉位拆成三份進行分批止盈。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  3.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#999999'>Q4: B — Zones recently
+  tested within the past few days that price hasn't moved far from are skipped.<br>
+  </span><span lang=EN-US style='font-size:9.0pt;line-height:115%;font-family:
+  "微軟正黑體",sans-serif;color:#999999'>Q4：B — 區域必須等價格從遠處打過來才有效；前幾天剛到過且還沒走遠的位置直接放棄。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  3.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#999999'>Q5: C — In competitions,
+  he raises risk to 2–3%, skips small scalps due to commissions, closes by
+  evening, and scales out early.<br>
+  </span><span lang=EN-US style='font-size:9.0pt;line-height:115%;font-family:
+  "微軟正黑體",sans-serif;color:#999999'>Q5：C — 比賽時他會將單筆風險放大至 2%–3%、因手續費貴只挑大空間波段、基本傍晚平倉極少過夜並提早分批止盈。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
