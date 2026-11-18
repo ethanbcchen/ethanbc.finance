@@ -1,0 +1,1139 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@Microsoft JhengHei";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#222222;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-top:4.0pt;margin-right:0cm;
+margin-bottom:12.0pt;margin-left:0cm;text-align:center'><b><span lang=EN-US
+style='font-size:15.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>High-Structure Deep Learning Notes: Korean Trading Legend Kim
+Joon-hyung's 'New High Pullback' Strategy<br>
+</span></b><b><span lang=EN-US style='font-size:16.0pt;line-height:115%;
+color:#112B45'>深度學習筆記：韓國傳奇交易員金俊亨（Kim Joon-hyung）的「新高反」高勝率交易策略</span></b></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>1. 核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>This video systematically
+deconstructs the core short-term trading strategy—the 'New High Pullback' (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>新高反</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)—developed by South Korean legendary trader Kim Joon-hyung (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>金俊亨</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), who grew his capital from 15 billion to 200 billion KRW
+(approx. $15M USD) with an extraordinary win rate (losing on only ~10-20
+trading days per year). The core philosophy shifts away from chasing breakout
+bullish candles (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#1F4E79'>大陽線</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), which
+frequently trap retail traders at intraday highs, and instead waits for a
+controlled pullback bearish candle (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#1F4E79'>上升陰線</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>) after a stock hits a significant new high. The strategy operates
+through a strict three-step daily candlestick workflow: (1) Stock Selection
+focusing on top-50 turnover sector leaders above the 120-day moving average
+while avoiding announcement spikes, pre-earnings risks, and new share listings;
+(2) Entry Timing at market close upon a pullback candle above the 5-day moving
+average, backed by &gt;50 billion KRW prior surge volume and net institutional
+buying; and (3) Exit &amp; Risk Discipline utilizing the 5-day moving average
+as a trailing stop, exiting immediately on 5x climax volume, and enforcing
+strict intraday windows (09:00–10:30) and position sizing rules.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:125%'><span
+lang=EN-US>本影片系統性拆解了韓國傳奇交易員金俊亨（Kim Joon-hyung）的核心短線戰法——「新高反（New High Pullback）」。金俊亨憑藉極高的交易勝率（每年200多個交易日中僅約10至20天虧損），將資產從150億韓元滾動至2,000億韓元（約1,500萬美元）。其核心哲學在於摒棄盲目追高大陽線（容易在盤中高點被套牢），轉而等待強勢股創下階段新高後出現「上升陰線」回調時再行介入。該策略透過嚴謹的三步驟日K線流程運作：（一）選股：鎖定成交額前50名的板塊龍頭股，要求股價站穩120日均線，並避開公告急拉、財報空窗與新股上市賣壓；（二）買點：在收盤前確認回調陰線站穩5日均線、前期上衝成交額達500億韓元以上，且當日機構法人呈淨買超時進場；（三）賣出與風控：以跌破5日均線或高位爆出5倍巨量作為出場訊號，並配合嚴格的日內交易時段（09:00–10:30）與資金控管紀律。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>2. 知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:00:42] New High Pullback (</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>新高反</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> / </span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>新高回調戰法</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:00:42] **New High Pullback（新高反 / 新高回調戰法）**：指股票強勢創下階段新高後不直接追高，而是等待其出現一根回調陰線（收盤價低於開盤價）且未破壞上升趨勢時，於收盤前買進的短線波段策略。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:01:25] Turnover / Trading
+Value (</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>成交額</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:01:25] **Turnover / Trading Value（成交額）**：單日買賣成交的總金額（非單純股數成交量）。用於過濾低價股的虛假放量，確保市場具備足夠的資金深度與流動性（篩選當日全市場前50名）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:01:49] Sector Leader (</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>龍頭股</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:01:49] **Sector Leader（龍頭股）**：在同一個產業板塊中，上漲時最先發動漲勢、下跌時跌幅最輕微的最強勢指標股。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:02:06] 120-Day Moving
+Average (120</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#1F4E79'>日均線</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'> / </span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>半年線</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:02:06] **120-Day Moving Average（120日均線 / 半年線）**：過去約半年的平均收盤價，作為判斷股票處於中長期多頭上升趨勢的底線標準。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:02:37] Rising Bearish
+Candle / Doji (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>上升陰線</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> / </span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>十字星</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:02:37] **Rising Bearish Candle / Doji（上升陰線 / 十字星）**：股價處於整體上升波段中所收出的陰線（收盤低於開盤）或開收盤價接近的十字星，代表短線獲利了結的良性換手。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:03:17] 5-Day Moving Average
+(5</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>日均線</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'> / </span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>週線</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:03:17] **5-Day Moving Average（5日均線 / 週線）**：最近5個交易日的平均收盤價，作為短線強勢股的關鍵支撐線與波段移動停利（Trailing
+Stop）基準。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:03:27] Institutional Net
+Buying (</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#1F4E79'>機構法人買盤</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:03:27] **Institutional Net Buying（機構法人買盤）**：投信、自營商等本土機構資金的淨買入動向；機構傾向短期集中買進且不會輕易在建倉成本區倒貨，支撐力道優於外資。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:04:22] 5x Climax Volume (5</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>倍天量見頂訊號</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:04:22] **5x Climax Volume（5倍天量見頂訊號）**：股價大幅上漲至高位後，單日突然爆出達到上漲期日均成交量5倍以上的巨量，視為籌碼派發與短期見頂的強制賣出訊號。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:06:16] Intraday N-Shape
+Pattern (</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#1F4E79'>日內</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>N</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>字型回調買點</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:06:16] **Intraday N-Shape Pattern（日內N字型回調買點）**：日內當沖（Day Trading）時，龍頭股早盤急漲後連續回落兩根陰線，隨後再度轉強向上突破形成「N」字走勢的切入點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:06:26] 3-Minute Candlestick
+Exit (3</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>分鐘</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>K</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>線出場法</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><span
+lang=EN-US>[00:06:26] **3-Minute Candlestick Exit（3分鐘K線出場法）**：日內交易沖高後，切換至3分鐘K線週期，一旦K線由陽轉陰即刻獲利了結的微觀出場機制。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>3. Knowledge Architecture Diagram (Text Mind Map)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>3. 知識架構圖解（文字版思維導圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Kim Joon-hyung's Short-Term
+Trading System</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:125%'><b><span
+lang=EN-US>(金俊亨短線交易體系)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>├── 1. Core Philosophy:
+New High Pullback</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:14.4pt;line-height:125%'><b><span lang=EN-US>(核心理念：新高反邏輯)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Why New Highs? No
+overhead trapped supply; clear upward path</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(為何選新高：上方無套牢盤，阻力最小)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   └── Why Pullbacks? Avoid
+chasing intraday peaks; buy controlled dips</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(為何等回調：規避追高陽線被套風險)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>├── 2. Swing / Overnight
+Workflow: Daily Chart</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:14.4pt;line-height:125%'><b><span lang=EN-US>(波段隔夜流程：日K線三部曲)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Step 1: Stock Selection</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(第一步：嚴格選股過濾)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   ├── Liquidity: Top 50
+daily turnover, exclude ETFs</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(流動性：成交額前50名，剔除ETF)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   ├── Trend &amp; Role:
+Sector leader + Above 120-MA</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(趨勢與地位：板塊龍頭 + 站上120日均線)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   └── Risk Exclusion: No
+sudden news spikes, pending March earnings, or new share listings</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(避雷：不追公告急拉、避開3月未出財報與增發/可轉債上市)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Step 2: Entry Timing at
+Market Close</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(第二步：收盤前買點確認)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   ├── Pattern: Rising
+bearish candle / Doji near or past prior high</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(形態：上升陰線或十字星)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   ├── Condition A: Prior
+surge turnover &gt; 50 billion KRW</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(條件一：前波衝刺成交額 &gt; 500億韓元)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   ├── Condition B:
+Closing price holds above 5-MA</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(條件二：收盤價穩守5日均線上方)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   └── Condition C:
+Intraday institutional net buying</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(條件三：盤中估算機構法人淨買入)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   └── Step 3: Exit &amp;
+Stop-Loss Rules</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(第三步：賣出與停損紀律)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│       ├── Failure Stop: No
+upward follow-through next morning -&gt; immediate exit</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(買錯停損：隔日開盤一段時間不漲即刻停損)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│       ├── Trend Exit: Close
+below 5-MA or gap open below 5-MA</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(趨勢出場：收盤跌破或開盤直接低於5日均線)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:43.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│       └── Climax Exit: Volume
+spikes to &gt;5x average rally volume</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:43.2pt;line-height:125%'><span lang=EN-US>(天量出場：高位爆出上漲期5倍以上成交量)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>├── 3. Intraday Trading
+Adaptation</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:14.4pt;line-height:125%'><b><span lang=EN-US>(日內當沖變體規則)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Golden Window:
+09:00–10:30 AM only</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(黃金時段：僅操作開盤後1.5小時，80-90%利潤來源)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Entry Setups: 2-candle
+pullback</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(N-pattern) OR
+dip-and-reclaim opening price</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   └── Exit &amp; Stop:
+3-minute chart turns bearish; beginners use hard -2% stop-loss</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(出場與停損：3分鐘K線轉陰即賣；新手機械式-2%停損)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>└── 4. Risk Management
+&amp; Trading Psychology</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:14.4pt;line-height:125%'><b><span lang=EN-US>(風控與心態鐵律)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>    ├── Capital Allocation:
+Fixed % per trade, max 2-3 stocks, 0 leverage, keep cash reserve</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(倉位控管：固定資金比例、集中2-3檔、不借錢、保留現金)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>    └── Circuit Breakers: Stop
+after morning losses; take 1-week break if tilt/confused</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:28.8pt;line-height:125%'><span lang=EN-US>(熔斷機制：早盤不順或下錯單當日收手；心態混亂停看一週)</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>4. Mental Models &amp; Underlying Logic (Why &amp; How)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>4. 底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>1. Supply-Demand Vacuum &amp;
+Resistance Elimination (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>籌碼真空與阻力消除模型</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>1. **籌碼真空與阻力消除模型（Supply-Demand Vacuum）**：當股價突破一年或階段新高時，意味著過去所有套牢在歷史高點的賣壓均已解套消化，上方無既定阻力位（Overhead
+Resistance），價格沿最小阻力線（Path of Least Resistance）繼續推升的機率最高。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>2. Asymmetric Entry via
+Liquidity Traps Avoidance (</span></b><b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#1F4E79'>避開流動性陷阱的非對稱進場模型</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>2. **避開流動性陷阱的非對稱進場模型（Asymmetric Entry）**：突破當日的大陽線往往伴隨散戶追價情緒，容易出現盤中假突破（Fakeout）後回落套牢。等待「上升陰線」是利用短線獲利盤吐出的瞬間，以更低的風險成本測試支撐有效性（5日均線），將隔夜跳空風險降至最低。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>3. Smart Money Anchoring &amp;
+Cost-Basis Defense (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>主力資金錨定與成本防守邏輯</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>3. **主力資金錨定與成本防守邏輯（Smart Money Anchoring）**：要求前波上衝成交額達500億韓元以上，且回調當日機構法人（Institutions）仍在買進。機構資金體量大、建倉週期集中，不會在剛建立的成本區輕易砸盤，從而為散戶提供了天然的「機構護城河」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>4. Exhaustion &amp;
+Distribution Detection (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>動能衰竭與籌碼派發識別模型</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>4. **動能衰竭與籌碼派發識別模型（Climax Exhaustion）**：價格上漲需要買盤持續推動，但當高位出現「5倍於上漲期的巨量」時，代表主力正在利用極度狂熱的市場流動性進行大規模派發（Distribution），此時不論後續是否還有餘溫，皆視為風險報酬比惡化的絕對離場點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>5. Volatility Concentration
+&amp; Emotional Circuit Breakers (</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>波動率集中與情緒熔斷機制</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>5. **波動率集中與情緒熔斷機制（Volatility &amp; Emotional Control）**：日內僅交易09:00–10:30，因為這是全天成交量與波動率最集中的時段；同時透過「盤前寫好劇本」、「早盤虧損即停手」、「心亂休息一週」等規則，切斷人類在虧損時產生「報復性交易（Revenge
+Trading）」的心理陷阱。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>5. Detailed Breakdown (6 Core Modules with Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>5. 詳細重點拆解（6大核心模組）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Module 1 [00:00:00 - 00:01:24]:
+Track Record &amp; Core Logic of 'New High Pullback'</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1F4E79'>模組一 [00:00:00 - 00:01:24]：傳奇戰績與「新高反」策略底層邏輯</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept: Kim Joon-hyung
+achieved 15B to 200B KRW (~$15M USD) and 429% return in under 2 months in a
+small-cap competition by prioritizing extreme win rates over catching bottoms.
+The 'New High Pullback' avoids chasing breakout green candles and buys
+controlled red pullback candles.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【概念解釋】：金俊亨靠極致高勝率（15年全職交易僅虧損過2個月、4次實盤大賽冠軍）累積約1,500萬美元資產。「新高反」核心在於不追創高當日的大陽線，而是等創高後收出一根回調陰線再介入。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Workflow: (1) Identify stocks
+breaking out to new highs -&gt; (2) Put on watchlist without chasing -&gt; (3)
+Wait for a pullback candle -&gt; (4) Pre-plan take-profit and stop-loss levels
+the night before.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【關鍵步驟/操作流程】：(1) 篩選創階段新高的強勢股
+-&gt; (2) 放入自選股觀察，嚴禁當日追高 -&gt; (3) 等待收盤出現回調陰線 -&gt; (4) 前一晚預先寫好隔日上漲賣出與下跌停損的完整劇本。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terms: New High Pullback (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>新高反</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Breakout Bullish Candle (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>突破大陽線</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Intraday Fakeout (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#1F4E79'>盤中假突破回落</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【重要公式/專有名詞】：New High
+Pullback（新高反）、Breakout Bullish Candle（突破大陽線）、Daily Candlestick Chart（日K線週期）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Pitfalls: Chasing big bullish
+candles on breakout day often results in buying the exact intraday top when
+prices fade before close.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【常見誤區/注意事項】：切勿在放量大陽線創高當天追進，許多個股盤中創高後收盤即大幅回落，追價者當日就會面臨嚴重套牢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Module 2 [00:01:24 - 00:02:36]:
+Step 1 — Strict Stock Selection &amp; Risk Filtering</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1F4E79'>模組二 [00:01:24 - 00:02:36]：第一步——嚴格選股與基本面/籌碼避雷機制</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept: High win rates require
+trading liquid market leaders in confirmed uptrends while systematically
+eliminating event-driven traps and sudden supply shocks.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【概念解釋】：高勝率的前提是只在「錢多、人多、趨勢向上」的領漲股中交易，並透過嚴格的負面清單排除突發利空與籌碼稀釋風險。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Workflow: (1) Filter Top 50
+stocks by daily turnover (exclude ETFs); (2) Prioritize sector leaders (first
+to rise, least to fall) hitting 1-year highs; (3) Confirm price is above the
+120-MA; (4) Exclude news-driven spikes, March companies with unreleased annual
+reports, and stocks with upcoming new share listings (CB conversions, rights
+issues, bonus shares).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【關鍵步驟/操作流程】：(1) 篩選當日成交額前50名（剔除ETF）；(2)
+挑選出刷新一年高點的板塊龍頭股；(3) 確認股價站穩120日均線（半年線）之上；(4) 剔除公告消息急拉股、每年3月財報尚未公布的標的，以及隔日有可轉債轉股/增發/送股上市的股票。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terms: Turnover Top 50 (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>成交額前</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>50), 120-Day Moving Average (120</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>日均線</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Convertible Bond Conversion (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>可轉債轉股</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【重要公式/專有名詞】：Daily
+Turnover（單日成交額）、Sector Leader（板塊龍頭）、120-MA（120日均線）、New Share Listing Dilution（新股上市賣壓）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Pitfalls: Never trade
+low-turnover small caps with heavy size (your own stop-loss order will crash
+the price), and never guess bottoms in downtrends.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【常見誤區/注意事項】：避免重倉成交額過小的冷門題材股（停損時自己的賣單會直接砸穿股價）；絕不在下跌趨勢中猜底；3月財報季前未出業績的公司若獲利暴雷將直接跌停賣不掉。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Module 3 [00:02:36 - 00:04:04]:
+Step 2 — Entry Timing &amp; The 3 Mandatory Confirmation Criteria</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1F4E79'>模組三 [00:02:36 - 00:04:04]：第二步——精準買點與三大強制確認條件</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept: Not every red candle
+is buyable. Entry occurs strictly near market close (to confirm final candle
+shape) only when a rising bearish candle/doji satisfies three simultaneous
+quantitative and order-flow conditions.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【概念解釋】：並非所有陰線都能買進，必須等到「收盤前」確認K線最終形態為上升陰線或十字星，且同時滿足動能、均線支撐與機構籌碼三大條件才能下單。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Workflow: (1) Draw horizontal
+resistance line at prior high; (2) Verify Condition 1: Prior surge turnover
+&gt;= 50 billion KRW (~$30M+ USD); (3) Verify Condition 2: Pullback candle
+closes above the 5-MA; (4) Verify Condition 3: Intraday institutional/foreign
+tracker shows net institutional buying; (5) Execute buy order near market close
+with pre-calculated overnight risk.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【關鍵步驟/操作流程】：(1) 畫出前波高點壓力線；(2)
+確認條件一：前波衝刺段成交額放大至500億韓元以上；(3) 確認條件二：回調陰線收盤價穩守5日均線之上；(4) 確認條件三：盤中估算數據顯示機構法人正在買入（機構權重高於外資）；(5)
+於收盤前買進並計算隔夜最大可承受虧損。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terms: Rising Bearish
+Candle (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>上升陰線</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), 50 Billion KRW
+Threshold (500</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>億韓元門檻</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), 5-Day Moving Average (5</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>日均線</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Institutional Net Flow (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>機構淨買盤</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【重要公式/專有名詞】：成交額門檻 $\ge
+500\text{億韓元}$、支撐基準 $\text{Close} &gt; \text{MA}_5$、Resistance Line（前高壓力線）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Pitfalls: If a watchlist stock
+rallies without giving a pullback candle, let it go—never chase. Concentrate on
+only 2–3 stocks at a time and start with small position sizes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【常見誤區/注意事項】：自選股若沒等來回調買點就直接飆漲，絕不追價；同時最多集中操作2至3檔股票，尚未完全掌握模型前務必縮小倉位累積經驗。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Module 4 [00:04:04 - 00:04:58]:
+Step 3 — Exit Strategy, Climax Volume &amp; Discipline Rules</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1F4E79'>模組四 [00:04:04 - 00:04:58]：第三步——賣出策略、天量見頂與交易停止鐵律</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept: Protect capital
+rapidly when a trade fails to follow through immediately, ride winners along
+the 5-MA, and exit unconditionally upon extreme volume exhaustion or emotional
+instability.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【概念解釋】：買對的突破回調股隔日理應迅速上攻；若未如期上漲則立刻停損，上漲過程沿5日均線抱牢，並透過爆量見頂指標與心理熔斷機制鎖住利潤。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Workflow: (1) Next-day check:
+If price fails to rise shortly after open, cut loss immediately; (2) Trailing
+stop: Hold until a daily close below 5-MA (or sell at open if it gaps below
+5-MA); (3) Climax exit: Sell immediately if daily volume exceeds 5x the average
+rally volume; (4) Enforce circuit breakers (stop trading for the day on morning
+losses/mistakes; take 1 week off if mentally tilted).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【關鍵步驟/操作流程】：(1) 隔日驗證：開盤一段時間仍無法上漲則立即停損；(2)
+移動停利：上漲趨勢中持續持有，直到收盤跌破5日均線（或開盤直接低於5日均線時開盤即賣）；(3) 爆量出場：高位單日成交量達上漲期5倍以上（如100萬股暴增至500萬股）視為見頂賣出；(4)
+執行停手規則與無槓桿現金保留。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terms: 5x Climax Volume (5</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>倍成交量見頂</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Trailing Stop on 5-MA (5</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>日線移動停利</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Zero Leverage (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>不借錢炒股</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【重要公式/專有名詞】：見頂量能公式
+$\text{Volume}_{\text{high}} \ge 5 \times \text{Volume}_{\text{rally}}$、Cash
+Reserve（現金保留原則）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Pitfalls: Never try to win back
+morning losses in the afternoon (revenge trading leads to compounding errors).
+Reduce overnight positions during bear markets and never use margin/borrowed
+money.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【常見誤區/注意事項】：早盤操作不順或下錯單時，切忌急著當天下午撈回來（越急越亂）；大盤連日下跌時減少隔夜留倉；絕不借錢融資，手中永遠保留現金。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Module 5 [00:04:58 - 00:05:53]:
+Case Study 1 — Celltrion (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>賽爾群</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>) Swing Trade Walkthrough</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1F4E79'>模組五 [00:04:58 - 00:05:53]：實戰案例一——韓國藥企 Celltrion（賽爾群）波段操作全解析</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept: A textbook
+demonstration of waiting patiently through false breakouts and institutional
+selling until all three 'New High Pullback' conditions align.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【概念解釋】：透過韓國生技巨頭 Celltrion
+的真實走勢，展示如何過濾掉「有陰線但機構在賣」的假訊號，耐心等待三條件共振後的波段大漲（獲利逾20%）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Workflow: (1) Late May: +20%
+surge hits 1-year high -&gt; watchlist only; (2) Day 2: Hits 236,000 KRW
+intraday then crashes into a big red candle with institutional selling -&gt;
+skip; (3) Early June (2 months later): High-volume green candle (&gt;50B KRW)
+approaches 236,000 resistance; (4) Next day red candle has
+institutional/foreign selling -&gt; skip; (5) Following day: Red candle at
+227,500 KRW holds above 5-MA &amp; 120-MA WITH institutional buying -&gt; Buy
+at close; (6) Ride 5-MA for 8 trading days until closing below 5-MA at 274,000
+KRW (+20% gain, no 5x climax volume).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【關鍵步驟/操作流程】：(1) 5月底單日漲逾兩成創一年新高，放入自選不追；(2)
+次日衝高23.6萬韓元後大跌收長陰線，因機構在賣故不買，23.6萬成為壓力線；(3) 6月初放量（遠超500億韓元）大陽線逼近壓力線；(4) 次日收陰線但機構外資皆賣出，繼續觀望；(5)
+再隔日收陰線於22.75萬韓元，站穩5日與120日均線且機構轉買，三條件齊備於收盤前買進；(6) 沿5日線抱至買進後第8個交易日收盤跌破5日線（27.4萬韓元）獲利了結，賺逾20%。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terms: Resistance Line
+Testing (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>壓力線測試</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Multi-Day Consolidation
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>多日回調確認</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【重要公式/專有名詞】：買進成本
+$227,500\text{ KRW}$，出場價格 $274,000\text{ KRW}$，波段報酬率 $\approx +20.4\%$。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Pitfalls: Buying the first
+pullback candle blindly without checking institutional net flow would have
+triggered false entries twice before the real breakout.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【常見誤區/注意事項】：若只看K線收陰就買進、忽略機構買賣超數據，會在5月底及6月初的第一根陰線連續踩雷；必須等「機構買盤進駐」才扣動扳機。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Module 6 [00:05:53 - 00:07:24]:
+Intraday Trading Rules &amp; Case Study 2 — Korean Air (</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>大韓航空</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1F4E79'>模組六 [00:05:53 - 00:07:24]：日內當沖變體規則與大韓航空（Korean
+Air）實戰</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept: Adapting momentum
+pullback logic to intraday trading by restricting activity to the first 90
+minutes, capping overnight exposure at 10%, and using 3-minute charts for
+exits.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【概念解釋】：將強勢回調邏輯應用於當日沖銷（Day
+Trading），透過鎖定開盤黃金90分鐘、限制隔夜倉位上限10%，並以3分鐘K線轉陰作為精準出場訊號。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Workflow: (1) Trade strictly
+09:00–10:30 AM (captures 80-90% of daily profits); (2) Entry Pattern A: Sector
+leader pulls back 2 red candles then turns up (N-pattern); Entry Pattern B: Dip
+below open then reclaim opening price; (3) Exit on 3-minute chart turning red
+(beginners set hard -2% stop); (4) Korean Air Case (Nov 2020): Monday Asiana
+acquisition news triggers 20x volume 1-year high -&gt; skip; Tuesday-Thursday 3
+red candles shrink volume to 10% and fall below 5-MA (ineligible for swing
+rule); Friday opens slightly lower at 23,000 KRW, buys on incoming bid, sells
+into spike at 24,400 peak (avg ~23,500+) for $15,000+ single-day profit.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【關鍵步驟/操作流程】：(1) 僅在早上09:00–10:30操作（佔全日8-9成獲利）；(2)
+買點一：龍頭股上漲後回落兩根陰線形成N字轉折；買點二：開盤先跌後強勢反彈站回開盤價；(3) 出場看3分鐘K線轉陰即賣，新手設死-2%停損，隔夜倉位上限10%；(4)
+大韓航空案例（2020年11月）：週一宣布收購韓亞航空爆20倍量創一年新高（不追）；週二至週四連收三陰線量縮至一成且跌破5日線（不符合波段規則，改做日內回調）；週五23,000韓元低開見買盤湧入即買進，衝高24,400途中分批賣出（均價23,500多），單日大賺1.5萬美元。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terms: Golden 90 Minutes (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>開盤黃金</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>90</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#1F4E79'>分鐘</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Opening
+Price Reclaim (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#1F4E79'>站回開盤價</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), 3-Minute
+Candlestick Reversal (3</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>分鐘</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>K</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F4E79'>線轉陰</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【重要公式/專有名詞】：日內黃金時段 `09:00
+- 10:30`、隔夜倉位上限 $\le 10\%$、新手機械停損線 $-2\%$。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Pitfalls: Avoid stocks with
+excessive volume or heavy institutional selling during intraday setups, and
+stop trading after 10:30 AM when retail noise causes random whipsaws.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US>【常見誤區/注意事項】：日內交易遇到成交量過大或機構大舉倒貨的股票應避開；10:30過後市場流動性下降，繼續交易極易盲目跟風亂買導致利潤回吐。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>6. Practical Action Items (Immediate Execution)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>6. 實操行動清單</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>1. Build a Daily Post-Market
+Screening Routine (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>建立每日盤後三層漏斗選股清單</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>1. **建立每日盤後三層漏斗選股清單**：每日收盤後篩選「成交額前50名（剔除ETF）→ 站上120日均線且創一年/階段新高的板塊龍頭
+→ 排除公告急拉、財報空窗與新股上市標的」，建立明日觀察自選股池。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>2. Implement a Pre-Close
+3-Condition Checklist (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#1F4E79'>執行收盤前「三條件共振」下單檢核表</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>2. **執行收盤前「三條件共振」下單檢核表**：在收盤前15分鐘針對出現「上升陰線/十字星」的自選股進行核對：前波衝刺成交額達標、收盤穩居5日均線上方、當日機構法人呈淨買超，三者缺一不可，否則堅決空手觀望。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>3. Write a Pre-Market Trading
+Plan with Fixed Risk Sizing (</span></b><b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#1F4E79'>盤前撰寫交易劇本並鎖定單筆風險比例</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>3. **盤前撰寫交易劇本並鎖定單筆風險比例**：前一日晚間預先寫下每檔標的的進場價、隔夜最大虧損承受度（總資金固定百分比，集中不超過2-3檔）、隔日不漲停損點及5日均線移動停利規則，消除盤中情緒干擾。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>4. Restrict Intraday Trading to
+09:00–10:30 with a Hard -2% Stop (</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>設定日內交易時間鎖與機械式停損</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>4. **設定日內交易時間鎖與機械式停損**：若進行當沖操作，強制將下單時間限制在開盤後90分鐘內（09:00–10:30），僅操作「N字回調」或「站回開盤價」形態，並設定-2%硬性停損與3分鐘K線轉陰出場規則。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>5. Enforce Emotional Circuit
+Breakers &amp; Zero-Leverage Policy (</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#1F4E79'>建立心理熔斷機制與零槓桿現金管理</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>):</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>5. **建立心理熔斷機制與零槓桿現金管理**：嚴格執行「不借錢融資、永遠保留現金」原則；一旦發生早盤連續虧損、下錯單或情緒焦躁，立即關閉交易軟體停止當日操作，必要時強制空倉休息一週復盤。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>7. Self-Assessment Quiz &amp; Review<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>7. 觀念自我檢測</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Q1 (Multiple Choice): According
+to Kim Joon-hyung's 'New High Pullback' strategy, when is the optimal time to
+execute a buy order on a qualifying pullback candle?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:125%'><b><span
+lang=EN-US>題目 1（單選題）：根據金俊亨的「新高反」策略，當符合條件的回調陰線出現時，最佳的下單買進時機為何？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>A. Immediately at market open
+when the stock gaps down / B. Intraday as soon as the price touches the 120-day
+moving average / C. Near market close after confirming the final candlestick
+shape and institutional net buying / D. The next morning after it breaks above
+the prior high with a big green candle</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:125%'><span lang=EN-US>A. 早盤跳空低開的瞬間立即市價買進 / B. 盤中價格一觸及120日均線時立刻買進
+/ C. 接近收盤前，確認最終K線形態收在5日均線上方且機構呈淨買超時買進 / D. 隔日早盤放量大陽線突破前高後追進</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Q2 (Multiple Choice): Which of
+the following is NOT one of the three mandatory confirmation criteria before
+entering a 'New High Pullback' swing trade?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:125%'><b><span
+lang=EN-US>題目 2（單選題）：在執行「新高反」波段買進前，下列何者「不屬於」必須同時滿足的三大確認條件？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>A. Prior rally turnover reaches
+at least 50 billion KRW / B. Pullback candle closes above the 5-day moving
+average / C. Intraday data shows net institutional buying / D. The stock's RSI
+indicator drops below 30 (oversold)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:125%'><span lang=EN-US>A. 前波上衝段成交額放大至500億韓元以上 /
+B. 回調陰線的收盤價穩守在5日均線上方 / C. 盤中估算數據顯示機構法人正在買入 / D. 股票的RSI技術指標跌破30進入超賣區</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Q3 (Multiple Choice): What
+volume signal indicates an immediate climax top and mandatory exit after a
+stock has rallied to a high level?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:125%'><b><span
+lang=EN-US>題目 3（單選題）：當股價已經上漲到相當高的位置後，出現何種成交量訊號代表短期見頂，必須立即賣出且後續再漲也不回頭看？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>A. Volume shrinks to 10% of the
+breakout day / B. Daily volume suddenly spikes to 5x or more of the average
+daily volume during the rally / C. Volume equals the 5-day moving average
+volume / D. Foreign investors buy more than domestic institutions</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:125%'><span lang=EN-US>A. 成交量萎縮至突破當日的10% / B. 單日突然放出達到上漲期間日均成交量5倍以上的巨量
+/ C. 成交量剛好等於5日均量 / D. 外資買超金額大於本土機構法人</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Q4 (Analytical Question): Why
+does Kim Joon-hyung strictly avoid buying stocks right after a sudden positive
+corporate announcement, or in March before annual earnings reports are released?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:125%'><b><span
+lang=EN-US>題目 4（思考題）：為什麼金俊亨嚴格禁止追買「突發利多公告後急拉」的股票，以及每年3月「財報尚未公布」的公司？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Think about retail FOMO
+liquidity traps and binary overnight gap-down risks.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:125%'><span lang=EN-US>請從「散戶跟風流動性陷阱」與「隔夜不可控跳空跌停風險」兩個維度思考。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Q5 (Analytical Question): In
+the November 2020 Korean Air case study, why did Kim Joon-hyung abandon the
+standard 'New High Pullback' swing rule and switch to an intraday pullback
+strategy instead?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:125%'><b><span
+lang=EN-US>題目 5（思考題）：在2020年11月大韓航空（Korean Air）的實戰案例中，為什麼金俊亨放棄了標準的「新高反」波段規則，轉而採用「日內回調策略」操作？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Examine the position of the
+three pullback candles relative to the 5-day moving average.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:125%'><span lang=EN-US>請觀察週二至週四連續三根回調陰線與「5日均線」的相對位置關係。</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#222222'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>Answer Key &amp; Explanations (Self-Check Reference)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#112B45'>參考答案與解析（自我檢測核對區）</span></b></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;background:#F2F4F8;padding:
+  7.5pt 10.0pt 7.5pt 10.0pt'>
+  <p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>Q1 Answer: C</span></b></p>
+  <p class=MsoNormal style='margin-bottom:6.0pt;line-height:125%'><span
+  lang=EN-US>【題目 1 答案：C】—— 必須等到接近收盤前，確認整根日K線最終收成穩守在5日均線之上的「上升陰線或十字星」，且確認當日機構法人呈淨買入後才下單買進，避免盤中假陰線變大跌。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>Q2 Answer: D</span></b></p>
+  <p class=MsoNormal style='margin-bottom:6.0pt;line-height:125%'><span
+  lang=EN-US>【題目 2 答案：D】—— 買進三大條件為：(1) 前波上衝成交額達500億韓元以上；(2) 回調陰線收盤在5日均線上方；(3) 盤中機構法人呈淨買超。策略完全不使用RSI超賣指標。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>Q3 Answer: B</span></b></p>
+  <p class=MsoNormal style='margin-bottom:6.0pt;line-height:125%'><span
+  lang=EN-US>【題目 3 答案：B】—— 股價漲至高位後，若單日突然爆出達到上漲期間日均成交量5倍以上的天量（例如從100萬股暴增至500萬股以上），代表主力大規模派發見頂，應無條件賣出。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>Q4
+  Explanation: News spikes attract impulsive retail FOMO buyers at the exact
+  intraday peak, resulting in immediate reversal traps. Meanwhile, companies
+  with unreleased annual earnings in March carry binary financial audit risk—if
+  earnings disappoint or receive an adverse audit opinion, the stock can gap
+  down limit-down with zero exit liquidity.</span></b></p>
+  <p class=MsoNormal style='margin-bottom:6.0pt;line-height:125%'><span
+  lang=EN-US>【題目 4 解析】：(1) 公告出來後急拉的股票，會引發散戶一窩蜂盲目衝進去，極易成為主力倒貨的接盤俠並買在最高點；(2) 每年3月是韓國企業公布年報的期限，未出業績的公司存在財報暴雷或審計異常的「黑天鵝」風險，一旦利空開出將直接鎖死跌停、想賣也賣不掉。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>Q5
+  Explanation: After Korean Air surged on Monday, it pulled back for three
+  consecutive red candles (Tuesday to Thursday) with volume shrinking to 10%,
+  closing BELOW the 5-day moving average. Because closing below the 5-MA
+  violates Condition 2 of the 'New High Pullback' swing rule, he did not hold
+  overnight via the swing rule, and instead waited for Friday's intraday open
+  dip + incoming bid momentum to execute a fast day trade.</span></b></p>
+  <p class=MsoNormal style='margin-bottom:6.0pt;line-height:125%'><span
+  lang=EN-US>【題目 5 解析】：大韓航空在週一創高後，週二至週四連續收出三根縮量陰線，且收盤價皆跌破了「5日均線」。根據「新高反」波段規則，陰線收在5日均線下方即不符合波段買點條件，因此金俊亨嚴守紀律不進行波段隔夜買進，而是等到週五開盤微幅低開且觀察到買盤湧入時，改以「日內回調策略」切入並於當日沖高分批獲利了結。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

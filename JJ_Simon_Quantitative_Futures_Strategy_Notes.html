@@ -1,0 +1,2440 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#222222;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#222222;}
+p.MsoListBulletCxSpFirst, li.MsoListBulletCxSpFirst, div.MsoListBulletCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#222222;}
+p.MsoListBulletCxSpMiddle, li.MsoListBulletCxSpMiddle, div.MsoListBulletCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#222222;}
+p.MsoListBulletCxSpLast, li.MsoListBulletCxSpLast, div.MsoListBulletCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#222222;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;background:#1B365D;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-top:8.0pt;margin-right:0cm;
+  margin-bottom:2.0pt;margin-left:0cm;text-align:center'><b><span lang=EN-US
+  style='font-size:16.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:white'>Deep Learning Study Notes: JJ Simon's Quantitative Futures
+  Trading Strategy</span></b></p>
+  <p class=MsoNormal align=center style='margin-bottom:8.0pt;text-align:center'><b><span
+  lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#D9E2F3'>深度學習筆記：</span></b><b><span lang=EN-US style='font-size:13.0pt;
+  line-height:115%;color:#D9E2F3'>JJ Simon </span></b><b><span lang=EN-US
+  style='font-size:13.0pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#D9E2F3'>的量化期貨交易策略（純價格行為與均值回歸模型）</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+color:#2B547E'>1. </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#2B547E'>核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>This video analyzes the quantitative futures trading methodology
+of JJ Simon, a computational finance honors graduate from the University of
+Washington who earned over $1.8 million in proprietary trading firm payouts
+within roughly a year starting from $5,000, while spending over $500,000 on
+evaluation fees. Focusing exclusively on the 1-minute chart of Nasdaq 100
+Futures (NQ) without technical indicators, his core framework combines an
+initial 5-minute opening momentum trade with session-based Mean Reversion back
+toward a dynamically defined Fair Value. Fair Value is anchored to the 9:29 AM
+pre-open candle, pre-news price levels, or post-news consolidation ranges.
+Entries rely strictly on candle closes confirming Displacement Candles or
+Market Structure Breaks, paired with fixed point-based Stop Loss and Take
+Profit targets calibrated to a 1:1.5 Risk-to-Reward Ratio tailored to prop firm
+evaluation rules. Ultimately, the video highlights that while this
+fixed-parameter model thrives under prop firm capital structures, backtesting
+and user feedback indicate it merely breaks even on personal accounts without discretionary
+order-flow adjustments.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>本影片深入解析華盛頓大學計算金融學優等畢業生</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'> JJ Simon </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>的量化期貨交易方法論。他以</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 5,000 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元起家，在一年多內透過自營交易公司（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'>Prop Firm</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）分潤賺取超過</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 180 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>萬美元，但也投入了逾</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>萬美元購買考核帳戶。其策略專注於納斯達克</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'> 100 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>期貨（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>NQ</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線圖，完全不使用技術指標，核心架構結合「開盤前</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘順勢單」與「盤中均值回歸（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>Mean Reversion</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）單」，交易目標是讓價格回歸動態定義的「公允價值（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'>Fair Value</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）」。公允價值依情境錨定於開盤前</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 9:29 K </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線、重要經濟數據公布前價格或突發新聞後的橫盤區間。進場嚴格等待</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線收盤確認「位移</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>Displacement
+Candle</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"MS Mincho",serif;color:#333333'>）」或「市場結構突破（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>Market
+Structure Break</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;font-family:"MS Mincho",serif;color:#333333'>）」，並配合專為自營考核設計的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1:1.5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>盈虧比固定點數停損與停利。最後影片指出，該固定點數模型高度依賴自營公司帳戶規則，若用於個人資金帳戶往往僅能打平，需依盤面靈活調整。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>2. Key Concepts &amp; Definitions (with Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+color:#2B547E'>2. </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#2B547E'>知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:00:07] Proprietary Trading Firm (Prop Firm / </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>自營交易公司</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>Firms that
+provide traders with funded capital after passing paid evaluation challenges,
+sharing a percentage of profits while enforcing strict drawdown limits.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>提供資金給通過付費考核的交易員進行操作，雙方按比例分成利潤，並設有嚴格最大虧損限制的機構。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:00:32] Nasdaq 100 Futures (NQ / </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>納斯達克</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'> 100 </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>期貨</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>The sole
+futures instrument traded in this strategy, valued at $20 per point for
+standard contracts (NQ) and $2 per point for micro contracts (MNQ).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>本策略唯一交易的期貨品種；標準合約（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>NQ</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）每跳動</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點價值</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 20 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元，微型合約（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>MNQ</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）每點價值</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 2 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:00:54] Fair Value (</span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1B365D'>公允價值</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'> / </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>公允價</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>The
+equilibrium price zone where buyers and sellers agree prior to an aggressive
+order-flow imbalance; prices pushed away from this zone tend to revert to it.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>在大型買賣訂單流造成失衡前，市場買賣雙方認可的均衡價格區間；價格偏離後具有向該區域回歸的傾向。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:01:02] Opening Momentum Trade (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>開盤順勢交易</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>A directional
+scalp executed within the first 5 minutes of the market open based on the
+breakout strength of the initial 9:30 AM 1-minute candle.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>在美股</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 9:30 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>開盤後前</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 5 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘內，依據第一根</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線的突破力道所執行的單向順勢短線交易。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:01:06] Mean Reversion (</span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1B365D'>均值回歸</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>The core
+statistical assumption that extreme short-term price spikes caused by opening
+orders or scheduled news releases will retrace back to Fair Value.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>核心統計假設，認為因開盤訂單湧入或預定經濟數據公布所引發的短期價格過度衝刺，最終會回落至公允價值。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:02:58] Displacement Candle (</span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1B365D'>位移</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'> K </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>線</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'> / </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>吞沒形態</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>A strong
+momentum candle (or two consecutive candles) whose body is larger than the
+prior opposing candle and closes beyond its extreme high or low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>實體長度大於前一根反向</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線，且收盤價突破前一根</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線最高點或跌破最低點的強動能</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線（或連續兩根同向</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:03:13] Market Structure Break (MSB / </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>市場結構突破</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>A reversal
+confirmation occurring when a 1-minute candle closes below a prior swing low
+during an upswing (or above a prior swing high during a downswing).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>反轉確認訊號，指價格上衝過程中，某根</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線收盤價跌破前一個波段小低點（做多則為收盤突破前波段小高點）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:04:48] News Drift (</span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1B365D'>新聞漂移</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>A sustained,
+multi-hour directional trend triggered by unexpected breaking news (e.g.,
+surprise central bank remarks or political posts) that permanently shifts Fair Value.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>由市場未預料到的突發新聞（如央行官員意外講話或政要發文）引發的持續數小時單邊趨勢，會永久改變原有的公允價值。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:02:25] Fixed Point Risk-to-Reward Ratio (1:1.5 </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>固定點數盈虧比</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>A rigid
+position-sizing framework typically risking 25 points to gain 38 points,
+calibrated directly to prop firm profit targets and maximum drawdown rules.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>嚴格的固定點數風控框架，標準配置為停損</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點、停利</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 38 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點（盈虧比</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1:1.5</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>），專為匹配自營考核的獲利目標與虧損上限而設計。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>3. Knowledge Architecture Diagram (Text-Based Mind Map)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+color:#2B547E'>3. </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#2B547E'>知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>1. Trader Profile &amp; Market Setup (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F4E78'>交易員背景與市場配置</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>1. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>交易員背景與市場配置</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>├── Background: UW Computational Finance grad; $5K start -&gt;
+$1.8M+ Prop Firm payouts ($500K+ eval costs)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>├── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>背景：華盛頓大學計算金融系畢業；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>5,000 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元起步賺取逾</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 180 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>萬美元自營分潤（花費逾</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>萬美元考核費）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>└── Chart Setup: Nasdaq Futures (NQ/MNQ) only | 1-Minute
+Timeframe | Naked Chart (Zero Indicators)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>└── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>圖表配置：僅做納斯達克期貨（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>NQ/MNQ</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）｜</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘週期｜純裸</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>圖表（零技術指標）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>2. Dynamic Fair Value Anchoring (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F4E78'>動態公允價值錨定規則</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>2. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>動態公允價值錨定規則</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>├── Normal Days: 9:29 AM pre-open 1-min candle (or pre-market
+multi-hour consolidation zone if immediately reclaimed)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>├── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>一般交易日：開盤前</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 9:29 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>的</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線（若開盤即衝回盤前橫盤區則改用該區間）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>├── Scheduled Data Days (8:30 AM CPI/NFP/PPI): 8:29 AM
+pre-release 1-min candle</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>├── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>預定數據日（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>8:30 CPI/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>非農</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>/PPI</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）：數據公布前</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 8:29 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>的</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>└── Unexpected Breaking News: Abandon old anchor; wait for price
+to stabilize into a new consolidation range</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>└── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>突發新聞事件：放棄舊錨點；順勢交易新聞漂移，待價格停滯橫盤後建立新公允價值</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>3. Dual-Phase Execution Engine (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F4E78'>雙階段交易執行引擎</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>3. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>雙階段交易執行引擎</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>├── Phase A: Opening Momentum (9:30–9:35 AM) -&gt; Trade 9:30
+candle breakout; adjust size if candle &gt; 25 pts</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>├── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>階段</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> A</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>：開盤順勢單（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>9:30–9:35</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>→ </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>交易首根</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線突破；若</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線實體超</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點則減半倉位</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>└── Phase B: Session Mean Reversion (First 90 mins of each
+session) -&gt; Wait for Displacement Candle or MSB close</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>└── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>階段</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> B</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>：時段均值回歸（開盤後</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 90 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘內）</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>→ </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>等待位移</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線或結構突破收盤後反向做回公允價</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>4. Risk Management &amp; Structural Limitations (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F4E78'>風險控管與策略侷限</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>4. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>風險控管與策略侷限</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>├── Position Scaling: Double SL (25-&gt;50 pts) = Halve Contract
+Size (1 NQ -&gt; 5 MNQ) to keep dollar risk constant ($500)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>├── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>動態縮倉：停損放寬一倍（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>25→50</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點）＝合約口數減半（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>1</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>NQ→5</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>口</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>MNQ</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>），維持單筆最大虧損恆定（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>500</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>├── Circuit Breakers: Max 3 consecutive losses per session; move
+SL to breakeven before new session/news</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>├── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>熔斷機制：單一時段連虧</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 3 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>筆即停手；遇新時段開盤或數據公布前將停損移至保本價</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>└── Reality Check: Optimized for Prop Firm 1:1.5 math; breaks
+even on personal live accounts without order-flow adaptation</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>└── </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>實戰侷限：高度適配自營公司</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1:1.5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>考核數學模型；直接套用於個人實盤帳戶通常僅能打平</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>4. Mental Models &amp; Logic (Why &amp; How)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+color:#2B547E'>4. </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#2B547E'>底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>1. Order-Flow Imbalance &amp; Equilibrium Gravity (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>訂單流失衡與均衡引力模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>Why: At major
+session opens (9:30 AM EST) or scheduled macro releases (8:30 AM),
+institutional algorithms and overnight retail orders flood the order book
+simultaneously, causing temporary liquidity vacuums and price overshoots. How:
+Rather than chasing emotional spikes, the trader anchors the pre-imbalance
+equilibrium price (Fair Value) and waits for momentum exhaustion to capture the
+snap-back.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>原理（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>Why</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）：在美股開盤（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>9:30</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）或預定宏觀數據公布（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>8:30</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）瞬間，機構演算法與隔夜散戶訂單同時湧入，造成短暫流動性失衡與價格過度衝刺。做法（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>How</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）：不盲目追逐情緒性大</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線，而是錨定失衡前的均衡價格（公允價值），等待動能衰竭後捕捉價格彈回的過程。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>2. Information Expectation vs. Surprise Dichotomy (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>資訊預期差二分法模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>Why: Markets
+price in scheduled events (CPI, NFP) beforehand, making initial spikes mere liquidity
+sweeps; conversely, unscheduled shocks (unexpected Fed speeches or political
+posts) alter fundamental valuation. How: Scheduled news is faded via Mean
+Reversion back to the 8:29 AM price, whereas unscheduled news is traded with
+the trend via News Drift until a new consolidation base forms.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>原理（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>Why</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）：市場對預定數據（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>CPI</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>、非農）早已提前定價，公布瞬間的劇烈波動多屬過度反應；反之，突發性意外事件（如聯準會主席突然講話）會真正改變基本面定價。做法（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>How</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）：預定數據採用「均值回歸」做回</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 8:29 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>價格；突發新聞則採用「新聞漂移」順勢跟進，直到價格重新橫盤築底。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>3. Constant Dollar-Risk Volatility Normalization (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>固定金額風險下的波動率標準化模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>Why: Fixed-point
+stops (25 points) fail during high-volatility expansions, leading to premature
+stop-outs. How: When 1-minute volatility doubles (e.g., an opening candle
+exceeds 25 points), the trader doubles the stop distance (to 50 points) and
+halves the position size (e.g., switching from 1 standard NQ to 5 micro MNQ),
+keeping maximum dollar loss identical ($500).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>原理（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>Why</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）：固定點數停損（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點）在市場波動率急劇放大時極易被掃損。做法（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'>How</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）：當</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘波動率倍增（如開盤首根</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線超過</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 25 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點），交易員將停損距離放寬一倍（至</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點）並將合約口數減半（如從</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口標準</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> NQ </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>改為</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 5 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口微型</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> MNQ</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>），確保單筆最大虧損金額完全不變（皆為</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'> 500 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>4. Prop Firm Payout Asymmetric Exploitation (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1B365D'>自營考核規則不對稱套利模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>Why: A
+typical $50,000 prop firm challenge requires a $3,000 profit target against a
+$2,000 maximum drawdown—an exact 1.5:1 ratio. How: By hardcoding a 1:1.5 Risk-to-Reward
+Ratio (25-point SL vs. 38-point TP) and executing across multiple evaluation
+accounts, the strategy turns trading into a statistical pass-rate optimization
+problem tailored to prop firm rules.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>原理（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>Why</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）：典型的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>萬美元自營考核帳戶要求獲利</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 3,000 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元過關、虧損</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 2,000 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元淘汰，比例正好是</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 1.5:1</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>。做法（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>How</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）：透過將盈虧比寫死為</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 1:1.5</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>（停損</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點對停利</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 38 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點）並在多帳戶同步操作，將交易轉化為高度貼合自營考核規則的統計過關率優化遊戲。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>5. Detailed Breakdown by Core Modules (with Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+color:#2B547E'>5. </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#2B547E'>詳細重點拆解（</span></b><b><span
+lang=EN-US style='font-size:12.5pt;line-height:115%;color:#2B547E'>6 </span></b><b><span
+lang=EN-US style='font-size:12.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>大核心模組與原始時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 1: Trader Background, Instrument &amp; Pure Price Action
+Setup [00:00:00 - 00:00:42]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組一：交易員背景、單一品種與純裸</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> K </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>配置</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2B547E'> [00:00:00 - 00:00:42]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Concept Explanation: JJ Simon graduated with honors in
+Computational Finance from the University of Washington in 2022. Starting with
+$5,000 earned from playing poker in college, he generated over $1.8 million in
+prop firm payouts in just over a year while spending over $500,000 on
+evaluation accounts. He trades solely Nasdaq 100 Futures on a 1-minute chart
+with zero indicators.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【概念解釋】：</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>JJ Simon </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>於</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 2022 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>年以計算金融學優等成績畢業於華盛頓大學。他以大學打撲克贏來的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 5,000 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元起步，一年多內獲得逾</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 180 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>萬美元自營分潤，但也花費超過</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>萬美元購買考核帳戶。他僅交易納斯達克期貨（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'>NQ</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>），只看</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘圖且不掛任何技術指標。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Steps &amp; Workflow: (1) Open the 1-minute Nasdaq Futures
+(NQ/MNQ) candlestick chart; (2) Remove all technical indicators (moving
+averages, RSI, MACD) because 1-minute price action moves too fast for lagging
+indicators; (3) Rely strictly on pre-defined point rules for entry, stop loss,
+and take profit.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>操作流程】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(1) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>開啟納斯達克期貨（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>NQ/MNQ</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線圖；</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>(2) </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>移除所有技術指標，因</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘圖波動極快，落後指標毫無用處；</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(3) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>嚴格執行預先設定的固定點數進場、停損與停利規則。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Formulas &amp; Terms: Standard NQ Contract = $20/point;
+Micro MNQ Contract = $2/point (10 MNQ = 1 NQ). Naked Chart (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F4E78'>純裸</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'> K </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F4E78'>圖</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>專有名詞】：標準納指合約（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>NQ</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）＝</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 20 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>/</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點；微型納指合約（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>MNQ</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）＝</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 2 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>美元</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>10 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> MNQ </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>＝</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> NQ</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>Naked Chart</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>（純裸</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>圖）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Pitfalls &amp; Precautions: Do not underestimate the capital
+burn of buying multiple prop firm evaluations ($500K+ spent); strict risk
+control is mandatory to avoid blowing accounts rapidly.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>注意事項】：切勿忽視購買大量自營考核帳戶的高昂試錯成本（影片提及花費逾</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>萬美元）；若無嚴格風控，連續虧損極易導致帳戶爆倉。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 2: Defining Dynamic Fair Value Across Market Regimes [00:00:42
+- 00:02:02]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組二：不同市場情境下的動態公允價值定義</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:00:42 -
+00:02:02]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Concept Explanation: Fair Value represents the consensus price
+before aggressive orders push the market out of balance. Because market
+catalysts differ by day, the Fair Value reference line must adapt across three
+distinct scenarios.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【概念解釋】：公允價值（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>Fair Value</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）代表大量買賣訂單將價格推離均衡前的共識價格區間。由於每日市場催化劑不同，公允價值基準線必須根據三種情境動態調整。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Steps &amp; Workflow: (1) Normal Days: Box out the 9:29 AM
+1-minute candle (the final minute before market open) and extend a horizontal
+line rightward across the entire session. If price immediately breaks back into
+a multi-hour pre-market consolidation range and holds, shift Fair Value to that
+range; (2) Scheduled News Days (8:30 AM CPI, NFP, PPI): Use the 8:29 AM
+1-minute candle prior to data release; if price returns to the 8:29 AM level by
+9:30 AM, ignore the 9:30 AM open price; (3) Unexpected Breaking News: Abandon
+prior Fair Value, wait for the spike to stop and consolidate sideways, and mark
+the new range as Fair Value.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>操作流程】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(1) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>一般交易日：框出開盤前最後一分鐘（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>9:29</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）的</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線並向右延伸橫線作為全天基準；若開盤後直接衝回盤前橫盤已久的區間並站穩，則改用該橫盤區間；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(2) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>預定數據日（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>8:30 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>公布通膨</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> CPI</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>、非農</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> NFP</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>PPI</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）：改用數據公布前</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 8:29 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線作為公允價；若</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 9:30 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>開盤時價格已回到數據前價格，則忽略開盤價；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(3) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>突發新聞日：舊公允價失效，等價格衝刺停止並橫盤整理後，以新橫盤區間作為公允價。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Terms: Fair Value (</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F4E78'>公允價值</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F4E78'>), Pre-Open Consolidation (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F4E78'>盤前橫盤區間</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>), Scheduled
+Macro Releases (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F4E78'>預定宏觀數據：</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>CPI / NFP / PPI).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>專有名詞】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>Fair Value</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（公允價值）、</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>Pre-Open Consolidation</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（盤前橫盤區間）、</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>CPI</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>（消費者物價指數）、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>NFP</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（非農就業數據）、</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>PPI</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>（生產者物價指數）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Pitfalls &amp; Precautions: Never cling to an outdated 9:30 AM
+opening price when an 8:30 AM data print or sudden political/Fed announcement
+has structurally repriced the market.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>注意事項】：當早盤</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 8:30 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>數據公布或突發政治</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>聯準會講話已改變市場定價時，切勿死守</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 9:30 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>開盤價作為回歸目標。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 3: Opening 5-Minute Momentum Trade Execution [00:02:02 -
+00:02:45]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組三：開盤前</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> 5 </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>分鐘順勢單執行規則</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2B547E'> [00:02:02 - 00:02:45]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Concept Explanation: Once Fair Value is established, the trader
+takes a single directional momentum trade within the first 5 minutes of the
+9:30 AM open to capitalize on initial order-flow follow-through.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【概念解釋】：定好公允價值後，交易員會在</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 9:30 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>開盤後的前</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 5 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘內執行一筆順勢單，旨在捕捉開盤瞬間訂單流湧入的第一波慣性動能。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Steps &amp; Workflow: (1) Observe the first 1-minute candle
+at 9:30 AM; (2) Go Long if it closes as a bullish candle above the highs of the
+preceding few candles; go Short if it closes bearish below recent lows; (3)
+Filter for highest probability: check the 6-to-12-hour overnight trend—if
+overnight drifted up, opening bearish reversals are stronger (and vice versa);
+(4) Set standard 38-point TP and 25-point SL; if the 9:30 AM candle body exceeds
+25 points, widen SL to 50 points, TP to 76 points, and halve contract size; (5)
+Cancel all momentum setups if no entry triggers within the first 5 minutes (by
+9:35 AM).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>操作流程】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(1) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>觀察</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 9:30 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>開盤第一根</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線；</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>(2) </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>收陽線且收盤高於前幾根</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線高點則做多；收陰線且收盤低於前幾根低點則做空；</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'>(3) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>結合過去</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 6–12 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>小時隔夜大方向過濾：隔夜一路上漲則開盤更容易向下（反之亦然），當順勢方向與回歸公允價方向一致時勝率最高；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(4) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>標準停利</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 38 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點、停損</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點；若首根</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線開盤到收盤已走超過</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點，則將停損放寬至</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 50 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點、停利</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 76 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點，並將口數減半；</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(5) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>開盤過了</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>9:35 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>後）不再做任何順勢單。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Formulas &amp; Terms: Standard Risk/Reward = 25-pt SL /
+38-pt TP (1:1.5 R:R). Volatility Adjustment: Candle Range &gt; 25 pts -&gt;
+50-pt SL / 76-pt TP with 0.5x Size.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>專有名詞】：標準盈虧比</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>＝</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>停損</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 25 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>停利</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 38 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>1:1.5</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）。波動率調整公式：首根</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線波幅</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> &gt; 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> → </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>停損</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> / </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>停利</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 76 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點，倉位口數</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> × 0.5</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Pitfalls &amp; Precautions: Chasing opening momentum after 9:35
+AM exposes the trader to the exact snap-back reversal targeted in Phase B.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>注意事項】：絕對禁止在開盤</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 5 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>9:35</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）之後才追進順勢單，否則極易買在最高點或賣在最低點，剛好成為階段</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'> B </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>均值回歸的對手盤。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 4: Mean Reversion Entry Signals — Displacement &amp;
+Structure Break [00:02:45 - 00:03:42]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組四：均值回歸進場訊號</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>——</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>位移</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2B547E'> K </span></b><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>線與結構突破</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2B547E'> [00:02:45 - 00:03:42]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Concept Explanation: After the first 5 minutes, the trader
+switches exclusively to Mean Reversion: looking only for Shorts when price is
+above Fair Value, and only for Longs when price is below Fair Value, confirmed
+strictly by 1-minute candle closes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【概念解釋】：開盤</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘過後，剩餘時間只做往公允價值回歸的反向單：價格在公允價上方只等做空訊號，在公允價下方只等做多訊號，且必須等待</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線正式收盤才算數。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Steps &amp; Workflow: (1) Monitor the countdown timer at the
+bottom-right of the screen so entries occur precisely as a new minute begins;
+(2) Signal Type 1 — Displacement Candle: For shorts, a bearish candle (or two
+consecutive bearish candles) must have a larger body than the prior bullish
+candle and close below the prior bullish candle's lowest point; (3) Signal Type
+2 — Market Structure Break (MSB): During an upward push, identify a swing low
+(a candle whose low is lower than both adjacent candles). Once a subsequent
+candle closes below this swing low, enter Short (MSB is considered more
+reliable than Displacement, especially if the level was tested multiple times);
+(4) Reverse both rules for Long setups below Fair Value.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>操作流程】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(1) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>緊盯螢幕右下角秒數倒數，在新的一分鐘跳出瞬間確認前一根收盤是否破位並立即進場；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(2) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>訊號一「位移</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>Displacement
+Candle</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"MS Mincho",serif;color:#333333'>）」：以做空為例，一根陰線（或連續兩根陰線）的實體必須長於前一根陽線，且收盤價跌破前一根陽線的最低點；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(3) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>訊號二「結構突破（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>Market Structure Break</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）」：價格上衝時會留下小低點（某根</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線最低點比左右兩根都低），一旦後續有</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線收盤跌破該小低點即做空（講者認為結構突破比位移</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線更穩健，若該低點曾被多次測試未破後跌破則更可靠）；</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'>(4) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>做多訊號則將上述兩種邏輯完全反轉。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Terms: Displacement Candle (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F4E78'>位移</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F4E78'> K </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F4E78'>線</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>/</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F4E78'>吞沒形態</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>), Swing
+Low/High (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F4E78'>波段小低點</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F4E78'>小高點</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>), Market Structure Break (MSB / </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F4E78'>市場結構突破</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>), Candle
+Close Confirmation (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F4E78'>收盤確認</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>專有名詞】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>Displacement Candle</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（位移</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線）、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>Swing
+Low/High</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"MS Mincho",serif;color:#333333'>（波段小低點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>小高點）、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>Market Structure Break</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>MSB / </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>市場結構突破）、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>Candle Close
+Confirmation</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"MS Mincho",serif;color:#333333'>（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'>K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線收盤確認）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Pitfalls &amp; Precautions: Never enter mid-candle before the
+60-second bar closes; wicks frequently fake breakouts and reverse before the
+minute ends.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>注意事項】：嚴禁在</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線尚未走完收盤前提前搶進，盤中上下影線經常出現假跌破或假突破，必須等收盤確認。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 5: Fixed-Point Targets, Distance Ratio &amp; News Drift
+Handling [00:03:42 - 00:05:08]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組五：固定點數停損停利、距離比例與新聞漂移應對</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:03:42 -
+00:05:08]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Concept Explanation: Even though Mean Reversion trades aim
+toward Fair Value, exits use fixed point tiers rather than exact Fair Value
+lines because price movement beyond Fair Value is random. Special rules apply
+to extreme data surprises and breaking news.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【概念解釋】：儘管均值回歸是朝著公允價值交易，但停利與停損仍採用固定點數而非直接掛在公允價線上，因為價格回到公允價後的走勢全憑運氣。此外，針對極端數據與突發新聞另有專屬應對邏輯。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Steps &amp; Workflow: (1) Measure the distance from entry to
+Fair Value and select a fixed TP tier (38, 50, 75, or 100 points); (2) Enforce
+the 80% Distance Rule: actual distance to Fair Value must be at least 80% of
+the chosen TP (e.g., at least 30 points away for a 38-point TP); (3) Select
+fixed SL tier (25, 37.5, 50, or 75 points) and scale contracts inversely (e.g.,
+1 NQ @ 25-pt SL = $500 risk; 5 MNQ @ 50-pt SL = $500 risk); (4) Scheduled Data
+Rule: Never chase the initial 8:30 AM spike candle; wait for Displacement/MSB
+back to 8:29 AM price. If data deviates wildly from consensus and trends
+non-stop without reversal signals, skip trading; (5) Unexpected Breaking News
+(News Drift): Enter early in the direction of the sudden spike, place SL below
+the pre-spike consolidation range, trail exits until a candle closes below a
+prior swing low, and only trade Mean Reversion after a new sideways range
+forms.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>操作流程】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(1) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>測量進場點到公允價的距離，挑選最接近的固定停利檔位（常用</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 38 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點，較遠則選</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 50</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>75 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>或</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 100 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點）；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(2) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>遵守「</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>80% </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>距離法則」：進場點離公允價的距離至少要有目標停利點數的八成（例如想賺</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 38 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點，距離至少需</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 30 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點）；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(3) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>挑選固定停損檔位（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>25</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>37.5</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>50 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>或</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 75 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點）並反向調整口數（如</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 25 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點停損做</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>口</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> NQ </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>虧</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 500 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元；放寬至</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 50 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點停損則改做</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>口微型</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> MNQ</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>，每點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 2 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> × 5 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口＝</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>10 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元，虧損仍為</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 500 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>美元）；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(4) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>預定數據處理：不追</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 8:30 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>第一根大</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線，等訊號往</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 8:29 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>價格做回；若數據遠超預期導致單邊暴走無訊號則觀望；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(5) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>突發新聞（新聞漂移）：早點順勢上車，停損放起跳前橫盤下方，不設固定停利，等收盤跌破前一個小低點再出場，待價格重新橫盤後再做回歸。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Formulas &amp; Terms: 80% Distance Rule: Distance to Fair
+Value &gt;= 0.80 * Take Profit Points. Constant Risk Sizing: Contracts = Max
+Dollar Risk / (Stop Loss Points * Point Value).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>專有名詞】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>80% </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>距離法則：進場點至公允價距離</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> ≥ 0.80 × </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>目標停利點數。等額風險口數公式：交易口數</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'> </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>＝</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>單筆最大虧損金額</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> ÷</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（停損點數</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> × </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>每點價值）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Pitfalls &amp; Precautions: Do not treat unexpected breaking
+news (like a sudden Trump tweet or Fed speech) as a Mean Reversion fade; fading
+News Drift leads to catastrophic consecutive losses.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>注意事項】：切勿將未預期的突發新聞（如政要突然發文或聯準會主席意外講話）當作普通數據進行反向做空</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>做多，逆勢對抗「新聞漂移」會導致嚴重連虧。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 6: Session Windows, Circuit Breakers, Case Studies &amp;
+Reality Check [00:05:08 - 00:08:48]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組六：</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>90 </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>分鐘交易窗口、熔斷機制、實戰案例與策略侷限</span></b><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:05:08 - 00:08:48]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Concept Explanation: Liquidity and Mean Reversion validity decay
+rapidly after the first 90 minutes of each major market session. Combining
+strict time windows, loss limits, and real-world case studies reveals both the
+execution precision and the structural boundaries of this system.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【概念解釋】：各主要交易時段開盤</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 90 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘後，市場流動性與公允價值回歸的有效性會大幅衰減。透過時間窗口限制、連虧熔斷與兩個實戰案例，能完整看清此系統的操作細節與現實侷限。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Steps &amp; Workflow: (1) Trade only the first 90 minutes of
+each session: NY Open (9:30–11:00 AM EST), Futures Reopen (6:00 PM EST), and
+Asian Open; avoid the low-volume 11:00 AM–2:00 PM EST dead zone; (2) Enforce
+the 3-Loss Circuit Breaker: 3 consecutive Mean Reversion losses in one session
+proves Fair Value has shifted—stop trading until the next session; (3) Move SL
+to breakeven before a new session open or scheduled speeches (e.g., 9:45 /
+10:00 AM); (4) Case Study 1 (July 14 CPI): 8:29 AM Fair Value at 29694 -&gt;
+8:31 AM spike to 29920+ -&gt; 8:35 AM MSB short at 29863 (175-pt TP, 25-pt SL)
++ 9:30 AM bearish open half-size short (50-pt SL, 76-pt TP) -&gt; both hit TP by
+9:35 AM at 29685; (5) Case Study 2 (Aug 25 Pre-Market Range): Open reclaimed
+1-hour pre-market range (29328.25) -&gt; shorted spike rejection at 29392.75
+across accounts for $4,700+ profit, then stopped out twice on overextended lows
+and halted trading; (6) Critical Evaluation: Fixed points match Prop Firm 1:1.5
+math ($3K target vs $2K drawdown), but backtests show minimal edge on personal
+accounts without discretionary order-flow targets.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>操作流程】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(1) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>每個時段僅做開盤後</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 90 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘：美股早盤</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 9:30–11:00</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（美東時間）、期貨傍晚重開盤及亞洲盤開盤，避開</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'> 11:00–14:00 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>無量垃圾時間；</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(2) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>單一時段連虧</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 3 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>次立即收手，代表公允價已轉移，等下一時段再重新錨定；</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'>(3) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>手上有單遇新時段開盤或</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 9:45/10:00 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>數據講話前，先將停損移至進場保本價；</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>(4) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>案例一（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>7/14 CPI</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）：</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>8:29 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>公允價</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 29694 →
+8:31 </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"MS Mincho",serif;color:#333333'>衝至</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'> 29920 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>多</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> → 8:35 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>收在</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 29863 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>結構突破做空（停利</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 175 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點、停損</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點）＋</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 9:30 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>開盤大陰線減半口數順勢空（停損</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點、停利</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 76 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點）</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>→ 9:35 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>跌至</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 29685 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>雙雙停利；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>(5) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>案例二（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>8/25 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>盤前橫盤）：開盤衝回盤前橫盤區（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>29328.25</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>），</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>9:50 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>於衝高回落（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>29392.75</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）分帳戶做空獲利逾</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 4,700 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元；隨後跌過頭兩次抄底做多皆停損，確認結構下破後果斷停手；</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'>(6) </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>客觀反思：固定點數專為自營公司</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 1:1.5 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>考核規則設計，網傳回測與本人亦坦言若用個人資金操作，僅能打平且需看盤面靈活設定停損停利。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Key Terms: 90-Minute Session Window (90 </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F4E78'>分鐘黃金窗口</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>), 3-Loss
+Circuit Breaker (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F4E78'>三連虧熔斷機制</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>), Breakeven Stop (</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F4E78'>保本停損</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F4E78'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>專有名詞】：</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>90-Minute Session Window</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>（開盤</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 90 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘窗口）、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>3-Loss
+Circuit Breaker</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;font-family:"MS Mincho",serif;color:#333333'>（單時段三連虧熔斷）、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>Breakeven
+Stop</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"MS Mincho",serif;color:#333333'>（保本停損）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Pitfalls &amp; Precautions: Do not blindly copy fixed-point
+parameters onto a personal cash account, and remember that taking two full-size
+losses in a row can blow a tight prop firm drawdown limit if risk per trade is
+oversized.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>注意事項】：切勿將固定點數參數直接照搬至個人自有資金帳戶；此外，若單筆風險金額設得過高（如達帳戶最大回撤的一半），連續兩筆虧損就會直接導致自營帳戶爆倉。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>6. Practical Action Items (5 Immediate Steps)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+color:#2B547E'>6. </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#2B547E'>實操行動清單（</span></b><b><span
+lang=EN-US style='font-size:12.5pt;line-height:115%;color:#2B547E'>5 </span></b><b><span
+lang=EN-US style='font-size:12.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>個可立即執行的步驟）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 1 — Configure a Clean 1-Minute NQ/MNQ Chart with
+Time-Session Markers: </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Open TradingView or your futures platform on the 1-minute NQ/MNQ
+chart, remove all indicators, enable the bottom-right candle countdown timer,
+and mark the 8:29 AM, 9:29 AM, and 11:00 AM EST vertical session boundaries.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>行動一</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>建立純淨的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> NQ/MNQ </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>圖表與時段標記：開啟期貨看盤軟體的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘納指圖表，移除所有技術指標，開啟右下角</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'> K </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線倒數計時器，並標記美東時間</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 8:29</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>9:29 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>與</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 11:00 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>的時段分隔線。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 2 — Build a Pre-Market Fair Value Anchor Checklist: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F4E78'>Before every
+US session open, check the economic calendar for 8:30 AM releases (CPI, NFP,
+PPI) and inspect the 6–12 hour overnight range to decide whether Fair Value
+should be anchored to the 8:29 AM candle, the 9:29 AM candle, or a multi-hour
+pre-market consolidation zone.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>行動二</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>建立盤前公允價值錨定檢查表：每日美股開盤前，先查閱財經日曆確認是否有</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 8:30 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>重大數據（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>CPI</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>、非農、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>PPI</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>），並檢視過去</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 6–12 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>小時隔夜走勢，決定當日公允價應錨定於</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 8:29 K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>9:29 K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線或盤前橫盤區間。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 3 — Create a Volatility-Adjusted Position Sizing
+Calculator (NQ vs. MNQ): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>Pre-calculate your exact contract sizes for 25-point,
+37.5-point, 50-point, and 75-point stop losses so that every trade risks the
+exact same dollar amount (e.g., 1 NQ at 25 pts = $500; 5 MNQ at 50 pts = $500)
+without mental math errors during fast 1-minute opens.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>行動三</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>製作波動率動態口數換算表（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>NQ </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>與</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> MNQ </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>切換）：預先算好停損</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>37.5 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點與</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 75 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點對應的合約口數，確保單筆最大虧損金額完全一致（例如</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點停損做</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> NQ </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>虧</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 500 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>美元；</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點停損則改做</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 5 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> MNQ </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>同樣虧</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 500 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>美元），避免開盤快市算錯倉位。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 4 — Backtest 50 Historical Sessions Separating
+Displacement vs. Market Structure Break: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F4E78'>Replay 50 past New York
+sessions (9:30–11:00 AM EST) and log win rates separately for Displacement
+Candles versus Market Structure Breaks, strictly enforcing the 80%
+distance-to-Fair-Value rule and the 3-loss session circuit breaker.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>行動四</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>回測</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>個歷史交易時段並區分兩種進場訊號：重播過去</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#333333'> 50 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>個美股早盤時段（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>9:30–11:00</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>），分別統計「位移</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>線」與「結構突破（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>MSB</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>）」的勝率，並嚴格測試「</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>80% </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>距離法則」與「單時段三連虧熔斷」的過濾效果。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 5 — Adapt Exit Rules Based on Account Type (Prop Firm vs.
+Personal Account): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>If trading a prop firm evaluation, align your fixed 1:1.5 R:R
+with the firm's maximum trailing drawdown (keeping single-trade risk &lt;=
+20–25% of max drawdown). If trading personal capital, replace fixed-point take
+profits with structural price targets near Fair Value.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>行動五</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>依帳戶性質調整出場規則（自營考核</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> vs. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>個人帳戶）：若操作自營考核帳戶，將</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'> 1:1.5 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>固定盈虧比對齊帳戶最大回撤上限（單筆風險控制在最大回撤的</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#333333'> 20%–25% </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>以內，避免兩筆爆倉）；若使用個人資金，則取消固定點數停利，改依公允價值附近的盤面結構設定出場。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>7. Concept Self-Assessment (Quiz &amp; Review)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+color:#2B547E'>7. </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#2B547E'>觀念自我檢測（</span></b><b><span
+lang=EN-US style='font-size:12.5pt;line-height:115%;color:#2B547E'>5 </span></b><b><span
+lang=EN-US style='font-size:12.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>題單選題與參考答案）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1B365D'>Q1. Under JJ Simon's rules, which price
+level serves as Fair Value on a day when scheduled 8:30 AM CPI data is
+released, assuming price has not yet returned to pre-news levels by 9:30 AM?<br>
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>問題</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'> 1</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>：根據</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> JJ Simon </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>的規則，在上午</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> 8:30 </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>公布預定</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> CPI </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>數據的交易日（假設</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> 9:30 </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>開盤時價格尚未回到數據前位置），應以哪個價格作為公允價值（</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>Fair Value</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>）？</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>A) The 9:29 AM 1-minute candle</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>A) 9:29 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>的</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>B) The 8:29 AM 1-minute candle immediately before the data
+release</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>B) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>數據公布前</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 8:29 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>的</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 1 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>C) The highest price reached at 8:31 AM</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>C) 8:31 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>衝出的最高價</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>D) The 200-period moving average on the 1-minute chart</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>D) 1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>分鐘圖的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 200 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>週期均線</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1B365D'>Q2. If the 9:30 AM opening 1-minute candle
+moves 32 points from open to close (exceeding the standard 25-point stop loss),
+how does JJ Simon adjust his opening momentum trade?<br>
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>問題</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'> 2</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>：如果</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> 9:30 </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>開盤第一根</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> 1 </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>分鐘</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> K </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>線從開盤到收盤波動了</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> 32 </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>點（超過標準</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> 25 </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>點停損），</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>JJ Simon </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>會如何調整這筆順勢單？</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>A) Skip the trade completely and wait until 11:00 AM</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>A) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>完全放棄交易並等到</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 11:00</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>B) Keep 25-point stop loss and double the contract size</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>B) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>維持</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點停損並將口數加倍</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>C) Widen stop loss to 50 points, take profit to 76 points, and
+halve the contract size</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>C) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>將停損放寬至</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 50 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點、停利</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'> 76 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點，並將合約口數減半</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>D) Switch from Nasdaq Futures to Gold Futures</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>D) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>從納斯達克期貨切換至黃金期貨</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1B365D'>Q3. According to the '80% Distance Rule'
+for Mean Reversion trades, what is the minimum distance required between the
+entry price and Fair Value if the trader aims for a 50-point Take Profit?<br>
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>問題</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'> 3</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>：根據均值回歸交易的「</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>80% </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>距離法則」，若交易員設定目標停利為</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'> 50 </span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>點，進場點距離公允價值至少需要多少點？</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>A) 25 points</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>A) 25 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>B) 30 points</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>B) 30 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>C) 40 points</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>C) 40 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>D) 50 points</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>D) 50 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1B365D'>Q4. How should a trader handle unexpected
+breaking news (such as a surprise speech by the Federal Reserve Chair) that
+causes a sudden vertical price surge?<br>
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>問題</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'> 4</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>：當市場出現未預期的突發新聞（例如聯準會主席突然講話）導致價格瞬間垂直飆升時，交易員應如何應對？</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>A) Immediately short the top of the spike to fade it back to the
+9:29 AM candle</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>A) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>立即在衝刺頂部做空，賭價格回到</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 9:29 K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>線</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>B) Trade with the 'News Drift' early, place SL below the
+pre-spike consolidation, exit on a swing-low break, and wait for a new sideways
+range before trading Mean Reversion</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>B) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>儘早順著「新聞漂移」跟進，停損放起跳前橫盤下方，等跌破前小低點出場，待重新橫盤後再做回歸</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>C) Turn off the computer for the rest of the week</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>C) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>本週剩餘時間關閉電腦停止交易</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>D) Double the standard 25-point mean-reversion position size</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>D) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>將標準</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 25 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點均值回歸倉位加倍</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1B365D'>Q5. Why does the video note that JJ Simon's
+fixed-point stop loss and take profit framework works well for Prop Firm
+challenges but tends to merely break even on personal live accounts?<br>
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>問題</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'> 5</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>：為何影片指出</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'> JJ Simon </span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2B547E'>的固定點數停損停利框架在自營考核帳戶表現優異，但在個人實盤帳戶上往往只能打平？</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>A) Personal accounts charge 10 times higher commissions than
+prop firms</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>A) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>個人帳戶的手續費是自營公司的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 10 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>倍</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>B) The 25-point SL / 38-point TP (1:1.5) ratio is mathematically
+engineered around prop firm profit targets ($3,000) vs. max drawdown ($2,000),
+whereas personal accounts require flexible exits based on real-time price
+structure</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>B) 25 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>點停損與</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 38 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>點停利（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#333333'>1:1.5</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"MS Mincho",serif;color:#333333'>）是專為匹配自營考核獲利目標（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'>3,000 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>美元）與最大回撤（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>2,000 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>美元）而設計，個人帳戶則需依盤面結構靈活設定出場</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>C) Nasdaq Futures cannot be traded on personal brokerage
+accounts</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>C) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>個人券商帳戶無法交易納斯達克期貨</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F4E78'>D) Prop firms guarantee zero slippage on 1-minute charts</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#333333'>D) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"MS Mincho",serif;color:#333333'>自營公司保證</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#333333'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"MS Mincho",serif;
+color:#333333'>分鐘圖表零滑點</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#222222'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Answer Key (Concealed on Separate Page for Self-Review)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>自我檢測參考答案（獨立頁隱蔽區，作答完畢後再行對照）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#555555'>Q1 Answer: B — The 8:29 AM
+1-minute candle immediately before the data release.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#666666'>問題</span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;color:#666666'> 1 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'>B — </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>數據公布前</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'> 8:29 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>的</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'> 1 </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>分鐘</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'> K </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>線。理由：預定數據（如</span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;color:#666666'> CPI</span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;font-family:"MS Mincho",serif;color:#666666'>、非農）市場早已提前定價，</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'>8:30 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>公布瞬間的衝刺屬於過度反應，因此以</span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;color:#666666'> 8:29 </span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;font-family:"MS Mincho",serif;color:#666666'>價格作為公允價值基準。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#555555'>Q2 Answer: C — Widen stop loss
+to 50 points, take profit to 76 points, and halve the contract size.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#666666'>問題</span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;color:#666666'> 2 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'>C — </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>將停損放寬至</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'> 50 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>點、停利放寬至</span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;color:#666666'> 76 </span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;font-family:"MS Mincho",serif;color:#666666'>點，並將合約口數減半。理由：維持</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'> 1:1.5 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>盈虧比不變，同時透過口數減半確保單筆最大虧損金額與平常完全相同。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#555555'>Q3 Answer: C — 40 points (50
+points × 80% = 40 points).</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#666666'>問題</span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;color:#666666'> 3 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'>C — 40 </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>點（</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'>50 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>點</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'> × 80% </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>＝</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'> 40 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>點）。理由：進場點至公允價值的距離至少需達到目標停利點數的八成，以確保在價格抵達公允價前有足夠空間完成停利。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#555555'>Q4 Answer: B — Trade with the
+'News Drift' early, place SL below the pre-spike consolidation, exit on a
+swing-low break, and wait for a new sideways range.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#666666'>問題</span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;color:#666666'> 4 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'>B — </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>儘早順著「新聞漂移」跟進，停損放起跳前橫盤下方，等跌破前小低點出場，待重新橫盤後再做回歸。理由：未預期突發新聞會真正改變市場定價，引發長達數小時的單邊趨勢。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#555555'>Q5 Answer: B — The 1:1.5 ratio
+is engineered around prop firm challenge rules ($3,000 target vs. $2,000
+drawdown).</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#666666'>問題</span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;color:#666666'> 5 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'>B — 25 </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>點停損與</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'> 38 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>點停利（</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#666666'>1:1.5</span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#666666'>）是專為匹配自營考核獲利目標（</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#666666'>3,000 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#666666'>美元）與最大回撤（</span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;color:#666666'>2,000 </span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;font-family:"MS Mincho",serif;color:#666666'>美元）而設計。講者本人亦指出若用個人自有資金操作，不應死用固定點數，而需依盤面結構決定停損停利。</span></p>
+
+</div>
+
+</body>
+
+</html>

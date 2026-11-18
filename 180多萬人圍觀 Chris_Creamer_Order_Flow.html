@@ -1,0 +1,1279 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@Microsoft JhengHei";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><b><span
+lang=EN-US style='font-size:15.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>Deep Learning Study Notes: Chris Creamer's Order Flow Intraday
+Trading Strategy<br>
+</span></b><b><span lang=EN-US style='font-size:16.0pt;line-height:115%;
+color:#1F4E79'>深度學習筆記：羅賓斯日內交易賽冠軍 Chris Creamer 訂單流交易策略</span></b></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>1. 核心總結 (Executive Summary)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>This study note breaks down the
+intraday Order Flow trading methodology of 26-year-old American trader Chris
+Creamer, who won the Robbins World Cup Intraday Trading Championship in July
+and achieved a 31-day winning streak with over a 60% win rate.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>本學習筆記深度拆解 26 歲美國交易員 Chris Creamer 的日內訂單流（Order Flow）交易方法論，他於
+7 月奪得羅賓斯世界盃日內交易賽（Robbins World Cup）冠軍，並創下超過 60% 勝率與最長連勝 31 天的紀錄。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>The core philosophy of his
+strategy is waiting for one side of the market to exhaust and fail at key
+institutional levels before entering in the opposite direction to capture
+trapped traders' stop-loss momentum.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>該策略的核心哲學在於「等待市場一方在關鍵機構價位發力失敗後進場」，藉此捕捉被套牢交易者觸發止損（Stop-Loss）所引發的反向推升動能。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>He structures his trading into
+a strict four-step workflow: Trend, Location, Confirmation, and Execution,
+where the first two steps are completed pre-market using Value Area (VA) and
+Gamma Exposure (GEX).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>他將交易嚴格劃分為「趨勢（Trend）、位置（Location）、確認（Confirmation）、執行（Execution）」四個步驟，其中前兩步必須在開盤前透過價值區（Value
+Area）與 Gamma 敞口（GEX）規劃完畢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>During the New York open (first
+1.5 hours), he uses 5-minute Footprint Charts to confirm absorption, candle
+reversal, and aggressive Delta imbalance (&gt;4x) within Fibonacci
+discount/premium zones (0.75–0.886), maintaining a 1.5R to 2R risk-reward ratio
+and pyramiding strictly on winning trades.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>在紐約開盤後的前 1.5 小時內，他利用 5 分鐘足跡圖（Footprint Chart）在費波那契（Fibonacci）0.75
+至 0.886 折價/溢價區間確認「吸收現象、K 線反轉與主動買賣盤失衡（4 倍以上）」，維持 1.5 至 2 倍盈虧比，並僅在獲利部位上進行順勢加倉。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>2. 知識地圖與核心概念 (Key Concepts &amp; Definitions)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:00:21] Order Flow (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>訂單流</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>): A real-time trading analysis method that tracks actual buy
+and sell market orders executed at each price level rather than relying solely
+on lagging price indicators.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:00:21] **[Order Flow（訂單流）]**：一種即時交易分析方法，直接追蹤每個價位實際成交的主動買單與主動賣單，而非僅依賴滯後的價格技術指標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:00:52] Value Area (VA / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>價值區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>): The price range in which 70% of a trading day's total volume
+was traded, used on 1H and 4H charts to determine daily market structure
+(uptrend, downtrend, or consolidation).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:00:52] **[Value Area（VA / 價值區）]**：單日 70% 成交量所集中的價格區間，在
+1 小時與 4 小時圖上用於判斷大級別結構是逐日墊高（上升）、逐日降低（下降）或橫盤震盪。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:01:10] Gamma Exposure (GEX
+/ Gamma </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>敞口</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2B547E'>): An options-derived
+metric estimating market makers' hedging direction; Positive GEX suppresses
+volatility (sell high, buy low), while Negative GEX amplifies volatility (buy
+high, sell low).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:01:10] **[Gamma Exposure（GEX / Gamma 敞口）]**：根據期權持倉推算的造市商（Market
+Maker）對沖方向；正 Gamma 會壓抑波動（高賣低買），負 Gamma 則會放大波動並加速單邊行情（追漲殺跌）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:01:32] Call Wall, Put Wall
+&amp; Zero Gamma Line (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>看漲期權牆、看跌期權牆與零</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'> Gamma </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>線</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>): Key
+pre-market option levels where Call/Put open interest concentrates (acting as
+major resistance/support) and the inflection line separating positive and
+negative Gamma regimes.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:01:32] **[Call Wall / Put Wall / Zero Gamma Line（看漲期權牆
+/ 看跌期權牆 / 零 Gamma 線）]**：開盤前必標的三大期權價位，分別代表期權倉位最集中的阻力位、支撐位，以及正負 Gamma 波動狀態的分界線。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:01:54] Discount Zone &amp;
+Premium Zone (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>折價區與溢價區</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>): Price
+regions below the Value Area (Discount, for buying) and above the Value Area
+(Premium, for selling), refined using Fibonacci retracement levels (0.75,
+0.786, 0.886).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:01:54] **[Discount Zone &amp; Premium Zone（折價區與溢價區）]**：位於價值區下方的低估區間（折價區，只做多）與價值區上方的高估區間（溢價區，只做空），並結合費波那契（Fibonacci）0.75、0.786、0.886
+精確定位。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:02:23] Footprint Chart
+&amp; Delta (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>足跡圖與</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2B547E'> Delta </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>淨主動成交量</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>): An order flow candlestick chart displaying aggressive market
+buy vs. market sell volume at every price tick; Delta equals Aggressive Buys
+minus Aggressive Sells.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:02:23] **[Footprint Chart &amp; Delta（足跡圖與淨主動成交量）]**：一種顯示每根
+K 線內部各價位主動買入與主動賣出數量的訂單流圖表；Delta 即為「主動買單減去主動賣單」的淨差額。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:02:46] Absorption (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>訂單吸收</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>): A phenomenon where massive aggressive selling (heavy negative
+Delta) occurs at the bottom wick of a candle, yet price refuses to drop further
+because passive limit buy orders absorb all supply.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:02:46] **[Absorption（訂單吸收）]**：K 線下影線出現大量負 Delta（賣方瘋狂砸盤），但價格卻跌不下去的現象，代表下方有大型被動限價買單將所有賣壓全數承接吸收。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:03:00] Diagonal Imbalance /
+Acceleration (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>斜對角失衡</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2B547E'> / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>數字加速</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>): An order flow confirmation trigger where aggressive buying at
+a specific price level exceeds diagonal aggressive selling by more than 4 times
+(400%).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:03:00] **[Diagonal Imbalance（斜對角失衡 / 數字加速）]**：訂單流進場觸發條件，指某個價位的主動買單數量達到斜對角主動賣單的
+4 倍（400%）以上，顯示買方動能正在急速爆發。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>[00:03:27] Point of Control
+(POC / </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>控制點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2B547E'>): The single price level
+within the Value Area that recorded the highest traded volume, serving as the
+primary take-profit target when price returns inside the Value Area.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>[00:03:27] **[Point of Control（POC / 控制點）]**：價值區內成交量最大的單一價位，當價格從折價區或溢價區重返價值區時，POC
+作為首要止盈目標。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>3. Knowledge Architecture Diagram (Text Mind Map)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>3. 知識架構圖解（文字版）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Chris Creamer Order Flow
+Trading System (60%+ Win Rate, 31-Day Win Streak)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>Chris Creamer 訂單流交易系統（勝率 60%+，最長連勝 31 天）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>├── 1. Core Philosophy: Trap
+&amp; Reversal Logic</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>├── 1. 核心哲學：誘捕與反轉邏輯</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   ├── Wait for one side to
+exhaust and fail at key levels</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   ├── 等待一方在關鍵位置發力失敗</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   └── Enter on trapped
+traders' stop-loss fuel</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   └── 借力被套牢者的止損單推動行情</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>├── 2. Four-Step Execution SOP</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>├── 2. 四步標準化執行流程（SOP）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   ├── Step 1: Trend
+(Pre-Market | 1H &amp; 4H Charts)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   ├── 第一步：判斷趨勢（開盤前 | 1 小時與 4 小時圖）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   │   ├── Value Area (70%
+Volume) migration direction</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   │   ├── 價值區（70% 成交量）每日高低移動方向</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   │   └── GEX Regime (+GEX
+low vol vs. -GEX high vol) &amp; Option Walls</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   │   └── Gamma 敞口環境（正 GEX 低波動 vs. 負 GEX 高波動）與期權牆</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   ├── Step 2: Location
+(Pre-Market | Swing Fibonacci)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   ├── 第二步：尋找位置（開盤前 | 波段費波那契）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   │   ├── Discount Zone (&lt;
+VA) for Longs; Premium Zone (&gt; VA) for Shorts</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   │   ├── 折價區（價值區下方）只做多；溢價區（價值區上方）只做空</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   │   └── Fib 0.75 – 0.786 –
+0.886 in Low Volume Node (LVN); &gt;0.886 invalidates</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   │   └── 鎖定低成交量區間內的 0.75–0.786–0.886；跌破 0.886 放棄交易</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   ├── Step 3: Confirmation
+(Intraday | 5-Min Footprint Charts)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   ├── 第三步：等待確認（盤中 | 5 分鐘足跡圖）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   │   ├── Signal 1:
+Absorption (Heavy negative Delta in lower wick, price holds)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   │   ├── 信號一：吸收現象（下影線巨量負 Delta，但價格跌不下去）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   │   ├── Signal 2: Candle
+closes bullish (reversal confirmation)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   │   ├── 信號二：該根 K 線最終收為陽線</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   │   └── Signal 3: Higher
+low retest + Aggressive Buy Imbalance (&gt;4x)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   │   └── 信號三：次根 K 線回測未破前低（更高低點）＋主動買單 4 倍加速</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│   └── Step 4: Execution &amp;
+Risk Management</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│   └── 第四步：交易執行與風控管理</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│       ├── Stop-Loss: Placed
+strictly below the second failed low</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│       ├── 止損設定：嚴格設於賣方第二次發力失敗的低點下方</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│       ├── Trade Management:
+Move to breakeven if price fails to re-enter VA</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│       ├── 倉位管理：若價格無法重返價值區，立即移至保本或平倉</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>│       └── Take-Profit: Target
+POC &amp; prior swing high (1.5R–2R; trail stop)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>│       └── 止盈目標：瞄準 POC 與前波段高點（1.5–2 倍盈虧比，移動止損）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>└── 3. Filters &amp;
+Championship Scaling Rules</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>└── 3. 過濾規則與冠軍加倉心法</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>    ├── Liquidity &amp; Session
+Filter: MNQ 5m vol &gt; 20,000; first 1.5h of NY Open</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>    ├── 流動性與時段過濾：微型納指 5 分鐘量 &gt; 2 萬手；僅做紐約開盤前 1.5 小時</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>    ├── Frequency Cap: Max 1–2
+high-probability setups per day</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>    ├── 頻率控制：每日最多 1 至 2 筆，寧缺勿濫</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>    └── Asymmetric Pyramiding:
+Small initial risk ($100), add only to winners</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><span lang=EN-US
+style='color:#1A1A1A'>    └── 非對稱加倉：小風險試單（如 100 美元），僅在浮盈單加倉並推保本</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>4. Mental Models &amp; Underlying Logic (Why &amp; How)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>4. 底層邏輯與思維模型 (Mental Models &amp; Logic)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>1. Trapped Traders &amp;
+Forced Liquidation Model (</span></b><b><span lang=EN-US style='color:#3B6998'>被套牢者與強制平倉燃料模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#3B6998'>)<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>1. 被套牢者與強制平倉燃料模型 (Trapped Traders &amp; Forced Liquidation
+Model)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Why: Markets move fastest when
+aggressive participants are proven wrong. How: Instead of predicting bottoms,
+Chris waits for sellers to dump heavy volume at support without breaking it.
+Once absorbed, those short sellers are trapped; their mandatory buy-to-cover
+stop orders act as rocket fuel for the upside reversal.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>【底層邏輯 Why】：市場走勢最凌厲的時刻，往往發生在主動進場的一方被證明判斷錯誤之時。【分析方式 How】：他不盲目猜底，而是等空頭在支撐位大幅砸盤卻跌不下去；一旦賣單被完全吸收，這批空頭即陷入套牢，他們被迫觸發止損的買回平倉單，就會成為推動價格向上反轉的天然燃料。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>2. Auction Market Theory
+&amp; Value Migration (</span></b><b><span lang=EN-US style='color:#3B6998'>拍賣市場理論與價值遷移模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#3B6998'>)<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>2. 拍賣市場理論與價值遷移模型 (Auction Market Theory &amp; Value Migration)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Why: Price is merely an
+advertising mechanism seeking fair value where 70% of volume occurs (Value
+Area). How: By tracking whether daily Value Areas are stepping higher or lower
+on 1H/4H charts, he aligns with institutional directional bias and only buys at
+an unfair low (Discount) expecting a reversion back to fair value (POC).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>【底層邏輯 Why】：價格只是市場尋找公允價值（即 70% 成交量所在的價值區）的媒介。【分析方式 How】：透過觀察
+1 小時與 4 小時圖上每日價值區的移動軌跡，確認機構大資金的趨勢方向，並堅持只在低於公允價值的「折價區」買入，賺取價格回歸價值中心（POC）的高勝率波段。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>3. Dealer Hedging &amp;
+Volatility Regime Filter (</span></b><b><span lang=EN-US style='color:#3B6998'>造市商對沖與波動率環境模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#3B6998'>)<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>3. 造市商對沖與波動率環境模型 (Dealer Hedging &amp; Volatility Regime Filter)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Why: Options market makers must
+dynamically delta-hedge their books, directly dictating intraday volatility.
+How: GEX tells him 'how fast' price will move, not 'which direction'. In
+Positive GEX, he expects mean reversion and fades extremes; in Negative GEX, he
+prepares for rapid directional expansion and avoids catching falling knives
+prematurely.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>【底層邏輯 Why】：期權造市商必須對其部位進行動態對沖，這直接決定了日內行情的波動特性。【分析方式 How】：GEX
+用於判斷「波動大小」而非「漲跌方向」。在正 Gamma 環境下預期震盪回歸（突破易失敗）；在負 Gamma 環境下則防範單邊急漲急跌，順勢追蹤快速行情。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>4. If-Then Pre-Market
+Scenario Planning (</span></b><b><span lang=EN-US style='color:#3B6998'>開盤前「如果</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#3B6998'>-</span></b><b><span
+lang=EN-US style='color:#3B6998'>那麼」情境劇本模型</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>)<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>4. 開盤前「如果-那麼」情境劇本模型 (If-Then Pre-Market Scenario Planning)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Why: Intraday price action
+triggers emotional FOMO and impulsive decisions. How: Before the 9:30 AM bell,
+he writes down exact price levels and conditions for three scenarios (Bullish,
+Bearish, Range). During live trading, he acts strictly as an executor of
+pre-written rules without mid-session improvisation.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>【底層邏輯 Why】：盤中劇烈跳動極易誘發交易者的情緒化追單與臨時改單。【分析方式 How】：在美東 9:30 開盤前，他會白紙黑字寫下上漲、下跌、震盪三種劇本的精確觸發價位與進場條件；開盤後嚴格扮演「規則執行者」，絕不在盤中臨時改變交易計畫。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>5. Asymmetric Risk &amp;
+Winning-Only Pyramiding (</span></b><b><span lang=EN-US style='color:#3B6998'>非對稱風險與只加贏單模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#3B6998'>)<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>5. 非對稱風險與只加贏單模型 (Asymmetric Risk &amp; Winning-Only Pyramiding)</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Why: Doubling an account in a
+trading competition requires capturing outsized winners while capping
+drawdowns. How: He initiates positions with tiny risk (e.g., $100), moves
+stop-loss to breakeven once in profit, and adds size exclusively to winning
+trades—never averaging down on losers.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>【底層邏輯 Why】：要在交易大賽中實現帳戶翻倍，必須在嚴控回撤的前提下捕捉暴利行情。【分析方式 How】：先用極小風險（如
+100 美元）試單，確認方向走對並將止損推至保本後才進行加倉，且「只在賺錢的單子上加倉，虧損的單子一手都不加」，實現風險有限、獲利無限的非對稱結構。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>5. Detailed Breakdown by Core Modules (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>5. 詳細重點拆解（7 大核心模組）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>Module 1 [00:00:00 –
+00:00:47]: Strategy Overview &amp; Multi-Timeframe Setup<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>模組一 [00:00:00 – 00:00:47]：策略總覽與多週期看盤框架</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Concept Explanation: Chris
+Creamer's Order Flow strategy achieved a 60%+ win rate and a 31-day winning
+streak by waiting for one market side to fail before entering. He separates
+macro direction from micro execution across three chart timeframes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：Chris Creamer 的訂單流策略憑藉「等一方發力失敗再進場」的邏輯，達成
+60% 以上勝率與 31 天連勝。他將大局方向與微觀進場拆分為三個時間週期進行管理。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Steps / Workflow: 1) Use
+1-Hour (1H) and 15-Minute (15M) charts to establish directional bias and market
+structure; 2) Use 5-Minute (5M) Footprint charts exclusively to time precise entries;
+3) Complete Step 1 (Trend) and Step 2 (Location) entirely before the market
+opens.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1) 使用 1 小時圖與
+15 分鐘圖觀察市場結構與方向；2) 切換至 5 分鐘足跡圖尋找精確進場點；3) 務必在開盤前完成「趨勢判斷」與「位置標記」兩大準備工作。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Terms: Order Flow (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>訂單流</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Multi-Timeframe Analysis (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>多週期分析</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Robbins World Cup (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#2B547E'>羅賓斯世界盃日內交易賽</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Order
+Flow（訂單流）、Multi-Timeframe Analysis（多週期分析）、Robbins World Cup（羅賓斯世界盃日內交易賽）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Common Pitfalls: Mixing up
+timeframes—never use a 5-minute chart to guess the macro trend, and never skip
+pre-market preparation to improvise during the volatile open.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：切忌週期混亂——不要用
+5 分鐘圖去猜測大方向，也絕不可跳過開盤前準備而在盤中臨時起意下單。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>Module 2 [00:00:48 –
+00:01:48]: Step 1 — Pre-Market Trend &amp; Gamma Exposure (GEX)<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>模組二 [00:00:48 – 00:01:48]：第一步（開盤前）— 判斷趨勢與 Gamma 敞口分析</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Concept Explanation: Trend
+determination combines Auction Market structure (Value Area migration) with
+Options Market Maker positioning (GEX) to forecast both directional bias and
+expected intraday volatility.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：趨勢判斷結合了拍賣市場結構（價值區移動軌跡）與期權造市商持倉結構（GEX），藉此同時掌握「交易方向」與「日內波動劇烈程度」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Steps / Workflow: 1) Check
+daily Value Areas (70% volume zone) on 1H/4H charts: rising VAs = look only for
+longs; falling VAs = look only for shorts; 2) Check GEX: Positive GEX means
+dealers sell highs/buy lows (low volatility, breakouts fail); Negative GEX
+means dealers chase moves (high volatility, fast trends); 3) Mark Call Wall,
+Put Wall, and Zero Gamma Line; 4) Write down concrete Bullish, Bearish, and
+Range plans before the open.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1) 在
+1H/4H 圖觀察每日價值區（70% 成交量區間）：逐日墊高只找做多機會，逐日降低只找做空機會；2) 判讀 GEX：正 Gamma 時造市商高賣低買（波動被壓縮、突破易失敗），負
+Gamma 時造市商追漲殺跌（波動放大、行情極快）；3) 標出看漲期權牆、看跌期權牆與零 Gamma 線；4) 開盤前寫好上漲、下跌、震盪三種應對劇本。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Terms: Value Area (VA / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>價值區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'> = 70% Daily Volume), Gamma Exposure (GEX / Gamma </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>敞口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Call Wall (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>看漲期權牆</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>), Put
+Wall (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>看跌期權牆</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2B547E'>), Zero Gamma Line (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>零</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'> Gamma </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>分界線</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Value
+Area（價值區 = 單日 70% 成交量區間）、GEX（Gamma 敞口）、Call Wall（看漲期權牆）、Put Wall（看跌期權牆）、Zero
+Gamma Line（零 Gamma 線）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Common Pitfalls:
+Misinterpreting GEX as a directional indicator—Positive or Negative GEX only
+measures volatility magnitude, not whether price will go up or down.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：切勿將正負
+Gamma 誤當作漲跌方向指標——正負 Gamma 僅反映波動率大小（震盪或單邊加速），與多空方向無關。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>Module 3 [00:01:48 –
+00:02:18]: Step 2 — Pre-Market Location &amp; Fibonacci Zones<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>模組三 [00:01:48 – 00:02:18]：第二步（開盤前）— 尋找進場位置與費波那契折價區</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Concept Explanation: Even in a
+strong uptrend, buying inside or above the Value Area offers poor risk-reward.
+You must wait for price to pull back into an institutional Discount Zone (or
+Premium Zone for shorts).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：即使處於明確的上升結構，在價值區內部或上方追高也會導致盈虧比惡化。必須耐心等待價格回調至機構「折價區」（做空則等反彈至「溢價區」）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Steps / Workflow: 1)
+Identify Discount Zone (below Value Area) for longs, or Premium Zone (above
+Value Area) for shorts; 2) Draw Fibonacci retracement from the recent swing low
+to swing high; 3) Highlight the 0.75, 0.786, and 0.886 zone; 4) Verify this
+zone sits outside the Value Area and aligns with a Low Volume Node (LVN) where
+price previously moved rapidly; 5) Cancel the trade setup if price breaks below
+0.886.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1) 鎖定價值區下方的折價區（做多）或上方的溢價區（做空）；2)
+從近期波段低點拉費波那契回撤至波段高點；3) 框出 0.75、0.786、0.886 之間的黃金進場帶；4) 確認該區間必須位於價值區外部，且最好是先前價格快速衝過、成交量稀疏的低量區（LVN）；5)
+若價格直接跌破 0.886，該筆交易計畫立即作廢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Terms: Discount Zone (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>折價區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Premium Zone (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>溢價區</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>),
+Fibonacci Retracement Levels (0.75 / 0.786 / 0.886), Low Volume Node (LVN / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>低成交量節點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Discount
+Zone（折價區）、Premium Zone（溢價區）、Fibonacci（0.75 / 0.786 / 0.886 關鍵回撤位）、Low Volume
+Node（低成交量區）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Common Pitfalls: Entering
+blindly with limit orders just because price touches 0.786, or stubbornly
+holding a long bias after price slices cleanly below the 0.886 invalidation
+level.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：切忌價格一觸及
+0.786 就盲目掛限價單進場（必須等第三步訂單流確認），且一旦跌破 0.886 止損底線，必須果斷放棄該筆交易。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>Module 4 [00:02:19 –
+00:03:12]: Step 3 — Intraday Confirmation via 5-Min Footprint Charts<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>模組四 [00:02:19 – 00:03:12]：第三步（盤中）— 5 分鐘足跡圖三大進場確認信號</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Concept Explanation: Location
+alone is insufficient; price must prove that passive institutional buyers are
+absorbing aggressive sellers and taking control. Chris monitors two 5-minute
+Footprint views simultaneously: Volume Profile and Delta Profile.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：價格抵達進場區還不能直接買入，必須透過訂單流證明被動機構買盤正在吸收主動賣壓並奪回主導權。他同時開啟兩種
+5 分鐘足跡 K 線：一種顯示「成交量分布」，一種顯示「Delta 分布」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Steps / Workflow: Wait for
+all 3 Long Confirmation Signals in sequence: 1) Absorption: Price enters the
+Fib zone, heavy negative Delta and peak candle volume cluster inside the lower
+wick, yet price refuses to drop; 2) Candle Reversal: That 5-minute candle
+closes green (bullish); 3) Failed Retest &amp; Acceleration: The next 5-minute
+candle dips to test sellers again, fails at a higher low, and aggressive buying
+surges (&gt;4x diagonal aggressive selling) as the candle turns bullish.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：做多必須依序等齊以下
+3 個信號：1) 吸收現象：價格跌入進場區，K 線下影線出現大量負 Delta 且最大成交量堆積在底部，但價格跌不下去；2) K 線收陽：該根 5 分鐘 K 線最終收為陽線；3)
+二次測試失敗與加速：下一根 K 線開盤先下探回落，賣方再次砸盤卻在更高位置失敗，同時主動買單出現 4 倍以上斜對角失衡加速，待 K 線翻陽即進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Terms: Footprint Chart (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>足跡圖</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Delta = Aggressive Buy - Aggressive Sell (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>淨主動成交量</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Absorption (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>訂單吸收</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>), 4x
+Diagonal Imbalance Acceleration (4 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#2B547E'>倍斜對角失衡加速</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Delta = 主動買入
+- 主動賣出、Footprint Volume &amp; Delta Profile（足跡成交量與 Delta 分布）、4x Imbalance（主動買單
+≥ 斜對角主動賣單 × 4）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Common Pitfalls: Jumping in on
+Signal 1 (Absorption) alone—absorption frequently pauses a downtrend
+temporarily before continuation; you must wait for the second failed push and
+4x buy acceleration.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：絕不能只看到「吸收現象」就搶先抄底——因為吸收未必代表反轉，必須等到賣方第二次發力失敗（更高低點）且出現
+4 倍買單加速後才可進場。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>Module 5 [00:03:13 –
+00:04:05]: Step 4 — Execution, Risk-Reward &amp; Session Filters<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>模組五 [00:03:13 – 00:04:05]：第四步 — 精準執行、盈虧比管理與時間流動性過濾</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Concept Explanation:
+Disciplined trade management and strict session/volume filtering protect
+capital during low-liquidity chop and lock in a 1.5R to 2R statistical edge.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：嚴格的倉位管理與時段流動性過濾，能避開低成交量的無效震盪磨損，穩定鎖定
+1.5 至 2 倍的統計盈虧比優勢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Steps / Workflow: 1) Place
+Stop-Loss right below the second failed low; 2) Monitor Value Area re-entry: if
+sellers push back and price fails to re-enter the Value Area, move stop to
+breakeven or exit immediately; 3) Target POC first, then prior swing high (aim
+for 1.5R–2R; e.g., $2,000 max daily loss vs. $3,000 profit target on a $50k
+account); 4) Trail stop as buyers push higher; 5) Apply filters: MNQ 5m volume
+must exceed 20,000 contracts; trade only the first 1.5 hours after NY open; max
+1–2 trades/day.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1) 止損設於賣方第二次發力失敗的低點下方；2)
+觀察價格能否重返價值區：若買方無力推回價值區內，立即將止損移至保本或直接平倉；3) 止盈目標鎖定 POC 與前波段高點（平均盈虧比 1.5–2 倍，例如 5 萬美元帳戶單日最大虧損
+2,000 美元、賺 3,000 美元即達 1.5 倍止盈）；4) 只要買方持續推升便一路上移止損；5) 執行雙重過濾：微型納指（MNQ）5 分鐘成交量低於
+2 萬手不做、僅做紐約開盤後 1.5 小時、每日僅做 1 至 2 筆。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Terms: Point of Control
+(POC / </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>控制點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2B547E'>), Risk-Reward Ratio (R:R
+= 1.5x to 2x), Micro E-mini Nasdaq-100 (MNQ / </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>微型納斯達克期貨</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Volume Filter (&gt;20,000 contracts/5m).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：POC（價值區最大成交量價位）、R:R（盈虧比
+1.5–2 倍）、MNQ Volume Filter（微型納指 5 分鐘成交量 &gt; 20,000 手）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Common Pitfalls: Overtrading
+after 11:00 AM EST when MNQ 5-minute volume drops below 20,000 contracts, where
+institutional order flow dries up and false signals spike.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：避免在美東中午前後（成交量跌破
+2 萬手後）繼續頻繁交易，此時機構流動性退潮，極易出現假突破與無序震盪。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>Module 6 [00:04:05 –
+00:05:41]: Live Case Studies — Aug 13 Long &amp; July 28 Short<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>模組六 [00:04:05 – 00:05:41]：實戰案例復盤 — 8 月 13 日多單與 7 月 28 日空單</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Concept Explanation: Real
+market executions on Nasdaq futures demonstrate how pre-market levels (Option
+Walls, Zero Gamma, Value Area) combine with opening 5-minute order flow
+absorption to yield high-precision trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：透過納斯達克期貨的真實盤面案例，完整演示開盤前關鍵價位（期權牆、零
+Gamma 線、價值區）如何與開盤 5 分鐘的訂單流吸收信號產生共振。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Steps / Workflow: [Aug 13
+Long]: Pre-market range 29,900–29,955; plan noted breakdown below 29,860
+targets 29,700. At 9:30 open, 1st 5m candle dumped to 29,863.5 (just 3.5 pts
+above 29,860), heavy sell orders stacked at bottom wick with 73,000+ MNQ
+volume, price held and closed bullish. Entered long on flip, SL at 29,861.5,
+exited near 30,110 (+100 pts, ~2R). [July 28 Short]: Multi-day falling VAs;
+price below Zero Gamma (28,440 = Negative GEX), Put Wall at 27,690. At 9:30
+open, 1st candle bounced to 27,992, buyers failed, candle turned bearish -&gt;
+shorted (SL above high), exited +70 pts at 27,880. After breaking Asian low,
+retest showed large buy orders failing to push higher -&gt; shorted again to
+Put Wall (27,658), netting +150 pts total in under 20 minutes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：【8 月 13 日多單案例】：盤前計畫寫明跌破
+29,860 看 29,700；9:30 開盤首根 5 分鐘 K 線下砸至 29,863.5（距關鍵位僅差 3.5 點），賣單全數堆積在底部且單根成交逾
+7.3 萬手卻跌不下去，K 線收陽翻多進場，止損設 29,861.5，於 30,110 附近獲利 100 點（約 2 倍盈虧比）出場。【7 月 28 日空單案例】：價值區連日下移，開盤前價格位於零
+Gamma 線（28,440）下方屬負 Gamma 環境，看跌期權牆在 27,690；9:30 開盤首根反彈至 27,992 買方推不動翻陰做空，於
+27,880 移動止損賺 70 多點；隨後跌破亞洲盤低點反抽出現大買單卻無法推升，再次翻陰做空直指看跌期權牆（27,658），開盤不到 20 分鐘兩筆合計獲利約
+150 點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Terms: Asian Session Low (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>亞洲盤低點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>), Trailing Stop (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>移動止損</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>),
+Negative GEX Acceleration (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#2B547E'>負</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'> Gamma </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>加速下跌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Asian
+Session Low（亞洲盤低點）、Trailing Stop（移動止損）、Negative GEX（負 Gamma 高波動環境）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Common Pitfalls: Trailing
+stop-loss too tightly on strong trend days—on Aug 13, Chris noted his trailing
+stop exited him early at 30,110 before price surged past 30,270.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：在強趨勢日移動止損跟得太緊容易過早洗出場——8
+月 13 日他復盤時便指出自己在 30,110 過早被移動止損掃出，錯過了後續衝上 30,270 的主升段。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#3B6998'>Module 7 [00:05:41 –
+00:06:08]: Championship Account-Doubling Scaling Technique<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#1F4E79'>模組七 [00:05:41 – 00:06:08]：冠軍賽帳戶翻倍的核心加倉技巧</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Concept Explanation: During the
+Robbins World Cup competition, Chris used the exact same 4-step chart reading
+method but accelerated account growth through asymmetric pyramiding.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：在參加羅賓斯交易大賽期間，Chris
+的看盤與進場邏輯完全不變，但他透過「非對稱順勢加倉法」大幅放大了資金成長曲線。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Steps / Workflow: 1)
+Initiate the first entry with a very small fixed dollar risk (e.g., risking
+only $100); 2) Wait for price to move in favor and confirm momentum; 3) Add
+additional contracts exclusively to the winning position while simultaneously
+moving the stop-loss to breakeven; 4) Never add a single contract to a losing
+position.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1) 第一筆單先用極小風險試單（例如僅冒
+100 美元的虧損風險）；2) 等待價格朝有利方向走出利潤；3) 在確認走對後進行加倉，並同步將整體止損推至保本位置；4) 嚴格遵守「虧損的單子一手都不加」，只要抓到一兩波大行情即可實現帳戶翻倍。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Key Terms: Asymmetric
+Pyramiding (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>非對稱順勢加倉</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#2B547E'>), Breakeven
+Stop (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#2B547E'>保本止損</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2B547E'>), Initial Probe Risk (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#2B547E'>初始試單風險</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Pyramiding（順勢金字塔加倉）、Breakeven
+Stop（保本止損）、Probe Risk（試單風險額度）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Common Pitfalls: Averaging down
+(adding to losing trades) to lower entry price—which violates risk limits and
+destroys accounts during Negative GEX trend days.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:8.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：絕對禁止「攤平虧損單」（越跌越買）——在負
+Gamma 單邊行情中，逆勢攤平會導致風險無限擴大並迅速爆倉。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>6. Practical Action Items (Immediate Implementation)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>6. 實操行動清單（Action Items）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>1. Build a Pre-Market Checklist
+Template: Before 9:30 AM EST every day, record the 1H/4H Value Area trend, GEX
+regime (+ or -), Call/Put Walls, Zero Gamma Line, and explicit If-Then
+scenarios for Bullish, Bearish, and Range outcomes.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>1. 【建立開盤前檢查表模板】：每日美東 9:30 開盤前，白紙黑字記錄 1H/4H 價值區移動方向、正負 GEX
+狀態、看漲/看跌期權牆、零 Gamma 線，以及上漲、下跌、震盪三種劇本的精確進場條件。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>2. Configure Dual 5-Minute
+Footprint Charts: Set up two side-by-side 5-minute Footprint charts on your
+trading platform—one displaying Volume Profile per bar and the other displaying
+Bid/Ask Delta Profile—and configure diagonal imbalance alerts at &gt;= 400% (4x).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>2. 【配置雙重視角 5 分鐘足跡圖】：在看盤軟體中並排開啟兩張 5 分鐘足跡圖（一張顯示單根 K 線成交量分布、一張顯示買賣盤
+Delta 分布），並將斜對角失衡（Diagonal Imbalance）高亮閾值設定為 4 倍（400%）以上。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>3. Mark Fibonacci 0.75–0.886
+Zones in Low Volume Nodes: Practice drawing Fibonacci retracements from swing
+lows to swing highs on 15M/1H charts, highlighting only the 0.75–0.886 pockets
+that sit outside the Value Area in low-volume areas, and set hard invalidation
+alerts at 0.886.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>3. 【標記低量區內的費波那契 0.75–0.886 區間】：在 15 分鐘與 1 小時圖上練習拉出波段費波那契，僅篩選位於價值區外部且成交量稀疏的
+0.75–0.886 區間作為埋伏區，並在 0.886 處設定硬性作廢警報。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>4. Enforce Strict Session &amp;
+Volume Discipline: Restrict live execution strictly to the first 90 minutes of
+the New York session (9:30–11:00 AM EST), verify 5-minute MNQ volume exceeds
+20,000 contracts, and cap daily trades at 1 to 2 setups.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>4. 【嚴格執行時段與成交量過濾紀律】：將實盤交易時間嚴格限制在紐約開盤後的前 1.5 小時（9:30–11:00），下單前確認微型納指
+5 分鐘成交量高於 20,000 手，並設定每日最多 1 至 2 筆的交易上限。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>5. Practice Probe-and-Pyramid
+Risk Sizing in Replay Mode: Backtest 20 historical NY opens using a small
+initial probe risk (e.g., 0.2% of account or $100), practicing moving stops to
+breakeven upon Value Area re-entry and adding size only to winning trades.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US
+style='color:#1A1A1A'>5. 【在回放模式練習「試單＋順勢加倉」風控】：利用歷史盤面回放功能練習 20 個紐約開盤日，先以極小風險（如帳戶
+0.2% 或 100 美元）試單，確認價格重返價值區後將止損推至保本，並練習只在浮盈單上加倉。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>7. Concept Self-Assessment (Quiz &amp; Review)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>7. 觀念自我檢測 (Quiz &amp; Review)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Q1 (Multiple Choice): According
+to Chris Creamer's strategy, what does a Positive Gamma Exposure (+GEX)
+environment indicate for intraday trading?</span></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='color:#1A1A1A'>Q1（單選題）：根據 Chris Creamer 的策略，正 Gamma 敞口（+GEX）環境對日內交易意味著什麼？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>A) Price will strongly trend upward
+all day. / B) Market makers sell highs and buy lows, suppressing volatility and
+causing breakouts to fail easily. / C) Market makers chase breakouts, causing
+rapid one-way trends. / D) Trading volume will exceed 50,000 contracts every 5
+minutes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>A) 價格整天都會強勢單邊上漲。 /
+B) 造市商高賣低買，波動會被壓小且突破容易失敗。 / C) 造市商追漲殺跌，行情會走得非常快。 / D) 每 5 分鐘成交量都會超過 5 萬手。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Q2 (Multiple Choice): When
+looking for a long entry in an uptrend structure, which specific Fibonacci
+retracement zone does Chris use, and when is the setup invalidated?</span></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='color:#1A1A1A'>Q2（單選題）：在上升結構中尋找做多位置時，Chris 使用哪個特定的費波那契回撤區間？且在什麼情況下該筆交易會直接作廢？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>A) 0.382–0.50; invalidated
+below 0.618. / B) 0.50–0.618; invalidated below 0.75. / C) 0.75–0.886 outside
+the Value Area; invalidated if price breaks below 0.886. / D) 0.618–0.786
+inside the Value Area; invalidated at POC.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>A) 0.382–0.50；跌破
+0.618 作廢。 / B) 0.50–0.618；跌破 0.75 作廢。 / C) 位於價值區外部的 0.75–0.886；若價格跌破 0.886 則不做。
+/ D) 位於價值區內部的 0.618–0.786；跌破 POC 作廢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Q3 (Multiple Choice): Why does
+Chris refuse to enter a long trade immediately when he sees Absorption (heavy
+negative Delta in the lower wick) on the first 5-minute candle?</span></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='color:#1A1A1A'>Q3（單選題）：為什麼 Chris 在看到第一根 5 分鐘 K 線出現「吸收現象」（下影線大量負 Delta）時，還不會立刻進場做多？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>A) Because absorption only
+occurs during the Asian session. / B) Because absorption does not guarantee a
+reversal; he must wait for the candle to close green, a second failed sell
+attempt at a higher low, and &gt;4x buy acceleration. / C) Because he needs to
+wait until 12:00 PM EST for volume to drop below 20,000. / D) Because negative
+Delta means buyers are trapped.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>A) 因為吸收現象只會發生在亞洲盤時段。
+/ B) 因為吸收不一定會反轉；必須等該 K 線收陽、下一根回測出現更高低點（賣方二次失敗）且主動買單出現 4 倍以上加速。 / C) 因為必須等到美東中午
+12 點成交量低於 2 萬手後才能進場。 / D) 因為負 Delta 代表買方被套牢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Q4 (Multiple Choice): What is
+the minimum 5-minute volume threshold for Micro E-mini Nasdaq (MNQ) required by
+his filter, and how does this affect his trading window?</span></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='color:#1A1A1A'>Q4（單選題）：他的過濾規則要求微型納指（MNQ）的 5 分鐘 K 線成交量最低需達到多少？這如何影響他的交易時間？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>A) 5,000 contracts; he trades
+all 24 hours. / B) 20,000 contracts; he generally trades only the first 1.5
+hours after the New York open before volume drops below 20,000 by noon. / C)
+50,000 contracts; he trades only the final hour before market close. / D)
+100,000 contracts; he trades only on FOMC days.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>A) 5,000 手；全天 24 小時皆可交易。
+/ B) 20,000 手；一般只做紐約開盤後的一個半小時（中午前成交量通常會跌破 2 萬手）。 / C) 50,000 手；只做收盤前最後一小時。 / D)
+100,000 手；只在聯準會利率決議日交易。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Q5 (Reflection Question):
+Explain how Chris managed to double his account during the trading competition
+without increasing his initial trade risk, and what happens if a trade fails to
+re-enter the Value Area after entry.</span></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='color:#1A1A1A'>Q5（思考題）：請說明 Chris 如何在不放大初始試單風險的情況下於比賽中實現帳戶翻倍？此外，進場後若價格遲遲無法重返「價值區（Value
+Area）」，他會如何處置？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#2B547E'>Think through his exact
+pyramiding rule and post-entry Value Area validation rule before checking the
+answer key below.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>請先自行回想他的順勢加倉鐵律與進場後的價值區驗證機制，再對照下方解答。</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>Answer Key (Spoiler-Free Reference Page)<br>
+</span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+color:#1F4E79'>參考解答頁（防劇透獨立分頁）</span></b></p>
+
+</div>
+
+<p class=MsoNormal><i><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+color:#666666'>Note: Placed on a separate page with muted styling so you can
+test yourself before viewing the solutions. / 註：解答置於獨立分頁並採用低對比色排版，方便您先自我測驗後再核對答案。</span></i></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#7A7A7A'>Answer 1: B — Positive GEX
+means market makers hedge by selling into rallies and buying dips, suppressing
+volatility so breakouts tend to fail (GEX measures volatility magnitude, not
+direction).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#595959'>解答 1：B — 正 Gamma 時造市商高賣低買，波動會被壓抑且突破容易失敗（正負
+Gamma 看的是波動大小，與漲跌方向無關）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#7A7A7A'>Answer 2: C — He draws
+Fibonacci from swing low to swing high and looks for entries in the
+0.75–0.786–0.886 zone outside the Value Area (ideally in a low-volume node);
+breaking below 0.886 invalidates the trade.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#595959'>解答 2：C — 從波段低點拉至高點，鎖定價值區外部（且成交量稀疏處）的
+0.75、0.786、0.886 之間作為進場區；若跌破 0.886 該筆交易便作廢。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#7A7A7A'>Answer 3: B — Absorption alone
+does not guarantee a reversal. He waits for all 3 signals: (1) absorption in
+the lower wick, (2) candle closes bullish, and (3) next candle dips to a higher
+low (second sell failure) with &gt;= 4x aggressive buy acceleration.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#595959'>解答 3：B — 只有吸收還不能進場，因為吸收不一定會反轉；必須等齊「下影線吸收＋該根收陽＋次根回測出現更高低點（賣方二次失敗）且主動買單
+4 倍以上加速」三個信號。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#7A7A7A'>Answer 4: B — MNQ 5-minute
+volume must be at least 20,000 contracts. Because volume typically drops below
+20,000 before noon, he trades almost exclusively during the first 1.5 hours
+after the New York open (1–2 trades/day).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#595959'>解答 4：B — 微型納指 5 分鐘 K 線成交量低於
+2 萬手就不能交易；由於一般中午前就會跌破 2 萬手，因此他通常只做紐約開盤後的一個半小時（每天 1 到 2 筆）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#7A7A7A'>Answer 5: Model Answer — (1)
+Account Doubling: He initiates with a tiny risk (e.g., $100), adds contracts
+ONLY to winning positions once price moves in his favor, moves stops to
+breakeven, and never adds a single contract to losing trades. (2) Post-Entry
+Rule: If sellers push back and price fails to re-enter the Value Area, he
+immediately moves his stop-loss to breakeven or closes the position.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#595959'>解答 5：參考答案 — (1) 帳戶翻倍技巧：先用小風險試單（如只冒
+100 美元風險），價格走對後「只在賺錢的單子上加倉，虧損的單子一手都不加」，同時將止損推至保本，抓到一兩波大行情收益便會大幅躍升。(2) 進場後規則：若賣方依然強勢導致價格無法重返價值區內，立即將止損移至保本位置或直接平倉離場。</span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,1016 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 61.2pt 57.6pt 61.2pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#1B365D;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-top:10.0pt;text-align:center'><b><span
+  lang=EN-US style='font-size:15.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:white'>Deep Learning Study Notes: Five-Time Trading Champion David's
+  Multi-Divergence Strategy<br>
+  </span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+  font-family:"微軟正黑體",sans-serif;color:#E0E8F5'>深度學習筆記：西班牙五屆交易冠軍 David 多重背離實戰交易策略</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<div style='border:none;border-bottom:solid #2B547E 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1A365D'>1. 核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:0cm;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Spanish day
+trader David, a former barber in his fifties, achieved a remarkable 2,222%
+return in 90 days to win the 2026 World Cup Trading Championship (Futures Day
+Trading Q2), securing five consecutive quarterly titles. Contrary to popular
+belief that champions rely on complex ICT or Order Flow tools, David's core
+edge stems from a disciplined, multi-timeframe Multi-Divergence Strategy
+combining MACD, RSI, Volume, and Fibonacci retracements. His approach follows a
+strict five-step execution framework: identifying higher-timeframe
+support/resistance zones (Daily/1H), waiting for lower-timeframe (30s/1m/5m)
+divergence—anchored obligatorily by MACD—to scale into positions (1 to 3 lots),
+using a micro Fibonacci retracement (23.6% breakout entry, 1-tick stop-loss
+beyond the extreme) for ultra-tight risk control, projecting targets via a
+macro Fibonacci retracement (38.2% and 66% levels), and moving stops to
+breakeven only after entering profit. Ultimately, his success demonstrates that
+mastering simple momentum exhaustion signals, enforcing strict position sizing,
+and eliminating greed yield repeatable championship-level consistency.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>西班牙五十多歲的理髮師出身日內交易員 David，在 2026 年世界盃交易錦標賽（期貨日內賽第二季度）中，僅用
+90 天便創造了 2,222%（帳戶翻 22 倍）的驚人收益率，斷崖式領先第二名（258%），並創下連拿五屆季度冠軍的紀錄。不同於市場普遍認為冠軍必然依賴複雜的
+ICT 或訂單流（Order Flow）工具，David 的核心武器是一套高度紀律化、結合多週期分析的「多重背離策略（Multi-Divergence
+Strategy）」，核心組成僅為 MACD、RSI、成交量（Volume）與斐波那契回撤（Fibonacci Retracement）。其交易系統嚴格遵循五大步驟：先在日線與
+1 小時圖標記關鍵支撐與阻力位；待價格抵達關鍵位後，切入小週期（30 秒、1 分鐘或 5 分鐘圖）等待背離訊號，且必須以 MACD 背離作為前提條件，依背離指標數量階梯式建倉（1
+至 3 手）；接著利用微觀斐波那契回撤（跌破或突破 23.6% 一跳掛單進場，止損設於極值外一跳）實現極窄止損；再透過宏觀斐波那契回撤設定 38.2% 與
+66%（三分之二）兩檔止盈目標；最後僅在獲利後將止損推至保本。這套策略證明了精準捕捉動能衰竭、嚴格控管風險與克制貪婪，才是穩定獲利的底層核心。</span></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1A365D'>2. 知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:00:33]
+Multi-Divergence Strategy (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>多重背離策略</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:00:33] Multi-Divergence Strategy（多重背離策略）：以
+MACD 背離為主導，結合 RSI 與成交量（Volume）同步出現動能衰竭訊號，並搭配斐波那契回撤（Fibonacci Retracement）進行精準進出場與倉位管理的日內交易系統。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:01:07]
+Regular Bearish / Bullish Divergence (</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>常規頂背離</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'> / </span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"MS Mincho",serif;color:#1E3A5F'>底背離</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:01:07] Regular Bearish / Bullish
+Divergence（常規頂背離 / 底背離）：價格創出新高（或新低），但技術指標（如 MACD 快線、RSI）的高點卻低於前高（或低點高於前低），代表原有趨勢推動力道衰竭，用於捕捉反轉回撤行情。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:01:14]
+MACD (12, 26, 9) (</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"MS Mincho",serif;color:#1E3A5F'>指數平滑異同移動平均線</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:01:14] MACD (12, 26, 9)（指數平滑異同移動平均線）：採用預設參數（快線
+12、慢線 26、訊號線 9）。在 David 的系統中擁有最高優先級與一票否決權——沒有 MACD 背離，即使 RSI 與成交量訊號再好也絕不進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:01:52] RSI
+(14) (</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"MS Mincho",serif;color:#1E3A5F'>相對強弱指標</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:01:52] RSI (14)（相對強弱指標）：參數設為 14，數值介於 0 至
+100 之間（70 以上為超買區 Overbought，30 以下為超賣區 Oversold）。用於作為第二重背離確認指標，不可單獨作為下單依據。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:01:58]
+Volume Divergence (</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"MS Mincho",serif;color:#1E3A5F'>成交量背離</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:01:58] Volume Divergence（成交量背離）：價格創出新高或新低時，對應
+K 線的成交量小於前一個極值點的成交量，顯示追價或殺跌動能不足。需注意盤前量不可與開盤首小時巨量直接對比。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:02:23]
+Dual Fibonacci Retracement System (</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>雙斐波那契回撤系統</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:02:23] Dual Fibonacci Retracement System（雙斐波那契回撤系統）：每筆交易需繪製兩組斐波那契回撤。一組為「微觀斐波那契」（連接背離兩極值間的轉折點與最新極值），用於設定
+23.6% 突破進場點與極值外 1 跳（Tick）止損；另一組為「宏觀斐波那契」（連接整波趨勢起點與終點），用於設定 38.2% 與 66%（三分之二）止盈目標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:04:16]
+Order Flow (</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;
+font-family:"MS Mincho",serif;color:#1E3A5F'>訂單流</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'> - </span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"MS Mincho",serif;color:#1E3A5F'>輔助加分項</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:04:16] Order Flow（訂單流）：David 僅將其作為輔助加分項而非核心依據。大陽線或大陰線內部出現的大單成交區（機構足跡），往往是價格後續回測的目標位，看到時可增強信心並適度增加倉位。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:04:38]
+Hidden Divergence (</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"MS Mincho",serif;color:#1E3A5F'>隱藏背離</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:04:38] Hidden Divergence（隱藏背離）：用於順勢交易（Trend
+Continuation）。例如上漲趨勢回調中，價格低點高於前低，但 MACD 低點卻低於前低，代表指標已修正完畢但價格抗跌，原有漲勢將延續。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>[00:04:58]
+MACD Failure / Kiss-and-Bounce (MACD </span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>失敗形態</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>):<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>[00:04:58] MACD Failure（MACD 失敗形態）：罕見的高勝率重倉訊號。價格創出新低時，MACD
+快線向下逼近慢線看似即將死叉下穿，卻在觸碰前突然掉頭向上，代表空頭動能徹底潰敗，David 遇此形態會重倉（如 10 手）進場。</span></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>3. Knowledge Architecture Diagram (Mind Map Logic)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1A365D'>3. 知識架構圖解（文字版思維導圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Root: David's
+5-Time Championship Multi-Divergence Trading System<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>核心主幹：David 五屆交易冠軍多重背離交易系統</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>├── 1. Core
+Philosophy &amp; Market Edge (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>核心理念與市場優勢</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>├── 1. 核心理念與市場優勢</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   ├── Focus
+on 2/3 (66%) Retracement of Exhausted Trends<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 專注捕捉趨勢衰竭後的「三分之二（66%）」回撤段</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   └──
+Simplicity &amp; Discipline over Complex Indicators (ICT/Order Flow as minor
+bonus)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   └── 化繁為簡與極致紀律（拒絕盲從複雜指標，訂單流僅作輔助）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>├── 2.
+Five-Step Execution SOP (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>五步標準化交易執行流程</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>├── 2. 五步標準化交易執行流程</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   ├── Step
+1: Locate Key Zones (Higher Timeframe: Daily &amp; 1H Support/Resistance)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 第一步：大週期定位置（日線與 1 小時圖標註支撐與阻力，不提前掛限價單）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   ├── Step
+2: Confirm Divergence &amp; Scale Position (Lower Timeframe: 30s / 1m / 5m)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 第二步：小週期看背離與定倉位（30秒/1分/5分圖，MACD 必備 1 手
++ RSI 1 手 + 成交量 1 手）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   ├── Step
+3: Micro Fibonacci Entry &amp; Ultra-Tight Stop-Loss<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 第三步：微觀斐波那契定進場與止損（破 23.6% 一跳掛單進場，止損設於
+0% 極值外一跳）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   ├── Step
+4: Macro Fibonacci Two-Tier Profit Targets<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 第四步：宏觀斐波那契定兩檔止盈（第一檔 38.2% 減倉/全平，第二檔
+66% 博取波段利潤）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   └── Step
+5: Dynamic Trade Management (Breakeven Rule)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   └── 第五步：動態風控管理（僅在獲利後將止損移至保本價加手續費緩衝，虧損絕不加碼或擴大止損）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>├── 3.
+Advanced Pattern Variations (</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>進階形態變體</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>├── 3. 進階形態變體</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   ├── Hidden
+Divergence (Trend-following entries during pullbacks)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 隱藏背離（用於順勢回調中的二次上車）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>│   └── MACD
+Failure (High-conviction setup for heavy sizing up to 10 lots)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>│   └── MACD 失敗形態（快線欲穿未穿掉頭，高確定性重倉訊號）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>└── 4. Risk
+Control &amp; Psychological Rules (</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>風控鐵律與交易心理</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>└── 4. 風控鐵律與交易心理</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>    ├── Avoid
+First Hour Market Open Volatility (for beginners &amp; volume comparison)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>    ├── 避開開盤首小時劇烈波動（新手禁做，且開盤巨量不可與盤前量比較）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>    ├── Reject
+Unrealistic 1:7 / 1:10 Risk-Reward Greed; Lock Daily Profit Target<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>    ├── 拒絕 1:7 或 1:10 的貪婪幻想，達成當日獲利目標立即停手</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>    └──
+Position Sizing &amp; Emotional Control (Lessons from Sept 23 &amp; Jan 13 live
+trades)<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>    └── 倉位與情緒控管（從 9/23 重倉提早離場與 1/13 CPI 精準執行中復盤優化）</span></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>4. Underlying Logic &amp; Mental Models<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1A365D'>4. 底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>1.
+Multi-Timeframe Resonance (Top-Down Spatial &amp; Temporal Filtering): David
+separates 'Where to trade' from 'When to trade'. Higher timeframes (Daily/1H)
+filter out market noise to identify institutional liquidity walls
+(Support/Resistance), while micro timeframes (30s/1m/5m) pinpoint exact
+momentum exhaustion, shrinking stop-loss distances to just a few ticks while
+aiming for macro-level retracement targets.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>1. 多週期共振模型（空間與時間的雙重過濾）：David 將「在哪裡交易」與「何時交易」徹底分離。大週期（日線、1
+小時圖）負責過濾雜訊並鎖定機構流動性密集的支撐與阻力區；小週期（30 秒、1 分鐘、5 分鐘圖）則用於精準捕捉微觀結構的動能衰竭，從而實現「微觀極窄止損、宏觀波段止盈」的高盈虧比結構。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>2. Asymmetric
+Risk &amp; Conviction-Weighted Sizing: Instead of fixed lot sizing, David
+scales risk dynamically based on multi-factor confluence. MACD divergence acts
+as the mandatory binary gatekeeper (1 lot), while independent confirmations
+from RSI (momentum) and Volume (participation) justify adding a 2nd and 3rd
+lot. Higher statistical probability directly translates into larger exposure.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>2. 非對稱風險與信念加權倉位模型（Conviction-Weighted Sizing）：他摒棄固定手數，改以「多維度指標共振」動態調整風險敞口。MACD
+背離是具備一票否決權的基礎門檻（下 1 手），當不同維度的指標——RSI（價格動能）與成交量（資金參與度）——同步背離時，勝率顯著提升，才依序加碼至第 2 手與第
+3 手。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>3. Momentum
+Exhaustion &amp; Mean Reversion Physics: When price pushes to a new extreme
+without corresponding expansion in MACD, RSI, or Volume, the move is driven by
+thin liquidity or stop-hunting rather than genuine institutional accumulation.
+Once exhausted, price naturally reverts toward the 38.2% to 66% (two-thirds)
+equilibrium zone of the prior impulse wave.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>3. 動能衰竭與均值回歸物理模型：當價格創新高或新低，但 MACD、RSI 與成交量均未跟隨時，代表推升價格的並非真實的機構買盤，而是流動性稀薄下的慣性衝刺或掃損行為。一旦動能耗盡，價格必然向前期推動浪的
+38.2% 至 66%（三分之二）均衡區間進行均值回歸。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>4. Anti-Greed
+&amp; Defensive Capital Preservation: David treats trading as a probability
+business rather than a lottery. By moving stops to breakeven (plus commission
+buffer) immediately upon favorable movement and taking partial/full profits at
+38.2% before trailing to 66%, he eliminates the psychological trap of turning
+winning trades into losers.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>4. 反貪婪與防禦性保本思維：David 將交易視為機率經營而非賭博。透過「獲利後立即推保本（預留手續費緩衝）」以及「先拿近端
+38.2% 利潤、走順再博 66% 遠端目標」的機制，徹底杜絕貪婪心態，防止帳面浮盈轉為虧損。</span></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>5. Detailed Breakdown by Core Modules (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1A365D'>5. 詳細重點拆解（五大核心模組，附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 1: Multi-Timeframe Positioning &amp; Divergence
+Foundation [00:00:49 - 00:01:47]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組一：大週期定位與背離核心判定 [00:00:49 -
+00:01:47]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept Explanation</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>】</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'> MACD divergence is the absolute prerequisite of the strategy.
+Price making a higher high while the MACD fast line makes a lower high signals
+a Bearish Divergence (short setup); price making a lower low while the MACD
+fast line makes a higher low signals a Bullish Divergence (long setup).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】 MACD 背離是整套策略的絕對前提。價格創新高但 MACD 快線高點低於前高，為「頂背離」（尋找做空機會）；價格創新低但
+MACD 快線低點高於前低，為「底背離」（尋找做多機會）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps &amp; Workflow</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> 1) Open Daily and 1-Hour
+charts to mark major Support and Resistance levels. 2) Wait patiently for price
+to reach these zones—never place blind limit orders ahead of time. 3) Drop down
+to 30-second, 1-minute, or 5-minute charts to observe if MACD forms a
+divergence at the key level.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟與操作流程】 1) 先在日線圖與 1 小時圖標註重要支撐與阻力位。2) 耐心等待價格觸及這些關鍵區域，絕不提前掛限價單盲目接刀或摸頂。3)
+價格到位後，切換至 30 秒、1 分鐘或 5 分鐘小週期圖表，觀察是否出現 MACD 背離。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Formulas &amp; Key Terms</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> MACD Default Parameters:
+Fast EMA = 12, Slow EMA = 26, Signal Line = 9. Higher Timeframe (HTF: Daily/1H)
+for structure; Lower Timeframe (LTF: 30s/1m/5m) for execution.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式與專有名詞】 MACD 預設參數：快線 12、慢線 26、訊號線 9。大週期（HTF：日線/1小時）定結構位置；小週期（LTF：30秒/1分/5分）定進場時機。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls &amp; Warnings</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Never trade based on RSI
+overbought/oversold crossovers or MACD golden/death crosses alone. Without MACD
+divergence, even perfect-looking RSI and Volume signals must be skipped.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區與注意事項】 嚴禁單獨依據 RSI 超買超賣區轉折或 MACD 金叉/死叉下單。只要沒有出現
+MACD 背離，即便 RSI 與成交量訊號再完美也必須放棄。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 2: Three-Factor Confluence &amp; Position Sizing
+[00:01:47 - 00:02:23]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組二：三重指標共振與階梯式倉位管理 [00:01:47 -
+00:02:23]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept Explanation</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>】</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'> Position size is dynamically determined by the number of
+diverging indicators. MACD divergence unlocks the base 1 lot; each additional
+divergence from RSI or Volume adds 1 more lot, up to a standard maximum of 3
+lots.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】 倉位大小由背離指標的共振數量動態決定。MACD 出現背離先下基礎 1 手；若
+RSI 與成交量也同步出現背離，每多一項背離便多加 1 手，標準配置最多下 3 手。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps &amp; Workflow</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> 1) Confirm MACD
+divergence -&gt; 1 lot. 2) Check RSI (14): if price makes a new extreme but RSI
+fails to exceed its prior extreme (especially from &gt;70 overbought or &lt;30
+oversold zones) -&gt; +1 lot. 3) Check Volume: if the new extreme candle has
+lower volume than the prior extreme candle -&gt; +1 lot.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟與操作流程】 1) 確認 MACD 背離 → 基礎 1 手。2) 檢查 RSI（參數
+14）：若價格創新極值但 RSI 未同步創新極值（尤其在 70 以上超買區或 30 以下超賣區轉折）→ 加 1 手。3) 檢查成交量：若創新極值該根 K 線的成交量小於前一個極值點成交量
+→ 再加 1 手。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Formulas &amp; Key Terms</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Position Sizing Rule:
+Total Lots = 1 (MACD) + 1 (if RSI diverges) + 1 (if Volume diverges). RSI (14)
+Thresholds: &gt;70 Overbought, &lt;30 Oversold.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式與專有名詞】 倉位計算公式：總手數 = 1（MACD 背離必備）+ 1（若
+RSI 背離）+ 1（若成交量背離）。RSI（14）閾值：70 以上超買，30 以下超賣。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls &amp; Warnings</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Do NOT compare pre-market
+volume with regular market open volume, as the first hour after market open
+naturally has massive volume spikes that distort volume divergence readings.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區與注意事項】 切勿將盤前時段的成交量與美股開盤後的成交量進行對比，因為開盤第一個小時的成交量本來就極大，直接比較會導致成交量背離失真。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 3: Micro Fibonacci Entry &amp; Ultra-Tight Stop-Loss
+[00:02:23 - 00:03:09]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組三：微觀斐波那契精準進場與極窄止損 [00:02:23 -
+00:03:09]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept Explanation</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>】</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'> Instead of guessing the exact top or bottom, David uses a small
+Fibonacci retracement on the LTF divergence swing to enter on confirmed
+momentum reversal (23.6% breakout) while placing the stop-loss just 1 tick
+beyond the extreme.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】 David 不去猜測絕對的頂點或底點，而是利用小週期背離波段的「微觀斐波那契回撤」，在價格確認掉頭突破
+23.6% 時掛單進場，並將止損緊貼於極值外側僅 1 跳（Tick）的位置。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps &amp; Workflow</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> For Shorts: Draw
+Fibonacci from the lowest trough between the two divergent highs (100%) to the
+new highest peak (0%). Place a sell stop order 1 tick below the 23.6% line, and
+set stop-loss 1 tick above the 0% peak. Reverse the process for Longs (from
+highest peak between two lows to the new lowest trough).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟與操作流程】 做空步驟：從兩個背離高點之間的「最低點（100%）」拉向最新的「最高點（0%）」。在
+23.6% 線下方 1 跳預掛空單（價格觸及自動成交），止損設於 0% 新高上方 1 跳。做多則完全反向操作（從兩低點間的最高點拉向新低點）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Formulas &amp; Key Terms</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Tick (</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>最小跳動單位</span><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>): For Nasdaq
+Futures (NQ), 1 tick = 0.25 points. Entry = 23.6% level ± 1 tick; Stop-Loss =
+0% extreme ± 1 tick (typically only a few to a dozen points).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式與專有名詞】 Tick（最小跳動點位）：以納斯達克期貨（NQ）為例，1 跳為
+0.25 點。進場點 = 23.6% 位置 ± 1 跳；止損點 = 0% 極值位置 ± 1 跳（通常僅幾個點到十幾個點）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls &amp; Warnings</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> If price makes a new
+high/low before your 23.6% entry order fills, cancel the order immediately and
+redraw Fibonacci to the new extreme. Even if stopped out, if divergence remains
+intact, redraw and re-enter.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區與注意事項】 若進場掛單尚未成交前價格又創新高（或新低），必須立即撤單並以新極值重新拉斐波那契。即使止損被打掉，只要背離結構仍在，就重新拉線再次進場。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 4: Macro Fibonacci Two-Tier Targets &amp; Breakeven
+Management [00:03:10 - 00:04:08]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組四：宏觀斐波那契兩檔止盈與保本風控 [00:03:10 -
+00:04:08]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept Explanation</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>】</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'> While entry uses a micro swing, profit targets are projected
+across the entire prior impulse wave using a second, macro Fibonacci
+retracement. Stop-loss is moved to breakeven only after the trade moves into
+profit.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】 進場看的是小週期的微觀波段，但止盈目標必須放大格局，透過第二條「宏觀斐波那契」測量整波前期趨勢的回撤幅度。止損則嚴格規定「只在獲利後才挪動至保本」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps &amp; Workflow</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> 1) Draw Macro Fibonacci
+from the start of the entire prior trend wave to the extreme high/low. 2) Set
+Tier 1 Target at 38.2% (beginners exit 100% here; experienced traders close
+majority and leave 1 lot running). 3) Set Tier 2 Target at 66% (2/3 level,
+manually added). Place take-profit orders 1 tick ahead of the line. 4) Once
+profitable, move stop-loss to entry price + 1 to 1.5 points buffer to cover
+commissions.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟與操作流程】 1) 從整波上漲（或下跌）的起點拉向極值終點，畫出宏觀斐波那契。2)
+第一檔目標設在 38.2%（初學者到此全平；熟練後平掉大部分倉位，留 1 手博取第二檔）。3) 第二檔目標設在 66%（三分之二處，需手動在工具中新增此數值），止盈單提前掛在目標線前
+1 跳。4) 獲利後將止損移至進場價上方（做多）或下方（做空）1 至 1.5 點，預留手續費空間。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Formulas &amp; Key Terms</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Macro Targets: Tier 1 =
+38.2% Retracement; Tier 2 = 66.0% (2/3) Retracement. Breakeven Stop = Entry
+Price ± (1.0 to 1.5 points).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式與專有名詞】 宏觀止盈位：第一檔 = 38.2% 回撤位；第二檔 = 66.0%（三分之二）回撤位。保本止損位
+= 進場價 ±（1.0 至 1.5 點）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls &amp; Warnings</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Never move your stop-loss
+further away when losing. Do not greedily set initial targets at 1:7 or 1:10
+risk-reward; secure the near-term 38.2% profit first and let the runner capture
+extended moves.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區與注意事項】 虧錢時絕對不可擴大止損。切忌一開始就設定 1:7 或 1:10 的貪婪盈虧比目標，務必先拿下近端確定性高的利潤，行情走順後再去拿遠端波段。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Module 5: Advanced Setups, Live Trade Case Studies &amp;
+Discipline [00:04:08 - 00:06:55]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>模組五：進階形態、實戰案例復盤與交易紀律 [00:04:08 -
+00:06:55]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept Explanation</span><span lang=EN-US style='font-size:
+10.5pt;line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>】</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'> Beyond regular reversal divergence, David applies Hidden
+Divergence for trend continuation and 'MACD Failure' (fast line approaches slow
+line without crossing, then snaps back) for high-conviction heavy sizing (e.g.,
+10 lots). Order flow large-volume candles serve as magnetic targets.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】 除了常規反轉背離，David 亦運用「隱藏背離」操作順勢單，並在出現極罕見的「MACD
+失敗形態」（快線逼近慢線欲穿未穿、直接掉頭）時重倉出擊（如 10 手）。此外，訂單流的大陽線/大陰線大單區可作為價格回測的磁吸目標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps &amp; Workflow</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Case 1 (Sept 23 NQ Long):
+Waited out the first hour 37-point drop to 1H support; spotted 30s triple
+divergence + MACD Failure; entered 10 lots around 30,660; got wicked out at
+breakeven once, re-entered immediately, and exited near 30,700+
+(retrospectively noted heavy size caused early exit before 30,820). Case 2 (Jan
+13 CPI NQ Long): After a 230-point post-CPI drop, spotted 1m/30s MACD + RSI
+bullish divergence at 25,895.25; entered 2 lots at 23.6% (25,826) risking ~$400
+total; exited at 25,897 (just below 38.2% at 25,899.5), netting 71 points per
+lot ($2,840 total) in minutes.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟與操作流程】 案例一（9月23日納指做多）：避開開盤首小時急跌至 1 小時支撐位，於
+30 秒圖捕捉三重背離與 MACD 失敗形態，在 30,660 附近重倉做多；雖一度被下影線掃掉保本單，隨即再次進場，於陰線下沿 30,700 附近獲利了結（事後復盤檢討因倉位過重導致情緒緊張而提早離場，錯過後續漲至
+30,820 的利潤）。案例二（1月13日 CPI 納指做多）：CPI 數據後納指大跌 230 多點，於 1 分與 30 秒圖發現 25,895.25 處出現
+MACD 與 RSI 雙底背離，在 23.6%（25,826）掛進 2 手（總風險僅約 400 美元），止盈掛在 38.2%（25,899.5）下方一點的
+25,897，幾分鐘內每手賺 71 點，兩手共獲利 2,840 美元。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Formulas &amp; Key Terms</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Hidden Bullish
+Divergence: Higher Low in Price + Lower Low in MACD. Risk-to-Reward in Jan 13
+Case: ~$400 risk vs. $2,840 profit (~1:7 realized).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式與專有名詞】 隱藏底背離：價格低點抬高 + MACD 低點降低。1月13日案例實戰盈虧比：風險約
+400 美元 vs. 獲利 2,840 美元（實際實現約 1:7 盈虧比）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"MS Mincho",serif;color:#1E3A5F'>【</span><span
+lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls &amp; Warnings</span><span lang=EN-US
+style='font-size:10.5pt;line-height:125%;font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-size:10.5pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#1E3A5F'> Beginners must avoid
+trading the chaotic market open. Once your daily profit target is achieved,
+stop trading immediately—overtrading out of greed erodes championship
+consistency.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區與注意事項】 初學者切勿操作開盤波動最劇烈的時段。一旦達成當日設定的獲利目標，必須立刻停止交易，絕不可因貪婪而過度交易。</span></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>6. Actionable Checklist (5 Immediate Action Items)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1A365D'>6. 實操行動清單（5 個可立即執行的行動建議）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>1. Configure
+Charting Workspace &amp; Custom Fibonacci Levels: Set up MACD (12, 26, 9), RSI
+(14), and Volume on your charting platform, and manually add the '0.66' (66% /
+two-thirds) retracement level to your Fibonacci tool alongside 0, 0.236, 0.382,
+0.5, 0.618, and 1.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>1. 配置看盤指標與自訂斐波那契參數：在看盤軟體中設定好預設參數的 MACD（12,
+26, 9）、RSI（14）與成交量（Volume），並在斐波那契回撤工具中手動新增「0.66（66% / 三分之二）」刻度，與 0、0.236、0.382、0.5、0.618、1
+並列。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>2. Enforce a
+Pre-Session Higher-Timeframe Mapping Routine: Before every trading session, mark
+key Support and Resistance levels on the Daily and 1-Hour charts, and set price
+alerts at those zones so you never chase mid-range noise or place blind limit
+orders.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>2. 建立盤前大週期關鍵位標註習慣：每日開盤前，先在日線與 1 小時圖上標出核心支撐與阻力位並設定價格警報，確保只在價格抵達關鍵結構位時才切換至小週期尋找背離，杜絕盤中盲目追單或提前掛限價單。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>3. Apply the
+Strict 'MACD Gatekeeper' Position Sizing Matrix: Create a pre-trade checklist
+requiring MACD divergence as a mandatory 1-lot entry trigger, adding a 2nd lot
+only if RSI (14) diverges, and a 3rd lot only if Volume (excluding the first hour
+of open) confirms lower participation.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>3. 執行「MACD 一票否決」階梯建倉檢核表：制定下單前檢核表，規定必須先看到 MACD
+背離才允許下基礎 1 手；若 RSI（14）同步背離則加碼至 2 手；若成交量（排除開盤首小時）同步萎縮背離才下滿 3 手。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>4. Practice
+Dual-Fibonacci Execution on Replay / Demo Mode: Backtest 20 historical setups
+on 1-minute or 5-minute charts using the Micro Fibonacci (23.6% ± 1 tick entry,
+0% ± 1 tick stop-loss) paired with the Macro Fibonacci (38.2% full exit for
+beginners, scaling to 66% once proficient).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>4. 在模擬盤或歷史回放中練習「雙斐波那契」畫法：使用 1 分鐘或 5 分鐘圖回測 20 筆歷史案例，熟練運用「微觀斐波那契（破
+23.6% 一跳進場、極值外一跳止損）」搭配「宏觀斐波那契（先練熟 38.2% 全平，再進階至 38.2% 減倉 + 66% 止盈）」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>5. Implement
+Hard Daily Profit Caps &amp; Breakeven Automation: Define a fixed daily
+dollar/point profit goal before the session begins, automate moving your
+stop-loss to entry ± 1–1.5 points once in profit, and shut down your trading
+terminal immediately upon hitting your daily target.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>5. 設定當日硬性止盈上限與自動化保本規則：盤前寫下當日明確獲利目標，進場獲利後立即將止損推至進場價預留
+1 至 1.5 點手續費緩衝的保本位，一旦達成當日目標便強制關閉交易軟體，杜絕過度交易。</span></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B547E'>7. Self-Assessment Quiz &amp; Review<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1A365D'>7. 觀念自我檢測（5 題單選題）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q1. In David's
+Multi-Divergence Strategy, which indicator holds absolute veto power (i.e., no
+trade can be taken without its divergence)?<br>
+A) RSI (14)   B) Volume   C) MACD (12, 26, 9)   D) Order Flow Footprint<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 1：在 David 的多重背離策略中，哪一項指標擁有「一票否決權」（即若該指標未出現背離，即使其他條件再好也絕對不能下單）？<br>
+A) RSI (14)   B) 成交量 (Volume)   C) MACD (12, 26, 9)   D) 訂單流足跡圖 (Order Flow)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q2. When
+setting up a short trade using the Micro Fibonacci retracement, where are the
+entry order and initial stop-loss placed?<br>
+A) Entry at 38.2%, Stop-Loss at 61.8%<br>
+B) Entry 1 tick below 23.6%, Stop-Loss 1 tick above 0% (the new high)<br>
+C) Entry at 0% limit order, Stop-Loss 10 points above<br>
+D) Entry 1 tick below 50%, Stop-Loss 1 tick above 23.6%<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 2：當使用「微觀斐波那契回撤」規劃做空進場時，進場掛單與初始止損分別設在何處？<br>
+A) 38.2% 進場，61.8% 止損<br>
+B) 23.6% 下方 1 跳掛單進場，0%（新高）上方 1 跳設止損<br>
+C) 0% 掛限價單摸頂進場，上方 10 點設止損<br>
+D) 50% 下方 1 跳進場，23.6% 上方 1 跳設止損</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q3. What are
+the two target levels on the Macro Fibonacci retracement used to take profits
+on the overall trend wave?<br>
+A) 23.6% and 50.0%   B) 38.2% and 61.8%   C) 38.2% and 66.0% (2/3)   D) 50.0%
+and 78.6%<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 3：在測量整波大趨勢的「宏觀斐波那契回撤」中，David 設定的兩檔止盈目標位分別是多少？<br>
+A) 23.6% 與 50.0%   B) 38.2% 與 61.8%   C) 38.2% 與 66.0%（三分之二）   D) 50.0% 與 78.6%</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q4. What
+defines the rare 'MACD Failure' setup where David dramatically increases his
+position size (e.g., up to 10 lots)?<br>
+A) Price makes a new low, and the MACD fast line approaches the slow line to
+cross down but fails to cross and snaps upward.<br>
+B) MACD histogram turns green while RSI stays above 80.<br>
+C) Price breaks above resistance with double the opening hour volume.<br>
+D) MACD fast line crosses below the zero line twice in 5 minutes.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 4：下列何者正確描述了 David 視為「市場白送錢」、會重倉（例如下到 10 手）出擊的罕見「MACD
+失敗形態」？<br>
+A) 價格創出新低時，MACD 快線向下逼近慢線看似要死叉下穿，卻未穿過並直接掉頭向上。<br>
+B) MACD 柱狀體轉綠，同時 RSI 維持在 80 以上。<br>
+C) 價格以開盤首小時兩倍的成交量突破阻力位。<br>
+D) MACD 快線在 5 分鐘內兩度下穿零軸。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q5. Which of
+the following is a strict risk-management rule emphasized by David?<br>
+A) Move the stop-loss further away if the trade goes into drawdown to give it
+room.<br>
+B) Compare pre-market volume directly with first-hour open volume for
+divergence.<br>
+C) Only move the stop-loss to breakeven (with a 1–1.5 point commission buffer)
+after the trade is in profit.<br>
+D) Always aim for at least a 1:10 risk-to-reward ratio on your first target.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 5：下列哪一項是 David 在交易管理與風控中嚴格強調的鐵律？<br>
+A) 當交易出現浮虧時，適度放寬止損距離以給行情喘息空間。<br>
+B) 直接將盤前成交量與開盤第一個小時的成交量對比以判斷背離。<br>
+C) 止損「只在獲利後才挪動」，且僅移至預留 1 至 1.5 點手續費空間的保本位。<br>
+D) 第一檔止盈目標必須至少設定為 1:10 的高盈虧比。</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Cambria",serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F52BA'>Answer Key &amp; Explanations (Concealed on Separate Page for
+Self-Testing)<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#0F52BA'>自我檢測參考答案與解析（獨立分頁隱蔽區，方便自我測驗後核對）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q1 Answer: C —
+MACD (12, 26, 9) is the mandatory anchor of David's strategy; without MACD
+divergence, RSI and Volume signals are ignored.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 1 答案：C — MACD (12, 26, 9) 是整套策略的主導與前提，沒有
+MACD 背離就絕不進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q2 Answer: B —
+Entry is placed via stop order 1 tick below the 23.6% retracement of the micro
+divergence swing, with the stop-loss 1 tick above the 0% extreme.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 2 答案：B — 進場掛單設在微觀斐波那契 23.6% 下方 1 跳處，止損緊貼
+0% 新高上方 1 跳。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q3 Answer: C —
+Tier 1 target is 38.2% (beginners exit completely here) and Tier 2 target is
+66.0% (two-thirds retracement, manually added to the Fibonacci tool).<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 3 答案：C — 第一檔止盈位為 38.2%，第二檔止盈位為手動新增的 66.0%（三分之二回撤位）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q4 Answer: A —
+In an MACD Failure at a new price low, the fast line approaches the slow line
+as if to cross down, but abruptly turns upward without crossing, signaling complete
+exhaustion of selling pressure.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 4 答案：A — 價格創新低時，MACD 快線欲穿未穿慢線而直接掉頭向上，代表空頭動能徹底衰竭。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:125%'><span lang=EN-US style='font-size:10.5pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#1E3A5F'>Q5 Answer: C —
+Stops are never widened during a loss and are moved to breakeven (entry ± 1–1.5
+points for commissions) only after the trade moves into profit.<br>
+</span><span lang=EN-US style='font-size:10.5pt;line-height:125%;font-family:
+"微軟正黑體",sans-serif;color:#2B2B2B'>題目 5 答案：C — 虧損時絕不動止損，僅在獲利後將止損推至預留 1 至 1.5 點手續費空間的保本位。</span></p>
+
+</div>
+
+</body>
+
+</html>
