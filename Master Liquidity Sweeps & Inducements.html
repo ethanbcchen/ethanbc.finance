@@ -1,0 +1,1125 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:4.0pt;
+	margin-left:0cm;
+	line-height:125%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span lang=EN-US
+style='font-size:16.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#112244'>Deep Learning Study Notes: Master Liquidity Sweeps &amp;
+Inducements</span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><b><span
+lang=EN-US style='font-size:15.0pt;line-height:125%;color:#112244'>深度學習筆記：精通流動性掃蕩與誘導機制（完整雙語實戰版）</span></b></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1B365D'>1. Executive Summary</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:13.0pt;
+line-height:125%;color:#1B365D'>1. 核心總結 (Executive Summary)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>This tutorial explains how market liquidity operates around
+traditional support, resistance, trendlines, and Supply and Demand zones, and
+why institutional players engineer Liquidity Sweeps and Inducements before
+driving price in the true intended direction. Retail traders typically place
+Stop-Loss orders, Buy Stops, and Sell Stops around Equal Highs, Equal Lows, and
+trendlines, creating dense pools of resting orders. Because institutional
+participants require massive counterparty orders to fill multi-million-dollar
+positions without slippage, they drive price through these obvious levels to
+trigger retail stops and breakout entries before reversing. Even within valid
+Supply and Demand zones, intermediate zones often act as Inducement traps when
+unmitigated Imbalances remain beyond them. To avoid getting stopped out on
+directionally correct trades, traders must wait for liquidity sweeps and
+require a Standard Confirmation—a clear Market Structure Shift (Break of
+Structure, BOS) in the lower timeframe—before entering on a retracement into an
+Efficient Range.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='color:#1A1A1A'>本教學影片深入解析市場流動性（Liquidity）在傳統支撐阻力、趨勢線以及供給需求區（Supply &amp;
+Demand Zones）周圍的運作機制，並揭示機構大戶為何在推動真實趨勢前製造流動性掃蕩（Liquidity Sweep）與誘導陷阱（Inducement）。散戶習慣在等高（Equal
+Highs）、等低（Equal Lows）與趨勢線外側設置停損單與突破掛單，形成高度集中的流動性池。由於機構資金龐大，必須藉由觸發這些大量對手盤訂單才能在不造成嚴重滑價的情況下完成建倉，因此價格常先穿越明顯關卡獵殺停損，再朝真實方向反轉。即便在有效的供需區內，若後方仍留有未填補的價格失衡（Imbalance），前方供需區往往只是誘餌。最終結論指出，交易者應避免盲目掛單，必須耐心等待流動性被掃除，並透過低時間框架的標準確認（Standard
+Confirmation，即明確的結構突破 BOS）驗證控制權轉移後，再於有效率區間（Efficient Range）回撤時進場，方能大幅提升勝率並避開提前停損。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1B365D'>2. Key Concepts &amp; Definitions (With Timestamps)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:13.0pt;
+line-height:125%;color:#1B365D'>2. 知識地圖與核心概念 (附時間戳記)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:00:29] Liquidity (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>流動性</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): Resting orders in the market, primarily consisting of
+Stop-Loss orders, Buy Stops, and Sell Stops clustered around obvious chart
+levels.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:00:29] Liquidity
+(流動性): 市場中等待成交的訂單集合，主要由聚集在明顯圖表價位周圍的停損單（Stop-Loss）、買進停損單（Buy Stop）與賣出停損單（Sell
+Stop）所構成。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:00:41] Equal Highs &amp;
+Equal Lows (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>等高點與等低點</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): Horizontal
+resistance (double/multiple tops) and support (double/multiple bottoms) levels
+where retail traders place reversal stops and breakout orders.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:00:41] Equal
+Highs &amp; Equal Lows (等高點與等低點): 水平阻力位（雙頂或多頂）與水平支撐位（雙底或多底），是散戶集中放置反轉停損單與突破追價單的區域。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:01:46] Buy Stop / Sell Stop
+Orders (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>買進停損單</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>賣出停損單</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): Automated pending orders triggered once price breaks above
+resistance (Buy Stop) or below support (Sell Stop), adding fuel to
+institutional liquidity pools.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:01:46] Buy Stop
+/ Sell Stop Orders (買進停損單 / 賣出停損單): 當價格向上突破阻力（Buy Stop）或向下跌破支撐（Sell Stop）時自動觸發的掛單，為機構流動性池提供額外的對手盤量能。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:04:05] Liquidity Sweep /
+False Breakout (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>流動性掃蕩</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'> / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>假突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): An institutional price maneuver that pushes beyond key highs,
+lows, or trendlines to trigger stop-losses and breakout orders before reversing
+sharply.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:04:05] Liquidity
+Sweep / False Breakout (流動性掃蕩 / 假突破): 機構大戶推動價格短暫穿越關鍵高點、低點或趨勢線，藉此觸發散戶停損單與突破單以獲取大額成交量，隨後迅速朝反方向推進的走勢。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:05:56] Trendline Liquidity
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>趨勢線流動性</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): Pools of stop-loss and break-retest orders accumulating just
+beyond ascending or descending trendlines after two or more price taps.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:05:56] Trendline
+Liquidity (趨勢線流動性): 在上升或下降趨勢線經過兩次以上觸及後，累積在趨勢線外側的停損單與突破回測訂單池。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:07:38] Inducement (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>誘導</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'> / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>誘餌</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): A deceptive
+price reaction or early Supply/Demand zone that lures retail traders into
+entering prematurely before price sweeps their stops to reach a deeper target.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:07:38]
+Inducement (誘導 / 誘餌): 具欺騙性的價格反應或較早出現的供需區，用來引誘散戶過早進場，隨後價格掃蕩其停損並前往更深層的目標區域。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:07:49] Supply &amp; Demand
+Zones (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>供給區與需求區</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): Consolidation
+or indecision price areas preceding a strong impulsive move away, where
+institutional orders remain unfilled for future mitigation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:07:49] Supply
+&amp; Demand Zones (供給區與需求區): 價格出現強勢單邊推進前的盤整或決策區域，留有尚未完全成交的機構訂單，等待未來價格回測填補。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:09:40] Imbalance / Inefficiency
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>價格失衡</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'> / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>低效率區</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): Rapid
+one-sided price movement leaving unmitigated gaps between buyers and sellers,
+acting as a magnet that price tends to fill before continuing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:09:40] Imbalance
+/ Inefficiency (價格失衡 / 低效率區): 單邊快速推進所留下的買賣雙方成交不均區間，如同磁鐵般吸引價格回頭填補後才繼續原有趨勢。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:10:50] Standard
+Confirmation (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>標準確認模型</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): A
+structural shift from higher highs/higher lows to a lower low (or vice versa)
+inside a zone, validating a true transfer of market control.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:10:50] Standard
+Confirmation (標準確認模型): 在目標區域內觀察到價格從更高高點/低點轉變為跌破前低的更低低點（反之亦然），用以驗證市場控制權已正式轉移的進場確認模型。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:16:52] Break of Structure -
+BOS (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>結構突破</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): The decisive breach of
+a prior swing high or swing low that confirms a trend continuation or
+structural reversal.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:16:52] Break of
+Structure - BOS (結構突破): 價格明確突破前波段高點或跌破前波段低點的行為，用以確認趨勢延續或市場結構反轉。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[00:20:05] Efficient Range (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>有效率區間</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): A price range where all prior imbalances have been mitigated
+and no opposing Supply/Demand zones remain to obstruct price movement.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#1A1A1A'>[00:20:05] Efficient
+Range (有效率區間): 區間內所有先前的價格失衡皆已填補完畢，且無反向供需區阻礙價格前進的順暢交易空間。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1B365D'>3. Text-Based Knowledge Architecture (Mind Map)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:13.0pt;
+line-height:125%;color:#1B365D'>3. 知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>Master Liquidity Sweeps &amp;
+Inducements</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>精通流動性掃蕩與誘導機制</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>├── 1. Foundations of Market
+Liquidity (00:00:00 - 00:07:38)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>├── 1. 市場流動性基礎原理 (00:00:00
+- 00:07:38)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   ├── Order Mechanics: Short
+Stop-Loss = Buy Order; Long Stop-Loss = Sell Order</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   ├── 訂單本質：空單停損＝自動買單；多單停損＝自動賣單</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   ├── Institutional Dilemma:
+Large capital causes slippage unless counterparty liquidity is harvested</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   ├── 機構困境：大額資金直接進場會造成滑價，必須集中獵殺對手盤流動性</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   └── Common Liquidity Pools:
+Equal Highs, Equal Lows, Ascending &amp; Descending Trendlines</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   └── 常見流動性池：等高點（雙頂）、等低點（雙底）、上升與下降趨勢線</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>├── 2. Advanced Traps:
+Inducement &amp; Multi-Zone Context (00:07:38 - 00:10:45)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>├── 2. 進階陷阱：誘導機制與多區域背景分析
+(00:07:38 - 00:10:45)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   ├── Internal Zone Trap:
+Double tops/bottoms inside a zone act as magnets to be swept</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   ├── 區域內部陷阱：供需區內形成的雙頂或雙底會成為磁鐵，高機率先被掃蕩</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   └── Multi-Zone Trap:
+Unfilled Imbalance beyond Zone 1 pulls price into extreme Zone 2</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   └── 多重區域陷阱：第一供需區後方若仍有未填補失衡，價格將穿透並前往極端第二區</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>├── 3. High-Probability
+Solution: Standard Confirmation (00:10:45 - 00:15:16)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>├── 3. 高勝率解決方案：標準確認模型
+(00:10:45 - 00:15:16)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   ├── Step 1: Wait for
+Liquidity Sweep of Equal Highs/Lows or Inducement</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   ├── 步驟一：耐心等待等高/等低或誘導區的流動性被掃除</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   ├── Step 2: Observe
+Lower-Timeframe Break of Structure (BOS) confirming control shift</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   ├── 步驟二：觀察低時間框架出現結構突破（BOS），確認買賣控制權轉移</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>│   └── Step 3: Enter on
+Retracement (Pullback) with protected Stop-Loss</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>│   └── 步驟三：於價格回撤（Pullback）時進場，並將停損設於受保護的波段極值外側</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>└── 4. Live Chart Case Study:
+EUR/CHF 5M Multi-Timeframe Execution (00:15:16 - 00:24:35)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>└── 4. 實戰案例解析：EUR/CHF
+五分鐘圖多時間框架操作 (00:15:16 - 00:24:35)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>    ├── Macro Perspective: Skip
+unconfirmed Demand Zones 1 &amp; 2; execute at Extreme Demand Zone 3</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>    ├── 宏觀視角：跳過無確認的第一、二需求區，於填補完失衡的極端第三需求區進場</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>    └── Micro Perspective:
+Isolate bullish leg -&gt; Skip Inducement Zone -&gt; Enter after BOS into
+Efficient Range</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>    └── 微觀視角：拆解上漲波段 →
+避開誘導區 → 確認 BOS 並進入有效率區間後掛單買進</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1B365D'>4. Mental Models &amp; Underlying Logic (Why &amp; How)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:13.0pt;
+line-height:125%;color:#1B365D'>4. 底層邏輯與思維模型 (Mental Models &amp; Logic)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>1. Counterparty Liquidity
+Matching Model (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>對手盤流動性撮合模型</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): Why:
+Institutional players trading millions of dollars cannot enter at retail
+support/resistance without moving price against themselves. How: They wait for
+retail stop-losses and breakout orders to cluster, engineer a sweep to trigger
+thousands of simultaneous opposite orders, and fill their massive positions at
+optimal average prices.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>1. Counterparty
+Liquidity Matching Model (對手盤流動性撮合模型): 為何如此（Why）：操作數百萬美元的機構無法直接在散戶支撐阻力位建倉，否則自身大單會推高成本造成嚴重滑價。如何運作（How）：機構等待散戶停損單與突破單高度集中後，刻意推動價格掃蕩該區域，利用瞬間湧現的數千筆反向成交量，在理想均價完成大額建倉。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>2. Magnetic Imbalance &amp;
+Efficiency Principle (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;color:#2B4C7E'>磁吸失衡與市場效率原則</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>): Why: Markets seek efficiency by mitigating unexecuted orders
+left behind during rapid price expansions. How: When evaluating multiple
+Supply/Demand zones, any zone that still has an unfilled Imbalance behind it
+acts as an Inducement magnet; true reversal zones reside at the extreme where
+all prior ranges are efficient.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>2. Magnetic Imbalance
+&amp; Efficiency Principle (磁吸失衡與市場效率原則): 為何如此（Why）：市場具有追求價格效率的慣性，傾向回頭填補快速單邊行情留下的未成交失衡缺口。如何運作（How）：評估多個供需區時，凡是後方仍留有未填補失衡（Imbalance）的區域皆具備磁吸效應，容易成為誘導陷阱；真正可靠的反轉區位於所有前置失衡皆已消化完畢的極端位置。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>3. Multi-Timeframe Control
+Shift Validation (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>多時間框架控制權轉移驗證模型</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>): Why:
+Directionally correct bias still loses money if entered too early before
+institutional accumulation/distribution completes. How: Align the Higher
+Timeframe (HTF) directional bias with a Lower Timeframe (LTF) Break of
+Structure (BOS) after a sweep, proving that buyers or sellers have genuinely
+seized control.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>3. Multi-Timeframe
+Control Shift Validation (多時間框架控制權轉移驗證模型): 為何如此（Why）：即便大方向判斷完全正確，若在機構完成吸籌或派發前過早進場，仍會因流動性掃蕩而停損。如何運作（How）：將高時間框架（HTF）的趨勢方向與低時間框架（LTF）在掃蕩後的結構突破（BOS）相互對齊，以客觀價格行為證明市場控制權已正式易主。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1B365D'>5. Detailed Breakdown by Core Modules</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:13.0pt;
+line-height:125%;color:#1B365D'>5. 詳細重點拆解（含原始時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2E6B9E'>Module 1: Order Mechanics Behind Equal Highs &amp; Equal Lows
+[00:00:00 - 00:05:56]</span></b></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;color:#2E6B9E'>模組一：等高點與等低點背後的訂單運作機制
+[00:00:00 - 00:05:56]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Concept Explanation] Liquidity
+refers to resting orders—specifically Stop-Losses, Buy Stops, and Sell Stops. A
+short seller's Stop-Loss above resistance is functionally a Buy Order,
+combining with breakout traders' Buy Stops to create massive Buy-Side Liquidity
+above Equal Highs (and vice versa for Sell-Side Liquidity below Equal Lows).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：流動性本質上是市場中的待成交訂單（停損單、Buy
+Stop 與 Sell Stop）。在阻力位（等高點）做空者的停損單，本質上是高價買回合約的「買單」，與突破交易者的 Buy Stop 疊加後，會在等高點上方形成龐大的買方流動性池（等低點下方則形成賣方流動性池）。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Steps &amp; Workflow] 1.
+Identify obvious Equal Highs (double/triple tops) or Equal Lows (double/triple
+bottoms). 2. Map where retail traders place stops (just above highs / below
+lows) and breakout orders. 3. Avoid placing direct sell orders at Equal Highs
+or buy orders at Equal Lows; anticipate a sweep.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1. 在圖表上標記明顯的等高點（雙頂/多頂）或等低點（雙底/多底）。2.
+推演散戶停損單（高點上方/低點下方）與突破追價單的集中區域。3. 嚴禁直接在等高點做空或等低點做多，預期價格將先掃蕩該區。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Terms &amp; Formulas]
+Buy-Side Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>買方流動性</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Sell-Side
+Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>賣方流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Equal Highs/Lows (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>等高</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>/</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>等低點</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Stop-Loss
+Order (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>停損單</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Buy/Sell Stop (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>買進</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>/</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>賣出停損單</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Buy-Side
+Liquidity（買方流動性）、Sell-Side Liquidity（賣方流動性）、Equal Highs / Lows（等高點 / 等低點）、Short
+Stop-Loss = Buy Order（空單停損＝買單）。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Common Pitfalls &amp; Notes]
+Treating double tops/bottoms as strong barriers to trade off directly. In
+reality, retail support/resistance levels are liquidity targets rather than
+institutional execution points.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：誤將傳統雙頂或雙底視為堅固的支撐阻力並直接掛單逆勢操作；事實上，散戶共識越強的支撐阻力，越容易成為機構獵殺流動性的目標。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2E6B9E'>Module 2: Trendline Liquidity &amp; False Breakouts [00:05:56 -
+00:07:38]</span></b></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;color:#2E6B9E'>模組二：趨勢線流動性與雙向假突破機制
+[00:05:56 - 00:07:38]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Concept Explanation] After two
+taps establish an ascending or descending trendline, retail bounce traders
+place stops just beyond the line while break-retest traders place stop-entry
+orders on the other side, creating a concentrated liquidity pool vulnerable to
+sweeps.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：當上升或下降趨勢線經過兩次觸及確立後，第三次觸及時會吸引兩批人：在趨勢線內側順勢進場並將停損設於線外的反彈交易者，以及在線外掛單等待突破回測的突破交易者，兩者共同在趨勢線外側形成高密度流動性池。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Steps &amp; Workflow] 1.
+Draw ascending or descending trendlines with at least two clear touchpoints. 2.
+Recognize the liquidity resting immediately below ascending lines or above
+descending lines. 3. Wait for price to pierce the trendline, sweep both bounce
+stops and breakout triggers, and reclaim the structure before trading.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1. 繪製具備至少兩個明確觸及點的上升或下降趨勢線。2.
+標註上升趨勢線下方或下降趨勢線上方的流動性聚集區。3. 等待價格刻意刺穿趨勢線、同時掃掉反彈單停損與誘發假突破單後，再尋找重回原趨勢的進場機會。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Terms &amp; Formulas]
+Ascending Trendline (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;color:#2B4C7E'>上升趨勢線</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>),
+Descending Trendline (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;color:#2B4C7E'>下降趨勢線</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>),
+Break-Retest Traders (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;color:#2B4C7E'>突破回測交易者</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>), False Breakout (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;color:#2B4C7E'>假突破</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Ascending
+/ Descending Trendline（上升 / 下降趨勢線）、Break-Retest（突破回測）、Liquidity Pool（流動性池）。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Common Pitfalls &amp; Notes]
+Entering on the 3rd or 4th touch of a trendline without confirmation, or
+chasing an immediate trendline break without waiting to see if it is a
+liquidity sweep.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：在趨勢線第三或第四次觸及時無條件盲目掛單，或在趨勢線剛被突破的瞬間追單，導致在假突破中遭到多空雙巴停損。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2E6B9E'>Module 3: Inducement Traps Inside Supply &amp; Demand Zones
+[00:07:38 - 00:09:35]</span></b></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;color:#2E6B9E'>模組三：供給與需求區內部的誘導陷阱
+(Inducement) [00:07:38 - 00:09:35]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Concept Explanation] Even when
+price reaches a valid Supply or Demand zone, forming an early double top (Equal
+Highs) or double bottom (Equal Lows) inside the zone acts as an Inducement that
+lures early sellers/buyers before sweeping their stops to tap deeper into the
+zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：即便價格已經進入有效的供給區或需求區，若價格在區域內部先形成雙頂（等高）或雙底（等低），該形態往往不是真正的反轉起點，而是「誘導（Inducement）」，用來吸引急躁的交易者進場並將停損設在附近，隨後價格便會向上/向下掃蕩該內部流動性，深入供需區核心後才真正反轉。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Steps &amp; Workflow] 1.
+Locate a valid Supply or Demand zone. 2. Observe price behavior upon initial
+arrival; if Equal Highs/Lows form inside the zone, classify them as Inducement.
+3. Hold off on entering until price sweeps that internal double top/bottom.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1. 定位有效的供給區或需求區。2.
+觀察價格初次抵達時的走勢；若區域內部出現等高或等低形態，將其判定為誘導（Inducement）。3. 忍住不在第一時間進場，等待價格掃蕩該內部高/低點後再行評估。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Terms &amp; Formulas]
+Inducement (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>誘導</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>/</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>誘餌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>), Supply Zone (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;color:#2B4C7E'>供給區</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>),
+Demand Zone (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>需求區</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Smart Money Trading (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>聰明錢交易</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Inducement（誘導機制）、Internal
+Liquidity（內部流動性）、Supply &amp; Demand Zones（供給與需求區）。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Common Pitfalls &amp; Notes]
+Assuming that touching a Supply/Demand zone guarantees an immediate
+bounce/drop, ignoring the newly created Equal Highs/Lows sitting right inside
+the zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：認為價格只要碰觸供需區邊緣就會立刻反轉，忽略了區域內部新生成的等高/等低點已成為近在咫尺的流動性磁鐵。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2E6B9E'>Module 4: Multi-Zone Context &amp; Unfilled Imbalances [00:09:35
+- 00:10:45]</span></b></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;color:#2E6B9E'>模組四：多重供需區背景與未填補失衡的磁吸效應
+[00:09:35 - 00:10:45]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Concept Explanation] When
+multiple Supply or Demand zones exist in a price leg, a nearer zone with an
+unmitigated Imbalance behind it is frequently bypassed; price uses the nearer
+zone as Inducement to fuel a move into the extreme zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：當一段趨勢中包含多個供需區時，若較近的第一供需區後方仍留有未填補的價格失衡（Imbalance），市場極高機率不會在此真正反轉，而是將第一個區域當作誘導，穿透它並填補失衡，最終抵達更深層的極端（Extreme）供需區。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Steps &amp; Workflow] 1.
+Map all Supply/Demand zones along the current price leg. 2. Check for
+unmitigated Imbalances (fair value gaps) between the nearer zone and the
+extreme zone. 3. Prioritize the extreme zone sitting beyond the last Imbalance
+as the primary high-probability target.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1. 標出當前波段中所有的供給區或需求區。2.
+檢查較近區域與極端區域之間是否仍存在未填補的失衡（Imbalance）。3. 將位於最後一段失衡之後的「極端供需區」列為首要高勝率關注目標。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Terms &amp; Formulas]
+Imbalance (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>價格失衡</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Extreme Supply/Demand
+Zone (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>極端供給</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>/</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>需求區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>), Larger Context (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;color:#2B4C7E'>宏觀市場背景</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Imbalance（失衡）、Extreme
+Zone（極端區域）、Mitigation（訂單填補/緩解）。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Common Pitfalls &amp; Notes]
+Placing blind limit orders at the very first Supply/Demand zone encountered
+during a pullback without checking whether an Imbalance remains behind it.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：價格回檔時盲目在第一個遇到的供需區掛限價單，未檢查其後方是否仍有未填補的失衡缺口，導致成為大戶掃單的犧牲品。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2E6B9E'>Module 5: The Standard Confirmation Entry Model [00:10:45 -
+00:15:16]</span></b></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;color:#2E6B9E'>模組五：標準確認進場模型 (Standard
+Confirmation) [00:10:45 - 00:15:16]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Concept Explanation] Standard
+Confirmation requires waiting for a liquidity sweep followed by a clear Market
+Structure Shift (e.g., breaking a prior swing low to form a Lower Low in a
+Supply zone) on a lower timeframe before entering on the pullback.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：標準確認模型是指不猜測頂底，而是等待流動性被掃除後，在低時間框架觀察到明確的市場結構轉變（例如在供給區內由更高高點/低點轉為跌破前波低點形成更低低點），藉此證明買賣雙方控制權已正式易主，隨後在價格回撤時順勢進場。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Steps &amp; Workflow] 1.
+Wait for price to enter the target zone and sweep resting liquidity (Equal
+Highs/Lows). 2. Drop to a lower timeframe and wait for a decisive Break of
+Structure (BOS) in the desired direction. 3. Enter on the retracement
+(pullback) to a Lower High (for sells) or Higher Low (for buys) with stop-loss
+above/below the sweep extreme.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1. 等待價格進入目標供需區並完成流動性掃蕩。2.
+切換至低時間框架，等待順應大方向的明確結構突破（BOS）。3. 在價格回撤形成較低高點（做空）或較高低點（做多）時進場，並將停損設在掃蕩極值外側。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Terms &amp; Formulas]
+Standard Confirmation (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;color:#2B4C7E'>標準確認</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>),
+Changing Control (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>控制權轉移</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Higher
+High/Low (</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+color:#2B4C7E'>更高高</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>/</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>低點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>), Lower High/Low (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:125%;color:#2B4C7E'>更低高</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>/</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>低點</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Retracement
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>回撤</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Standard
+Confirmation（標準確認）、Uptrend (HH/HL) -&gt; BOS -&gt; Lower Low -&gt; Pullback to
+Lower High（上升結構轉破低→回撤較低高點做空）。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Common Pitfalls &amp; Notes]
+Entering immediately after a liquidity sweep without waiting for the structural
+break (BOS), which risks catching a falling knife if price continues to a
+deeper zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：看到價格刺破高點或低點（看似掃蕩）後立刻市價追單，卻未等待結構突破（BOS）確認，一旦市場繼續衝向更深層供需區便會直接停損。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2E6B9E'>Module 6: Live Multi-Timeframe Walkthrough (EUR/CHF 5M)
+[00:15:16 - 00:24:35]</span></b></p>
+
+<p class=MsoNormal style='page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:125%;color:#2E6B9E'>模組六：實戰多時間框架演練 (EUR/CHF 五分鐘圖)
+[00:15:16 - 00:24:35]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Concept Explanation]
+Demonstrates how to filter three Demand zones in an upswing—skipping the first
+two due to lack of confirmation and remaining Imbalance—and executing at the
+Extreme Demand zone, then repeating the exact process on a lower-timeframe
+internal leg once price enters an Efficient Range.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【概念解釋】：透過歐元兌瑞郎（EUR/CHF）5
+分鐘實盤圖表，示範如何從一段上漲波段的三個需求區中進行篩選：前兩個需求區因缺乏結構確認且下方仍有失衡而被跳過；直到價格觸及極端第三需求區並產生 BOS 後才確立多頭格局，接著在低時間框架內部波段中再次避開誘導區，於價格進入有效率區間後掛單買進。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Steps &amp; Workflow] 1.
+Identify all Demand zones in the macro leg (Zones 1, 2, and Extreme Zone 3). 2.
+Skip Zones 1 &amp; 2 due to no BOS and remaining Imbalance below. 3. Confirm
+bullish BOS after Extreme Zone 3 is tapped. 4. Zoom into the new bullish leg,
+skip the upper Inducement Demand zone, confirm LTF BOS into an Efficient Range,
+and place a Buy Limit at the final unmitigated Demand zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【關鍵步驟/操作流程】：1. 標記大波段中的三個需求區（區1、區2與極端區3）。2.
+因缺乏 BOS 且下方仍有失衡，跳過區1與區2。3. 待極端區3被觸及並出現看漲 BOS 後確認多頭方向。4. 聚焦新上漲波段，跳過上方作為誘導的第一需求區，待低時間框架出現
+BOS 並推進至無失衡的「有效率區間」後，在最後一個未填補需求區掛 Buy Limit 進場。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Key Terms &amp; Formulas]
+Efficient Range (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;color:#2B4C7E'>有效率區間</span><span lang=EN-US style='font-size:10.0pt;
+line-height:125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>), Buy Limit (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>限價買單</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>), BOS - Break of Structure (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>結構突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>), Refined Price Action (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:125%;color:#2B4C7E'>精細價格行為</span><span
+lang=EN-US style='font-size:10.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#2B4C7E'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【重要公式/專有名詞】：Efficient
+Range（有效率區間＝無剩餘失衡的順暢空間）、Buy Limit（限價買單）、BOS（結構突破）。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>[Common Pitfalls &amp; Notes]
+Confusing an Efficient Range (no remaining imbalances, clear path to highs)
+with an Inefficient Range (unfilled gaps that will pull price back before
+expanding).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>【常見誤區/注意事項】：未能區分「有效率區間」（前方已無失衡與供給阻礙，價格可順暢創高）與「低效率失衡區」（價格必須先回頭填補缺口才能繼續推進），導致過早平倉或錯誤掛單。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1B365D'>6. Concrete Action Items</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:13.0pt;
+line-height:125%;color:#1B365D'>6. 實操行動清單（Action Items）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>1. Audit Your Chart for
+Liquidity Pools Before Placing Any Order: Before executing any Supply/Demand
+trade, explicitly mark Equal Highs, Equal Lows, and obvious trendlines nearby;
+if an un-swept pool sits right behind your zone, do not place a blind limit
+order.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>1. 掛單前強制標記流動性池：在執行任何供需區交易前，先在圖表上明確畫出鄰近的等高點、等低點與明顯趨勢線；若你的進場區後方緊鄰尚未被掃蕩的流動性池，嚴禁直接掛限價單。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>2. Filter Multiple Zones Using
+the Imbalance Rule: When a price leg contains two or more Supply/Demand zones,
+check for unmitigated Imbalances between them and prioritize the extreme zone
+located beyond the final Imbalance.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>2. 運用失衡原則篩選多重供需區：當單一波段內出現兩個以上的供給或需求區時，檢查區域之間是否留有未填補的價格失衡（Imbalance），並優先將最後一段失衡後方的極端供需區設為主要觀察區。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>3. Enforce the Standard
+Confirmation Checklist: Require a three-step sequence before entry: (a)
+Liquidity Sweep of an inducement/high/low, (b) Lower-timeframe Break of
+Structure (BOS), and (c) Pullback into a refined zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>3. 嚴格執行標準確認三步驟清單：進場前必須同時滿足三個條件：(a)
+誘導區或前高/前低的流動性已被掃除、(b) 低時間框架出現明確的結構突破（BOS）、(c) 價格回撤至精細化供需區。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>4. Verify an Efficient Range
+Before Setting Targets: After a lower-timeframe BOS occurs, inspect the path
+toward your target to ensure price has pushed into an Efficient Range without
+opposing imbalanced Supply/Demand zones capping the move.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>4. 設定獲利目標前確認有效率區間：在低時間框架出現
+BOS 後，檢查價格是否已推進至無剩餘失衡的「有效率區間」，並確認前方沒有反向的失衡供需區阻擋獲利空間。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>5. Backtest 20 Historical
+Setups Comparing Blind Limits vs. Standard Confirmation: Open a 5M or 15M chart
+(such as EUR/CHF), log 20 historical Supply/Demand setups, and record how many
+premature stop-outs are avoided by waiting for Inducement sweeps and BOS
+confirmation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><span lang=EN-US style='color:#1A1A1A'>5. 回測 20 組歷史圖表對比盲目掛單與標準確認：打開
+5 分鐘或 15 分鐘圖表（如 EUR/CHF），統計 20 組歷史供需區案例，記錄透過等待誘導掃蕩與 BOS 確認後，成功避開了多少次提前停損。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#1B365D'>7. Quiz &amp; Review (Self-Assessment)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:13.0pt;
+line-height:125%;color:#1B365D'>7. 觀念自我檢測 (Quiz &amp; Review)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q1. Why is a retail
+short-seller's Stop-Loss above resistance (Equal Highs) attractive to large
+institutional sellers?</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='color:#1A1A1A'>問題 1：為何散戶設在阻力位（等高點）上方的空單停損單，對大型機構賣方具有高度吸引力？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>A) It pushes price down
+automatically without institutional volume.  B) A short Stop-Loss is
+functionally a Buy Order, providing massive counterparty buy liquidity so
+institutions can fill large sell orders without slippage.  C) It creates an
+Efficient Range immediately.  D) It eliminates all Imbalances below support.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#1A1A1A'>A) 它無需機構交易量就能自動把價格往下壓。 
+B) 空單停損本質上是「買單」，能提供龐大的買方對手盤流動性，讓機構在不造成嚴重滑價的情況下完成大額賣單建倉。  C) 它會立刻創造有效率區間。  D) 它會消除支撐位下方的所有失衡。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q2. When price enters a
+valid Supply zone and forms a double top (Equal Highs) inside the zone without
+breaking structure downward, what does this price action most likely represent?</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='color:#1A1A1A'>問題 2：當價格進入一個有效的供給區，並在區域內部形成雙頂（等高點）但尚未向下跌破結構時，此價格行為最可能代表什麼？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>A) A guaranteed immediate
+crash.  B) An Inducement trap that will likely have its highs swept before the
+real downward move begins.  C) Confirmation that all liquidity has been
+cleared.  D) An Efficient Range.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#1A1A1A'>A) 保證價格會立刻暴跌。  B) 一個誘導陷阱（Inducement），其高點極可能先被向上掃蕩，之後才會展開真正的下跌走勢。 
+C) 確認所有流動性皆已清除完畢。  D) 一個有效率區間。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q3. Suppose an upward
+price leg leaves three Demand zones behind, with unmitigated Imbalances still
+sitting below Zone 1 and Zone 2, while Zone 3 sits at the extreme with an
+efficient range below it. Which zone has the highest probability of holding?</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='color:#1A1A1A'>問題 3：假設一段上漲波段留下三個需求區，區
+1 與區 2 下方仍有未填補的價格失衡，而區 3 位於極端位置且其下方為有效率區間。哪個區域守住並反轉的機率最高？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>A) Demand Zone 1, because it is
+touched first.  B) Demand Zone 2, because it is in the middle.  C) Demand Zone
+3 (the extreme zone), after price sweeps the earlier zones to fill the
+remaining Imbalances.  D) None of them.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#1A1A1A'>A) 需求區 1，因為價格最先觸及它。 
+B) 需求區 2，因為它位於中間位置。  C) 需求區 3（極端區域），在價格掃過前方區域並填補剩餘失衡之後。  D) 以上皆非。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q4. What constitutes a
+'Standard Confirmation' entry signal inside a Supply zone?</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='color:#1A1A1A'>問題 4：在供給區內，什麼條件構成完整的「標準確認（Standard
+Confirmation）」進場訊號？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>A) Selling immediately on the
+first touch of the zone.  B) Seeing Equal Highs form inside the zone.  C)
+Waiting for a liquidity sweep, observing a lower-timeframe Break of Structure
+(BOS) into a Lower Low, and selling on the pullback to a Lower High.  D) Buying
+a Buy Stop above the Supply zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#1A1A1A'>A) 價格初次碰觸供給區時立刻市價做空。 
+B) 看到供給區內部形成等高點。  C) 等待流動性掃蕩後，觀察低時間框架出現跌破前低的結構突破（BOS），並於價格回撤至較低高點時做空。  D) 在供給區上方掛
+Buy Stop 買進。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+125%;font-family:"Calibri",sans-serif;color:#2B4C7E'>Q5. In the live EUR/CHF
+5-minute case study, what did price pushing into an 'Efficient Range' after a
+lower-timeframe BOS signify?</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt'><b><span lang=EN-US style='color:#1A1A1A'>問題 5：在 EUR/CHF 五分鐘圖的實戰案例中，低時間框架出現
+BOS 後價格推進至「有效率區間（Efficient Range）」代表什麼意義？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:125%;
+font-family:"Calibri",sans-serif;color:#2B4C7E'>A) There are no remaining
+imbalances or opposing Supply zones capping price, opening a clean path toward
+new highs.  B) The trend has failed and traders must exit immediately.  C)
+Price must drop below the extreme low first.  D) Retail traders have taken
+control of the market.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#1A1A1A'>A) 該區間內已無剩餘失衡或反向供給區限制價格，打開了順暢邁向新高的空間。 
+B) 趨勢已經失敗，交易者必須立刻出場。  C) 價格必須先跌破極端低點。  D) 散戶交易者已經取得市場控制權。</span></p>
+
+<p class=MsoNormal style='margin-top:24.0pt;page-break-before:always'><span
+lang=EN-US style='font-size:9.5pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#999999'>— Answer Key (Hidden / Low-Contrast Review Section — Highlight
+Text to Reveal) —</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-size:9.5pt;line-height:125%;
+color:#999999'>— 測驗解答區（隱蔽低對比設計 — 反白選取文字即可檢視答案） —</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#E8E8E8'>Q1 Answer: B — Short stop-losses are buy orders; sweeping Equal
+Highs triggers massive buy volume so institutions can sell into it without
+slippage.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;color:#E8E8E8'>第 1 題答案：B — 空單停損本質上是買單；掃蕩等高點會瞬間觸發大量買盤，讓機構能在另一側無滑價地成交大額賣單。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#E8E8E8'>Q2 Answer: B — Internal Equal Highs inside a zone act as an
+Inducement magnet that institutions sweep before initiating the real drop.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;color:#E8E8E8'>第 2 題答案：B — 區域內部形成的等高點是誘導磁鐵（Inducement），機構通常會先向上掃掉這批流動性後才展開真正下跌。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#E8E8E8'>Q3 Answer: C — Price tends to fill all unmitigated Imbalances
+and sweep earlier Inducement zones before reversing from the Extreme Demand
+zone.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;color:#E8E8E8'>第 3 題答案：C — 市場傾向先填補所有未緩解的失衡並掃過前方誘導區，最終才在極端需求區（區
+3）展開真正反轉。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#E8E8E8'>Q4 Answer: C — Standard Confirmation requires a liquidity sweep,
+a lower-timeframe Break of Structure (BOS) confirming control shift, and entry
+on the pullback.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;color:#E8E8E8'>第 4 題答案：C — 標準確認需要同時具備流動性掃蕩、低時間框架結構突破（BOS）驗證控制權轉移，以及回撤進場三個條件。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;font-family:"Calibri",sans-serif;
+color:#E8E8E8'>Q5 Answer: A — An Efficient Range contains no unmitigated
+imbalances or opposing Supply zones, giving price a clear runway to push into
+new highs.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:9.0pt;line-height:125%;color:#E8E8E8'>第 5 題答案：A — 有效率區間內沒有剩餘失衡或反向供給區阻礙，為價格提供了順暢突破新高的空間。</span></p>
+
+</div>
+
+</body>
+
+</html>

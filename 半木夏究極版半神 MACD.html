@@ -1,0 +1,2597 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:新細明體;
+	panose-1:2 2 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@Microsoft JhengHei";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@PMingLiU";
+	panose-1:2 2 5 0 0 0 0 0 0 0;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:10.5pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:16.0pt;
+	font-family:"Arial",sans-serif;
+	color:#12355B;}
+h2
+	{margin-top:15.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.5pt;
+	font-family:"Arial",sans-serif;
+	color:#12355B;}
+h3
+	{margin-top:8.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:10.5pt;
+	font-family:"Arial",sans-serif;
+	color:#1F6FB2;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:12.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	font-size:22.0pt;
+	font-family:"Arial",sans-serif;
+	color:#12355B;
+	font-weight:bold;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	font-size:10.5pt;
+	font-family:"Arial",sans-serif;}
+p.zhH1, li.zhH1, div.zhH1
+	{mso-style-name:zhH1;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:8.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	border:none;
+	padding:0cm;
+	font-size:14.0pt;
+	font-family:"Arial",sans-serif;
+	color:#12355B;
+	font-weight:bold;}
+p.zhH2, li.zhH2, div.zhH2
+	{mso-style-name:zhH2;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:11.5pt;
+	font-family:"Arial",sans-serif;
+	color:#2B4C6F;
+	font-weight:bold;}
+p.zhH3, li.zhH3, div.zhH3
+	{mso-style-name:zhH3;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:3.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:10.5pt;
+	font-family:"Arial",sans-serif;
+	color:#1F6FB2;
+	font-weight:bold;}
+p.zhTitle, li.zhTitle, div.zhTitle
+	{mso-style-name:zhTitle;
+	margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:12.0pt;
+	margin-left:0cm;
+	font-size:17.0pt;
+	font-family:"Arial",sans-serif;
+	color:#2B4C6F;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-size:10.5pt;
+	font-family:"Arial",sans-serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:2.0cm 2.0cm 2.0cm 2.0cm;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle><span lang=EN-US>Liquidity, Timing &amp; Profit</span></p>
+
+<p class=zhTitle><span style='font-family:"微軟正黑體",sans-serif'>流動性、時機與獲利：深度學習筆記</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:9.5pt;line-height:115%;color:#1A1A1A'>Source:
+trading lesson video by Brett Goa (about 38 minutes). Timestamps [HH:MM:SS]
+follow the original subtitle timeline.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><span
+style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>資料來源：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#2B4C6F'>Brett Goa </span><span style='font-size:9.5pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>交易教學影片逐字稿（約</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2B4C6F'> 38 </span><span
+style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>分鐘）。時間戳記</span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;color:#2B4C6F'> [</span><span style='font-size:9.5pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>時</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2B4C6F'>:</span><span
+style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>分</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#2B4C6F'>:</span><span style='font-size:9.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>秒</span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;color:#2B4C6F'>] </span><span
+style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>對應原始字幕時間軸。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:9.5pt;line-height:115%;color:#1A1A1A'>Greetings,
+self-introduction and product promotion have been removed; only high-value
+content is kept.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><span
+style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>已排除打招呼、自我介紹與產品／課程宣傳，僅保留高價值內容。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:9.5pt;line-height:115%;color:#1A1A1A'>These
+notes summarize the speaker’s views for study purposes and are not investment
+advice.</span></p>
+
+<p class=MsoNormal style='margin-bottom:10.0pt;line-height:115%'><span
+style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>本筆記僅整理講者觀點供學習使用，非投資建議。</span></p>
+
+<h1><span lang=EN-US>1. Executive Summary</span></h1>
+
+<div style='border:none;border-bottom:solid #12355B 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=zhH1><span lang=EN-US>1. </span><span style='font-family:"微軟正黑體",sans-serif'>核心總結</span><span
+lang=EN-US> (Executive Summary)</span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='color:#1A1A1A'>The speaker argues that traders
+rarely lose because their strategy is bad; they lose because they enter at the
+wrong time, when no liquidity is available to fuel a move. Liquidity means
+resting orders (pending orders and stop losses), which institutions need in
+order to fill very large positions. Price therefore tends to sweep liquidity
+around support and resistance, swing highs and lows, equal highs and lows, and
+consolidations before moving in its real direction. Knowing “where” is not
+enough; you also need “when”: the London Open and the London–New York overlap
+attract the most institutional participation, while the Asian session is mostly
+low-volatility consolidation. The speaker merges both ideas into a five-step
+“Golden Bullet Strategy”. His conclusion: liquidity is the fuel, timing is the
+ignition, and the real difficulty is discipline and patience.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>講者認為，交易者虧損並非策略太差，而是在沒有流動性、時機錯誤時進場。流動性即市場中的掛單（待成交單與止損單），是機構建立大額部位所需的「燃料」，因此價格常先掃蕩支撐壓力、波段高低點等位置的流動性，再朝真正方向移動。但知道「哪裡」還不夠，還要掌握「何時」：倫敦開盤與倫敦／紐約重疊時段機構參與度最高，亞洲時段則多為低波動盤整。講者將兩者整合為五步驟的「黃金子彈策略」：判斷結構、找出流動性、等待活躍時段、等掃蕩後的確認訊號、以約</span><span
+lang=EN-US style='color:#2B4C6F'> 1% </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>風險執行。結論是：流動性是燃料、時機是點火，兩者結合才會產生價格擴張，而真正的難關是紀律與等待。</span></p>
+
+<h1><span lang=EN-US>2. Key Concepts &amp; Definitions</span></h1>
+
+<div style='border:none;border-bottom:solid #12355B 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=zhH1><span lang=EN-US>2. </span><span style='font-family:"微軟正黑體",sans-serif'>知識地圖與核心概念</span><span
+lang=EN-US> (Key Concepts &amp; Definitions)</span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:01:57]
+</span></b><b><span lang=EN-US style='color:#12355B'>Liquidity</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Resting orders in the market, made of
+pending orders and stop losses. It is the fuel institutions need to execute
+large positions and push price in their desired direction.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>流動性</span></b><b><span
+lang=EN-US style='color:#12355B'> (Liquidity)</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>市場中的掛單，由待成交單與止損單組成；是機構執行大額部位、推動價格朝預期方向移動所需的「燃料」。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:01:16]
+</span></b><b><span lang=EN-US style='color:#12355B'>Smart Money / Institutions</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Large players such as banks and funds.
+Their orders are so big that no single counterparty can match them at once, so
+they draw on liquidity from retail and other traders.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>主力機構</span></b><b><span
+lang=EN-US style='color:#12355B'> (Smart Money)</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>銀行、基金等大型參與者；單量龐大，無法在同一時間找到單一對手盤，因此必須汲取散戶與其他交易者的流動性。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:02:57]
+</span></b><b><span lang=EN-US style='color:#12355B'>Resting Orders (Stop Loss,
+Pending Orders)</span></b><span lang=EN-US>: <span style='color:#1A1A1A'>Stop
+losses close losing trades; pending orders such as buy stops and sell stops
+enter the market when price reaches a level (for example to trade a breakout).</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>掛單（止損單、待成交單）</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>止損單用於平掉虧損部位；待成交單（如</span></span><span
+lang=EN-US style='color:#2B4C6F'> buy stop</span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>、</span><span lang=EN-US style='color:#2B4C6F'>sell stop</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>）在價格到達特定位置時進場，常用於交易突破。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:02:10]
+</span></b><b><span lang=EN-US style='color:#12355B'>Liquidity Sweep</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Price runs through an area full of
+resting orders to collect them, then moves (often reverses) in the
+institutions’ intended direction.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>流動性掃蕩</span></b><b><span
+lang=EN-US style='color:#12355B'> (Liquidity Sweep)</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>價格衝過掛單密集區以取得流動性，隨後朝機構預期方向發展（常見為反轉）。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:02:28]
+</span></b><b><span lang=EN-US style='color:#12355B'>Support &amp; Resistance
+Liquidity</span></b><span lang=EN-US>: <span style='color:#1A1A1A'>Retail
+traders sell at resistance with stops above it and buy at support with stops
+below it, so liquidity piles up just beyond these levels.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>支撐壓力位流動性</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>散戶習慣在壓力位做空並把止損放在上方、在支撐位做多並把止損放在下方，因此流動性堆積在這些位置之外。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:03:43]
+</span></b><b><span lang=EN-US style='color:#12355B'>Swing High / Swing Low</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Buy stops sit above a swing high; sell
+stops and the stop losses of continuation buyers sit below a swing low.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>波段高點／波段低點</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>波段高點上方有</span></span><span
+lang=EN-US style='color:#2B4C6F'> buy stop</span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>；波段低點下方有</span><span lang=EN-US style='color:#2B4C6F'> sell stop
+</span><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>以及順勢買入者的止損單。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:04:29]
+</span></b><b><span lang=EN-US style='color:#12355B'>Equal Highs / Equal Lows</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Two or more highs (or lows) at nearly
+the same level, creating a visible pool of liquidity beyond them.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>等高點／等低點</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>兩個以上高點（或低點）位於相近價位，其外側形成明顯的流動性池。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:04:38]
+</span></b><b><span lang=EN-US style='color:#12355B'>Consolidation</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>A sideways range with liquidity above
+and below it. Price can use the liquidity on one side to fuel a pullback or the
+next leg.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>盤整</span></b><b><span
+lang=EN-US style='color:#12355B'> (Consolidation)</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>價格橫向整理的區間，上下兩側都有流動性；價格可利用其中一側的流動性推動回檔或下一段走勢。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:20:26]
+</span></b><b><span lang=EN-US style='color:#12355B'>Market Structure / Break
+of Structure (BOS)</span></b><span lang=EN-US>: <span style='color:#1A1A1A'>The
+sequence of highs and lows. A bearish BOS creates a lower high and a fresh
+lower low; a bullish BOS is the opposite and shows the trend direction.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>市場結構／結構突破</span></b><b><span
+lang=EN-US style='color:#12355B'> (BOS)</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>由高低點序列構成的價格結構。空頭</span></span><span
+lang=EN-US style='color:#2B4C6F'> BOS </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>會形成更低的高點與新的更低低點；多頭則相反，用來判斷趨勢方向。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:05:23]
+</span></b><b><span lang=EN-US style='color:#12355B'>Bias</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Your trade idea: where to buy, where
+to sell, and roughly when to enter. It comes from understanding market
+structure and liquidity.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>偏向／交易觀點</span></b><b><span
+lang=EN-US style='color:#12355B'> (Bias)</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>你的交易想法：在哪裡買、在哪裡賣，以及大約何時進場；來自對市場結構與流動性的理解。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:07:26]
+</span></b><b><span lang=EN-US style='color:#12355B'>Timing</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Not a convenient time of day for you,
+but the windows when institutions are actually participating. Outside them,
+price does not move much.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>時機</span></b><b><span
+lang=EN-US style='color:#12355B'> (Timing)</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>不是挑你方便的時間，而是找出機構實際參與的時窗；在這些時窗之外價格通常波動不大。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:09:02]
+</span></b><b><span lang=EN-US style='color:#12355B'>Trading Sessions</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Asian session (before London), London
+session 3–11 AM EST, New York session opening 8 AM EST. The London Open is 3–6
+AM EST.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>交易時段</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>亞洲時段（早於倫敦）、倫敦時段美東</span></span><span
+lang=EN-US style='color:#2B4C6F'> 3–11 </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>點、紐約時段美東</span><span lang=EN-US style='color:#2B4C6F'> 8 </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>點開盤；其中倫敦開盤為美東</span><span
+lang=EN-US style='color:#2B4C6F'> 3–6 </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>點。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:09:59]
+</span></b><b><span lang=EN-US style='color:#12355B'>London–New York Overlap</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Roughly 8–11 AM EST, when UK and US
+traders are active together; the highest volume and the most volatile period of
+the day.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>倫敦／紐約重疊時段</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>約美東</span></span><span
+lang=EN-US style='color:#2B4C6F'> 8–11 </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>點，英美交易者同時在場，是一天中成交量最高、波動最劇烈的時段。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:12:30]
+</span></b><b><span lang=EN-US style='color:#12355B'>Kill Zones</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>A popular nickname for the session
+windows. There is no magic: they exist because liquidity and institutional
+participation overlap.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>殺戮區間</span></b><b><span
+lang=EN-US style='color:#12355B'> (Kill Zones)</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>交易者對上述時窗的稱呼；並無神奇之處，只是因為流動性與機構參與在此重疊。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:22:19]
+</span></b><b><span lang=EN-US style='color:#12355B'>Supply / Demand Zone</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Areas where sell (supply) or buy
+(demand) orders are likely clustered. Price gravitates toward them; the zone
+that caused a structural break is especially important.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>供給／需求區</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>賣單（供給）或買單（需求）可能聚集的區域，價格會自然被吸引過去；造成結構突破的那個區域尤其重要。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:23:53]
+</span></b><b><span lang=EN-US style='color:#12355B'>POI (Point of Interest)</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Pre-marked levels (supply or demand
+zones, liquidity levels) where you expect a reaction. You wait to see which one
+is respected.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>興趣點</span></b><b><span
+lang=EN-US style='color:#12355B'> (POI)</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>事先標記、預期會出現反應的位置（供需區、流動性位置）；你只需等待觀察哪一個被市場尊重。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:14:16]
+</span></b><b><span lang=EN-US style='color:#12355B'>Accumulation /
+Distribution</span></b><span lang=EN-US>: <span style='color:#1A1A1A'>In the
+Asian session price accumulates and positions rather than expands. After a
+sweep, a sharp reversal signals smart money distributing.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>累積／派發</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>亞洲時段價格多在累積與佈局而非擴張；掃蕩後的急速反轉則被視為主力在派發。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:25:18]
+</span></b><b><span lang=EN-US style='color:#12355B'>V-Shaped Reaction</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>A sharp reversal right after liquidity
+is swept, confirming the sweep and that smart money manipulated price.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+lang=EN-US style='color:#12355B'>V </span></b><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#12355B'>型反應</span></b><span style='font-family:"微軟正黑體",sans-serif'>：<span
+style='color:#2B4C6F'>流動性被掃蕩後立即出現的急速反轉，用來確認掃蕩成立。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:25:41]
+</span></b><b><span lang=EN-US style='color:#12355B'>Internal Structure Break</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>During a pullback, the micro structure
+(higher highs/lows) breaks back in the trend direction, confirming that the
+pullback is over.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>內部結構突破</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>回檔期間的小級別結構（更高高點／低點）反向突破，確認回檔結束、原趨勢恢復。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:20:00]
+</span></b><b><span lang=EN-US style='color:#12355B'>Golden Bullet Strategy</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>The speaker’s five-step plan that
+combines liquidity and timing into an execution plan.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>黃金子彈策略</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>講者提出的五步驟執行計畫，將流動性與時機整合為具體的交易流程。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:35:37]
+</span></b><b><span lang=EN-US style='color:#12355B'>Risk per Trade &amp;
+Reward-to-Risk (R)</span></b><span lang=EN-US>: <span style='color:#1A1A1A'>Risk
+about 1% of account equity per trade, put the stop beyond the sweep candle or
+demand zone, and aim for a target such as 3R.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>單筆風險與風險報酬比</span></b><b><span
+lang=EN-US style='color:#12355B'> (R)</span></b><span style='font-family:"微軟正黑體",sans-serif'>：<span
+style='color:#2B4C6F'>單筆風險約為帳戶淨值的</span></span><span lang=EN-US
+style='color:#2B4C6F'> 1%</span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>，止損放在掃蕩</span><span lang=EN-US style='color:#2B4C6F'> K </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>線或需求區之外，並以</span><span
+lang=EN-US style='color:#2B4C6F'> 3R </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>等目標設定報酬。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:29:53]
+</span></b><b><span lang=EN-US style='color:#12355B'>Drawdown</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>The decline from a peak in account
+equity. Maximum-loss and profit-target rules help limit it and avoid giving
+profits back.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>資金回撤</span></b><b><span
+lang=EN-US style='color:#12355B'> (Drawdown)</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>帳戶淨值自高點回落的幅度；最大虧損與獲利目標規則可限制回撤並避免把獲利還給市場。</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:37:54]
+</span></b><b><span lang=EN-US style='color:#12355B'>Trade Idea – Location –
+Timing</span></b><span lang=EN-US>: <span style='color:#1A1A1A'>The speaker’s
+three foundations of profitability: what to trade (idea), where to trade (POI),
+and when to trade (session).</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>交易想法</span></b><b><span
+lang=EN-US style='color:#12355B'>—</span></b><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#12355B'>位置</span></b><b><span lang=EN-US style='color:#12355B'>—</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>時機</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>講者提出的三大獲利基礎：交易什麼（想法）、在哪裡交易（</span></span><span
+lang=EN-US style='color:#2B4C6F'>POI </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>位置）、何時交易（時段）。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:27:52]
+</span></b><b><span lang=EN-US style='color:#12355B'>Discipline</span></b><span
+lang=EN-US>: <span style='color:#1A1A1A'>Described as the single most important
+trait for consistent profitability; in practice, the ability to wait and follow
+your rules.</span></span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#12355B'>紀律</span></b><b><span
+lang=EN-US style='color:#12355B'> (Discipline)</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：<span style='color:#2B4C6F'>被視為穩定獲利最重要的特質；實務上就是耐心等待並遵守規則的能力。</span></span></p>
+
+<h1><span lang=EN-US>3. Knowledge Structure (Text Mind Map)</span></h1>
+
+<div style='border:none;border-bottom:solid #12355B 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=zhH1><span lang=EN-US>3. </span><span style='font-family:"微軟正黑體",sans-serif'>知識架構圖解（文字版）</span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='color:#1A1A1A'>Root: Trading profitability =
+Trade Idea + Location + Timing</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>根節點：交易獲利</span></b><b><span
+lang=EN-US style='color:#2B4C6F'> = </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>交易想法</span></b><b><span lang=EN-US
+style='color:#2B4C6F'> + </span></b><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>位置</span></b><b><span lang=EN-US style='color:#2B4C6F'> + </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>時機</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='color:#1A1A1A'>A. Why traders lose</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span lang=EN-US style='color:#2B4C6F'>A.
+</span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>為什麼交易者虧損</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Retail orders become the
+liquidity institutions need</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>散戶的掛單成了機構需要的流動性</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Right direction, wrong
+time (too early or too late)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>方向對但時機錯（太早或太晚）</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Indiscipline: premature
+entries, anticipating, off-window trades</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>缺乏紀律：過早進場、預測而非反應、在非時窗交易</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='color:#1A1A1A'>B. Pillar 1 – Liquidity
+(WHERE)</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span lang=EN-US style='color:#2B4C6F'>B.
+</span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>支柱一：流動性（在哪裡）</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Definition: resting orders
+= pending orders + stop losses</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>定義：掛單</span><span lang=EN-US style='color:#2B4C6F'> = </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>待成交單</span><span
+lang=EN-US style='color:#2B4C6F'> + </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>止損單</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: institutions need
+counterparties for large orders</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>原因：機構的大單需要對手盤</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Locations:
+support/resistance, swing highs/lows, equal highs/lows, consolidation</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>位置：支撐壓力、波段高低點、等高低點、盤整區間</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Output: bias (where to buy
+/ sell)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>產出：偏向（在哪裡買／賣）</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='color:#1A1A1A'>C. Pillar 2 – Timing
+(WHEN)</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span lang=EN-US style='color:#2B4C6F'>C.
+</span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>支柱二：時機（何時）</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Asian: low volume,
+consolidation</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>亞洲時段：低成交量、盤整</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>London Open: liquidity
+enters, structure forms</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>倫敦開盤：流動性進場、結構成形</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>London–New York overlap:
+highest volume and volatility</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>倫敦／紐約重疊：成交量與波動最高</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>New York: extends or
+reverses the London move</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>紐約時段：延續或反轉倫敦走勢</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Pre-session routine: map
+charts before the open</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>開盤前例行準備：先完成圖表標記</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='color:#1A1A1A'>D. Synthesis: Liquidity
+(fuel) + Timing (ignition) = Expansion</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span lang=EN-US style='color:#2B4C6F'>D.
+</span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>整合：流動性（燃料）</span></b><b><span
+lang=EN-US style='color:#2B4C6F'>+ </span></b><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>時機（點火）</span></b><b><span lang=EN-US style='color:#2B4C6F'>= </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>擴張</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='color:#1A1A1A'>E. Golden Bullet
+Strategy (5 steps)</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span lang=EN-US style='color:#2B4C6F'>E.
+</span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>黃金子彈策略（</span></b><b><span
+lang=EN-US style='color:#2B4C6F'>5 </span></b><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>步驟）</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Structure → Liquidity →
+Session → Sweep + confirmation → Execute with 1% risk</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>結構</span><span lang=EN-US style='color:#2B4C6F'> → </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>流動性</span><span
+lang=EN-US style='color:#2B4C6F'> → </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>時段</span><span lang=EN-US style='color:#2B4C6F'> → </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>掃蕩與確認</span><span
+lang=EN-US style='color:#2B4C6F'> → </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>以</span><span lang=EN-US style='color:#2B4C6F'> 1% </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>風險執行</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='color:#1A1A1A'>F. Case studies</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span lang=EN-US style='color:#2B4C6F'>F.
+</span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>案例演練</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Bearish: sweep highs, then
+continue down</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>空頭案例：掃高點後繼續下跌</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Bullish: sweep lows at
+London Open, then expand up</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>多頭案例：倫敦開盤掃低點後向上擴張</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='color:#1A1A1A'>G. Execution &amp;
+discipline</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span lang=EN-US style='color:#2B4C6F'>G.
+</span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>執行與紀律</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Waiting for A+ setups;
+fixed risk; window restriction; journaling</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>等待</span><span lang=EN-US style='color:#2B4C6F'> A+ </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>型態；固定風險；限制交易時窗；撰寫交易日誌</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:36.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>◦<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Location (POI) completes
+the triad</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:36.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>位置（</span><span lang=EN-US style='color:#2B4C6F'>POI</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>）補齊三要素</span></p>
+
+<h1><span lang=EN-US>4. Mental Models &amp; Logic</span></h1>
+
+<div style='border:none;border-bottom:solid #12355B 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=zhH1><span lang=EN-US>4. </span><span style='font-family:"微軟正黑體",sans-serif'>底層邏輯與思維模型</span><span
+lang=EN-US> (Mental Models &amp; Logic)</span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:01:16]
+</span></b><b><span lang=EN-US style='color:#1A1A1A'>Counterparty Constraint
+Model</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>對手盤限制模型</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: a huge order needs
+someone on the other side, and such a counterparty rarely exists at the exact
+moment. How: ask where other traders’ stops and pending orders sit, because
+institutions must travel there to fill.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>為什麼：龐大訂單需要對手盤，而這種對手盤很少在剛好的時間出現。怎麼做：問自己「別人的止損與掛單在哪裡」，因為機構必須到那裡才能成交。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:05:03]
+</span></b><b><span lang=EN-US style='color:#1A1A1A'>Perspective Inversion</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>視角翻轉</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: retail logic (enter
+at levels, stop beyond them) creates predictable pools. How: look at the chart
+from the institution’s seat. If you cannot spot liquidity, you are the
+liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>為什麼：散戶邏輯（在關鍵位進場、止損放其外）會製造可預測的流動性池。怎麼做：站在機構的角度看圖。看不出流動性在哪，你就是別人的流動性。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:19:33]
+</span></b><b><span lang=EN-US style='color:#1A1A1A'>Fuel and Ignition (AND
+Logic)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>燃料與點火（且邏輯）</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: each factor is
+necessary but not sufficient. How: require both liquidity nearby and an active
+session. Timing without liquidity chops; liquidity without participation can
+sit untouched for hours.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>為什麼：兩個因素都是必要但不充分條件。怎麼做：同時要求「附近有流動性」與「處於活躍時段」。有時機沒流動性會盤整；有流動性沒人參與可能閒置數小時。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:06:08]
+</span></b><b><span lang=EN-US style='color:#1A1A1A'>Direction ≠ Profit</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>方向正確</span></b><b><span
+lang=EN-US style='color:#2B4C6F'> ≠ </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>獲利</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: success = strategy +
+timing; being early is as bad as being wrong. How: after confirming direction,
+check whether the move is already extended and whether institutions are active.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>為什麼：成功</span><span lang=EN-US style='color:#2B4C6F'> = </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>策略</span><span lang=EN-US
+style='color:#2B4C6F'> + </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>時機；太早和錯誤一樣糟。怎麼做：確認方向後，再檢查走勢是否已延伸過度、機構是否正在參與。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:08:32]
+</span></b><b><span lang=EN-US style='color:#1A1A1A'>Data-Driven Window
+Selection</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>以數據選擇時窗</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: trading hours should
+come from evidence, not lifestyle. How: use the sessions with the most
+opportunities (London Open, overlap) and verify with your own trade records.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>為什麼：交易時間應基於證據而非作息。怎麼做：選擇機會最多的時段（倫敦開盤、重疊時段），並用自己的交易紀錄驗證。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:24:45]
+</span></b><b><span lang=EN-US style='color:#1A1A1A'>Conditional Scenario
+Planning</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>條件式情境規劃</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: there is no crystal
+ball. How: pre-mark several POIs, define an invalidation level (the last lower
+high), act only after confirmation, and flip bias if structure breaks.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>為什麼：沒有人有水晶球。怎麼做：事先標記多個</span><span lang=EN-US style='color:#2B4C6F'>
+POI</span><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>、設定失效位置（最近的更低高點）、確認後才行動，結構被破壞就翻轉偏向。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;color:#B45309'>[00:17:08]
+</span></b><b><span lang=EN-US style='color:#1A1A1A'>Selectivity &amp; Patience
+as Edge</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%'><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>選擇性與耐心即優勢</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Why: professionals trade
+only when the market can pay out. How: wait for the A+ setup that checks every
+box and say no to sub-par trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>為什麼：專業者只在市場有能力給付報酬時交易。怎麼做：等待符合所有條件的</span><span lang=EN-US
+style='color:#2B4C6F'> A+ </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>型態，對次級機會說不。</span></p>
+
+<h2><span lang=EN-US>How the Speaker Analyzes a Problem (Top-Down Funnel)</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>講者分析問題的方式（由上而下漏斗）</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:20:26] </span></b><span lang=EN-US style='color:#1A1A1A'>Read
+trend and market structure to set direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>判讀趨勢與市場結構，決定方向。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:20:49] </span></b><span lang=EN-US style='color:#1A1A1A'>Ask
+what price must do next, and where the liquidity for that move sits.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>問「價格接下來必須做什麼」，以及完成該動作所需的流動性在哪裡。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:21:56] </span></b><span lang=EN-US style='color:#1A1A1A'>Ask
+when institutions will act, and wait for that session.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>問「機構何時會動手」，並等待該時段。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:24:08] </span></b><span lang=EN-US style='color:#1A1A1A'>Wait
+for a sweep plus confirmation signals at a pre-marked POI.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>在事先標記的</span><span lang=EN-US style='color:#2B4C6F'> POI </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>等待掃蕩與確認訊號。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:26:20] </span></b><span lang=EN-US style='color:#1A1A1A'>Execute
+with defined risk and a reward target; otherwise do nothing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>以明確的風險與報酬目標執行；沒有條件就不動作。</span></p>
+
+<h1><span lang=EN-US>5. Detailed Breakdown</span></h1>
+
+<div style='border:none;border-bottom:solid #12355B 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=zhH1><span lang=EN-US>5. </span><span style='font-family:"微軟正黑體",sans-serif'>詳細重點拆解</span></p>
+
+</div>
+
+<h2><span lang=EN-US>Module 1: Why Most Traders Lose – Becoming the Liquidity 
+[00:00:00–00:01:16]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 1</span><span style='font-family:"微軟正黑體",sans-serif'>：多數交易者為何虧損</span><span
+lang=EN-US>——</span><span style='font-family:"微軟正黑體",sans-serif'>淪為他人的流動性</span><span
+lang=EN-US>  [00:00:00–00:01:16]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:00:00] </span></b><span lang=EN-US style='color:#1A1A1A'>Losses
+often come not from a bad strategy but from entering at the wrong time, when
+there is no liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>虧損往往不是因為策略差，而是在沒有流動性的時候於錯誤時間進場。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:00:55] </span></b><span lang=EN-US style='color:#1A1A1A'>Conventional
+advice (sell at resistance with a stop above, buy at support with a stop below)
+places retail stops exactly where institutions need liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>傳統建議（壓力位做空、止損放上方；支撐位做多、止損放下方）使散戶止損剛好落在機構需要流動性的位置。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:01:03] </span></b><span lang=EN-US style='color:#1A1A1A'>Institutions
+do not hunt stops out of malice; they need liquidity to execute large
+positions.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>機構掠奪止損並非出於惡意，而是需要流動性來執行大額部位。</span></p>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:05:08] </span></b><span lang=EN-US style='color:#1A1A1A'>Before
+entering, ask where liquidity is hiding, so you stop being the hunted.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>進場前先問「流動性藏在哪」，才不會成為被獵取的一方。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<div style='border:none;border-left:solid #12355B 2.25pt;padding:0cm 0cm 0cm 8.0pt;
+background:#EAF2FB;margin-left:12.0pt;margin-right:6.0pt'>
+
+<p class=MsoNormal style='margin-top:3.0pt;line-height:120%;page-break-after:
+avoid;background:#EAF2FB;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:9.0pt;line-height:120%;color:#B45309'>[00:05:03] </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'>If you
+cannot spot liquidity, then you are the liquidity.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.0pt;line-height:120%;background:#EAF2FB;
+border:none;padding:0cm'><b><span style='font-size:11.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#12355B'>如果你看不出流動性在哪，你自己就是流動性。</span></b></p>
+
+</div>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:01:03] </span></b><span lang=EN-US style='color:#1A1A1A'>Blaming
+“evil smart money” instead of understanding the execution mechanism.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>把原因歸咎於「邪惡的主力」，而不去理解其背後的執行機制。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:05:08] </span></b><span lang=EN-US style='color:#1A1A1A'>Getting
+stopped out repeatedly and then watching price go your way is a sign your stops
+sit in obvious liquidity pools.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>一再被止損後價格才朝你原方向走，代表你的止損放在明顯的流動性池裡。</span></p>
+
+<h2><span lang=EN-US>Module 2: What Liquidity Is and Why Institutions Need It 
+[00:01:16–00:02:28]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 2</span><span style='font-family:"微軟正黑體",sans-serif'>：流動性的定義與機構的需求</span><span
+lang=EN-US>  [00:01:16–00:02:28]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:01:16] </span></b><span lang=EN-US style='color:#1A1A1A'>Example:
+an institution wants to sell about one billion dollars of short orders and
+needs buyers on the other side, but no single counterparty is likely to match
+the order at that exact moment.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>舉例：機構想建立約十億美元的空單，需要有人在另一端買進，但不太可能剛好有單一對手盤在同一時間接下。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:01:42] </span></b><span lang=EN-US style='color:#1A1A1A'>So
+they take available liquidity from the market, from retail and other traders.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>因此他們必須從市場、散戶與其他交易者手中取得可用的流動性。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:02:10] </span></b><span lang=EN-US style='color:#1A1A1A'>To
+move price significantly up or down, they must first sweep some liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>要讓價格大幅上漲或下跌，必須先掃蕩一部分流動性。</span></p>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:01:16] </span></b><span lang=EN-US style='color:#1A1A1A'>Institution
+wants a large position.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>機構想建立大額部位。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:01:35] </span></b><span lang=EN-US style='color:#1A1A1A'>No
+counterparty is available at the desired moment.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>在想要的時間點沒有足夠對手盤。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:02:10] </span></b><span lang=EN-US style='color:#1A1A1A'>Price
+travels to areas full of resting orders and sweeps them.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>價格移動到掛單密集處並將其掃蕩。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:03:31] </span></b><span lang=EN-US style='color:#1A1A1A'>The
+position is filled and price moves in the intended direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>部位得以成交，價格朝預期方向移動。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<div style='border:none;border-left:solid #12355B 2.25pt;padding:0cm 0cm 0cm 8.0pt;
+background:#EAF2FB;margin-left:12.0pt;margin-right:6.0pt'>
+
+<p class=MsoNormal style='margin-top:3.0pt;line-height:120%;page-break-after:
+avoid;background:#EAF2FB;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:9.0pt;line-height:120%;color:#B45309'>[00:02:57] </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'>Liquidity =
+Resting Orders = Pending Orders + Stop Losses</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.0pt;line-height:120%;background:#EAF2FB;
+border:none;padding:0cm'><b><span style='font-size:11.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#12355B'>流動性</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'> = </span></b><b><span
+style='font-size:11.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#12355B'>掛單</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:120%;color:#12355B'> = </span></b><b><span style='font-size:11.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#12355B'>待成交單</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'> + </span></b><b><span
+style='font-size:11.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#12355B'>止損單</span></b></p>
+
+</div>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:18:18] </span></b><span lang=EN-US style='color:#1A1A1A'>Liquidity
+existing nearby does not mean price will move right away; it can sit untouched
+for hours until institutions step in.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>附近有流動性不代表價格馬上會動；在機構出手之前，它可能閒置數小時。</span></p>
+
+<h2><span lang=EN-US>Module 3: Where Liquidity Hides  [00:02:17–00:05:23]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 3</span><span style='font-family:"微軟正黑體",sans-serif'>：流動性藏在哪裡</span><span
+lang=EN-US>  [00:02:17–00:05:23]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:02:23] </span></b><span lang=EN-US style='color:#1A1A1A'>Liquidity
+is not mysterious; it sits in four recurring places on the chart.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>流動性並不神祕，它固定出現在圖表上的四種位置。</span></p>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:02:28] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Support
+and resistance:</span></b><span lang=EN-US style='color:#1A1A1A'> stops of
+traders who sell at resistance or buy at support, plus sell stops placed under
+support for breakout trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>支撐與壓力：</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>在壓力位做空、支撐位做多者的止損單，以及為交易突破而掛在支撐下方的</span><span lang=EN-US
+style='color:#2B4C6F'> sell stop</span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:03:43] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Swing
+highs and lows:</span></b><span lang=EN-US style='color:#1A1A1A'> buy stops
+above a swing high; sell stops and continuation buyers’ stop losses below a
+swing low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>波段高低點：</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>波段高點上方有</span><span lang=EN-US style='color:#2B4C6F'> buy stop</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>；波段低點下方有</span><span
+lang=EN-US style='color:#2B4C6F'> sell stop </span><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>與順勢買入者的止損單。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:04:29] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Equal
+highs and equal lows:</span></b><span lang=EN-US style='color:#1A1A1A'> a
+visible pool beyond both highs or both lows.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>等高點與等低點：</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>兩個高點（或低點）外側形成明顯的流動性池。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:04:38] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Consolidation:</span></b><span
+lang=EN-US style='color:#1A1A1A'> liquidity above and below the range.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>盤整區間：</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>區間上方與下方都有流動性。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:03:24] </span></b><span lang=EN-US style='color:#1A1A1A'>Sweep
+low liquidity → price reverses up; sweep high liquidity → price reverses down
+(a typical pattern the speaker shows).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>掃蕩低點流動性</span><span lang=EN-US style='color:#2B4C6F'> → </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>價格反轉向上；掃蕩高點流動性</span><span
+lang=EN-US style='color:#2B4C6F'> → </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>價格反轉向下（講者示範的典型型態）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:04:48] </span></b><span lang=EN-US style='color:#1A1A1A'>In
+one example, liquidity below a consolidation fueled a pullback into a previous
+supply zone and created a new lower high.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>範例中，盤整下方的流動性推動價格回檔至先前的供給區，形成新的更低高點。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:05:23] </span></b><span lang=EN-US style='color:#1A1A1A'>Understanding
+structure and liquidity lets you form a bias and judge a good entry price.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>理解結構與流動性後，才能形成偏向並判斷合適的進場價格。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:05:49] </span></b><span lang=EN-US style='color:#1A1A1A'>Treating
+liquidity as the whole puzzle; it is only one leg of the chair and must be
+paired with timing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>把流動性當成全部；它只是椅子的其中一隻腳，必須搭配時機。</span></p>
+
+<h2><span lang=EN-US>Module 4: Timing – Right Direction, Wrong Time 
+[00:05:49–00:08:23]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 4</span><span style='font-family:"微軟正黑體",sans-serif'>：時機</span><span
+lang=EN-US>——</span><span style='font-family:"微軟正黑體",sans-serif'>方向對、時間錯</span><span
+lang=EN-US>  [00:05:49–00:08:23]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:05:49] </span></b><span lang=EN-US style='color:#1A1A1A'>Success
+in trading equals strategy plus timing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>交易成功</span><span lang=EN-US style='color:#2B4C6F'> = </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>策略</span><span lang=EN-US
+style='color:#2B4C6F'> + </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>時機。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:06:25] </span></b><span lang=EN-US style='color:#1A1A1A'>Example:
+price sweeps liquidity and trends down, and you sell, but price has already
+made an extended move down. It pulls back, stops you out, and only then
+continues.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>例：價格掃蕩流動性後下跌，你此時做空，但價格已經走完一大段，隨即回檔把你止損，之後才繼續下跌。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:07:00] </span></b><span lang=EN-US style='color:#1A1A1A'>Wall
+Street adage: being early is just as bad as being wrong.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>華爾街格言：太早和錯誤一樣糟。</span></p>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:06:25] </span></b><span lang=EN-US style='color:#1A1A1A'>Establish
+direction using structure and liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>先用結構與流動性確立方向。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:06:38] </span></b><span lang=EN-US style='color:#1A1A1A'>Check
+whether the move is already extended.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>檢查走勢是否已經延伸過頭。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:08:11] </span></b><span lang=EN-US style='color:#1A1A1A'>Wait
+for the window when institutional money flows in, right before the large move.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>等待機構資金進場的時窗，也就是大行情發動之前。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<div style='border:none;border-left:solid #12355B 2.25pt;padding:0cm 0cm 0cm 8.0pt;
+background:#EAF2FB;margin-left:12.0pt;margin-right:6.0pt'>
+
+<p class=MsoNormal style='margin-top:3.0pt;line-height:120%;page-break-after:
+avoid;background:#EAF2FB;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:9.0pt;line-height:120%;color:#B45309'>[00:05:49] </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'>Success =
+Strategy + Timing</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.0pt;line-height:120%;background:#EAF2FB;
+border:none;padding:0cm'><b><span style='font-size:11.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#12355B'>成功</span></b><b><span lang=EN-US
+style='font-size:11.0pt;line-height:120%;color:#12355B'> = </span></b><b><span
+style='font-size:11.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#12355B'>策略</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:120%;color:#12355B'> + </span></b><b><span style='font-size:11.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#12355B'>時機</span></b></p>
+
+</div>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:07:26] </span></b><span lang=EN-US style='color:#1A1A1A'>“Timing”
+is not picking a convenient hour (after dinner, after the kids sleep); it is
+finding when institutions participate.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>「時機」不是挑方便的時間（晚餐後、孩子睡覺後），而是找出機構何時參與。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:07:00] </span></b><span lang=EN-US style='color:#1A1A1A'>Even
+a perfect sniper entry fails with the wrong timing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>再精準的進場，搭配錯誤時機仍會失敗。</span></p>
+
+<h2><span lang=EN-US>Module 5: Sessions, Kill Zones and Daily Routine 
+[00:08:23–00:18:11]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 5</span><span style='font-family:"微軟正黑體",sans-serif'>：交易時段、殺戮區間與每日流程</span><span
+lang=EN-US>  [00:08:23–00:18:11]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:08:23] </span></b><span lang=EN-US style='color:#1A1A1A'>In
+forex, only two windows offer the most opportunities: the London Open and the
+New York Open. The speaker says this is based on a large record of his own
+trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>外匯市場中機會最多的只有兩個時窗：倫敦開盤與紐約開盤；講者表示這來自他大量交易紀錄的統計。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:12:30] </span></b><span lang=EN-US style='color:#1A1A1A'>Kill
+Zones are just these windows; there is no magic, only liquidity and
+institutional participation overlapping.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>殺戮區間就是這些時窗，沒有魔法，只是流動性與機構參與重疊。</span></p>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:13:58] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Asian
+session:</span></b><span lang=EN-US style='color:#1A1A1A'> low volume, small
+candles, price accumulates and positions; little volatility. The speaker avoids
+it, but it can suit beginners as a calm place to practice.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>亞洲時段：</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>成交量低、</span><span lang=EN-US style='color:#2B4C6F'>K </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>線小、價格在累積佈局，波動很小。講者不交易此時段，但初學者可在此練習適應慢節奏。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:09:09] </span></b><b><span lang=EN-US style='color:#1A1A1A'>London
+session (3–11 AM EST) and London Open (3–6 AM EST):</span></b><span lang=EN-US
+style='color:#1A1A1A'> liquidity enters, banks open, structure forms and price
+seeks liquidity. The speaker’s favorite window.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>倫敦時段（美東</span></b><b><span lang=EN-US style='color:#2B4C6F'>
+3–11 </span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>點）與倫敦開盤（美東</span></b><b><span
+lang=EN-US style='color:#2B4C6F'> 3–6 </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>點）：</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>流動性進場、銀行開盤、結構成形、價格尋找流動性；為講者最愛的時窗。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:10:28] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Overlap
+(about 8–11 AM EST):</span></b><span lang=EN-US style='color:#1A1A1A'> highest
+volume, most volatile period with big spikes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>重疊時段（約美東</span></b><b><span lang=EN-US style='color:#2B4C6F'>
+8–11 </span></b><b><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>點）：</span></b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>成交量最高、波動最大，常有劇烈的價格尖峰。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:11:25] </span></b><b><span lang=EN-US style='color:#1A1A1A'>New
+York session (opens 8 AM EST):</span></b><span lang=EN-US style='color:#1A1A1A'>
+can extend or reverse the London move. Most real daily moves are created or
+confirmed here.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>紐約時段（美東</span></b><b><span lang=EN-US style='color:#2B4C6F'> 8 </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>點開盤）：</span></b><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>可能延續或反轉倫敦走勢；多數真正的日內行情在此形成或確認。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:13:05] </span></b><span lang=EN-US style='color:#1A1A1A'>Worked
+example: Asian consolidation → London sweeps the Asian range low and breaks out
+up → New York continues up, then reverses down.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>實例：亞洲盤整</span><span lang=EN-US style='color:#2B4C6F'> → </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>倫敦掃蕩亞洲區間低點並向上突破</span><span
+lang=EN-US style='color:#2B4C6F'> → </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>紐約先延續上漲，之後反轉下跌。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:16:20] </span></b><span lang=EN-US style='color:#1A1A1A'>Daily
+routine: begin analysis around 2 AM EST, go through the watchlist, mark key
+levels, and define trend and liquidity so you know when and where to strike at
+the open.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>每日流程：約美東</span><span lang=EN-US style='color:#2B4C6F'> 2 </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>點開始分析，檢視觀察清單、標記關鍵位、定義趨勢與流動性，開盤時就知道何時何地出手。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:16:04] </span></b><span lang=EN-US style='color:#1A1A1A'>Asian
+= consolidation; London = trend established; New York = continue or reverse.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>亞洲＝盤整；倫敦＝建立趨勢；紐約＝延續或反轉。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:09:59] </span></b><span lang=EN-US style='color:#1A1A1A'>Times
+are given in EST; convert them to your own time zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>講者以美東時間</span><span lang=EN-US style='color:#2B4C6F'> (EST) </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>為準，請自行換算成你所在時區。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:14:35] </span></b><span lang=EN-US style='color:#1A1A1A'>Trading
+the Asian session as an experienced trader risks being chopped out or holding
+too long and stopping out before the real move.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>有經驗者在亞洲時段交易，容易被來回洗出，或持倉過久，在真正行情前被止損。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:17:08] </span></b><span lang=EN-US style='color:#1A1A1A'>The
+hard part is not chart analysis but waiting for an A+ setup and rejecting
+sub-par trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>困難之處不是看圖分析，而是等待</span><span lang=EN-US style='color:#2B4C6F'> A+
+</span><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>型態並拒絕次級交易。</span></p>
+
+<h2><span lang=EN-US>Module 6: Liquidity + Timing and the Golden Bullet
+Strategy (Bearish Example)  [00:18:11–00:27:00]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 6</span><span style='font-family:"微軟正黑體",sans-serif'>：流動性</span><span
+lang=EN-US> + </span><span style='font-family:"微軟正黑體",sans-serif'>時機與黃金子彈策略（空頭範例）</span><span
+lang=EN-US>  [00:18:11–00:27:00]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:18:11] </span></b><span lang=EN-US style='color:#1A1A1A'>Professionals
+do not trade all the time; they trade only when the market is capable of paying
+out.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>專業者不會隨時交易，只在市場有能力給付報酬時才交易。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:18:58] </span></b><span lang=EN-US style='color:#1A1A1A'>Perfect
+timing with no resting orders nearby leaves price chopping around or barely
+moving. You need both.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>時機再好，若附近沒有掛單，價格只會盤整或幾乎不動；兩者缺一不可。</span></p>
+
+<div style='border:none;border-left:solid #12355B 2.25pt;padding:0cm 0cm 0cm 8.0pt;
+background:#EAF2FB;margin-left:12.0pt;margin-right:6.0pt'>
+
+<p class=MsoNormal style='margin-top:3.0pt;line-height:120%;page-break-after:
+avoid;background:#EAF2FB;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:9.0pt;line-height:120%;color:#B45309'>[00:19:33] </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'>Liquidity +
+Timing = Expansion  (Liquidity = fuel, Timing = ignition)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.0pt;line-height:120%;background:#EAF2FB;
+border:none;padding:0cm'><b><span style='font-size:11.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#12355B'>流動性</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'> + </span></b><b><span
+style='font-size:11.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#12355B'>時機</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:120%;color:#12355B'> = </span></b><b><span style='font-size:11.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#12355B'>擴張（流動性＝燃料，時機＝點火）</span></b></p>
+
+</div>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:20:26] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Identify
+trend and structure.</span></b><span lang=EN-US style='color:#1A1A1A'> A
+bearish break of structure creates a lower high and a new lower low; you trade
+within that swing high and swing low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>判斷趨勢與結構。</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>空頭結構突破會形成更低的高點與新的更低低點，你在該波段高低點範圍內交易。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:20:49] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Identify
+where liquidity sits.</span></b><span lang=EN-US style='color:#1A1A1A'> To keep
+falling, price needs a lower high, so it must first sweep liquidity above swing
+highs. If price floats in the middle with no sweep, do not enter.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>找出流動性位置。</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>要繼續下跌，價格需形成更低的高點，因此會先掃蕩波段高點上方的流動性；若價格在中間且尚未掃蕩，就不進場。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:21:56] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Wait
+for the active session</span></b><span lang=EN-US style='color:#1A1A1A'> (London
+Open, New York Open or the overlap). Bonus tip: mark the supply zones that
+caused the structural break, especially the one next to the liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>等待活躍時段</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>（倫敦開盤、紐約開盤或重疊時段）。加碼技巧：標記造成結構突破的供給區，尤其是緊鄰流動性的那一個。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:24:08] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Let
+price sweep and wait for confirmation:</span></b><span lang=EN-US
+style='color:#1A1A1A'> a V-shaped reaction, then an internal structure break
+(the micro bullish structure breaks its recent higher low to the downside).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>讓價格掃蕩並等待確認：</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>出現</span><span lang=EN-US style='color:#2B4C6F'> V </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>型反應，接著內部結構突破（小級別多頭結構跌破最近的更高低點）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:26:20] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Execute
+with defined risk,</span></b><span lang=EN-US style='color:#1A1A1A'> typically
+1% of account equity per trade.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>以明確風險執行，</span></b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>通常單筆風險為帳戶淨值的</span><span lang=EN-US style='color:#2B4C6F'> 1%</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:23:02] </span></b><span lang=EN-US style='color:#1A1A1A'>The
+last lower high is the invalidation point: if price breaks above it, structure
+turns bullish and you look for longs instead.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>最近的更低高點是失效位置：若價格突破，結構轉為多頭，改找做多機會。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:23:45] </span></b><span lang=EN-US style='color:#1A1A1A'>Until
+London opens, do nothing; wait for price to reach one of the marked POIs and
+see which is respected.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>倫敦開盤前不動作；等價格到達標記的</span><span lang=EN-US style='color:#2B4C6F'>
+POI</span><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>，觀察哪一個被尊重。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:24:33] </span></b><span lang=EN-US style='color:#1A1A1A'>Price
+may sweep a higher liquidity level first and pull back into the next supply
+zone, so reversals can occur at any POI.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>價格可能先掃更高的流動性，再回到下一個供給區，因此反轉可能發生在任何</span><span lang=EN-US
+style='color:#2B4C6F'> POI</span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:24:45] </span></b><span lang=EN-US style='color:#1A1A1A'>There
+is no crystal ball: wait for confluences to validate the idea before executing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>沒有水晶球：要等多重條件驗證想法後才執行。</span></p>
+
+<h2><span lang=EN-US>Module 7: Bullish Case Study  [00:31:04–00:36:45]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 7</span><span style='font-family:"微軟正黑體",sans-serif'>：多頭案例演練</span><span
+lang=EN-US>  [00:31:04–00:36:45]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:31:04] </span></b><span lang=EN-US style='color:#1A1A1A'>A
+second example to confirm the formula: Liquidity + Timing = Expansion, this
+time on the long side.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>用第二個範例驗證公式「流動性</span><span lang=EN-US style='color:#2B4C6F'> + </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>時機</span><span lang=EN-US
+style='color:#2B4C6F'> = </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>擴張」，這次為做多方向。</span></p>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:31:14] </span></b><span lang=EN-US style='color:#1A1A1A'>Structure:
+price forms a bullish break of structure, so look for longs.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>結構：價格形成多頭結構突破，因此尋找做多。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:32:13] </span></b><span lang=EN-US style='color:#1A1A1A'>Liquidity:
+price consolidates with equal highs and swing lows, creating a pool underneath
+(retail buyers’ stops plus breakout sell stops).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>流動性：價格盤整並形成等高點與波段低點，下方出現流動性池（散戶買方止損加上突破者的</span><span
+lang=EN-US style='color:#2B4C6F'> sell stop</span><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:32:59] </span></b><span lang=EN-US style='color:#1A1A1A'>Session:
+do nothing until the London Open.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>時段：倫敦開盤前什麼都不做。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:33:38] </span></b><span lang=EN-US style='color:#1A1A1A'>At
+London Open price first spikes up and sweeps high-side liquidity, then
+reverses; an aggressive counter-trend short could target the key demand zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>倫敦開盤時價格先向上掃蕩高點流動性後反轉；積極者可做逆勢空單，目標為關鍵需求區。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:34:52] </span></b><span lang=EN-US style='color:#1A1A1A'>About
+30 minutes into London, price sweeps low-side liquidity and mitigates the
+demand zone that broke structure: a high-probability long expecting a new
+higher low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>倫敦時段開始約</span><span lang=EN-US style='color:#2B4C6F'> 30 </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>分鐘後，價格掃蕩低點流動性並回測造成結構突破的需求區：預期形成新的更高低點，為高勝算做多機會。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>6.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:35:37] </span></b><span lang=EN-US style='color:#1A1A1A'>Risk:
+stop below the sweep candle or demand zone, target about 3R. Price then expands
+quickly upward.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>風險：止損放在掃蕩</span><span lang=EN-US style='color:#2B4C6F'> K </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>線或需求區下方，目標約</span><span
+lang=EN-US style='color:#2B4C6F'> 3R</span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>；之後價格快速向上擴張。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:36:17] </span></b><span lang=EN-US style='color:#1A1A1A'>When
+liquidity (fuel) meets the London Open (ignition), price moves cleanly.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>當流動性（燃料）遇上倫敦開盤（點火），價格走勢乾淨俐落。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:36:17] </span></b><span lang=EN-US style='color:#1A1A1A'>Keep
+the strategy simple; the counter-trend short is an optional aggressive play,
+not a requirement.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>保持策略簡單；逆勢空單只是可選的積極做法，並非必要。</span></p>
+
+<h2><span lang=EN-US>Module 8: Discipline, Execution and the Trading Triad  [00:27:46–00:30:25,
+00:36:45–00:38:06]</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>模組</span><span
+lang=EN-US> 8</span><span style='font-family:"微軟正黑體",sans-serif'>：紀律、執行與交易三要素</span><span
+lang=EN-US>  [00:27:46–00:30:25</span><span style='font-family:"微軟正黑體",sans-serif'>、</span><span
+lang=EN-US>00:36:45–00:38:06]</span></p>
+
+<h3><span lang=EN-US>Concept Explanation</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:27:52] </span></b><span lang=EN-US style='color:#1A1A1A'>Discipline
+is described as the single most important trait for consistent profitability.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>紀律被視為穩定獲利最重要的特質。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:28:00] </span></b><span lang=EN-US style='color:#1A1A1A'>The
+speaker claims 95% of retail traders lose money because they enter prematurely,
+anticipate instead of react, trade outside proper windows, trade out of
+boredom, ignore entry rules, or skip chart mapping.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>講者指出</span><span lang=EN-US style='color:#2B4C6F'> 95% </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>的散戶虧損，原因包括過早進場、預測而非反應、在非時窗交易、因無聊而交易、無視進場規則、跳過圖表標記。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:28:30] </span></b><span lang=EN-US style='color:#1A1A1A'>Pascal’s
+point: humanity’s problems stem from being unable to sit quietly alone;
+likewise most trading errors come from being unable to wait.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>帕斯卡的觀點：人類的問題源於無法安靜獨處；同理，多數交易錯誤源於無法耐心等待。</span></p>
+
+<h3><span lang=EN-US>Key Steps / Workflow</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:28:50] </span></b><span lang=EN-US style='color:#1A1A1A'>Wait
+for price to sweep liquidity, reach your POI, trigger your rules and enter your
+session window.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>等待價格掃蕩流動性、到達你的</span><span lang=EN-US style='color:#2B4C6F'> POI</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>、觸發你的規則，並處於你的交易時窗內。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:29:34] </span></b><span lang=EN-US style='color:#1A1A1A'>Use
+rule enforcement: a fixed risk percentage (1–2%), position size calculated from
+stop distance, trading only within your window, maximum-loss and profit limits,
+a journal that checks plan adherence, and review of results by session.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>用規則約束自己：固定風險比例（</span><span lang=EN-US style='color:#2B4C6F'>1–2%</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>）、依止損距離計算部位大小、只在自己的時窗交易、設定最大虧損與獲利上限、以日誌檢查是否遵守計畫，並按時段檢視績效。</span></p>
+
+<h3><span lang=EN-US>Key Formulas / Terms</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】</span></p>
+
+<div style='border:none;border-left:solid #12355B 2.25pt;padding:0cm 0cm 0cm 8.0pt;
+background:#EAF2FB;margin-left:12.0pt;margin-right:6.0pt'>
+
+<p class=MsoNormal style='margin-top:3.0pt;line-height:120%;page-break-after:
+avoid;background:#EAF2FB;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:9.0pt;line-height:120%;color:#B45309'>[00:37:54] </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'>Trade Idea +
+Location + Timing = the foundation of profitability</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.0pt;line-height:120%;background:#EAF2FB;
+border:none;padding:0cm'><b><span style='font-size:11.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#12355B'>交易想法</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'> + </span></b><b><span
+style='font-size:11.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#12355B'>位置</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:120%;color:#12355B'> + </span></b><b><span style='font-size:11.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#12355B'>時機</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:120%;color:#12355B'> = </span></b><b><span
+style='font-size:11.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#12355B'>獲利的基礎</span></b></p>
+
+</div>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:37:16] </span></b><span lang=EN-US style='color:#1A1A1A'>Timing
+and liquidity must be paired with high-probability locations (POIs) to be
+effective.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>時機與流動性必須搭配高勝算位置（</span><span lang=EN-US style='color:#2B4C6F'>POI</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>）才有效。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span></h3>
+
+<p class=zhH3><span style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:28:23] </span></b><span lang=EN-US style='color:#1A1A1A'>Understanding
+liquidity and timing will not make you profitable if you lack the patience to
+wait for setups.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>若缺乏等待型態的耐心，光懂流動性與時機並不會讓你獲利。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:37:00] </span></b><span lang=EN-US style='color:#1A1A1A'>Success
+is not doing more transactions; it is executing the right idea at the right
+time and place.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>成功不在於交易更多次，而在於在對的時間與地點執行對的想法。</span></p>
+
+<h1><span lang=EN-US>6. Action Items</span></h1>
+
+<div style='border:none;border-bottom:solid #12355B 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=zhH1><span lang=EN-US>6. </span><span style='font-family:"微軟正黑體",sans-serif'>實操行動清單</span><span
+lang=EN-US> (Action Items)</span></p>
+
+</div>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>1.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:02:28] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Mark
+liquidity on every chart before you trade.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>交易前先在每張圖上標出流動性。</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>List swing highs/lows,
+equal highs/lows, consolidation edges and support/resistance; note where stops
+likely sit.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>列出波段高低點、等高低點、盤整邊界與支撐壓力，並標註止損可能所在位置。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>2.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:09:59] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Define
+your trading window and convert it to your local time.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>定義你的交易時窗，並換算成當地時間。</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Choose the London Open
+(3–6 AM EST) or the overlap (8–11 AM EST), and do not enter outside it; start
+chart prep about an hour earlier.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>選擇倫敦開盤（美東</span><span lang=EN-US style='color:#2B4C6F'> 3–6 </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>點）或重疊時段（美東</span><span
+lang=EN-US style='color:#2B4C6F'> 8–11 </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>點），時窗外不進場；並提早約一小時開始準備圖表。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>3.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:20:00] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Write
+a Golden Bullet checklist and trade only when all five boxes are ticked.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>寫下黃金子彈檢查表，五項全部符合才交易。</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Structure, liquidity,
+session, sweep with V-shaped reaction and internal structure break, then risk.
+If liquidity has not been swept, do nothing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>結構、流動性、時段、掃蕩後的</span><span lang=EN-US style='color:#2B4C6F'> V </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>型反應與內部結構突破、風險。若流動性尚未被掃蕩，就不動作。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>4.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:26:20] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Fix
+your risk before entry.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>進場前先固定風險。</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Risk about 1% of equity,
+place the stop beyond the sweep candle or demand zone, compute position size
+from the stop distance, and aim for a target such as 3R.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>單筆風險約淨值</span><span lang=EN-US style='color:#2B4C6F'> 1%</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>，止損放在掃蕩</span><span
+lang=EN-US style='color:#2B4C6F'> K </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>線或需求區之外，依止損距離計算部位大小，並以</span><span lang=EN-US style='color:#2B4C6F'>
+3R </span><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>等目標設定報酬。</span></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:21.0pt;text-indent:-21.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>5.<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:9.0pt;line-height:115%;
+color:#B45309'>[00:30:05] </span></b><b><span lang=EN-US style='color:#1A1A1A'>Keep
+a journal and review results by session.</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:21.0pt;line-height:115%'><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>寫交易日誌，並按時段檢視績效。</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:0cm;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt;text-indent:-18.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='color:#1A1A1A'>Record whether you
+followed the plan and which session each trade happened in; beginners may
+practice in the calm Asian session first.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.5pt;
+margin-left:18.0pt;line-height:115%'><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>記錄是否遵守計畫與每筆交易所在時段；初學者可先在較平靜的亞洲時段練習。</span></p>
+
+<h1><span lang=EN-US>7. Quiz &amp; Review</span></h1>
+
+<div style='border:none;border-bottom:solid #12355B 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=zhH1><span lang=EN-US>7. </span><span style='font-family:"微軟正黑體",sans-serif'>觀念自我檢測</span><span
+lang=EN-US> (Quiz &amp; Review)</span></p>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:9.5pt;line-height:115%;color:#1A1A1A'>Try
+to answer first; the answer key at the end is masked. Select the dark bars with
+your cursor to reveal them.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.5pt;line-height:115%'><span
+style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>請先自行作答；文末答案已遮蔽，以游標反白選取深色區塊即可顯示。</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;line-height:115%;page-break-after:avoid'><b><span lang=EN-US
+style='color:#1A1A1A'>Q1. Why do institutions sweep stop losses and pending
+orders, according to the speaker?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:115%'><b><span
+lang=EN-US style='color:#2B4C6F'>Q1. </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>依講者所述，機構為何會掃蕩止損單與待成交單？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>A. They are evil and want to take retail traders’ money.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>A. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>他們邪惡，想拿走散戶的錢。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>B. Their large orders need counterparties, so they need
+available resting orders.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>B. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>他們的大單需要對手盤，因此需要可用的掛單。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>C. Indicators tell them to do so.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>C. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>技術指標叫他們這麼做。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>D. Retail traders trade at random times.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>D. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>散戶在隨機時間交易。</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;line-height:115%;page-break-after:avoid'><b><span lang=EN-US
+style='color:#1A1A1A'>Q2. Which windows offer the most opportunities in forex,
+and when is the overlap?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:115%'><b><span
+lang=EN-US style='color:#2B4C6F'>Q2. </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>外匯市場中機會最多的是哪兩個時窗？重疊時段是何時？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>A. Tokyo and Sydney; 8–11 PM EST.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>A. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>東京與雪梨；美東晚間</span><span
+lang=EN-US style='color:#2B4C6F'> 8–11 </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>點。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>B. London Open and New York Open; overlap about 8–11 AM
+EST.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>B. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>倫敦開盤與紐約開盤；重疊約美東上午</span><span
+lang=EN-US style='color:#2B4C6F'> 8–11 </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>點。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>C. Asian session and New York close; 12–3 AM EST.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>C. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>亞洲時段與紐約收盤；美東</span><span
+lang=EN-US style='color:#2B4C6F'> 0–3 </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>點。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>D. Any time, as long as the setup looks good.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>D. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>任何時間，只要型態好看。</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;line-height:115%;page-break-after:avoid'><b><span lang=EN-US
+style='color:#1A1A1A'>Q3. In Step 2 of the Golden Bullet Strategy, price floats
+mid-range and has swept no liquidity. What should you do?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:115%'><b><span
+lang=EN-US style='color:#2B4C6F'>Q3. </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>黃金子彈策略第</span></b><b><span lang=EN-US
+style='color:#2B4C6F'> 2 </span></b><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>步中，價格在區間中間且尚未掃蕩任何流動性，應該怎麼做？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>A. Enter immediately in the trend direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>A. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>立刻順勢進場。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>B. Do not enter; wait for a sweep.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>B. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>不進場，等待掃蕩。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>C. Double the position size.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>C. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>加倍部位。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>D. Move to the Asian session and scalp.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>D. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>改到亞洲時段短線操作。</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;line-height:115%;page-break-after:avoid'><b><span lang=EN-US
+style='color:#1A1A1A'>Q4. After liquidity is swept, which two reactions does
+the speaker look for before entering?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:115%'><b><span
+lang=EN-US style='color:#2B4C6F'>Q4. </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>流動性被掃蕩後，講者進場前要看哪兩個反應？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>A. A V-shaped reaction and an internal structure break.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>A.
+V </span><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>型反應與內部結構突破。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>B. RSI divergence and a MACD cross.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>B.
+RSI </span><span style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>背離與</span><span
+lang=EN-US style='color:#2B4C6F'> MACD </span><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>交叉。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>C. A price gap and a volume spike.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>C. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>跳空與成交量暴增。</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;line-height:115%;page-break-after:avoid'><span lang=EN-US
+style='color:#1A1A1A'>D. A doji and a moving-average cross.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:2.0pt;
+margin-left:18.0pt;line-height:115%'><span lang=EN-US style='color:#2B4C6F'>D. </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#2B4C6F'>十字星與均線交叉。</span></p>
+
+<p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;line-height:115%;page-break-after:avoid'><b><span lang=EN-US
+style='color:#1A1A1A'>Q5. Short answer: explain “Liquidity + Timing =
+Expansion” using the fuel and ignition idea, and what happens if one is
+missing.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:115%'><b><span
+lang=EN-US style='color:#2B4C6F'>Q5. </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>思考題：用「燃料與點火」的概念解釋「流動性</span></b><b><span
+lang=EN-US style='color:#2B4C6F'> + </span></b><b><span style='font-family:
+"微軟正黑體",sans-serif;color:#2B4C6F'>時機</span></b><b><span lang=EN-US
+style='color:#2B4C6F'> = </span></b><b><span style='font-family:"微軟正黑體",sans-serif;
+color:#2B4C6F'>擴張」，並說明缺少其中一項會怎樣。</span></b></p>
+
+<h2><span lang=EN-US>Answer Key (masked)</span></h2>
+
+<p class=zhH2><span style='font-family:"微軟正黑體",sans-serif'>參考答案（已遮蔽）</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q1: B. Large
+orders need counterparties, so institutions draw on resting orders.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:115%'><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q1</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>：</span><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>B</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>。大單需要對手盤，機構因此汲取掛單。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q2: B. London
+Open and New York Open; the overlap is about 8–11 AM EST.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:115%'><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q2</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>：</span><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>B</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>。倫敦開盤與紐約開盤；重疊約美東</span><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'> 8–11 </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>點。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q3: B. Without
+a sweep there is no fuel, so do not enter. If price breaks the last lower high,
+structure turns bullish.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:115%'><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q3</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>：</span><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>B</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>。尚未掃蕩就沒有燃料，不進場；若價格突破最近的更低高點，結構轉為多頭。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q4: A. A
+V-shaped reaction confirms the sweep; an internal structure break confirms the
+pullback is over.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:115%'><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q4</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>：</span><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>A</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>。</span><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>V </span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>型反應確認掃蕩，內部結構突破確認回檔結束。</span></p>
+
+<p class=MsoNormal style='margin-bottom:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q5: Liquidity
+(resting orders) is the fuel that lets price move; timing (London/New York
+sessions with institutional participation) is the ignition. Without timing,
+liquidity can sit untouched for hours; without liquidity, a good session just
+chops. Both together produce a clean expansion.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:115%'><span
+lang=EN-US style='color:#3A3A3A;background:#3A3A3A'>Q5</span><span
+style='font-family:"微軟正黑體",sans-serif;color:#3A3A3A;background:#3A3A3A'>：流動性（掛單）是讓價格移動的燃料；時機（有機構參與的倫敦／紐約時段）是點火。沒有時機，流動性可能閒置數小時；沒有流動性，好時段也只是盤整。兩者結合才會出現乾淨的價格擴張。</span></p>
+
+</div>
+
+</body>
+
+</html>

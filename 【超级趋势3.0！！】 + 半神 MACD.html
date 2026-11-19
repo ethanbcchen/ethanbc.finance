@@ -1,0 +1,1368 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@Microsoft JhengHei";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+p.MsoListBulletCxSpFirst, li.MsoListBulletCxSpFirst, div.MsoListBulletCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+p.MsoListBulletCxSpMiddle, li.MsoListBulletCxSpMiddle, div.MsoListBulletCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+p.MsoListBulletCxSpLast, li.MsoListBulletCxSpLast, div.MsoListBulletCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:Cambria;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='font-size:18.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>Deep Learning Study Notes: SuperTrend 3.0 &amp; Demigod MACD
+Trading Systems</span></b></p>
+
+<p class=MsoNormal><b><span lang=EN-US style='font-size:15.0pt;line-height:
+115%;color:#2B547E'>深度學習筆記：【超級趨勢 3.0】與半神 MACD 雙重趨勢交易系統</span></b></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>1. Executive Summary</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>1. 核心總結 (Executive Summary)</span></b></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;border:none;border-left:solid #2B547E 2.25pt;
+  background:#F0F4F8;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>This tutorial introduces
+  two high-win-rate quantitative trend-following strategies built on TradingView
+  using an adaptive composite oscillator (Multi Oscillator Adaptive Kernel,
+  abbreviated as MAC in the transcript) that merges Stochastic RSI (</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F2937'>隨機強弱指標</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'>), RSI (</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;color:#1F2937'>相對強弱指標</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'>), MFI (</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;color:#1F2937'>資金流量指標</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'>), and CCI (</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;color:#1F2937'>順勢指標</span><span lang=EN-US style='font-size:
+  10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#1F2937'>) to
+  filter market noise and sideways consolidation.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>本教學影片介紹兩套建構於
+  TradingView 的高勝率順勢交易策略，核心採用自適應複合震盪指標（Multi Oscillator Adaptive Kernel，逐字稿簡稱
+  MAC），該指標融合了 Stoch RSI（隨機強弱指標）、RSI（相對強弱指標）、MFI（資金流量指標）與 CCI（順勢指標），能多重過濾震盪行情並消除走勢噪音。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>In Strategy 1, setting
+  all four MAC parameters to 200 establishes macro trend direction (blue above
+  midline for bullish, red below midline for bearish), while the Multi
+  Oscillator Adaptive Oscillator (AEO) provides precise momentum crossover
+  entry triggers on higher timeframes such as the BTC 4-hour chart.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>策略一將 MAC 四項參數均設為 200 以界定大週期趨勢方向（中線上方藍色為多頭、下方紅色為空頭），並搭配趨勢波動指標（AEO）的雙線交叉作為精準進場訊號，特別適用於比特幣（BTC）4
+  小時級別圖表。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>In Strategy 2, tuning
+  the MAC parameters to 144 pairs with the Demigod MACD Ultimate (</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;color:#1F2937'>半神</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'> MACD) indicator on the 1-hour (or 15-minute+) timeframe,
+  utilizing histogram divergence (bullish/bearish divergence) aligned with the
+  macro trend to pinpoint high-probability entries.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>策略二則將 MAC 參數調整為 144，結合「半神
+  MACD（Demigod MACD Ultimate）」能量柱背離（頂背離與底背離）捕捉順勢啟動點，適用於 1 小時及 15 分鐘以上週期。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>Finally, the presenter
+  emphasizes strict risk management—targeting an initial 1:1.5 risk-to-reward
+  ratio, scaling out 50% at Take Profit 1 while moving Stop Loss to breakeven,
+  and backtesting at least 100 trades per asset and timeframe before live
+  execution.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>最後，講者強調嚴格的風控與分批止盈紀律：初始盈虧比設定為
+  1:1.5，達標後平倉一半並將止損移至保本位，且實盤前必須針對特定交易標的與週期完成至少 100 次歷史回測驗證。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>2. Key Concepts &amp; Definitions (with Timestamps)</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>2. 知識地圖與核心概念 (附時間戳記)</span></b></p>
+
+</div>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:00:02 - 00:00:16] Adaptive Composite Algorithm (</span></b><b><span
+lang=EN-US style='color:#1B365D'>自適應複合算法</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>An advanced
+indicator logic combining Stoch RSI (</span><span lang=EN-US style='color:#1F2937'>隨機強弱指標</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>), RSI (</span><span
+lang=EN-US style='color:#1F2937'>相對強弱指標</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), MFI (</span><span
+lang=EN-US style='color:#1F2937'>資金流量指標</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), and CCI (</span><span
+lang=EN-US style='color:#1F2937'>順勢指標</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>) to filter out sideways chop and market
+noise.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>[00:00:02 - 00:00:16] 自適應複合算法 (Adaptive Composite
+Algorithm)：</span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#4B5563'>一種將 Stoch RSI（隨機強弱指標）、RSI（相對強弱指標）、MFI（資金流量指標）與 CCI（順勢指標）四種震盪指標融合的演算法，旨在多重過濾盤整行情並消除價格噪音。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:00:46 - 00:01:14] Multi Oscillator Adaptive Kernel / MAC (</span></b><b><span
+lang=EN-US style='color:#1B365D'>多震盪自適應核心指標</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>The primary
+macro-trend filter on TradingView; displays blue above the centerline during
+uptrends and red below the centerline during downtrends.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>[00:00:46 - 00:01:14] 多震盪自適應核心指標 (Multi Oscillator Adaptive
+Kernel，簡稱 MAC)：</span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#4B5563'>在 TradingView 上用於判斷大方向趨勢的核心指標；上升趨勢時位於中心線上方並顯示藍色，下降趨勢時位於中心線下方並顯示紅色。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:01:14 - 00:01:26] Multi Oscillator Adaptive Oscillator / AEO
+(</span></b><b><span lang=EN-US style='color:#1B365D'>多震盪自適應波動指標</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>A secondary
+momentum indicator in Strategy 1 that measures volatility intensity across
+bullish and bearish swings using green, red, and orange signal lines.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>[00:01:14 - 00:01:26] 多震盪自適應波動指標 (Multi Oscillator Adaptive
+Oscillator，簡稱 AEO)：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>策略一的輔助動能指標，透過綠線、紅線與橙線的交叉變化，衡量多空波段的波動程度並突顯當前趨勢方向與強度。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:01:55 - 00:02:00] Key Candlestick (</span></b><b><span
+lang=EN-US style='color:#1B365D'>關鍵</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'> K </span></b><b><span
+lang=EN-US style='color:#1B365D'>線</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>The specific
+price bar corresponding to the exact moment an entry signal is confirmed; its
+closing price serves as the trade execution trigger.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>[00:01:55 - 00:02:00] 關鍵 K 線 (Key Candlestick)：</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>指標進場訊號正式確認當下所對應的那一根
+K 線，其收盤價即為標準進場點位。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:02:31 - 00:03:09] Demigod MACD Ultimate (</span></b><b><span
+lang=EN-US style='color:#1B365D'>半神</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'> MACD </span></b><b><span
+lang=EN-US style='color:#1B365D'>指標</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>A customized
+MACD indicator (authored by Speculation Lab) using green/red histograms
+above/below the zero line to visualize trend momentum expansion, contraction,
+and divergence.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>[00:02:31 - 00:03:09] 半神 MACD 指標 (Demigod MACD Ultimate)：</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>由
+Speculation Lab 開發的改良型 MACD 指標，透過零軸上方的綠色能量柱（看漲）與零軸下方的紅色能量柱（看跌）之波峰波谷變化，判斷動能延續性與背離訊號。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:03:50 - 00:04:35] Bullish &amp; Bearish Divergence (</span></b><b><span
+lang=EN-US style='color:#1B365D'>底背離與頂背離</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>A structural
+mismatch between price action and MACD histogram peaks/troughs within an
+established macro trend, signaling high-probability trend resumption.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>[00:03:50 - 00:04:35] 底背離與頂背離 (Bullish &amp; Bearish
+Divergence)：</span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#4B5563'>在既定的大趨勢背景下，價格走勢與 MACD 能量柱波峰或波谷出現不一致的背離現象，作為順勢進場的高勝率觸發條件。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[00:04:03 - 00:04:23] ATR &amp; Breakeven Scaling Strategy (ATR </span></b><b><span
+lang=EN-US style='color:#1B365D'>止損與保本推保護策略</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Setting
+stop-loss via swing highs/lows or ATR (</span><span lang=EN-US
+style='color:#1F2937'>平均真實波幅</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>), targeting a 1:1.5 Risk-to-Reward ratio (</span><span
+lang=EN-US style='color:#1F2937'>盈虧比</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>), closing 50% at TP1, and shifting SL to
+entry price (breakeven).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>[00:04:03 - 00:04:23] ATR 止損與保本推保護策略 (ATR &amp; Breakeven
+Scaling Strategy)：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>依據波段高低點、關鍵支撐阻力或 ATR（平均真實波幅）設定止損，首個止盈目標設為 1:1.5 盈虧比，達標後平倉半數倉位並將止損上移/下移至入場價（保本），剩餘倉位博取
+1:2 以上利潤。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>3. Knowledge Structure Diagram (Text-Based Mind Map)</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>3. 知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;border:none;border-left:solid #475569 2.25pt;
+  background:#F8FAFC;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>Dual-Engine Trend
+  Trading System (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;color:#1F2937'>雙引擎順勢交易系統</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F2937'>)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>雙引擎順勢交易系統</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>├── 1. Core Trend
+  Filter: Multi Oscillator Adaptive Kernel (MAC)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>├── 1. 核心趨勢過濾器：多震盪自適應核心指標
+  (MAC)</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   ├── Fusion Engine:
+  Stoch RSI + RSI + MFI + CCI (Noise Reduction)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   ├── 四合一融合引擎：Stoch
+  RSI + RSI + MFI + CCI（過濾震盪噪音）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   └── Visual State:
+  Blue above midline (Bullish) | Red below midline (Bearish)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   └── 視覺狀態判讀：中線上方藍色（多頭趨勢）｜中線下方紅色（空頭趨勢）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>├── 2. Strategy One:
+  Macro Swing System (4H Timeframe)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>├── 2. 策略一：大週期波段交易系統（適用
+  4 小時級別）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   ├── Parameter
+  Tuning: MAC set to 200 (Low sensitivity, anti-whipsaw)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   ├── 參數設定：MAC 四項參數均設為
+  200（降低敏感度、防洗盤）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   ├── Entry Trigger:
+  AEO Indicator (Default settings)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   ├── 進場觸發器：AEO 波動指標（維持預設參數）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   │   ├── Long Rule:
+  MAC Blue + AEO Green crosses Red then Orange</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   │   ├── 做多規則：MAC 藍色區域
+  + AEO 綠線依序上穿紅線與橙線</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   │   └── Short Rule:
+  MAC Red + AEO Red crosses Green then Orange</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   │   └── 做空規則：MAC 紅色區域
+  + AEO 紅線依序穿過綠線與橙線</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>├── 3. Strategy Two:
+  Momentum Divergence System (1H / 15m+ Timeframe)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>├── 3. 策略二：動能背離順勢系統（適用
+  1 小時 / 15 分鐘以上級別）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   ├── Parameter
+  Tuning: MAC set to 144 (Balanced responsiveness)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   ├── 參數設定：MAC 四項參數均設為
+  144（兼顧靈敏度與穩定性）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   ├── Entry Trigger:
+  Demigod MACD Ultimate (Speculation Lab)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   ├── 進場觸發器：半神 MACD 指標（作者
+  Speculation Lab）</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   │   ├── Long Rule:
+  MAC Blue + MACD Bullish Divergence (</span><span lang=EN-US style='font-size:
+  10.0pt;line-height:115%;color:#1F2937'>底背離</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'>)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   │   ├── 做多規則：MAC 藍色區域
+  + 半神 MACD 出現底背離</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>│   │   └── Short Rule:
+  MAC Red + MACD Bearish Divergence (</span><span lang=EN-US style='font-size:
+  10.0pt;line-height:115%;color:#1F2937'>頂背離</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'>)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>│   │   └── 做空規則：MAC 紅色區域
+  + 半神 MACD 出現頂背離</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>└── 4. Risk Management
+  &amp; Empirical Validation (</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;color:#1F2937'>風控與實證規範</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'>)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>└── 4. 資金管理與回測驗證規範</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>    ├── Stop Loss: Swing
+  High/Low, Key S/R, or ATR (</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;color:#1F2937'>平均真實波幅</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F2937'>)</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>    ├── 止損設定：波段高低點、關鍵支撐阻力位或參考
+  ATR 指標</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>    ├── Position
+  Scaling: 50% TP at 1:1.5 R:R -&gt; Move SL to Breakeven -&gt; Trail to 1:2+</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>    ├── 倉位管理：1:1.5 盈虧比平倉一半
+  -&gt; 止損移至保本價 -&gt; 剩餘倉位博取 1:2 以上</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>    └── Verification
+  Rule: Minimum 100 backtested trades per asset &amp; timeframe</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>    └── 驗證鐵律：實戰前針對目標品種與時間週期至少回測
+  100 次交易機會</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>4. Mental Models &amp; Underlying Logic (Why &amp; How)</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>4. 底層邏輯與思維模型 (Mental Models &amp; Logic)</span></b></p>
+
+</div>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>1. Multi-Factor Consensus Filtering (</span></b><b><span
+lang=EN-US style='color:#1B365D'>多因子共識過濾模型</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'> — Why &amp; How): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Single
+momentum oscillators frequently fail in choppy markets due to false breakouts.
+By synthesizing four distinct dimensions—Stoch RSI (momentum velocity), RSI
+(price strength), MFI (volume-weighted money flow), and CCI (statistical price
+deviation)—the system requires multi-dimensional agreement before signaling a
+trend, drastically reducing false positives.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>1. 多因子共識過濾模型（Why &amp; How）：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#4B5563'>單一震盪指標在盤整區間極易產生假突破訊號。講者透過整合四種不同維度的指標——Stoch
+RSI（動能加速度）、RSI（純價格強弱）、MFI（納入成交量的資金流向）與 CCI（價格統計偏離度），要求多維度數據達成共識後才確認趨勢，從底層解決了震盪市頻繁止損的痛點。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>2. Dual-Layer Architecture: Regime Identification vs. Execution
+Timing (</span></b><b><span lang=EN-US style='color:#1B365D'>雙層架構：大勢定調與精準擇時分離</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>The presenter
+separates 'where the market is going' from 'when to pull the trigger.'
+Long-period smoothing (200 or 144) on the MAC prevents emotional overreaction
+to short-term volatility spikes, while fast oscillators (AEO crossovers or MACD
+divergences) pinpoint exact entry candles only in the direction of the dominant
+flow.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>2. 雙層架構思維：大勢定調（Regime）與精準擇時（Timing）分離：</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>講者將「判斷趨勢方向」與「尋找進場扳機」拆分為兩個獨立模組。透過將
+MAC 參數拉長至 200 或 144，使趨勢線具備高慣性、不因短期劇烈波動而頻繁翻轉；再由靈敏度較高的 AEO 交叉或半神 MACD 背離在順勢方向上捕捉精確進場點，實現「大週期定方向、小結構找買點」。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>3. Asymmetric Risk-Free Scaling Model (</span></b><b><span
+lang=EN-US style='color:#1B365D'>非對稱無風險推保護倉位模型</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Rather than
+an all-or-nothing exit, the strategy locks in guaranteed mathematical expectancy
+at a 1:1.5 risk-to-reward threshold by closing 50% of the position and shifting
+the stop-loss to breakeven. This converts the remaining 50% into a 'free trade'
+capable of capturing outsized 1:2+ trend extensions with zero principal risk.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>3. 非對稱無風險推保護倉位模型：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#4B5563'>放棄「一次性全倉止盈」的二元博弈，改採「分段收割
++ 風險歸零」機制。當行情達到 1:1.5 盈虧比時先平倉一半落袋為安，同時將止損移動至入場保本價，使剩餘半倉成為「零本金風險部位」，讓交易者能無心理壓力地持有至
+1:2 甚至更高的趨勢紅利。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>4. Sample-Size Statistical Validation (</span></b><b><span
+lang=EN-US style='color:#1B365D'>大數法則回測驗證思維</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1B365D'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Recognizing
+that indicator sensitivity varies across asset volatility profiles (e.g., BTC
+4H vs. 1H) and timeframes, the presenter mandates a minimum sample size of 100
+historical trades to verify positive expectancy before committing capital.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>4. 大數法則樣本驗證思維：</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>講者明確指出不同交易品種與時間週期的波動特性存在差異，拒絕盲目套用參數，要求學習者在特定標的與週期上至少完成
+100 次交易機會的歷史回測，以統計學大數法則驗證策略適配性。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>5. Detailed Breakdown by Core Modules (with Original Timestamps)</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>5. 詳細重點拆解（6 大核心模組與時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:8.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-size:
+11.5pt;line-height:115%;font-family:"Calibri",sans-serif;color:#0F2C59'>Module
+1: Composite Indicator Architecture &amp; Trend Filtering [00:00:00 - 00:00:36]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>模組一：四合一自適應複合指標原理與去噪邏輯
+[00:00:00 - 00:00:36]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Concept Explanation] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Combines Stoch RSI, RSI,
+MFI, and CCI via an adaptive kernel algorithm to eliminate market noise and
+filter out sideways consolidation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【概念解釋】</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>透過自適應核心演算法（Adaptive Kernel），將隨機強弱（Stoch RSI）、RSI、MFI
+與 CCI 四種指標融合，多重過濾盤整震盪並消除走勢噪音。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Steps / Workflow] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>1. Open TradingView
+indicator search bar. 2. Search for 'Multi Oscillator Adaptive Kernel' (MAC).
+3. Favorite and add to chart.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【關鍵步驟/操作流程】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>1. 開啟 TradingView 指標搜尋欄。 2. 搜尋「Multi
+Oscillator Adaptive Kernel」（簡稱 MAC）。 3. 點擊收藏並添加至主圖/副圖。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Formulas / Terminology] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Stoch RSI (</span><span
+lang=EN-US style='color:#1F2937'>隨機強弱指標</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), RSI (</span><span
+lang=EN-US style='color:#1F2937'>相對強弱指標</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), MFI (</span><span
+lang=EN-US style='color:#1F2937'>資金流量指標</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), CCI (</span><span
+lang=EN-US style='color:#1F2937'>順勢指標</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>), Multi Oscillator Adaptive Kernel (MAC).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【重要公式/專有名詞】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>Stoch RSI（隨機強弱指標）、RSI（相對強弱指標）、MFI（資金流量指標）、CCI（順勢指標）、MAC（多震盪自適應核心指標）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Common Pitfalls / Precautions] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Do not trade solely on
+single oscillator overbought/oversold signals in ranging markets; wait for
+composite alignment.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【常見誤區/注意事項】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>切勿在無明顯趨勢的盤整區間僅憑單一指標的超買超賣進場，必須等待四合一複合趨勢方向明確。</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-size:
+11.5pt;line-height:115%;font-family:"Calibri",sans-serif;color:#0F2C59'>Module
+2: Strategy 1 Setup — MAC (200) + AEO Indicator [00:00:46 - 00:01:36]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>模組二：策略一工具配置
+— MAC (200) 與 AEO 波動指標設定 [00:00:46 - 00:01:36]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Concept Explanation] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Configures MAC with a
+200-period parameter to stabilize macro trend identification, paired with AEO
+(Multi Oscillator Adaptive Oscillator) to gauge swing volatility.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【概念解釋】</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>將 MAC 四項參數均設為 200 以降低對短期劇烈波動的敏感度，並搭配 AEO（多震盪自適應波動指標）衡量多空波段強度。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Steps / Workflow] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>1. Open MAC settings and
+set all four indicator lengths to 200. 2. Verify color state: Blue above
+centerline = Uptrend; Red below centerline = Downtrend. 3. Search and add
+'Multi Oscillator Adaptive Oscillator' (AEO) and keep default parameters.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【關鍵步驟/操作流程】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>1. 打開 MAC 指標設定，將四個子指標的參數全部修改為 200。 2. 確認顏色規則：中心線上方藍色代表上升趨勢，下方紅色代表下降趨勢。
+3. 搜尋並添加「Multi Oscillator Adaptive Oscillator」（簡稱 AEO），參數維持預設不變。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Formulas / Terminology] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Centerline (</span><span
+lang=EN-US style='color:#1F2937'>中心線</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>), Parameter Smoothing = 200 (200 </span><span
+lang=EN-US style='color:#1F2937'>週期平滑參數</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), Multi Oscillator
+Adaptive Oscillator / AEO (</span><span lang=EN-US style='color:#1F2937'>多震盪自適應波動指標</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【重要公式/專有名詞】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>Centerline（中心線）、200 週期平滑參數（降低敏感度防洗盤）、AEO（多震盪自適應波動指標）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Common Pitfalls / Precautions] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Avoid changing AEO
+default parameters; altering them may desynchronize the green/red/orange
+crossover sequence.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【常見誤區/注意事項】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>請勿隨意更動 AEO 指標的預設參數，否則會破壞綠線、紅線與橙線之間的標準交叉節奏。</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-size:
+11.5pt;line-height:115%;font-family:"Calibri",sans-serif;color:#0F2C59'>Module
+3: Strategy 1 Execution Rules — Long &amp; Short Entry on 4H Chart [00:01:36 -
+00:02:31]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>模組三：策略一實戰進場規則
+— 4 小時級別多空操作流程 [00:01:36 - 00:02:31]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Concept Explanation] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Executes high-reward
+trend trades on the BTC 4-hour timeframe by waiting for steady trend
+establishment followed by sequential AEO line crossovers.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【概念解釋】</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>在比特幣（BTC）4 小時圖表上，等待趨勢平穩確立後，利用 AEO 雙線依序穿越橙線的動能爆發點進場。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Steps / Workflow] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Long Entry: (1) MAC is in
+the blue zone above centerline (ideally after a steady initial rise); (2) AEO
+green line crosses above the red line first, then crosses above the orange
+line; (3) Enter at the close of the Key Candlestick. Short Entry: (1) MAC is in
+the red zone below centerline; (2) AEO red line crosses the green line first,
+then crosses the orange line; (3) Enter at the close of the Key Candlestick.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【關鍵步驟/操作流程】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>做多規則：(1) MAC 位於中心線上方的藍色區域（最好已有一小段平穩上升走勢）；(2)
+AEO 指標的綠線先穿過紅線，再穿過橙線；(3) 於訊號確認當下的「關鍵 K 線」收盤價進場。做空規則：(1) MAC 位於中心線下方的紅色區域（已有一小段平穩下降走勢）；(2)
+AEO 指標的紅線先穿過綠線，再穿過橙線；(3) 於對應關鍵 K 線收盤價進場。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Formulas / Terminology] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>BTC 4H Timeframe (</span><span
+lang=EN-US style='color:#1F2937'>比特幣</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'> 4 </span><span lang=EN-US
+style='color:#1F2937'>小時圖表</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>), Sequential Crossover (</span><span lang=EN-US
+style='color:#1F2937'>依序交叉訊號</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>), Key Candlestick Close (</span><span lang=EN-US
+style='color:#1F2937'>關鍵</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'> K </span><span lang=EN-US style='color:#1F2937'>線收盤價</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【重要公式/專有名詞】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>BTC 4H Timeframe（比特幣 4 小時圖表）、Sequential
+Crossover（綠/紅線依序穿越橙線）、Key Candlestick Close（關鍵 K 線收盤價）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Common Pitfalls / Precautions] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Do not enter prematurely
+when the green/red line only crosses the first line; both crossovers (crossing
+the other color AND the orange line) must complete.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【常見誤區/注意事項】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>切勿在綠線（或紅線）剛穿過第一條線時搶跑進場，必須等待其完整穿過另一色線「並」穿過橙線後，才算有效訊號。</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-size:
+11.5pt;line-height:115%;font-family:"Calibri",sans-serif;color:#0F2C59'>Module
+4: Strategy 2 Setup — Demigod MACD Ultimate &amp; MAC (144) [00:02:31 -
+00:03:41]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>模組四：策略二工具配置
+— 半神 MACD 指標與 MAC (144) 參數調校 [00:02:31 - 00:03:41]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Concept Explanation] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Pairs MAC tuned to 144
+with 'Demigod MACD Ultimate' (by Speculation Lab) to capture momentum
+continuation and divergence on 1H and 15m+ charts.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【概念解釋】</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>將 MAC 參數調整為 144，並結合 Speculation Lab 開發的「半神 MACD（Demigod
+MACD Ultimate）」，適用於 1 小時及 15 分鐘以上圖表。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Steps / Workflow] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>1. Search 'Demigod MACD
+Ultimate' (author: speculation lab) on TradingView (or via creator's profile
+link) and add to chart. 2. Observe histogram mechanics: Green above zero =
+Bullish momentum; Red below zero = Bearish momentum; Taller/deeper peaks =
+Strong momentum; Shrinking peaks = Weakening momentum. 3. Change all four MAC
+parameters to 144.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【關鍵步驟/操作流程】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>1. 在 TradingView 搜尋「半神MACD Ultimate /
+Demigod MACD Ultimate」（作者：speculation lab，若搜不到可透過頻道主頁連結添加）。 2. 判讀能量柱：零軸上方綠色能量柱看漲，零軸下方紅色能量柱看跌；波峰越高/越深代表動能強勁，波峰縮小代表動量減弱。
+3. 點開 MAC 設定，將四個指標參數全部改為 144。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Formulas / Terminology] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Demigod MACD Ultimate (</span><span
+lang=EN-US style='color:#1F2937'>半神</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'> MACD </span><span lang=EN-US
+style='color:#1F2937'>指標</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>), Speculation Lab (</span><span lang=EN-US style='color:#1F2937'>投機實驗室</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>), Histogram
+Peak/Trough Expansion &amp; Contraction (</span><span lang=EN-US
+style='color:#1F2937'>能量柱波峰波谷擴張與收縮</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>), MAC Parameter = 144.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【重要公式/專有名詞】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>Demigod MACD Ultimate（半神 MACD 指標）、Speculation
+Lab（作者名稱）、Histogram Peak/Trough（能量柱波峰波谷）、MAC 參數 144。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Common Pitfalls / Precautions] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Prioritize signals with
+clean, well-defined histogram peaks and troughs; skip messy, flat, or ambiguous
+histogram fluctuations.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【常見誤區/注意事項】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>務必優先選用能量柱「波峰、波谷標準清晰」的背離訊號，過濾掉柱狀體扁平、雜亂無章的模糊訊號。</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-size:
+11.5pt;line-height:115%;font-family:"Calibri",sans-serif;color:#0F2C59'>Module
+5: Strategy 2 Execution — Trend-Aligned MACD Divergence [00:03:41 - 00:04:55]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>模組五：策略二實戰規則
+— 順勢底背離做多與頂背離做空 [00:03:41 - 00:04:55]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Concept Explanation] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Combines macro trend
+confirmation from MAC (144) with counter-pullback divergence signals on Demigod
+MACD to enter right as pullbacks exhaust.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【概念解釋】</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>以 MAC (144) 鎖定大方向，並利用半神 MACD 在回調末端出現的背離現象，精準捕捉趨勢重啟的第一時間。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Steps / Workflow] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Long Rule: (1) MAC (144)
+is in the blue zone above centerline; (2) Identify Bullish Divergence (</span><span
+lang=EN-US style='color:#1F2937'>底背離</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>) on Demigod MACD; (3) Enter at the close
+of the divergence Key Candlestick. Short Rule: (1) MAC (144) is in the red zone
+below centerline; (2) Identify Bearish Divergence (</span><span lang=EN-US
+style='color:#1F2937'>頂背離</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>) on Demigod MACD; (3) Enter at the close of the divergence Key
+Candlestick.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【關鍵步驟/操作流程】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>做多規則：(1) MAC (144) 處於中心線上方的藍色上升趨勢區；(2) 找到半神
+MACD 指標的「底背離」位置；(3) 於底背離對應的關鍵 K 線收盤價入場。做空規則：(1) MAC (144) 處於中心線下方的紅色下降趨勢區；(2) 找到半神
+MACD 指標的「頂背離」位置；(3) 於頂背離對應的關鍵 K 線收盤價入場。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Formulas / Terminology] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Trend-Aligned Divergence
+(</span><span lang=EN-US style='color:#1F2937'>順勢背離</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), Bullish Divergence (</span><span
+lang=EN-US style='color:#1F2937'>底背離</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'> — </span><span lang=EN-US
+style='color:#1F2937'>價格創新低但指標低點抬高</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>), Bearish Divergence (</span><span
+lang=EN-US style='color:#1F2937'>頂背離</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'> — </span><span lang=EN-US
+style='color:#1F2937'>價格創新高但指標高點降低</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1F2937'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【重要公式/專有名詞】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>Trend-Aligned Divergence（順勢背離）、Bullish
+Divergence（底背離）、Bearish Divergence（頂背離）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Common Pitfalls / Precautions] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Never trade MACD
+divergence against the MAC trend color (e.g., do not short a bearish divergence
+when MAC is blue).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【常見誤區/注意事項】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>嚴禁逆勢交易背離訊號（例如：當 MAC 仍處於藍色上升區時，不可僅因出現頂背離就逆勢做空），必須嚴格順應
+MAC 顏色方向。</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US style='font-size:
+11.5pt;line-height:115%;font-family:"Calibri",sans-serif;color:#0F2C59'>Module
+6: Risk Management, Scaling &amp; Backtesting Protocol [00:04:08 - 00:05:17]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'>模組六：風控止損、分批止盈推保護與百次歷史回測規範
+[00:04:08 - 00:05:17]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Concept Explanation] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Establishes structured
+stop-loss placement, two-stage take-profit scaling with breakeven protection,
+and mandatory 100-trade empirical backtesting.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【概念解釋】</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#4B5563'>建立標準化止損位置、兩段式分批止盈與保本推保護機制，並要求在實盤前完成至少 100 次交易機會的回測。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Steps / Workflow] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>1. Set Stop Loss at
+swing low/high, key support/resistance, or using ATR (Average True Range). 2.
+Set Take Profit 1 at a 1:1.5 Risk-to-Reward ratio. 3. Once TP1 hits, close 50%
+of the position and move Stop Loss to the entry price (breakeven). 4. Hold the
+remaining 50% to target 1:2 or higher. 5. Backtest at least 100 trades on your
+chosen asset and timeframe before live trading.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【關鍵步驟/操作流程】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>1. 將止損設在波段低點/高點附近、關鍵支撐/阻力位，或參考 ATR 指標設定。
+2. 初始止損與首個止盈目標的比值保持在 1:1.5 左右。 3. 價格到達 1:1.5 止盈位後，平掉一半（50%）倉位，同時將止損移動至入場價（保本位）。
+4. 剩餘一半倉位繼續持有，博取 1:2 甚至更高的盈虧比。 5. 正式使用前，務必在自己常做的交易品種與週期上回測至少 100 次交易機會。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Key Formulas / Terminology] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>ATR / Average True Range
+(</span><span lang=EN-US style='color:#1F2937'>平均真實波幅</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>), 1:1.5 Risk-to-Reward
+Ratio (1:1.5 </span><span lang=EN-US style='color:#1F2937'>盈虧比</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>), Partial
+Take Profit / Scaling Out (</span><span lang=EN-US style='color:#1F2937'>分批平倉</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>), Breakeven
+Stop Loss (</span><span lang=EN-US style='color:#1F2937'>保本止損</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>), 100-Trade
+Backtest (</span><span lang=EN-US style='color:#1F2937'>百次交易回測</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【重要公式/專有名詞】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>ATR（平均真實波幅）、1:1.5 盈虧比、Partial Take
+Profit（平調一半倉位）、Breakeven Stop Loss（止損移至入場價）、100-Trade Backtest（百次交易回測）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Common Pitfalls / Precautions] </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1F2937'>Forgetting to move the
+stop-loss to breakeven after taking 50% profit can turn a winning trade into a
+net loss if the market reverses.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>【常見誤區/注意事項】</span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#4B5563'>在達到 1:1.5 止盈並平掉半倉後，若忘記將止損移動至入場價，一旦行情反轉將導致剩餘倉位虧損、吞噬已得利潤。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>6. Actionable Implementation Checklist (Action Items)</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>6. 實操行動清單（5 項立即可執行的任務）</span></b></p>
+
+</div>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 1 — Configure TradingView Workspace: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Add 'Multi
+Oscillator Adaptive Kernel' (MAC), 'Multi Oscillator Adaptive Oscillator'
+(AEO), and 'Demigod MACD Ultimate' (by Speculation Lab) to your TradingView
+favorites and save two distinct chart templates: Template A (MAC=200 + AEO for
+4H) and Template B (MAC=144 + Demigod MACD for 1H/15m).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>行動 1 — 建立 TradingView 雙指標工作區模板：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#4B5563'>在 TradingView 中搜尋並收藏「Multi
+Oscillator Adaptive Kernel (MAC)」、「Multi Oscillator Adaptive Oscillator (AEO)」與「Demigod
+MACD Ultimate (speculation lab)」，分別儲存兩組版面模板：模板 A（MAC=200 + AEO，用於 4 小時圖）與模板 B（MAC=144
++ 半神 MACD，用於 1 小時/15 分鐘圖）。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 2 — Define Strict Pre-Entry Visual Filters: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Create a
+pre-trade checklist requiring that (a) MAC clearly sits in the blue/red zone
+after an initial steady move, and (b) AEO completes both line crossovers OR
+Demigod MACD exhibits clean, unmistakable histogram peaks/troughs before
+placing any order.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>行動 2 — 制定進場前視覺過濾檢查表：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#4B5563'>建立下單前核對清單，強制確認：(a) MAC 已在藍色或紅色區域走出一小段平穩趨勢；(b)
+AEO 已完整達成雙重交叉，或半神 MACD 能量柱呈現波峰波谷標準清晰的背離結構，未達標絕不提前進場。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 3 — Automate Two-Stage Order Execution: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>When entering
+at the Key Candlestick close, immediately place your Stop Loss (via swing point
+or ATR) and set a limit order for 50% position size at 1:1.5 Risk-to-Reward,
+setting an alert to move your Stop Loss to breakeven upon TP1 fill.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>行動 3 — 設定兩段式止盈與保本鬧鐘機制：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#4B5563'>在關鍵 K 線收盤進場的同時，立即依據波段高低點或
+ATR 掛好止損單，並在 1:1.5 盈虧比位置預掛 50% 倉位的限價止盈單；同時設定價格警報，一旦第一目標成交，立即將止損移至入場保本價。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 4 — Execute a 100-Trade Historical Backtest Log: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Select your
+primary trading instrument (e.g., BTCUSDT) and preferred timeframe (4H or 1H),
+then manually replay and log at least 100 historical signals in a spreadsheet
+to record win rate, average R:R, and parameter suitability.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>行動 4 — 完成 100 次歷史回測數據紀錄：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#4B5563'>選定你最常交易的標的（如 BTCUSDT）與目標週期（4
+小時或 1 小時），使用 TradingView 回放功能逐根測試並記錄至少 100 次完整交易訊號，統計實際勝率與盈虧比表現。</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>Action 5 — Conduct Cross-Timeframe Sensitivity Calibration: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1F2937'>Compare
+performance between the 200-parameter setting on 4H charts and the
+144-parameter setting on 1H/15m charts across your backtest log to determine
+which timeframe yields cleaner trend continuations for your specific asset.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#2B547E'>行動 5 — 進行跨週期參數適配性校準：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#4B5563'>對比回測紀錄中「4 小時週期 + MAC
+200」與「1 小時/15 分鐘週期 + MAC 144」的表現差異，找出最適合該交易品種波動特性的時間週期組合後再投入實盤。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>7. Self-Assessment Quiz &amp; Review</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>7. 觀念自我檢測 (Quiz &amp; Review)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Question] </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>Q1 (Multiple Choice): Which four technical oscillators are
+merged inside the Multi Oscillator Adaptive Kernel (MAC) to filter out sideways
+market noise?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>【測驗題】</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>題目 1（單選題）：多震盪自適應核心指標（MAC）融合了哪四種技術指標，以多重過濾震盪行情並消除走勢噪音？</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>A) MACD, Bollinger Bands, EMA, ATR   |   B) Stoch RSI, RSI, MFI,
+CCI   |   C) KDJ, OBV, VWAP, Ichimoku   |   D) Parabolic SAR, ADX, Williams %R,
+Momentum</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#4B5563'>A) MACD、布林通道、EMA、ATR   ｜   B) Stoch RSI、RSI、MFI、CCI   ｜   C) KDJ、OBV、VWAP、一目均衡表  
+｜   D) 拋物線轉向、ADX、威廉指標、動量指標</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Question] </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>Q2 (Multiple Choice): In Strategy 1 (4H timeframe), what are the
+exact MAC parameter settings and AEO crossover conditions required for a valid
+LONG entry?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>【測驗題】</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>題目 2（單選題）：在策略一（4
+小時圖表）中，有效「做多」進場所需的 MAC 參數設定與 AEO 交叉條件為何？</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>A) MAC set to 144 (red zone); AEO red line crosses green then
+orange.   |   B) MAC set to 200 (blue zone); AEO green line crosses red first,
+then orange.   |   C) MAC set to 200 (blue zone); AEO orange line crosses green
+then red.   |   D) MAC set to 50 (blue zone); AEO green line crosses zero line.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#4B5563'>A) MAC 設為 144（紅色區域）；AEO 紅線先穿綠線再穿橙線。   ｜   B) MAC 設為 200（藍色區域）；AEO
+綠線先穿過紅線，再穿過橙線。   ｜   C) MAC 設為 200（藍色區域）；AEO 橙線先穿綠線再穿紅線。   ｜   D) MAC 設為 50（藍色區域）；AEO
+綠線穿過零軸。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Question] </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>Q3 (Multiple Choice): When combining MAC with the Demigod MACD
+Ultimate indicator in Strategy 2, what parameter value is assigned to the four
+MAC inputs, and which chart timeframes are recommended?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>【測驗題】</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>題目 3（單選題）：在策略二中將
+MAC 與半神 MACD 指標結合使用時，MAC 的四個指標參數應設為多少？且最適合哪些時間週期？</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>A) Parameter 200; Daily and Weekly charts only.   |   B)
+Parameter 100; 1-minute and 5-minute scalping charts.   |   C) Parameter 144;
+1-hour chart (and applicable to 15-minute+ charts).   |   D) Parameter 21;
+4-hour chart only.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#4B5563'>A) 參數設為 200；僅限日線與週線圖表。   ｜   B) 參數設為 100；1 分鐘與 5 分鐘超短線圖表。   ｜  
+C) 參數設為 144；1 小時級別效果極佳（15 分鐘以上圖表皆適用）。   ｜   D) 參數設為 21；僅限 4 小時圖表。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Question] </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>Q4 (Analytical Reflection): Explain the two-stage risk
+management and position-scaling protocol recommended after entering at the Key
+Candlestick close. Why is moving the stop-loss to the entry price critical?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>【測驗題】</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>題目 4（思考題）：請簡述在關鍵
+K 線收盤價入場後，講者建議的兩段式風控與倉位管理流程為何？為什麼達到首個止盈目標後必須將止損移動至入場價？</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>Write your brief analysis before checking the answer key below.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#4B5563'>請先自行整理操作步驟與風控邏輯，再核對下方解答。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1B365D'>[Question] </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>Q5 (Analytical Reflection): According to the presenter, why must
+a trader backtest at least 100 trade opportunities on a specific asset and
+timeframe before live execution?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#2B547E'>【測驗題】</span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#4B5563'>題目 5（思考題）：根據講者的觀點，為什麼交易者在正式實盤使用這兩套策略前，必須在自己常做的交易品種與週期上回測至少
+100 次交易機會？</span></p>
+
+<p class=MsoListBullet style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:18.0pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1F2937'>Write your brief explanation before checking the answer key
+below.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#4B5563'>請先思考不同標的與週期的市場特性差異，再核對下方解答。</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'>Answer Key (Concealed on Separate Page for Self-Review)</span></b></p>
+
+<div style='border:none;border-bottom:solid #2B547E 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;color:#2B547E'>自我檢測參考解答（獨立分頁隱蔽區，作答完畢後檢視）</span></b></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;border:none;border-left:solid #0F2C59 2.25pt;
+  background:#F1F5F9;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>Q1 Answer: B — Stoch
+  RSI, RSI, MFI, and CCI.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>題目 1 解答：B — 隨機強弱（Stoch
+  RSI）、RSI、MFI 與 CCI 四種指標。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>Q2 Answer: B — MAC
+  parameters are set to 200 (blue zone above centerline), and the AEO green
+  line must cross the red line first and then cross the orange line.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>題目 2 解答：B — MAC 四項參數均設為
+  200（位於中心線上方的藍色區域），且 AEO 指標的綠線需先穿過紅線、再穿過橙線，於關鍵 K 線收盤價入場。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>Q3 Answer: C — All four
+  MAC parameters are set to 144; the strategy performs particularly well on the
+  1-hour chart and is applicable to all timeframes of 15 minutes and above.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>題目 3 解答：C — MAC 四項參數均設為
+  144；該策略在比特幣 1 小時級別效果極佳，且 15 分鐘以上圖表皆適用。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>Q4 Answer: Set initial
+  Stop Loss at swing high/low, key S/R, or via ATR, targeting a 1:1.5 Risk-to-Reward
+  ratio. Once 1:1.5 is reached, close 50% of the position and move the Stop
+  Loss to the entry price (breakeven), letting the remaining 50% run to 1:2 or
+  higher. Moving SL to breakeven eliminates principal loss risk on the
+  remaining position while locking in realized profit.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>題目 4 解答：初始止損設於波段高低點、關鍵支撐/阻力位或參考
+  ATR，並將首個止盈目標設為 1:1.5 盈虧比。達標後平倉一半（50%）鎖定利潤，同時將止損上移/下移至入場價（保本位），剩餘半倉博取 1:2 以上收益。此舉能確保剩餘倉位在零本金風險下追蹤大趨勢，避免行情反轉侵蝕已獲利潤。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F2937'>Q5 Answer: Different
+  trading instruments and timeframes exhibit distinct volatility structures and
+  trend persistence; backtesting at least 100 trades provides a statistically
+  valid sample to verify win rate and calibrate the optimal asset-timeframe
+  pairing before risking live capital.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#4B5563'>題目 5 解答：因為不同的交易品種（幣種/商品）甚至不同的時間週期，其波動率與指標訊號表現皆存在顯著差異；透過至少
+  100 次交易機會的歷史回測，能以足夠的統計樣本驗證該標的與週期是否適配此策略，做到「找好標的、用對策略」。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

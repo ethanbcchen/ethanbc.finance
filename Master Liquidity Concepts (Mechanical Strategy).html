@@ -1,0 +1,1334 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#2B2B2B;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;background:#1E3A5F;padding:
+  9.0pt 11.0pt 9.0pt 11.0pt'>
+  <p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+  style='font-size:15.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:white'>DEEP STUDY NOTES: MASTER LIQUIDITY CONCEPTS (MECHANICAL
+  STRATEGY)</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-US
+  style='font-size:14.0pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#D9E2EC'>深度學習筆記：精通流動性概念（機械化交易策略）</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F243E'>1. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#0F243E'>核心總結</span></b></p>
+
+</div>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;border:none;border-left:solid #1E3A5F 3.0pt;
+  background:#F0F4F8;padding:6.0pt 8.0pt 6.0pt 9.0pt'>
+  <p class=MsoNormal style='margin-bottom:2.0pt'><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1E3A5F'>This tutorial deconstructs institutional Liquidity concepts
+  into a repeatable, mechanical trading framework rather than discretionary
+  chart drawings. The core premise is that institutional players ('Big Money')
+  require massive opposing resting orders to fill large positions with minimal
+  slippage. By integrating a top-down multi-timeframe structure (HTF for market
+  phase, MTF for immediate directional bias and POI selection, and LTF for
+  execution), traders can filter high-probability Supply and Demand zones.
+  Specifically, valid zones must either form via a historical Liquidity Sweep
+  (proving institutional involvement) or possess clear Liquidity Inducement (to
+  the left or right) ahead of the Point of Interest (POI) to fuel the next
+  move. Finally, evaluating High vs. Low Resistance Liquidity enables traders
+  to anticipate pullback depth and execute systematically using three distinct
+  mechanical entry models.</span></p>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>本教學將機構「流動性</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> (Liquidity)</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>」概念拆解為可重複執行的機械化交易框架，摒棄主觀隨意的圖表畫線。其核心前提在於：機構大資金（</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'>Big Money</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>）必須仰賴龐大的反向掛單來撮合大額倉位，藉此將滑點（</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'>Slippage</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>）降至最低。透過由上而下的多時間週期結構（高時間週期</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> HTF </span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>判別市場階段、中時間週期</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> MTF </span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>確立日內方向與興趣點</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> POI</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>、低時間週期</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> LTF </span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>執行進場），交易者能精準過濾高勝率供需區（</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'>Supply &amp; Demand
+  Zones</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+  font-family:"MS Mincho",serif'>）。具體而言，高機率區域必須具備歷史「流動性獵取</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> (Liquidity Sweep)</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>」作為機構介入證據，或在</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> POI </span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>前方（左側或右側）累積明確的「流動性誘導</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> (Inducement)</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>」以提供推進動能。最後，透過評估高阻與低阻流動性，交易者可預判回調深度，並運用三種機械化進場模型嚴格執行交易。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F243E'>2. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#0F243E'>知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:01:46] Multi-Timeframe (MTF) Hierarchy**: Higher Timeframe
+(HTF) identifies pro-trend run vs. pullback phases; Medium Timeframe (MTF)
+defines immediate directional bias and Points of Interest (POIs); Lower
+Timeframe (LTF) refines execution.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>多時間週期階層架構</span><span
+lang=EN-US>**</span><span lang=EN-US style='font-family:"MS Mincho",serif'>：高時間週期</span><span
+lang=EN-US> (HTF) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>用於判斷順勢推進或回調階段；中時間週期</span><span
+lang=EN-US> (MTF) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>確立即時方向偏見與興趣點</span><span
+lang=EN-US> (POI)</span><span lang=EN-US style='font-family:"MS Mincho",serif'>；低時間週期</span><span
+lang=EN-US> (LTF) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>則負責精細化進場執行。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:03:24] Liquidity &amp; Slippage**: Liquidity is the volume
+of resting supply and demand at each price level. Institutions require massive
+opposing liquidity to execute large orders without suffering severe slippage.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>流動性與滑點</span><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>：流動性是指各價格水平上掛單的供需總量。機構大資金需要龐大的反向流動性來撮合大額訂單，以避免產生嚴重的價格滑點</span><span
+lang=EN-US> (Slippage)</span><span lang=EN-US style='font-family:"MS Mincho",serif'>。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:06:07] Buy-Side Liquidity (BSL) &amp; Sell-Side Liquidity
+(SSL)**: Buy-Side Liquidity (BSL) rests above structural highs (short
+stop-losses and breakout buy orders), while Sell-Side Liquidity (SSL) rests
+below structural lows (long stop-losses and breakdown sell orders).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>買方流動性</span><span lang=EN-US>
+(BSL) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>與賣方流動性</span><span
+lang=EN-US> (SSL)**</span><span lang=EN-US style='font-family:"MS Mincho",serif'>：買方流動性</span><span
+lang=EN-US> (BSL) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>位於結構高點上方（空單止損與突破買單），而賣方流動性</span><span
+lang=EN-US> (SSL) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>則位於結構低點下方（多單止損與跌破賣單）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:06:21] Liquidity Inducement**: Chart patterns (such as
+equal highs/lows or minor structure breaks) that persuade retail traders to
+enter early, thereby generating resting opposing liquidity in front of an
+institutional POI.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>流動性誘導</span><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>：誘使散戶過早進場的圖表型態（如等高</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>等低點或次級結構突破），藉此在機構興趣點</span><span
+lang=EN-US> (POI) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>前方累積可供大資金吸收的反向流動性。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:08:52] Liquidity Sweep Zones**: Supply or demand zones
+created immediately after sweeping a prior high or low, serving as historical
+proof that institutional capital absorbed opposing orders at that origin.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>流動性獵取區域</span><span
+lang=EN-US>**</span><span lang=EN-US style='font-family:"MS Mincho",serif'>：在獵取（掃蕩）前期高點或低點後立即形成的供需區域，作為機構資金曾在此處吸收反向訂單、強勢介入的歷史證據。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:13:33] Left-Side vs. Right-Side Inducement**: Available
+liquidity located either in the prior impulse leg to the left of a POI or built
+during the corrective pullback to the right of a POI; if neither exists, the POI
+itself becomes the liquidity target.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>左側誘導與右側誘導</span><span
+lang=EN-US>**</span><span lang=EN-US style='font-family:"MS Mincho",serif'>：位於</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>左側前波推進腿中的既有流動性，或是在</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>右側回調過程中新建的流動性；若左右兩側皆無流動性，該</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>本身就會成為被獵取的目標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:16:03] Three Mechanical Entry Models**: Model 1: Limit
+order at refined POI after inducement sweep; Model 2: Trailing candles after
+liquidity sweep; Model 3: Waiting for an LTF Market Structure Shift (MSS) and
+entering on the pullback.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>三種機械化進場模型</span><span
+lang=EN-US>**</span><span lang=EN-US style='font-family:"MS Mincho",serif'>：模型一：誘導被獵取後在精煉</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>掛限價單；模型二：流動性獵取後逐根追蹤</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"MS Mincho",serif'>線進場；模型三：等待低週期市場結構轉變</span><span
+lang=EN-US> (MSS) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>後於回調時進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>**[00:18:03] High vs. Low Resistance Liquidity**: Corrective
+pullbacks leaving multiple un-swept lows/highs create Low Resistance Liquidity
+(shallow pullbacks), whereas a strong sweep at the swing extreme signals
+institutional reversal and a deep pullback.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt'><span lang=EN-US>**</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>高阻力與低阻力流動性</span><span
+lang=EN-US>**</span><span lang=EN-US style='font-family:"MS Mincho",serif'>：修正性回調若留下多個未被掃蕩的高低點，會形成「低阻力流動性」（預示淺回調）；反之，波段極值若發生強力獵取，則預示機構介入並將引發深度回調。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>3. Knowledge Architecture (Text-Based Mind Map)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F243E'>3. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#0F243E'>知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Master Liquidity Strategy (Mechanical Framework)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>精通流動性策略（機械化交易框架）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>├── 1. Top-Down Strategy Foundation [00:01:15]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt'><b><span lang=EN-US>├── 1. </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>由上而下策略地基</span><span lang=EN-US>
+[00:01:15]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   ├── HTF: Identify Pro-Trend Run vs. Pullback Phase</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>高時間週期</span><span lang=EN-US> (HTF)</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>：判別順勢推進階段或回調階段</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   ├── MTF: Establish Immediate Directional Bias &amp; Select
+POIs</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>中時間週期</span><span lang=EN-US> (MTF)</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>：確立即時方向偏見並篩選興趣點</span><span
+lang=EN-US> (POI)</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   └── LTF: Refine Zones &amp; Execute Mechanical Entries</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>低時間週期</span><span lang=EN-US> (LTF)</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>：精煉區域並執行機械化進場</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>├── 2. Core Mechanics of Liquidity [00:03:24]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt'><b><span lang=EN-US>├── 2. </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>流動性運作底層機制</span><span lang=EN-US>
+[00:03:24]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   ├── Institutional Need: Minimize Slippage via Opposing
+Orders</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>機構核心需求：透過反向掛單將大額交易滑點降至最低</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   └── Structural Pools: BSL (Above Highs) &amp; SSL (Below Lows)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>結構性流動性池：買方流動性</span><span lang=EN-US> BSL</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（高點上方）與賣方流動性</span><span
+lang=EN-US> SSL</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（低點下方）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>├── 3. Dual-Time Liquidity Application [00:08:21]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt'><b><span lang=EN-US>├── 3. </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>流動性雙向時間維度應用</span><span lang=EN-US>
+[00:08:21]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   ├── Past Evidence (Liquidity Sweep Zones): Zones formed by
+sweeping prior liquidity</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>過去證據（流動性獵取區）：透過掃蕩前期流動性而誕生的有效供需區</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   └── Future Fuel (Inducement): Left-leg liquidity OR
+Right-pullback liquidity before POI</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>未來燃料（流動性誘導）：</span><span lang=EN-US>POI </span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>前方左側推進腿或右側回調中累積的流動性</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>├── 4. Execution &amp; Pullback Depth [00:15:53]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt'><b><span lang=EN-US>├── 4. </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>進場執行與回調深度預判</span><span lang=EN-US>
+[00:15:53]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   ├── Entry Models: Model 1 (Limit), Model 2 (Candle Trail),
+Model 3 (LTF MSS)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>三大進場模型：模型一（限價單）、模型二（追蹤</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"MS Mincho",serif'>線）、模型三（</span><span
+lang=EN-US>LTF </span><span lang=EN-US style='font-family:"MS Mincho",serif'>結構轉變）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>│   └── Resistance Liquidity: Un-swept corrective swings
+(Shallow) vs. Extreme sweep (Deep)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>│   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>阻力流動性判別：未掃蕩修正波段（淺回調）</span><span
+lang=EN-US>vs. </span><span lang=EN-US style='font-family:"MS Mincho",serif'>極值強力掃蕩（深回調）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>└── 5. Complete Liquidity Cycle [00:21:06]</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt'><b><span lang=EN-US>└── 5. </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>完整進階流動性循環</span><span lang=EN-US>
+[00:21:06]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>    └── Inducement -&gt; Sweep into Extreme POI -&gt; MSS -&gt;
+Target Opposing Liquidity</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt'><span lang=EN-US>    └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>誘導形成</span><span lang=EN-US> -&gt; </span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>獵取並觸及極值</span><span
+lang=EN-US> POI -&gt; </span><span lang=EN-US style='font-family:"MS Mincho",serif'>結構轉變</span><span
+lang=EN-US> -&gt; </span><span lang=EN-US style='font-family:"MS Mincho",serif'>瞄準對向流動性目標</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>4. Mental Models &amp; Underlying Logic (Why &amp; How)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F243E'>4. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#0F243E'>底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1. Order-Matching &amp; Slippage Constraint Model (Why
+Institutions Hunt Stops)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>1. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>訂單撮合與滑點限制模型（為何機構必須獵取止損）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Every buy order requires an equal and opposite sell order.
+Because institutions deploy massive capital, entering in an illiquid area
+causes severe slippage. Therefore, 'Big Money' engineers or waits for retail
+stop-losses and breakout orders (Liquidity Pools) to accumulate at obvious
+highs/lows so they can execute large positions at optimal prices.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>每一筆買單都必須有等量的賣單撮合。由於機構部署的資金極為龐大，在缺乏流動性的區域進場會導致嚴重滑點。因此，大資金必須等待或誘導散戶在明顯的高低點累積止損單與突破單（流動性池），藉此在理想價位完成大額建倉。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>2. The 'Fuel vs. Target' Zone Validation Logic (How to Avoid
+Liquidity Traps)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>2. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>「燃料</span><span lang=EN-US>
+vs. </span></b><b><span lang=EN-US style='font-family:"MS Mincho",serif'>目標」區域驗證邏輯（如何避開流動性陷阱）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Before trading any Point of Interest (POI), ask: 'Where is the
+available liquidity?' If liquidity exists to the left (prior leg) or to the
+right (pullback) in front of the POI, that liquidity acts as FUEL for the POI
+to hold. If NO liquidity exists in front of the POI, the POI itself becomes the
+TARGET and will likely be swept to fuel a deeper extreme zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>在交易任何興趣點</span><span
+lang=EN-US> (POI) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>之前，必須先問：「可用的流動性在哪裡？」若</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>前方的左側（前波段）或右側（回調中）存在流動性，該流動性將成為支撐</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>生效的「燃料」；若</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>前方完全沒有流動性，則該</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>本身就會成為被獵取的「目標」，價格將貫穿它以觸發更深層的極值區。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>3. Confluence Portfolio &amp; Mechanical Rule-Set (Eliminating
+Discretionary Bias)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>3. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>多重共振組合與機械化規則集（消除主觀偏見）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Liquidity is never traded in isolation; it acts as a timing and
+refinement filter layered on top of Market Structure (Direction) and
+Supply/Demand (Location). Traders must define strict mechanical rules (e.g.,
+exact proximity of inducement, valid timeframes, invalidation criteria) because
+consistent actions yield consistent results.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>流動性絕不能單獨使用，它必須疊加在「市場結構（決定方向）」與「供需區域（決定位置）」之上，作為進場時機與區域精煉的過濾器。交易者必須制定嚴格的機械化規則（如誘導距離</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>的精確範圍、適用週期與失效條件），因為唯有「一致的行動」才能帶來「一致的結果」。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>5. Detailed Key Breakdown (6 Core Modules)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F243E'>5. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#0F243E'>詳細重點拆解（六大核心模組）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Module 1: Top-Down Multi-Timeframe Strategy Framework [00:01:15
+- 00:03:24]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>模組一：由上而下的多時間週期策略框架</span><span
+lang=EN-US> [00:01:15 - 00:03:24]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>A three-tier timeframe system that separates market phase
+identification, directional bias/zone selection, and execution timing to align
+trades with institutional order flow.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【概念解釋】透過三層時間週期系統，將「市場階段判別」、「方向偏見與區域篩選」以及「進場時機精煉」徹底分離，確保交易順應機構資金流向。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1) Check Higher Timeframe (HTF) to determine if price is in a
+pro-trend run or a pullback phase. 2) Use Medium Timeframe (MTF, e.g., M15) to
+confirm immediate directional bias and mark Supply/Demand POIs. 3) Drop to
+Lower Timeframe (LTF, e.g., M5) to apply liquidity rules for refined entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【關鍵步驟】</span><span
+lang=EN-US>1) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>觀察高時間週期</span><span
+lang=EN-US> (HTF)</span><span lang=EN-US style='font-family:"MS Mincho",serif'>，判斷當前處於順勢推進階段或回調階段。</span><span
+lang=EN-US>2) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>利用中時間週期</span><span
+lang=EN-US> (MTF</span><span lang=EN-US style='font-family:"MS Mincho",serif'>，如</span><span
+lang=EN-US> M15) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>確認即時方向偏見並標記供需</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>。</span><span
+lang=EN-US>3) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>切換至低時間週期</span><span
+lang=EN-US> (LTF</span><span lang=EN-US style='font-family:"MS Mincho",serif'>，如</span><span
+lang=EN-US> M5) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>運用流動性規則精煉進場點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Terms</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Pro-Trend Run (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>順勢推進</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>), Pullback Phase (</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1E3A5F'>回調階段</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A5F'>), Point of Interest / POI (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3A5F'>興趣點</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>),
+Directional Bias (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>方向偏見</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【重要專有名詞】</span><span
+lang=EN-US>Pro-Trend Run</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（順勢推進階段）、</span><span
+lang=EN-US>Pullback Phase</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（回調階段）、</span><span
+lang=EN-US>Point of Interest / POI</span><span lang=EN-US style='font-family:
+"MS Mincho",serif'>（興趣點</span><span lang=EN-US>/</span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>關鍵供需區）、</span><span lang=EN-US>Directional
+Bias</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（方向偏見）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Drawing liquidity lines randomly across every swing on a single
+timeframe without anchoring to HTF/MTF market structure.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【常見誤區】未先錨定高、中時間週期的市場結構，就在單一圖表上隨意畫滿各種流動性線條，導致分析充滿主觀性而無法執行。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Module 2: Liquidity Mechanics &amp; Inducement Generation
+[00:03:24 - 00:08:21]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>模組二：流動性本質與誘導生成機制</span><span lang=EN-US>
+[00:03:24 - 00:08:21]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Liquidity represents resting orders at specific price levels.
+Inducement occurs when deceptive price patterns lure retail traders into
+placing stops and breakout orders right where institutions need opposing
+liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【概念解釋】流動性代表特定價位上的掛單量。當具欺騙性的價格型態誘使散戶進場，並將止損單與突破單集中在機構需要反向撮合的位置時，即形成「流動性誘導」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1) Identify structural highs (Buy-Side Liquidity / BSL) and
+structural lows (Sell-Side Liquidity / SSL). 2) Spot inducement patterns such
+as equal highs/lows (double tops/bottoms) or minor structure breaks forming
+directly in front of your POI. 3) Wait for institutions to sweep that
+inducement before considering an entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【關鍵步驟】</span><span
+lang=EN-US>1) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>辨識結構高點（買方流動性</span><span
+lang=EN-US> BSL</span><span lang=EN-US style='font-family:"MS Mincho",serif'>）與結構低點（賣方流動性</span><span
+lang=EN-US> SSL</span><span lang=EN-US style='font-family:"MS Mincho",serif'>）。</span><span
+lang=EN-US>2) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>尋找在</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>前方形成的誘導型態，例如等高</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>等低點（雙頂</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>雙底）或次級結構突破。</span><span
+lang=EN-US>3) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>等待機構掃蕩該誘導流動性後再考慮進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Terms</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Slippage (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>滑點</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>), Buy-Side Liquidity / BSL (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3A5F'>買方流動性</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>), Sell-Side
+Liquidity / SSL (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>賣方流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>), Inducement (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>流動性誘導</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【重要專有名詞】</span><span
+lang=EN-US>Slippage</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（滑點）、</span><span
+lang=EN-US>Buy-Side Liquidity / BSL</span><span lang=EN-US style='font-family:
+"MS Mincho",serif'>（買方流動性）、</span><span lang=EN-US>Sell-Side Liquidity / SSL</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（賣方流動性）、</span><span
+lang=EN-US>Inducement</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（流動性誘導）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Buying support at a double bottom or selling resistance at a
+double top directly in front of an unmitigated institutional POI, becoming the
+liquidity yourself.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【常見誤區】在尚未測試的機構</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>前方，直接於雙底支撐做多或雙頂阻力做空，結果讓自己的止損單成為機構建倉的流動性燃料。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Module 3: Historical Validation via Liquidity Sweep Zones
+[00:08:21 - 00:11:10]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>模組三：透過「流動性獵取區」驗證歷史機構介入</span><span
+lang=EN-US> [00:08:21 - 00:11:10]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Looking backward in price action, a Supply or Demand zone that
+swept prior liquidity during its creation provides strong evidence of
+institutional backing.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【概念解釋】從歷史價格行為回顧，若某個供給區或需求區在「誕生過程中」曾掃蕩過前期高</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>低點的流動性，這便是有力的證據，證明該區域背後有機構資金撐腰。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1) Inspect candidate MTF/LTF Supply or Demand zones. 2) Verify
+whether the candle formation that created the zone first took out a prior swing
+low (for demand) or swing high (for supply). 3) Prioritize sweep-backed zones
+over non-sweep zones when selecting POIs.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【關鍵步驟】</span><span
+lang=EN-US>1) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>檢視候選的</span><span
+lang=EN-US> MTF/LTF </span><span lang=EN-US style='font-family:"MS Mincho",serif'>供給區或需求區。</span><span
+lang=EN-US>2) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>驗證形成該區域的</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"MS Mincho",serif'>線結構是否先獵取了前期波段低點（需求區）或波段高點（供給區）。</span><span
+lang=EN-US>3) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>篩選</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>時，優先選擇具備流動性獵取背景的區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Terms</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Liquidity Sweep Zone (</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1E3A5F'>流動性獵取區域</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3A5F'>), Strong Low / Strong
+High (</span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3A5F'>強勢低點</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>/</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3A5F'>強勢高點</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>),
+Supply-to-Demand Flip (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>供需轉換</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【重要專有名詞】</span><span
+lang=EN-US>Liquidity Sweep Zone</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（流動性獵取區域）、</span><span
+lang=EN-US>Strong Low / Strong High</span><span lang=EN-US style='font-family:
+"MS Mincho",serif'>（強勢低點</span><span lang=EN-US>/</span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>強勢高點）、</span><span lang=EN-US>Supply-to-Demand
+Flip</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（供需轉換）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Treating all order blocks or supply/demand zones as equal
+without checking whether they actually absorbed opposing liquidity upon
+creation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【常見誤區】將所有訂單塊或供需區域一視同仁，未檢查該區域在形成時是否真正吸收了反向流動性。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Module 4: Future Filtering — Left vs. Right Inducement Rules
+[00:11:10 - 00:15:53]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>模組四：未來區域過濾</span><span lang=EN-US>——</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>左側與右側誘導判別法則</span><span
+lang=EN-US> [00:11:10 - 00:15:53]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Looking forward, a POI requires resting liquidity in front of it
+to hold. This liquidity must exist either in the prior impulse leg (Left) or be
+constructed during the pullback (Right).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【概念解釋】展望未來走勢，一個</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>要能成功支撐或壓制價格，其前方必須有可用流動性。這些流動性必須存在於前波推進腿（左側）中，或是在回調過程（右側）中建立。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1) Check the impulse leg to the left of your POI for structural
+highs/lows. 2) If the push was a straight line (no left liquidity), wait for
+the pullback on the right to build structural inducement (e.g., equal
+highs/lows or minor BOS) before price reaches the POI. 3) If neither left nor
+right liquidity exists, skip the first POI and anticipate it being swept into
+the Extreme POI.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【關鍵步驟】</span><span
+lang=EN-US>1) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>檢查</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>左側的推進腿是否留有結構高低點。</span><span
+lang=EN-US>2) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>若前波為直線推進（無左側流動性），則必須等待右側回調過程中建立結構性誘導（如等高低點或次級突破）後再觸及</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>。</span><span
+lang=EN-US>3) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>若左右兩側皆無流動性，果斷放棄第一個</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>，預判它將被掃蕩並轉向極值</span><span
+lang=EN-US> POI (Extreme POI)</span><span lang=EN-US style='font-family:"MS Mincho",serif'>。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Terms</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Straight Push (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>直線推進</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>無流動性腿</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>), Extreme POI (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>極值興趣點</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>), Mechanical Proximity Rule (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3A5F'>機械化距離規則</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【重要專有名詞】</span><span
+lang=EN-US>Straight Push</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（直線推進腿）、</span><span
+lang=EN-US>Extreme POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（極值興趣點）、</span><span
+lang=EN-US>Mechanical Proximity Rule</span><span lang=EN-US style='font-family:
+"MS Mincho",serif'>（機械化距離規則）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Entering on the first unmitigated zone after a straight
+impulsive move when no inducement has been built, getting stopped out as price
+sweeps the zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【常見誤區】在價格直線推進後、完全沒有建立任何誘導的情況下，盲目在第一個供需區掛單進場，結果直接成為機構掃損的犧牲品。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Module 5: Three Mechanical Entry Models [00:15:53 - 00:18:03]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>模組五：三種機械化進場模型</span><span lang=EN-US>
+[00:15:53 - 00:18:03]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Three standardized execution protocols balancing Risk-to-Reward
+(R:R) against confirmation certainty once price sweeps inducement into a valid
+POI.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【概念解釋】當價格掃蕩誘導並進入有效</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>後，提供三種標準化執行協議，讓交易者在「高盈虧比</span><span
+lang=EN-US> (R:R)</span><span lang=EN-US style='font-family:"MS Mincho",serif'>」與「高確認度」之間做出機械化抉擇。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Model 1 (Aggressive Limit): Place a limit order directly on the
+refined POI once inducement is established, maximizing R:R. Model 2 (Candle
+Trailing): Wait for the inducement sweep, then trail candle highs/lows
+mechanically to enter as momentum shifts. Model 3 (Conservative MSS): Wait for
+a clear LTF Market Structure Shift (MSS) after the sweep, then enter on the
+pullback (using extreme demand/supply or Fibonacci 0.618).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【關鍵步驟】模型一（激進限價單）：確認誘導存在後，直接在精煉</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>掛限價單，追求最大盈虧比。模型二（</span><span
+lang=EN-US>K </span><span lang=EN-US style='font-family:"MS Mincho",serif'>線追蹤進場）：等待誘導被掃蕩後，按機械規則逐根追蹤</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"MS Mincho",serif'>線高低點突破進場。模型三（保守結構轉變）：等待掃蕩後出現明確的</span><span
+lang=EN-US> LTF </span><span lang=EN-US style='font-family:"MS Mincho",serif'>市場結構轉變</span><span
+lang=EN-US> (MSS)</span><span lang=EN-US style='font-family:"MS Mincho",serif'>，再於回調時（如極值區或斐波那契</span><span
+lang=EN-US> 0.618</span><span lang=EN-US style='font-family:"MS Mincho",serif'>）進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Terms</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Risk-to-Reward Ratio / R:R (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3A5F'>盈虧比</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3A5F'>), Candle Trailing (K</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3A5F'>線追蹤</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>), Market
+Structure Shift / MSS (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>市場結構轉變</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>), Fibonacci Retracement (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3A5F'>斐波那契回撤</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【重要專有名詞】</span><span
+lang=EN-US>Risk-to-Reward Ratio / R:R</span><span lang=EN-US style='font-family:
+"MS Mincho",serif'>（盈虧比）、</span><span lang=EN-US>Candle Trailing</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（</span><span lang=EN-US>K</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>線追蹤）、</span><span lang=EN-US>Market
+Structure Shift / MSS</span><span lang=EN-US style='font-family:"MS Mincho",serif'>（市場結構轉變）、</span><span
+lang=EN-US>Fibonacci Retracement</span><span lang=EN-US style='font-family:
+"MS Mincho",serif'>（斐波那契回撤）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Switching impulsively between entry models mid-session without
+backtesting which model aligns best with your personal psychology and
+invalidation rules.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【常見誤區】未經回測驗證哪種模型最契合自身心理素質與失效規則，就在盤中隨意切換進場模型。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Module 6: High vs. Low Resistance Liquidity &amp; Advanced Cycle
+[00:18:03 - 00:24:15]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>模組六：高低阻力流動性與進階流動性循環</span><span
+lang=EN-US> [00:18:03 - 00:24:15]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Concept</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Evaluating how a pullback forms reveals whether institutions
+have fueled a deep counter-trend move or left easy 'low-resistance' targets for
+rapid trend continuation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【概念解釋】評估回調結構的形成方式，可揭示機構是否已為深度逆勢回調注入動能，抑或是留下了易於攻破的「低阻力」目標以延續原趨勢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Steps</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1) If a pullback leaves multiple corrective highs/lows without
+sweeping the swing extreme, classify it as Low Resistance Liquidity—expect a
+shallow pullback (discount/less well-priced POI) and rapid continuation. 2) If
+the swing extreme experiences a strong liquidity sweep followed by structure
+break, expect a deep pullback into premium/discount extremes. 3) Combine all
+phases into the full cycle: Inducement -&gt; Sweep into Extreme POI -&gt; MSS
+-&gt; Target resting double tops/bottoms.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【關鍵步驟】</span><span
+lang=EN-US>1) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>若回調留下多個修正性高低點且未掃蕩波段極值，判定為「低阻力流動性」</span><span
+lang=EN-US>——</span><span lang=EN-US style='font-family:"MS Mincho",serif'>預期淺回調（折價區</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>）並快速延續趨勢。</span><span
+lang=EN-US>2) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>若波段極值發生強力流動性獵取並伴隨結構突破，則預期將出現深入溢價</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>折價極值區的深回調。</span><span
+lang=EN-US>3) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>串聯完整循環：誘導形成</span><span
+lang=EN-US> -&gt; </span><span lang=EN-US style='font-family:"MS Mincho",serif'>獵取進入極值</span><span
+lang=EN-US> POI -&gt; </span><span lang=EN-US style='font-family:"MS Mincho",serif'>結構轉變</span><span
+lang=EN-US> -&gt; </span><span lang=EN-US style='font-family:"MS Mincho",serif'>瞄準對向雙頂</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>雙底流動性目標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Key Terms</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Low Resistance Liquidity (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3A5F'>低阻力流動性</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>), High
+Resistance Liquidity (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>高阻力流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>), Premium &amp; Discount Zones (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3A5F'>溢價區與折價區</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A5F'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【重要專有名詞】</span><span
+lang=EN-US>Low Resistance Liquidity</span><span lang=EN-US style='font-family:
+"MS Mincho",serif'>（低阻力流動性）、</span><span lang=EN-US>High Resistance Liquidity</span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（高阻力流動性）、</span><span
+lang=EN-US>Premium &amp; Discount Zones</span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>（溢價區與折價區）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>【</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Common Pitfalls</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3A5F'>】</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Waiting passively for deep premium/discount prices during a
+low-resistance corrective pullback, missing the entire continuation move.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:7.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>【常見誤區】在低阻力修正性回調中死等深度的溢價</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>折價極值區，導致完全錯過順勢延續行情。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>6. Practical Action Items<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F243E'>6. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#0F243E'>實操行動清單</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>1. Audit Your Chart Template to Enforce a 3-Timeframe Hierarchy</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>1. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>審視並規範你的圖表模板，嚴格執行三時間週期階層</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Configure your trading workspace into three fixed timeframes
+(e.g., H4 for Market Phase, M15 for Directional Bias &amp; POIs, M5/M1 for
+Liquidity Execution) and forbid taking trades without HTF/MTF alignment.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>將交易介面固定為三個時間週期（例如：</span><span
+lang=EN-US>H4 </span><span lang=EN-US style='font-family:"MS Mincho",serif'>判別市場階段、</span><span
+lang=EN-US>M15 </span><span lang=EN-US style='font-family:"MS Mincho",serif'>確立方向與</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>、</span><span
+lang=EN-US>M5/M1 </span><span lang=EN-US style='font-family:"MS Mincho",serif'>執行流動性進場），嚴禁在未獲得高、中週期共振的情況下單憑低週期訊號下單。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>2. Apply the 'Left-or-Right Inducement' Checklist Before Marking
+Any POI</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>2. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>標記任何</span><span lang=EN-US>
+POI </span></b><b><span lang=EN-US style='font-family:"MS Mincho",serif'>前，強制執行「左側或右側誘導」檢查清單</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Before setting a limit order or alert on any Supply/Demand zone,
+verify that there is either a clear structural swing in the left impulse leg or
+inducement built on the right pullback; if neither exists, shift your alert to
+the Extreme POI behind it.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>在任何供需區設定掛單或警報前，先確認左側推進腿留有結構高低點，或右側回調已建立誘導；若兩者皆無，立即將警報移至其後方的極值</span><span
+lang=EN-US> POI (Extreme POI)</span><span lang=EN-US style='font-family:"MS Mincho",serif'>。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>3. Filter Historical Zones Using the 'Sweep-Origin' Rule</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>3. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>運用「獵取起源」法則過濾歷史供需區域</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Review your last 20 marked POIs and tag only those whose
+creation candles swept a prior swing high or low. Make 'liquidity sweep origin'
+a mandatory criterion for high-probability zones.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>回顧過去標記的</span><span
+lang=EN-US> 20 </span><span lang=EN-US style='font-family:"MS Mincho",serif'>個</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>，僅保留那些「誕生</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"MS Mincho",serif'>線曾掃蕩過前期波段高低點」的區域，將「具備流動性獵取起源」列為篩選高勝率區域的硬性標準。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>4. Select and Backtest One Single Entry Model for 50 Trades</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>4. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>選定單一進場模型並進行</span><span
+lang=EN-US> 50 </span></b><b><span lang=EN-US style='font-family:"MS Mincho",serif'>筆歷史回測</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Choose either Model 1 (Limit Order), Model 2 (Candle Trailing),
+or Model 3 (LTF MSS + Pullback) based on your schedule and psychology, and
+backtest 50 consecutive setups with fixed mechanical invalidation rules.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>根據你的看盤時間與心理承受度，從模型一（限價單）、模型二（</span><span
+lang=EN-US>K </span><span lang=EN-US style='font-family:"MS Mincho",serif'>線追蹤）或模型三（</span><span
+lang=EN-US>LTF </span><span lang=EN-US style='font-family:"MS Mincho",serif'>結構轉變回調）中擇一，並以固定且機械化的失效規則連續回測</span><span
+lang=EN-US> 50 </span><span lang=EN-US style='font-family:"MS Mincho",serif'>筆交易。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>5. Tag Pullbacks as 'Low Resistance' vs. 'Extreme Sweep' to
+Calibrate Targets</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US>5. </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>標記回調類型為「低阻力」或「極值獵取」以校準進場深度</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>During live market analysis, label corrective pullbacks leaving
+un-swept highs/lows as Low Resistance Liquidity (favoring shallower POIs)
+versus pullbacks triggered by an extreme sweep (favoring deeper
+premium/discount POIs).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>在日常盤面分析中，將留下未掃蕩高低點的修正性回調標記為「低阻力流動性」（優先關注淺層</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>），而由極值強力掃蕩引發的回調則標記為深回調（耐心等待深層溢價</span><span
+lang=EN-US>/</span><span lang=EN-US style='font-family:"MS Mincho",serif'>折價區</span><span
+lang=EN-US> POI</span><span lang=EN-US style='font-family:"MS Mincho",serif'>）。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>7. Self-Assessment Quiz &amp; Review<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F243E'>7. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#0F243E'>觀念自我檢測</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Q1 (Multiple Choice): Why do institutional traders ('Big Money')
+actively seek out large liquidity pools such as equal highs or structural lows?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>題目</span><span lang=EN-US> 1</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（單選題）：為什麼機構交易者（「大資金」）會積極尋找等高點或結構低點等大型流動性池？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>A) To follow retail breakout indicators  |  B) To minimize
+slippage by matching large orders against opposing resting liquidity  |  C)
+Because liquidity pools always cause trend reversals  |  D) To avoid using
+higher timeframes</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US>A) </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>為了跟隨散戶的突破指標</span><span lang=EN-US>  | 
+B) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>為了藉由龐大的反向掛單撮合大額倉位，將滑點降至最低</span><span
+lang=EN-US>  |  C) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>因為流動性池必然導致趨勢反轉</span><span
+lang=EN-US>  |  D) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>為了避免分析高時間週期</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Q2 (Multiple Choice): You identify an M15 Supply Zone formed
+after a straight impulsive drop (no structural highs in the left leg), and
+price rallies straight back into it without building any highs on the right.
+What is most likely to happen?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>題目</span><span lang=EN-US> 2</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（單選題）：你發現一個</span><span
+lang=EN-US> M15 </span></b><b><span lang=EN-US style='font-family:"MS Mincho",serif'>供給區是在直線急跌後形成的（左側推進腿無結構高點），且價格隨後直線反彈進入該區，右側也未建立任何高點誘導。接下來最可能發生什麼情況？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>A) The supply zone will hold with 100% certainty  |  B) The zone
+itself acts as the available liquidity and will likely be swept into an Extreme
+POI  |  C) You should immediately enter using Model 1 limit order  |  D) The
+market has entered a low-resistance bullish trend</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US>A) </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>該供給區將</span><span lang=EN-US> 100% </span><span
+lang=EN-US style='font-family:"MS Mincho",serif'>有效壓制價格</span><span lang=EN-US> 
+|  B) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>該供給區本身就是唯一可用的流動性，極可能被獵取貫穿並衝向更深層的極值</span><span
+lang=EN-US> POI  |  C) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>應立即使用模型一限價單進場做空</span><span
+lang=EN-US>  |  D) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>市場已進入低阻力多頭趨勢</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Q3 (Multiple Choice): What distinguishes a 'Liquidity Sweep
+Zone' when evaluating historical price action?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>題目</span><span lang=EN-US> 3</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（單選題）：在評估歷史價格行為時，「流動性獵取區域</span><span
+lang=EN-US> (Liquidity Sweep Zone)</span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>」的核心特徵為何？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>A) It was formed during the Asian session with low volume  |  B)
+It swept a prior high or low during its creation, proving institutional
+involvement  |  C) It has no supply or demand imbalance  |  D) It never gets
+mitigated in the future</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US>A) </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>它是在低成交量的亞洲盤時段形成的</span><span lang=EN-US> 
+|  B) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>它在誕生過程中曾掃蕩過前期高點或低點，證明背後有機構資金介入</span><span
+lang=EN-US>  |  C) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>它不具備任何供需失衡</span><span
+lang=EN-US>  |  D) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>它未來永遠不會被回測填補</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Q4 (Multiple Choice): In a bearish trend, price pulls back
+correctively, leaving multiple un-swept lows without sweeping the major swing
+low extreme. What does this 'Low Resistance Liquidity' signal?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>題目</span><span lang=EN-US> 4</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（單選題）：在空頭趨勢中，價格呈現修正性回調，沿途留下多個未被掃蕩的低點，且未獵取主要波段低點極值。這種「低阻力流動性」預示著什麼？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>A) Institutions have already entered massive long positions for
+a deep reversal  |  B) The pullback will likely be shallow and target a closer,
+less well-priced POI before continuing down  |  C) You must wait for the 0.886
+Fibonacci retracement  |  D) Bearish market structure is completely invalidated</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US>A) </span><span lang=EN-US
+style='font-family:"MS Mincho",serif'>機構已建立龐大多單準備進行深度反轉</span><span lang=EN-US> 
+|  B) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>此波回調可能較淺，價格觸及較近的次優</span><span
+lang=EN-US> POI </span><span lang=EN-US style='font-family:"MS Mincho",serif'>後便會迅速延續跌勢</span><span
+lang=EN-US>  |  C) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>必須死等斐波那契</span><span
+lang=EN-US> 0.886 </span><span lang=EN-US style='font-family:"MS Mincho",serif'>深度回撤位</span><span
+lang=EN-US>  |  D) </span><span lang=EN-US style='font-family:"MS Mincho",serif'>空頭市場結構已完全失效</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Q5 (Reflection / Scenario Question): Compare Entry Model 1
+(Limit Order at POI) and Entry Model 3 (LTF Market Structure Shift + Pullback).
+What is the core trade-off between these two mechanical approaches?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt'><b><span lang=EN-US
+style='font-family:"MS Mincho",serif'>題目</span><span lang=EN-US> 5</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif'>（情境思考題）：請比較「進場模型一（</span><span
+lang=EN-US>POI </span></b><b><span lang=EN-US style='font-family:"MS Mincho",serif'>限價單）」與「進場模型三（</span><span
+lang=EN-US>LTF </span></b><b><span lang=EN-US style='font-family:"MS Mincho",serif'>結構轉變後回調進場）」，這兩種機械化策略之間的核心權衡（</span><span
+lang=EN-US>Trade-off</span></b><b><span lang=EN-US style='font-family:"MS Mincho",serif'>）是什麼？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Consider risk-to-reward ratio, confirmation certainty, and the
+risk of missing trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"MS Mincho",serif'>請從盈虧比（</span><span
+lang=EN-US>R:R</span><span lang=EN-US style='font-family:"MS Mincho",serif'>）、進場確認度以及踏空風險三個維度進行思考。</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A5F 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A5F'>Answer Key (Spoiler / Review Section)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#0F243E'>參考答案區（自我檢測核對）</span></b></p>
+
+</div>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;border:none;border-left:solid #7B8794 3.0pt;
+  background:#F4F5F7;padding:6.0pt 8.0pt 6.0pt 9.0pt'>
+  <p class=MsoNormal style='margin-bottom:2.0pt'><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1E3A5F'>Q1: B — Institutions require opposing resting liquidity to
+  fill large positions with minimal slippage.<br>
+  Q2: B — Without left-leg or right-pullback inducement, the POI itself is the
+  only resting liquidity pool and is prone to being swept into the Extreme POI.<br>
+  Q3: B — Sweeping a prior high/low during zone creation confirms that
+  institutional capital absorbed opposing orders at that origin.<br>
+  Q4: B — Un-swept corrective lows create Low Resistance Liquidity to target
+  downward, indicating institutions have not fueled a deep pullback.<br>
+  Q5: Model 1 maximizes Risk-to-Reward (R:R) and ensures you never miss a fast
+  reversal, but carries higher risk of the zone failing without LTF
+  confirmation. Model 3 provides high confirmation via an LTF Market Structure
+  Shift (MSS), but sacrifices some R:R and risks missing the trade if price
+  does not pull back to tag you in.</span></p>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>題目</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> 1</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>：</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'>B — </span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>機構必須仰賴反向掛單流動性來撮合大額倉位，藉此將滑點降至最低。</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'><br>
+  </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+  "MS Mincho",serif'>題目</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%'> 2</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"MS Mincho",serif'>：</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%'>B — </span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>若左側推進腿與右側回調皆無誘導，該</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> POI </span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>本身就是唯一流動性池，極易被獵取貫穿並衝向極值</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'> POI</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>。</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'><br>
+  </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+  "MS Mincho",serif'>題目</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%'> 3</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"MS Mincho",serif'>：</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%'>B — </span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>區域誕生時掃蕩前期高低點，證實了機構資金曾在此處吸收反向訂單。</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'><br>
+  </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+  "MS Mincho",serif'>題目</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%'> 4</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"MS Mincho",serif'>：</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%'>B — </span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>未被掃蕩的修正性低點構成向下的低阻力流動性目標，顯示機構並未注入動能發動深度回調。</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'><br>
+  </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+  "MS Mincho",serif'>題目</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%'> 5</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"MS Mincho",serif'>：模型一能最大化盈虧比（</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'>R:R</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>）並確保不錯過快速反轉行情，但缺乏低週期確認，區域直接失效的風險較高；模型三透過低週期市場結構轉變（</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%'>MSS</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif'>）提供高度確認，但會犧牲部分盈虧比，且若價格未回調觸及掛單則面臨踏空風險。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,2042 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBullet, li.MsoListBullet, div.MsoListBullet
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBulletCxSpFirst, li.MsoListBulletCxSpFirst, div.MsoListBulletCxSpFirst
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBulletCxSpMiddle, li.MsoListBulletCxSpMiddle, div.MsoListBulletCxSpMiddle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+p.MsoListBulletCxSpLast, li.MsoListBulletCxSpLast, div.MsoListBulletCxSpLast
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:18.0pt;
+	text-indent:-18.0pt;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-bottom:2.0pt;text-align:center'><b><span
+lang=EN-US style='font-size:16.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>Deep Learning Study Notes: Liquidity Concepts Simplified (SMC
+&amp; Price Action)</span></b></p>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><b><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#333333'>深度學習筆記：簡化流動性概念（聰明錢概念</span></b><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#333333'> SMC </span></b><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#333333'>與價格行為</span></b><b><span
+lang=EN-US style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#333333'> Price Action</span></b><b><span lang=EN-US style='font-size:
+14.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#333333'>）</span></b></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>1. Executive Summary<br>
+1. </span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>核心總結</span></b><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> (Executive Summary)</span></b></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;border:none;border-left:solid #2E75B6 2.25pt;
+  background:#F2F6FA;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+  2.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F4E79'>This tutorial
+  demystifies Liquidity (</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>流動性</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>) within Smart Money Concepts (SMC, </span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#1F4E79'>聰明錢概念</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>) and Price
+  Action (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+  font-family:"微軟正黑體",sans-serif;color:#1F4E79'>價格行為</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>), explaining how major financial institutions manipulate
+  retail traders to execute massive orders. Because institutions require
+  substantial counterparty orders to enter or exit positions, they
+  intentionally engineer price movements to trigger retail Stop Loss (</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#1F4E79'>止損單</span><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F4E79'>) pools before resuming
+  the true market trend. The video categorizes liquidity into Dynamic Liquidity
+  (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+  "微軟正黑體",sans-serif;color:#1F4E79'>動態流動性</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>)—the continuous price cycle between External Liquidity (</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#1F4E79'>外部流動性</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>, swing
+  highs/lows) and Internal Liquidity (</span><span lang=EN-US style='font-size:
+  10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>內部流動性</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>, Fair Value Gaps </span><span lang=EN-US style='font-size:
+  10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>公平價值缺口</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>)—and Static Liquidity (</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#1F4E79'>靜態流動性</span><span lang=EN-US style='font-size:10.0pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), which
+  represents resting order pools at predictable chart structures. Specifically,
+  the presenter breaks down two high-probability retail traps: Equal Highs/Lows
+  (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+  "微軟正黑體",sans-serif;color:#1F4E79'>等高點</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>/</span><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>等低點</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>, forming double/triple tops and bottoms) and Trendline
+  Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+  font-family:"微軟正黑體",sans-serif;color:#1F4E79'>趨勢線流動性</span><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>). The ultimate actionable takeaway is patience: traders must
+  avoid entering prematurely on classic retail patterns, treat un-swept zones
+  as Inducement (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>誘導區</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>), and execute trades at extreme Supply or Demand Zones (</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#1F4E79'>供給區</span><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F4E79'>/</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#1F4E79'>需求區</span><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F4E79'>) only after a confirmed
+  Liquidity Sweep (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>流動性獵取</span><span
+  lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#1F4E79'>) has cleared retail stops.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#222222'>本教學深入剖析「聰明錢概念」（</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"Calibri",sans-serif;color:#222222'>Smart Money
+  Concepts, SMC</span><span lang=EN-US style='font-size:10.5pt;line-height:
+  115%;font-family:"微軟正黑體",sans-serif;color:#222222'>）與「價格行為」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Price Action</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>）中的核心要素</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>——</span><span lang=EN-US style='font-size:10.5pt;line-height:
+  115%;font-family:"微軟正黑體",sans-serif;color:#222222'>「流動性」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Liquidity</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>），揭示大型金融機構如何利用散戶心理來執行龐大訂單。由於機構進出場需要海量對手盤，他們會刻意製造價格假象，觸發散戶密集的「止損單」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Stop Loss</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>）池以獲取動能，隨後才恢復真實趨勢。影片將流動性劃分為兩大類：一是「動態流動性」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Dynamic Liquidity</span><span lang=EN-US style='font-size:
+  10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>），即價格在「外部流動性」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>External Liquidity</span><span lang=EN-US style='font-size:
+  10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>，波段高低點）與「內部流動性」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Internal Liquidity</span><span lang=EN-US style='font-size:
+  10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>，「公允價值缺口」</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Fair Value Gaps, FVG</span><span lang=EN-US style='font-size:
+  10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>）之間不斷循環的驅動力；二是「靜態流動性」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Static Liquidity</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>），指停留在特定圖表結構的掛單與止損池。講者重點拆解了兩種最常見的散戶陷阱：「等高點</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+  115%;font-family:"微軟正黑體",sans-serif;color:#222222'>等低點」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Equal Highs/Lows</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>，即雙重與三重頂底）與「趨勢線流動性」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Trendline Liquidity</span><span lang=EN-US style='font-size:
+  10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>）。最終的核心結論是「耐心等待確認」：交易者應避免在傳統形態出現時過早進場，而應將未經獵取的區域視為「誘導區」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Inducement</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>），唯有在確認「流動性獵取」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Liquidity Sweep</span><span lang=EN-US style='font-size:10.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>）完成、散戶止損被清算後，方可在極端的「供給區或需求區」（</span><span
+  lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#222222'>Supply/Demand Zones</span><span lang=EN-US style='font-size:
+  10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#222222'>）進場交易。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+2. </span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>知識地圖與核心概念</span></b><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> (Key Concepts &amp; Definitions)</span></b><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:01:21] Smart Money (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>聰明錢</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>): Major financial
+institutions and central banks with massive capital capable of moving markets,
+requiring large pools of retail orders as counterparties to fill their
+positions.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:01:21]
+Smart Money</span><span lang=EN-US style='font-size:10.5pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#222222'>（聰明錢）：指擁有龐大資金、足以推動市場走勢的大型金融機構與銀行，他們需要大量散戶訂單作為對手盤才能完成建倉或平倉。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:01:39] Liquidity (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>): The availability of
+resting orders (especially retail Stop Loss orders and pending orders) in the
+market that institutions absorb to execute large buy or sell transactions.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:01:39]
+Liquidity</span><span lang=EN-US style='font-size:10.5pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#222222'>（流動性）：市場中可供成交的停留訂單（特別是散戶的止損單與掛單），機構透過吸收這些訂單來執行大額買賣交易。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:02:39] Dynamic Liquidity (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>動態流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>): The market forces that
+drive price direction and movement, operating as a continuous cycle between
+internal liquidity and external liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:02:39]
+Dynamic Liquidity</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（動態流動性）：驅動市場方向與價格波動的內在力量，表現為價格在內部流動性與外部流動性之間不斷循環的過程。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:02:55] External Liquidity (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>外部流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>): Liquidity resting above
+major swing highs and below major swing lows within a price wave.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:02:55]
+External Liquidity</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（外部流動性）：位於價格波段中主要波段高點上方與主要波段低點下方的流動性。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:03:02] Internal Liquidity /
+Fair Value Gaps (FVG) (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>內部流動性</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>公允價值缺口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): Price inefficiencies or gaps located inside the range between
+a swing high and swing low, which price returns to fill for market balance.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:03:02]
+Internal Liquidity / Fair Value Gaps, FVG</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>（內部流動性</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> / </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>公允價值缺口）：位於波段高點與低點區間內部的價格失衡區或缺口，價格會回調填補這些缺口以尋求市場平衡。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:04:41] Static Liquidity (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>靜態流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>): Specific chart zones
+where large pools of money (stop losses and pending orders) rest passively,
+such as equal highs/lows, trendlines, and support/resistance levels.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:04:41]
+Static Liquidity</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（靜態流動性）：市場中大量資金被動停留的特定圖表區域，例如等高點</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>等低點、趨勢線以及支撐與阻力位。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:04:55] Liquidity Sweep (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>流動性獵取</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>): A price movement that
+intentionally pierces a key high, low, or pattern to trigger retail stop losses
+and absorb liquidity before reversing in the true trend direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:04:55]
+Liquidity Sweep</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（流動性獵取）：價格刻意刺穿關鍵高點、低點或圖表形態，以觸發散戶止損單並吸收流動性，隨後反轉朝真實趨勢前進的行為。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:04:55] Point of Interest
+(POI) / Supply &amp; Demand Zones (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>興趣點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>供給區與需求區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): High-probability institutional order zones (Order Blocks)
+where traders look to enter positions, which are only valid if preceded by a
+liquidity sweep.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:04:55]
+Point of Interest, POI / Supply &amp; Demand Zones</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>（興趣點</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> / </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>供給區與需求區）：交易者尋求進場的高勝率機構訂單區（訂單塊），但前提是價格到達該區前必須先發生流動性獵取。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:06:25] Equal Lows (EQL)
+&amp; Equal Highs (EQH) (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>等低點與等高點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): Horizontal price levels where the market forms double/triple
+bottoms or tops, attracting massive retail stop-loss pools just beyond the
+level.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:06:25]
+Equal Lows, EQL &amp; Equal Highs, EQH</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（等低點與等高點）：市場在同一水平價位形成雙重</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>三重底或頂的結構，在該水平線外側吸引龐大的散戶止損池。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:07:12] Break of Structure
+(BOS) (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>結構突破</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): A decisive price break beyond a previous structural high (in
+an uptrend) or low (in a downtrend), confirming trend continuation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:07:12]
+Break of Structure, BOS</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（結構突破）：價格強勢突破前一個結構高點（上升趨勢）或跌破前一個結構低點（下降趨勢），用以確認趨勢延續。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:10:55] Inducement Area (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>誘導區</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>): An un-swept decisional
+order block or minor structure designed to lure early retail traders in, acting
+as fuel (liquidity) before price reaches the true extreme POI.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:10:55]
+Inducement Area</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（誘導區）：未經流動性獵取的決策性訂單塊或次要結構，旨在引誘散戶過早進場，成為價格抵達真正極端興趣點（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>POI</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）前的動能燃料。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:7.2pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>[00:14:40] Trendline Liquidity
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"微軟正黑體",sans-serif;color:#1F4E79'>趨勢線流動性</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): A series of closely spaced minor highs or lows forming a
+diagonal trendline, accumulating a dense cluster of retail stop losses right
+behind the line.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:25.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>[00:14:40]
+Trendline Liquidity</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（趨勢線流動性）：由一連串緊密排列的次要高點或低點所形成的斜向趨勢線，在趨勢線外側累積了密集的散戶止損單。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>3. Knowledge Architecture Diagram (Text-Based Mind Map)<br>
+3. </span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>知識架構圖解（文字版）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Liquidity Concepts Simplified
+(SMC &amp; Price Action)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>簡化流動性概念（聰明錢概念與價格行為）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>├── 1. Core Market Mechanics (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>核心市場運作機制</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>├── 1. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>核心市場運作機制</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Smart Money Need:
+Counterparty orders required to fill institutional volume</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   ├── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>聰明錢需求：機構建倉需要海量對手盤訂單才能成交</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   └── Manipulation Purpose:
+Trigger retail Stop Losses to fuel trend momentum</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>操縱目的：觸發散戶止損單（</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>Stop Loss</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>）以獲取推動趨勢的動能</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>├── 2. Classification of
+Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>流動性的兩大分類</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>├── 2. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>流動性的兩大分類</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Dynamic Liquidity (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>動態流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'> - Market Direction
+Engine)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   ├── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>動態流動性（市場方向引擎）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   ├── External Liquidity:
+Swing Highs &amp; Swing Lows (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>外部流動性：波段高低點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   │   ├── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>外部流動性：波段高點與波段低點</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   └── Internal Liquidity:
+Fair Value Gaps / FVG (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>內部流動性：公允價值缺口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   │   └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>內部流動性：公允價值缺口（</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>FVG</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   └── Continuous Cycle:
+Internal -&gt; External -&gt; Internal (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>循環：內部</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'> &lt;-&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>外部</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   │   └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>循環規律：內部流動性</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> &lt;-&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>外部流動性</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> </span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>交替運行</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   └── Static Liquidity (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>靜態流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'> - Resting Order Pools)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>靜態流動性（停留訂單池）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│       └── Locations: EQL/EQH,
+Swing Points, Trendlines, Order Blocks, S/R, Fibs, Daily Wicks</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│       └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>分佈位置：等高低點、波段點、趨勢線、訂單塊、支撐阻力、斐波那契、日線影線</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>├── 3. Practical Liquidity
+Patterns &amp; Retail Traps (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>實用流動性形態與散戶陷阱</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>├── 3. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>實用流動性形態與散戶陷阱</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   ├── Pattern A: Equal Lows
+&amp; Equal Highs (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>等低點與等高點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   ├── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>形態一：等低點與等高點（</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>EQL &amp; EQH</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   ├── Bullish Setup:
+Double/Triple Bottoms -&gt; Sweep Lows -&gt; Tap Extreme Demand Zone</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   │   ├── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>看漲情境：雙重</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>/</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>三重底</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>獵取低點止損</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>觸及極端需求區反轉</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   │   └── Bearish Setup:
+Double/Triple Tops -&gt; Sweep Highs -&gt; Tap Unmitigated Supply Zone</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   │   └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>看跌情境：雙重</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>/</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>三重頂</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>獵取高點止損</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>觸及未緩解供給區反轉</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│   └── Pattern B: Trendline
+Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>趨勢線流動性</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│   └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>形態二：趨勢線流動性</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│       ├── Bullish Setup:
+Choppy small BOS uptrend -&gt; Sweep Trendline -&gt; Fill FVG &amp; Tap Demand</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│       ├── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>看漲情境：微小震盪結構突破形成趨勢線</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>跌破趨勢線獵取止損</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>填補缺口並觸及需求區</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>│       └── Bearish Setup:
+Choppy small BOS downtrend -&gt; Sweep Trendline -&gt; Fill FVG &amp; Tap
+Supply</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>│       └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>看跌情境：微小震盪結構突破形成趨勢線</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>突破趨勢線獵取止損</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> -&gt; </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>填補缺口並觸及供給區</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>└── 4. Execution &amp;
+Confirmation Rules (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>進場執行與確認法則</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>└── 4. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>進場執行與確認法則</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>    ├── Filter Rule: No
+Liquidity Sweep before POI = POI becomes Liquidity (Inducement)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>    ├── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>過濾法則：</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'>POI </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>前無流動性獵取</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> = </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>該</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> POI </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>將成為誘導區（被穿破）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>    └── Entry Rule: Enter ONLY
+after retail stop losses are swept at Extreme OB</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>    └── </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>進場法則：僅在散戶止損被清算後，於極端訂單塊（</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>Extreme
+OB</span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>）進場</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>4. Mental Models &amp; Logic<br>
+4. </span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>底層邏輯與思維模型</span></b><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> (Mental Models &amp; Logic)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>1. The Counterparty &amp;
+Liquidity Fuel Model (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>對手盤與流動性燃料模型</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): Why: Markets do not move simply because of chart patterns;
+they move because institutions need liquidity to match their massive order
+sizes. How: Institutions identify where retail traders cluster their Stop Loss
+orders (which are market orders waiting to be triggered) and push price into
+those pools to absorb liquidity before driving the real trend.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>1. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>對手盤與流動性燃料模型（</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>Why &amp; How</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>）：【底層原因】市場波動並非源於傳統圖表形態的魔力，而是因為機構需要龐大的對手盤才能成交巨額訂單。【運作方式】機構會精準鎖定散戶止損單（本質上是待觸發的市價單）最密集的區域，先將價格推向該流動性池進行吸收，獲取足夠動能後再發動真正的主趨勢。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>2. The Market Balance Pendulum:
+Internal vs. External Liquidity (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>市場平衡鐘擺：內外部流動性循環</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): Why: Institutional algorithmic delivery seeks both liquidity
+acquisition and price efficiency. How: Price operates in a closed loop—after
+sweeping External Liquidity (swing highs/lows), price becomes inefficient and
+must retrace to Internal Liquidity (Fair Value Gaps) to rebalance, and vice
+versa.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>2. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>市場平衡鐘擺：內外部流動性循環：【底層原因】機構演算法報價同時追求「獲取流動性」與「價格效率平衡」。【運作方式】價格在閉環中運行</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>——</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>當價格獵取完「外部流動性」（波段高低點）後，會留下價格失衡，因此必須回調至「內部流動性」（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）進行再平衡，反之亦然。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>3. First-Order vs. Second-Order
+Thinking (Inducement Filter) (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>一階思維</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> vs. </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>二階思維：誘導過濾器</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>): Why: Retail traders use first-order thinking (e.g., 'Double
+bottom means buy now'), making their behavior predictable. How: Smart Money
+traders apply second-order thinking—asking 'Where are the retail traders
+trapped?' Any Order Block or Supply/Demand zone without a prior Liquidity Sweep
+is reclassified as an Inducement Area rather than a valid entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>3. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>一階思維</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> vs. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>二階思維（誘導過濾器）：【底層原因】散戶習慣一階思維（例如「看到雙重底就立刻買進」），導致行為高度可預測。【運作方式】聰明錢交易者運用二階思維，自問「散戶的止損設在哪裡？」。任何在價格抵達前沒有發生「流動性獵取」的訂單塊或供需區，都會被重新定義為「誘導區」（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Inducement</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>），而非有效進場點。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>5. Detailed Breakdown by Core Modules<br>
+5. </span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>詳細重點拆解（核心主題模組）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Module 1: Institutional
+Psychology &amp; The Essence of Liquidity [00:01:09 - 00:02:29]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>模組一：機構心理學與流動性的本質</span></b><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#2E75B6'> [00:01:09 - 00:02:29]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept Explanation: Smart
+Money (major financial institutions) cannot execute large buy or sell positions
+without sufficient counterparty orders. Retail Stop Loss orders provide this
+exact liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【概念解釋】：聰明錢（大型金融機構）若沒有足夠的對手盤訂單，便無法執行大額買賣部位。散戶設置的止損單（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Stop Loss</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）正好提供了這筆所需的流動性。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Operational Process: 1)
+Institutions engineer a false price move that lures retail traders into
+thinking they understand Price Action. 2) Price reverses toward retail
+stop-loss clusters. 3) Once stops are triggered and absorbed, the market
+resumes its true trend.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>操作流程】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>1) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>機構製造虛假價格走勢，誘導散戶誤以為看懂了價格行為並進場；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>2) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>價格反向朝散戶止損密集區移動；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>3) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>一旦止損被觸發並吸收完畢，市場便恢復原本的主趨勢。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terminology: Smart Money (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>聰明錢</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Stop Loss Orders (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>止損單</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Price Action (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>價格行為</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Retail Illusion (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>散戶錯覺</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【重要公式</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>專有名詞】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Smart Money</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（聰明錢）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Stop Loss Orders</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（止損單）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Price Action</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（價格行為）。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Common Pitfalls: Entering
+trades based purely on surface-level chart patterns without asking where the
+market's liquidity pool is resting.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【常見誤區</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>注意事項】：僅憑表面圖表形態就盲目進場，卻沒有思考市場當前的流動性池停留在哪個位置。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Module 2: Dynamic
+Liquidity — The Internal &amp; External Cycle [00:02:29 - 00:04:13]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>模組二：動態流動性</span></b><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#2E75B6'>——</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>內部與外部流動性的循環</span></b><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#2E75B6'> [00:02:29 - 00:04:13]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept Explanation: Dynamic
+liquidity governs market direction through a continuous loop between External
+Liquidity (swing highs and lows) and Internal Liquidity (Fair Value Gaps / FVG
+inside the wave).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【概念解釋】：動態流動性透過「外部流動性」（波段高點與低點）與「內部流動性」（波段內部的公允價值缺口</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）之間的持續循環，主導著市場的運行方向。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Operational Process: 1) Price
+rallies to sweep External Liquidity above a previous swing high. 2) Seeking
+balance, price retraces inward to fill the Internal Liquidity (FVG). 3) From
+the FVG, price launches again to sweep the next External Liquidity high.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>操作流程】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>1) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>價格上漲並獵取前波高點上方的外部流動性；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>2) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>為尋求市場平衡，價格向內回調並填補內部流動性（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）；</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>3) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>獲得支撐後，價格再度啟動並獵取下一個外部流動性高點。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Formula / Logic: Market
+Cycle = External Liquidity (Swing High/Low) &lt;-&gt; Internal Liquidity (Fair
+Value Gap, FVG).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【重要公式</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>專有名詞】：市場循環公式</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>＝</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>外部流動性（波段高低點）</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>↔ </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>內部流動性（公允價值缺口</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Common Pitfalls: Chasing
+breakouts immediately after External Liquidity is swept, right before price
+pulls back to fill the FVG.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【常見誤區</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>注意事項】：在外部流動性剛被獵取後立刻追高突破，結果正好買在價格準備回調填補</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> FVG </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>的起跌點。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Module 3: Static
+Liquidity &amp; The Confirmation Rule [00:04:41 - 00:06:20]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>模組三：靜態流動性與進場確認法則</span></b><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#2E75B6'> [00:04:41 - 00:06:20]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept Explanation: Static
+liquidity refers to passive pools of money resting at well-known technical
+levels. A Liquidity Sweep before reaching a Point of Interest (POI) is
+mandatory to validate that zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【概念解釋】：靜態流動性指停留在知名技術價位的被動資金池。價格在抵達興趣點（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>POI</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）之前必須先發生「流動性獵取」，才能驗證該區域的有效性。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Operational Process: 1) Map
+static liquidity zones: Equal Highs/Lows, Swing Highs/Lows,
+Trendlines/Channels, Order Blocks, Support/Resistance, Fibonacci levels, and
+Daily candle bodies/wicks. 2) Check if price sweeps liquidity prior to tapping
+your Supply/Demand POI.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>操作流程】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>1) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>在圖表標記靜態流動性區域（等高低點、波段高低點、趨勢線</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>通道、訂單塊、支撐阻力、斐波那契位、日線實體與影線）；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>2) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>檢查價格在觸及供給</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>需求</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> POI </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>之前是否已先獵取流動性。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terminology: Static
+Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>靜態流動性</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Point of Interest (POI, </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>興趣點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Order Blocks (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>訂單塊</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Fibonacci Retracement (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>斐波那契回撤</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【重要公式</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>專有名詞】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Static Liquidity</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（靜態流動性）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Point of Interest / POI</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（興趣點）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Order Blocks</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（訂單塊）。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Common Pitfalls: Trading a
+Supply or Demand zone that has no preceding liquidity sweep—price will likely
+smash right through your POI to use it as liquidity fuel.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【常見誤區</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>注意事項】：交易前方沒有發生流動性獵取的供需區</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>——</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>價格極可能會直接穿破你的</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> POI</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>，將該區域本身當作流動性燃料。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Module 4: Bullish Equal
+Lows (Double/Triple Bottoms) &amp; Inducement [00:06:20 - 00:12:46]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>模組四：看漲等低點（雙重底</span></b><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#2E75B6'>/</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2E75B6'>三重底）與誘導區實戰</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#2E75B6'> [00:06:20 -
+00:12:46]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept Explanation: After a
+bullish Break of Structure (BOS), price forms two or three internal lows at the
+same level (Equal Lows). Retail traders buy the double/triple bottom and place
+stops underneath, creating a Sell-side Liquidity pool above the true Extreme
+Demand Zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【概念解釋】：在看漲結構突破（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>BOS</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）後，價格在同一水平形成兩個或三個內部低點（等低點）。散戶在此買進雙重底或三重底並將止損設在下方，從而在真正的極端需求區上方創造出賣方流動性池。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Operational Process: 1)
+Identify bullish BOS and two demand zones (Decisional OB vs. Extreme OB). 2)
+Recognize Equal Lows and the un-swept Decisional OB as an Inducement Area. 3)
+Wait patiently for price to drop, sweep the Equal Lows and Decisional OB, and
+tap the Extreme Demand Zone. 4) Enter long after stops are cleared.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>操作流程】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>1) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>辨識看漲</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> BOS </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>及兩個潛在需求區（決策性訂單塊</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> vs. </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>極端訂單塊）；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>2) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>將等低點與未獵取流動性的決策性訂單塊視為「誘導區」；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>3) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>耐心等待價格下跌、獵取等低點下方止損並觸及極端需求區；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>4) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>止損清算後進場做多。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terminology: Equal Lows (EQL,
+</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"微軟正黑體",sans-serif;color:#1F4E79'>等低點</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>),
+Double/Triple Bottom (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>雙重底</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>/</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>三重底</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Decisional Order Block (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>決策性訂單塊</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Inducement
+Area (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>誘導區</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Extreme Order Block (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>極端訂單塊</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【重要公式</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>專有名詞】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Equal Lows / EQL</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（等低點）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Decisional Order Block</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（決策性訂單塊）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Inducement Area</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（誘導區）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Extreme Order Block</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（極端訂單塊）。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Common Pitfalls: Buying at the
+Decisional Order Block or immediately on the second/third bottom touch, getting
+stopped out right before the real rally begins.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【常見誤區</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>注意事項】：在決策性訂單塊或第二、三次觸底時過早買進，結果在真正大漲啟動前被精準掃損出場。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Module 5: Bearish Equal
+Highs (Double/Triple Tops) [00:12:46 - 00:14:33]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>模組五：看跌等高點（雙重頂</span></b><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#2E75B6'>/</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2E75B6'>三重頂）獵取策略</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#2E75B6'> [00:12:46 -
+00:14:33]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept Explanation: In a
+bearish trend following a downward BOS, price forms two or three Equal Highs
+just below an Unmitigated Supply Zone. Retail short-sellers place their
+buy-stop losses right above these equal highs.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【概念解釋】：在向下</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> BOS </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>的看跌趨勢中，價格在「未緩解供給區」下方形成兩個或三個等高點。進場做空的散戶將買入止損單密集設在這些等高點的正上方。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Operational Process: 1) Confirm
+bearish BOS and mark the upper Unmitigated Supply Zone. 2) Spot Double Top or
+Triple Top (Equal Highs) forming below the supply zone. 3) Wait for price to
+spike above the Equal Highs to sweep retail buy-side liquidity and tap the
+Supply Zone. 4) Execute a short position once liquidity is absorbed.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>操作流程】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>1) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>確認看跌</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> BOS </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>並標記上方的未緩解供給區；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>2) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>觀察供給區下方形成的雙重頂或三重頂（等高點）；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>3) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>等待價格向上刺穿等高點、獵取散戶止損並觸及供給區；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>4) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>流動性吸收完畢後進場做空。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terminology: Equal Highs
+(EQH, </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>等高點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Double/Triple Top (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>雙重頂</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>/</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>三重頂</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Unmitigated Supply Zone (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>未緩解供給區</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>), Buy-side
+Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>買方流動性</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【重要公式</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>專有名詞】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Equal Highs / EQH</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（等高點）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Unmitigated Supply Zone</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（未緩解供給區）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Buy-side Liquidity</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（買方流動性）。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Common Pitfalls: Shorting
+prematurely on the double/triple top neckline or peak without waiting for the
+stop-hunt spike into the upper Supply Zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【常見誤區</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>注意事項】：未等待價格向上獵取止損並觸及上方供給區，就在雙重頂或三重頂的頂部過早做空。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Module 6: Trendline
+Liquidity — Bullish &amp; Bearish Scenarios [00:14:33 - 00:17:46]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>模組六：趨勢線流動性</span></b><b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#2E75B6'>——</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2E75B6'>看漲與看跌實戰情境</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#2E75B6'> [00:14:33 -
+00:17:46]</span></b></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Concept Explanation: After a
+strong BOS that leaves behind a large price inefficiency (FVG), price often
+moves slowly in a choppy series of tiny BOS, forming a clean diagonal
+trendline. Retail traders repeatedly buy/sell trendline touches and stack stop
+losses right behind the trendline.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【概念解釋】：在留下巨大價格失衡區（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）的強勢</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> BOS </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>之後，價格常以微小且震盪的連續小</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> BOS </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>緩慢推進，形成一條明顯的斜向趨勢線。散戶每次觸及趨勢線便反覆進場，並將止損單密集排列在趨勢線外側。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Operational Process: 1)
+Identify a major BOS with an unmitigated extreme zone and an FVG/Inefficiency.
+2) Spot a clean diagonal trendline formed by minor choppy structures without
+any liquidity sweeps. 3) Wait for price to aggressively break the trendline,
+sweep all aligned stops, fill the FVG, and tap the extreme Demand/Supply zone.
+4) Enter in the dominant trend direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>操作流程】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>1) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>辨識帶有未緩解極端區與價格失衡區（</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）的主要</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> BOS</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>；</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>2) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>發現由微小震盪結構組成、且未經任何流動性獵取的斜向趨勢線；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>3) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>等待價格強勢跌破</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>突破趨勢線，清算沿線止損、填補</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> FVG </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>並觸及極端供需區；</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>4) </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>順應主趨勢進場。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Key Terminology: Trendline
+Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>趨勢線流動性</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Price Inefficiency (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>價格失衡區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>), Minor Break of Structure (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#1F4E79'>次要結構突破</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#1F4E79'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【重要公式</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>專有名詞】：</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Trendline Liquidity</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（趨勢線流動性）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Price Inefficiency</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（價格失衡區）、</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>Minor BOS</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>（次要結構突破）。</span></p>
+
+<p class=MsoListBullet style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:10.8pt'><span lang=EN-US style='font-family:Symbol'>·<span
+style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Common Pitfalls: Treating a
+trendline breakout as a true trend reversal (e.g., shorting the breakdown of a
+bullish trendline) instead of recognizing it as a liquidity sweep into an
+extreme Demand Zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>【常見誤區</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>注意事項】：將趨勢線的跌破或突破誤判為真實趨勢反轉（例如在看漲趨勢線跌破時追空），而未能識破這其實是價格向極端需求區邁進的流動性獵取。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>6. Practical Action Items<br>
+6. </span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>實操行動清單（</span></b><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>Action Items</span></b><b><span lang=EN-US style='font-size:
+13.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1F4E79'>）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>1. Map Internal &amp; External
+Liquidity Daily: Before placing any trade, mark the current swing high/low
+(External Liquidity) and highlight any unmitigated Fair Value Gaps (Internal
+Liquidity) to determine where price is currently gravitating.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>1. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>每日標記內外部流動性：在進行任何交易前，先在圖表標出當前的波段高點與低點（外部流動性），並框出未填補的公允價值缺口（內部流動性），以判斷價格當前的引力方向。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>2. Apply the 'No Sweep, No
+Trade' Filter: Audit every Supply or Demand Point of Interest (POI) on your
+watchlist; if price has not swept liquidity prior to reaching that zone,
+reclassify it as an Inducement Area and do not place limit orders there.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>2. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>執行「無獵取、不交易」過濾法則：檢視觀察清單上的每一個供給或需求興趣點（</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>POI</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）；若價格抵達該區前未發生流動性獵取，請將其重新標記為「誘導區」，切勿在該處掛限價單。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>3. Hunt for Equal Highs/Lows
+Before Extreme Zones: Actively scan charts for double/triple tops and bottoms
+sitting just in front of unmitigated Order Blocks, using them as
+high-probability confirmation that institutional stop-hunts are imminent.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>3. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>在極端區前方尋找等高點</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>/</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>等低點：主動掃描圖表中位於未緩解訂單塊前方的雙重</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>/</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>三重頂與底，將它們作為機構即將發動止損獵取的高勝率確認訊號。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>4. Use Retail Trendlines as
+Reverse Targets: Whenever you see a clean diagonal trendline formed by small,
+choppy price steps leaving an FVG behind, avoid trading trendline bounces and
+instead set alerts at the extreme Order Block beyond the trendline.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>4. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>將散戶趨勢線作為反向目標：每當看到由微小震盪步伐組成、且後方留有</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> FVG </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>的斜向趨勢線時，避免在趨勢線反彈時進場，改為在趨勢線外側的極端訂單塊設置價格警報。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>5. Backtest 20 Historical
+Liquidity Sweeps: Open your charting platform, review 20 past reversals on your
+primary trading pair, and document how many occurred immediately after sweeping
+Equal Highs/Lows or Trendline Liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>5. </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>回測</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> 20 </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>個歷史流動性獵取案例：打開看盤軟體，回顧主要交易品種過去</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> 20 </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>次重大反轉，記錄其中有多少次是緊接在獵取等高低點或趨勢線流動性之後發生的。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>7. Self-Assessment Quiz &amp; Review<br>
+7. </span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>觀念自我檢測</span></b><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'> (Quiz &amp; Review)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Q1 (Multiple Choice):
+According to the video, how does price continuously move in the market under
+Dynamic Liquidity?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>題目</span></b><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#2E75B6'> 1</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>（單選題）：根據影片內容，在「動態流動性」的驅動下，市場價格是如何持續運行的？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>A) Exclusively from one Supply
+Zone to another Supply Zone.<br>
+B) In a continuous cycle between Internal Liquidity (FVG) and External
+Liquidity (swing highs/lows).<br>
+C) Strictly along 45-degree trendlines without ever breaking them.<br>
+D) Randomly based on retail indicator crossovers.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>A) </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>僅在一個供給區與另一個供給區之間移動。</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"Calibri",sans-serif;color:#222222'><br>
+B) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>在內部流動性（</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）與外部流動性（波段高低點）之間不斷循環移動。</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+C) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>嚴格沿著</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> 45 </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>度趨勢線運行且永不跌破。</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'><br>
+D) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>根據散戶技術指標交叉隨機波動。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Q2 (Multiple Choice):
+What happens if price approaches a Point of Interest (POI / Order Block)
+WITHOUT first executing a Liquidity Sweep?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>題目</span></b><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#2E75B6'> 2</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>（單選題）：如果價格在抵達興趣點（</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>POI / </span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2E75B6'>訂單塊）之前「沒有」先執行流動性獵取，最有可能發生什麼情況？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>A) The POI becomes extra strong
+and guarantees a 100% reversal.<br>
+B) The market will consolidate permanently inside the POI.<br>
+C) Price will likely break through the POI, using that zone itself as liquidity
+(Inducement) to fuel momentum.<br>
+D) Institutions will cancel all their pending orders.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>A) </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>該</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> POI </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>會變得異常堅固並保證</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> 100% </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>反轉。</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'><br>
+B) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>市場將在該</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> POI </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>內部永久盤整。</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+C) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>價格極可能會穿破該</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> POI</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>，將該區域本身當作流動性燃料（誘導區）來推動動能。</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+D) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>機構會取消所有掛單。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Q3 (Multiple Choice):
+Where do retail traders typically place their Stop Loss orders when trading a
+Double Bottom (Equal Lows) pattern?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>題目</span></b><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#2E75B6'> 3</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>（單選題）：當散戶交易者依據雙重底（等低點）形態進場做多時，他們通常將止損單設在哪裡？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>A) Far above the major swing
+high.<br>
+B) Directly inside the Fair Value Gap.<br>
+C) Just below the Equal Lows, creating a concentrated liquidity pool.<br>
+D) They never use stop losses on double bottoms.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>A) </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>遠高於主要波段高點的位置。</span><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'><br>
+B) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>直接設在公允價值缺口（</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'>FVG</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>）內部。</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+C) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>緊貼在等低點的正下方，從而創造出一個集中的流動性池。</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+D) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>他們在交易雙重底時從不使用止損。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Q4 (Multiple Choice):
+Why does a choppy uptrend with small Break of Structures (BOS) form a dangerous
+trap for trendline traders?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>題目</span></b><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#2E75B6'> 4</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>（單選題）：為什麼由微小結構突破（</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>BOS</span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2E75B6'>）組成的震盪上升趨勢，會對趨勢線交易者構成危險的陷阱？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>A) Because the small BOS
+structures create a diagonal trendline with dense retail stop losses
+underneath, which price will sweep to fill the underlying FVG and reach the extreme
+Demand Zone.<br>
+B) Because trendlines are mathematically impossible to draw on small
+timeframes.<br>
+C) Because Smart Money never trades during uptrends.<br>
+D) Because the FVG prevents price from ever moving downward.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"Calibri",sans-serif;color:#222222'>A) </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>因為這些小</span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"Calibri",sans-serif;color:#222222'> BOS </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>結構形成了一條斜向趨勢線，下方累積了密集的散戶止損單，價格最終會跌破趨勢線獵取止損、填補下方的</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'> FVG </span><span lang=EN-US style='font-size:10.5pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#222222'>並觸及極端需求區。</span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+B) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>因為在小時間週期上在數學上無法畫出趨勢線。</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+C) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>因為聰明錢從不在上升趨勢中交易。</span><span lang=EN-US
+style='font-size:10.5pt;line-height:120%;font-family:"Calibri",sans-serif;
+color:#222222'><br>
+D) </span><span lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#222222'>因為</span><span lang=EN-US style='font-size:
+10.5pt;line-height:120%;font-family:"Calibri",sans-serif;color:#222222'> FVG </span><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#222222'>會阻止價格向下移動。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#2E75B6'>Q5 (Reflection /
+Open-Ended Question): Suppose you identify an uptrend with a Decisional Order
+Block right below Equal Lows, and an Extreme Order Block further down. How
+would you plan your trade execution using SMC liquidity principles?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>題目</span></b><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#2E75B6'> 5</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2E75B6'>（思考題）：假設你在上升趨勢中發現一個緊鄰等低點下方的「決策性訂單塊」，以及更下方的「極端訂單塊」。運用</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#2E75B6'> SMC </span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2E75B6'>流動性原則，你該如何規劃進場執行？</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F4E79'>Think through: Which zone is
+Inducement? What event must happen before you click Buy?</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#222222'>思考方向：哪一個區域是誘導區？在你按下買入鍵之前，圖表上必須先發生什麼事件？</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"Cambria",serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 2.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>Answer Key &amp; Explanations (Self-Check Section)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>參考答案與解析（自我檢測核對區）</span></b></p>
+
+</div>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=662 valign=top style='width:496.8pt;border:none;border-left:solid #AAAAAA 2.25pt;
+  background:#F7F7F7;padding:0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+  2.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#1F4E79'>Note: Answers are placed
+  on a separate final page with subtle styling so you can test yourself before
+  reviewing.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#222222'>提示：為方便自我測驗，答案與解析特別獨立置於末頁並採用淡色排版，請完成作答後再行核對。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#666666'>Q1 Answer: B — Dynamic
+liquidity drives price in a continuous loop between Internal Liquidity (FVG)
+and External Liquidity (swing highs/lows).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>題目</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>答案：</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'>B —— </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>動態流動性驅動價格在內部流動性（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#555555'>FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>）與外部流動性（波段高低點）之間不斷循環運行。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#666666'>Q2 Answer: C — Without a prior
+liquidity sweep, the POI lacks confirmation and often acts as an Inducement
+Area that price breaks through to fuel momentum.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>題目</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'> 2 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>答案：</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'>C —— </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>若前方沒有發生流動性獵取，該</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#555555'> POI </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>便缺乏確認，往往會淪為誘導區，被價格直接穿破以獲取推動動能的流動性。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#666666'>Q3 Answer: C — Retail traders
+place their stop losses just below the Equal Lows, forming a target liquidity
+pool for institutions to sweep before reversing upward.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>題目</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'> 3 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>答案：</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'>C —— </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>散戶通常將止損單設在等低點正下方，形成機構在反轉拉升前所要獵取的目標流動性池。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#666666'>Q4 Answer: A — The closely
+spaced minor highs/lows create trendline liquidity; price sweeps below the
+trendline to clear stops, fill the left-behind inefficiency (FVG), and tap the
+extreme Demand Zone.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>題目</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'> 4 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>答案：</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'>A —— </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>緊密排列的次要高低點製造了趨勢線流動性；價格會向下獵取趨勢線下方的止損、填補遺留的價格失衡區（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#555555'>FVG</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#555555'>），並觸及極端需求區。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#666666'>Q5 Suggested Answer: Treat the
+Equal Lows and the un-swept Decisional Order Block as Inducement. Do not enter
+at the Decisional OB. Patiently wait for price to drop, sweep the liquidity
+below the Equal Lows and Decisional OB, and tap into the Extreme Order
+Block—only then execute a long entry.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>題目</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#555555'> 5 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#555555'>參考解答：將等低點與未經流動性獵取的「決策性訂單塊」視為誘導區，切勿在決策性訂單塊處進場。耐心等待價格下跌、清算等低點與決策性訂單塊下方的止損，並觸及「極端訂單塊」後，再行建立多頭部位。</span></p>
+
+</div>
+
+</body>
+
+</html>

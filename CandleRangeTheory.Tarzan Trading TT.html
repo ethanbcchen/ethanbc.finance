@@ -1,0 +1,1971 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#282828;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><b><span
+lang=EN-US style='font-size:18.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#154360'>Deep Learning Study Notes: Candle Range Theory (CRT)<br>
+</span></b><b><span lang=EN-US style='font-size:15.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2E86C1'>深度學習筆記：蠟燭區間理論（</span></b><b><span
+lang=EN-US style='font-size:15.0pt;line-height:115%;color:#2E86C1'>CRT</span></b><b><span
+lang=EN-US style='font-size:15.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2E86C1'>）實戰解析</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B4F72 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B4F72'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#1B4F72'>1. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#1B4F72'>核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Candle Range Theory (CRT) simplifies price action analysis by
+viewing every Higher Timeframe (HTF) candlestick as a complete price range bounded
+by a CRT High and CRT Low. When price sweeps liquidity beyond one boundary and
+swiftly rejects back inside the range, it signals an impending move toward the
+opposite boundary. Internally, this HTF range corresponds to the Lower
+Timeframe (LTF) Power of Three (PO3) model—comprising Accumulation,
+Manipulation, and Distribution phases. By waiting for LTF manipulation
+confirmation, traders can pinpoint precise entries, clear invalidation stop
+losses, and high-probability targets. Furthermore, filtering CRT setups through
+key institutional Supply and Demand zones provides crucial confluence,
+elevating trade selection to A-plus setups while maintaining strict risk
+management.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>蠟燭區間理論（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>CRT</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>）透過將每根高時間週期（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>HTF</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>K</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線視為由</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點與</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點界定的完整價格區間，簡化了價格行為分析。當價格掃蕩某側邊界外的流動性並迅速拒絕、收盤回到區間內時，即預示價格將朝另一側邊界移動。在微觀結構上，高週期區間對應低時間週期（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>LTF</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）的三階段模型（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Power of Three, PO3</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>），包含吸籌（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Accumulation</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）、操縱（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Manipulation</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>）與派發（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Distribution</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）階段。交易者透過等待低週期操縱階段確認，能精準定位進場點、明確的停損失效點及高勝率目標位。此外，結合機構供給區（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Supply Zone</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）與需求區（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Demand Zone</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）進行多重佐證（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Confluence</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>），可過濾低品質訊號並鎖定</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> A </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>級交易機會，同時配合嚴謹的風險控管以保護資金。</span></p>
+
+<div style='border:none;border-bottom:solid #1B4F72 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B4F72'>2. Key Concepts &amp; Definitions<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#1B4F72'>2. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#1B4F72'>知識地圖與核心概念</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Candle Range Theory (CRT) / </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#143C6E'>蠟燭區間理論</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>] (00:00:00 -
+00:01:28): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>A trading framework that treats a single higher timeframe
+candlestick as a complete price range with upper and lower liquidity boundaries
+rather than an isolated bar.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>[Candle Range Theory
+(CRT) / </span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#143C6E'>蠟燭區間理論</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>] (00:00:00
+- 00:01:28): </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>一種交易框架，將單一高時間週期</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線視為具有上下流動性邊界的完整價格區間，而非孤立的單根蠟燭。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[CRT High &amp; CRT Low / CRT </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#143C6E'>高點與</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'> CRT </span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#143C6E'>低點</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>] (00:00:54 -
+00:01:20): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>The highest and lowest price points of a reference higher
+timeframe candle, acting as key liquidity pools and directional targets.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>[CRT High &amp; CRT Low
+/ CRT </span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#143C6E'>高點與</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'> CRT </span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>低點</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>] (00:00:54 - 00:01:20): </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>基準高週期</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線的最高價與最低價，作為關鍵的流動性池與價格移動的目標邊界。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Sell-Side Liquidity Sweep / </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#143C6E'>賣方流動性掃蕩</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>] (00:01:37 -
+00:02:19): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Price briefly breaks below the CRT Low to trigger stop losses
+and breakout sellers, then immediately rejects and closes back inside the
+range, signaling a bullish setup.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>[Sell-Side Liquidity
+Sweep / </span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#143C6E'>賣方流動性掃蕩</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>] (00:01:37
+- 00:02:19): </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>價格短暫跌破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>低點以觸發停損單與追空賣盤，隨後立即遭到拒絕並收盤回到區間內，預示看漲型態。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Buy-Side Liquidity Sweep / </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#143C6E'>買方流動性掃蕩</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>] (00:02:21 -
+00:02:40): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Price briefly breaks above the CRT High to absorb buy-side
+liquidity, then rejects and closes back inside the range, signaling a bearish
+setup.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>[Buy-Side Liquidity
+Sweep / </span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#143C6E'>買方流動性掃蕩</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>] (00:02:21
+- 00:02:40): </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>價格短暫突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點以吸收買方流動性，隨後遭到拒絕並跌回區間內收盤，預示看跌型態。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Power of Three (PO3) / </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#143C6E'>三階段模型</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>] (00:02:59 -
+00:03:15): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>A Smart Money concept dividing lower timeframe price delivery
+into three sequential phases: Accumulation (consolidation), Manipulation (false
+breakout/sweep), and Distribution (expansion/acceleration).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>[Power of Three (PO3) /
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#143C6E'>三階段模型</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>] (00:02:59
+- 00:03:15): </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>一種聰明錢（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Smart Money</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）概念，將低週期價格走勢劃分為三個連續階段：吸籌（盤整）、操縱（假突破／掃蕩）與派發（擴張／加速）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Supply &amp; Demand Zones / </span></b><b><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#143C6E'>供給區與需求區</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>] (00:06:48 -
+00:10:07): </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Key institutional price areas (such as Drop-Base-Drop supply or
+strong impulsive demand bases) where heavy institutional orders previously
+entered the market.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>[Supply &amp; Demand
+Zones / </span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#143C6E'>供給區與需求區</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>] (00:06:48
+- 00:10:07): </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>關鍵機構價格區域（如「下跌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>-</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>盤整</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>-</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>下跌」供給區或強勢衝動起漲的需求區基底），代表過去曾有龐大機構訂單進場的位置。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Confluence / </span></b><b><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#143C6E'>多重佐證（共振）</span></b><b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#143C6E'>] (00:06:57 - 00:08:17):
+</span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>The
+alignment of multiple independent technical factors—specifically HTF
+Supply/Demand zones, CRT liquidity sweeps, and LTF PO3 structure—to validate
+A-plus setups.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>[Confluence / </span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>多重佐證（共振）</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>] (00:06:57 - 00:08:17): </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>多項獨立技術因素的一致性排列</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>——</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>特別是高週期供需區、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>流動性掃蕩與低週期</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> PO3 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>結構的結合，用以確認</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> A </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>級高品質型態。</span></p>
+
+<div style='border:none;border-bottom:solid #1B4F72 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B4F72'>3. Knowledge Architecture Diagram (Text Mind Map)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#1B4F72'>3. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#1B4F72'>知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Candle Range Theory (CRT) Mastery Framework</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>蠟燭區間理論（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>CRT</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>）核心掌握架構</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>├── 1. Multi-Timeframe Anatomy (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3250'>多時間週期解構</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>├── 1. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>多時間週期解構（宏觀與微觀對應）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>│   ├── Higher Timeframe (HTF): Single Candle = Complete Range
+(CRT High &amp; CRT Low)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>│   ├── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高時間週期（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>HTF</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）：單根</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>＝</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>完整區間（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點與</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>│   └── Lower Timeframe (LTF): Internal Candles = Power of Three
+(PO3) Structure</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>│   └── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低時間週期（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>LTF</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）：內部多根</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>＝</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>三階段模型（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>PO3</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）微觀結構</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>├── 2. Liquidity Sweep Mechanics (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3250'>流動性掃蕩機制</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>├── 2. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>流動性掃蕩機制（方向判斷核心）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>│   ├── Bullish CRT: Sweep below CRT Low -&gt; Rejection -&gt;
+Target CRT High</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>│   ├── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>看漲</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>：跌破掃蕩</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>拒絕並收盤回區間內</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>目標直指</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高點</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>│   └── Bearish CRT: Sweep above CRT High -&gt; Rejection -&gt;
+Target CRT Low</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>│   └── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>看跌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>：突破掃蕩</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>拒絕並收盤回區間內</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>目標直指</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>├── 3. Power of Three (PO3) Execution Engine (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>三階段執行引擎</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>├── 3. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>三階段執行引擎（低週期進場時機）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>│   ├── Phase 1 - Accumulation: Sideways consolidation inside
+the range</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>│   ├── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>第一階段－吸籌（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Accumulation</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）：價格於區間內橫盤整理</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>│   ├── Phase 2 - Manipulation: False breakout sweeping
+liquidity beyond CRT boundary</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>│   ├── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>第二階段－操縱（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Manipulation</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）：假突破並掃蕩</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>邊界外的流動性</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>│   └── Phase 3 - Distribution: Strong directional expansion
+toward opposite CRT boundary</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>│   └── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>第三階段－派發（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Distribution</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）：朝向另一側</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>邊界的強勁單邊加速</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>└── 4. A-Plus Setup Filtering &amp; Risk Management (A</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>級型態過濾與風控</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>└── 4. A </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>級型態過濾與風險管理</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>    ├── Institutional Confluence: Align Bearish CRT with Supply
+/ Bullish CRT with Demand</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>    ├── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>機構區域共振：看跌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>結合供給區</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>／</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>看漲</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>結合需求區</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>    ├── Precision Trade Parameters: Entry on confirmation close,
+SL beyond manipulation/zone</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>    ├── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>精準交易參數：確認</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線收盤進場，停損設於操縱極值或供需區外側</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>    └── Capital Protection: Strict position sizing &amp;
+acceptance of probabilistic outcomes</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>    └── </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>資金保護原則：嚴格部位規模控管，認知無任何模型具備</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 100% </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>勝率</span></p>
+
+<div style='border:none;border-bottom:solid #1B4F72 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B4F72'>4. Mental Models &amp; Logic<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#1B4F72'>4. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#1B4F72'>底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>1. Fractal Timeframe Decomposition (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#143C6E'>分形時間週期拆解思維</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Why: Retail
+traders view candlesticks as static shapes. How: The speaker deconstructs every
+HTF candle into an LTF micro-market. By pairing 1H with 15M, or Daily with 1H,
+you gain macro directional clarity from HTF while executing with surgical LTF
+precision.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>1. Fractal Timeframe
+Decomposition (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#143C6E'>分形時間週期拆解思維</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>): </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>為何有效：散戶常將</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線視為靜態圖形。如何運作：講者將每根高週期</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線拆解為低週期的微觀市場。透過「</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>小時圖配</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>15</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>分鐘圖」或「日線圖配</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>小時圖」，既能從高週期取得宏觀方向指引，又能利用低週期進行精準進場。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>2. Liquidity Inducement &amp; Trap Reversal (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#143C6E'>流動性誘導與陷阱反轉邏輯</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Why:
+Institutional algorithms require liquidity (stop orders and breakout traders)
+to fill large positions. How: A break beyond CRT High/Low acts as a trap (Manipulation).
+Once liquidity is absorbed and price re-enters the range, the path of least
+resistance shifts directly to the opposing boundary.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>2. Liquidity Inducement
+&amp; Trap Reversal (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#143C6E'>流動性誘導與陷阱反轉邏輯</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>): </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>為何有效：機構演算法需要足夠的流動性（停損單與追價單）來成交大額部位。如何運作：突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高低點是誘導散戶的陷阱（操縱階段）。一旦流動性被吸收且價格重回區間，最小阻力路徑便直接指向區間的另一端。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>3. Probabilistic Confluence Filtering (</span></b><b><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#143C6E'>機率疊加與多重佐證過濾</span></b><b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#143C6E'>): </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Why:
+Standalone patterns fail frequently in noisy market conditions. How: Instead of
+trading every CRT candle, the speaker overlays institutional Supply/Demand
+zones as a spatial filter, ensuring trades are only taken where institutional
+order flow already exists.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>3. Probabilistic
+Confluence Filtering (</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#143C6E'>機率疊加與多重佐證過濾</span></b><b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#143C6E'>): </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>為何有效：在雜訊較多的市場中，單一型態容易失效。如何運作：講者不盲目交易每一個</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>型態，而是疊加機構供需區作為空間濾網，確保僅在已有機構訂單流痕跡的關鍵位置出手。</span></p>
+
+<div style='border:none;border-bottom:solid #1B4F72 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B4F72'>5. Detailed Module Breakdown<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#1B4F72'>5. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#1B4F72'>詳細重點拆解</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2874A6'>Module 1: Anatomy of
+Candle Range Theory (00:00:00 - 00:01:36)<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2874A6'>模組一：蠟燭區間理論的基礎結構</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2874A6'> (00:00:00 -
+00:01:36)</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Concept Explanation]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Every HTF candlestick
+encapsulates a complete LTF price range bounded by two critical levels: CRT
+High and CRT Low.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【概念解釋】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>每根高週期</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線都包含一個完整的低週期價格區間，並由</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點與</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點兩個關鍵邊界所界定。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Steps / Workflow]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>1. Select a clear
+reference candle on the Higher Timeframe (e.g., Daily or 1H).<br>
+2. Mark the absolute highest wick/price as CRT High.<br>
+3. Mark the absolute lowest wick/price as CRT Low.<br>
+4. Observe subsequent price interaction around these two horizontal boundaries.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【關鍵步驟</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>操作流程】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1. </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>在高時間週期（如日線或</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時線）選定一根明確的基準</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+2. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>標記該</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線最高點為</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高點（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>CRT High</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+3. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>標記該</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線最低點為</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>CRT Low</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+4. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>耐心觀察後續價格在這兩條水平邊界附近的互動反應。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Terms]: </span></b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3250'>CRT High (CRT </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3250'>高點</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>), CRT Low (CRT </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>低點</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>), Higher
+Timeframe (HTF / </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>高時間週期</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>), Lower Timeframe (LTF / </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3250'>低時間週期</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【重要公式</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>專有名詞】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>CRT High (CRT </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>CRT Low (CRT
+</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>低點</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'>)</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Higher Timeframe (HTF / </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高時間週期</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Lower
+Timeframe (LTF / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低時間週期</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Pitfalls &amp; Notes]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Do not treat the CRT
+candle as a directional signal by itself; it merely defines the battlefield
+boundaries. Never enter immediately upon marking the range.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【常見誤區</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>注意事項】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>切勿將基準</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線本身直接當作進場方向訊號，它僅用來劃定戰場邊界；標記完區間後絕不可立即進場。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2874A6'>Module 2: Bullish &amp;
+Bearish Liquidity Sweep Mechanics (00:01:37 - 00:02:58)<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2874A6'>模組二：看漲與看跌的流動性掃蕩機制</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2874A6'> (00:01:37 -
+00:02:58)</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Concept Explanation]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>The core edge of CRT
+relies on false breakouts (liquidity sweeps) followed by immediate rejection
+back into the established candle range.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【概念解釋】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>的核心優勢在於辨識假突破（流動性掃蕩），並捕捉價格遭拒絕後迅速重回既有區間的動能。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Steps / Workflow]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>1. Bullish Setup: Wait
+for price to dip below CRT Low (Sell-Side Liquidity Sweep), reject, and close
+back inside the range -&gt; Target CRT High.<br>
+2. Bearish Setup: Wait for price to spike above CRT High (Buy-Side Liquidity
+Sweep), reject, and close back inside the range -&gt; Target CRT Low.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【關鍵步驟</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>操作流程】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1. </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>看漲型態：等待價格跌破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>低點（賣方流動性掃蕩）、遭到拒絕並收盤回到區間內</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>目標看向</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高點。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+2. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>看跌型態：等待價格突破</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點（買方流動性掃蕩）、遭到拒絕並收盤跌回區間內</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>目標看向</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Terms]: </span></b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3250'>Sell-Side Liquidity Sweep (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>賣方流動性掃蕩</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>), Buy-Side
+Liquidity Sweep (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>買方流動性掃蕩</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>), Rejection (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>價格拒絕／假突破收回</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【重要公式</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>專有名詞】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Sell-Side Liquidity Sweep (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>賣方流動性掃蕩</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Buy-Side
+Liquidity Sweep (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>買方流動性掃蕩</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Rejection (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>價格拒絕／假突破收回</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Pitfalls &amp; Notes]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>If a candle breaks
+beyond the CRT boundary and closes strongly outside without rejecting back
+inside, it is a valid breakout rather than a CRT sweep—do not fade it.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【常見誤區</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>注意事項】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>若價格突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>邊界後強勢收盤在區間外側且未收回，這代表真實突破而非</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>掃蕩，切勿逆勢操作。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2874A6'>Module 3: Connecting CRT
+with the Power of Three (00:02:59 - 00:05:10)<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2874A6'>模組三：</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2874A6'>CRT </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2874A6'>與三階段模型（</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2874A6'>Power of Three</span></b><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2874A6'>）的連結</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2874A6'> (00:02:59 - 00:05:10)</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Concept Explanation]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>An HTF CRT range unfolds
+internally on the LTF as the Smart Money Power of Three (PO3) cycle:
+Accumulation, Manipulation, and Distribution.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【概念解釋】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高週期的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>區間在低週期圖表上，會完整呈現聰明錢「三階段模型（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>PO3</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）」的演變：吸籌、操縱與派發。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Steps / Workflow]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>1. Identify the CRT
+range and sweep on the 1H chart (e.g., GBP/JPY example).<br>
+2. Drop down to the 15M chart to inspect internal structure.<br>
+3. Spot Accumulation (sideways consolidation) and Manipulation (sweep of CRT
+Low/High).<br>
+4. Enter at the close of the 15M candle confirming the return inside the range,
+placing SL below the manipulation low and TP at the 1H CRT High.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【關鍵步驟</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>操作流程】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1. </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>在</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時圖上辨識</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>區間與流動性掃蕩（如</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> GBP/JPY </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>案例）。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+2. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>切換至</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 15 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>分鐘圖檢視內部微觀結構。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'><br>
+3. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>確認吸籌階段（橫盤整理）與操縱階段（掃蕩</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點或低點）。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'><br>
+4. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>在</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 15 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>分鐘確認收回區間內的</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線收盤時進場，停損設於操縱極值外側，停利設於</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時圖的另一側</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>邊界。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Terms]: </span></b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3250'>Power of Three / PO3 (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>三階段模型</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>),
+Accumulation (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>吸籌／累積階段</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>), Manipulation (</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1E3250'>操縱／假突破階段</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>), Distribution (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>派發／加速階段</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【重要公式</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>專有名詞】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Power of Three / PO3 (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>三階段模型</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Accumulation
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>吸籌／累積階段</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Manipulation (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>操縱／假突破階段</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Distribution (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>派發／加速階段</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Pitfalls &amp; Notes]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Entering prematurely
+during the Manipulation wick before the confirmation candle closes inside the
+range exposes traders to continued stop hunts.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【常見誤區</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>注意事項】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>在操縱階段的影線形成過程中、確認</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線尚未收盤回到區間內之前就過早進場，極易暴露在持續獵殺停損的風險中。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2874A6'>Module 4: Bearish CRT
+&amp; Gold (XAU/USD) Execution (00:05:11 - 00:06:35)<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2874A6'>模組四：看跌</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2874A6'> CRT </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2874A6'>與黃金（</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2874A6'>XAU/USD</span></b><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2874A6'>）實戰執行</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2874A6'> (00:05:11 - 00:06:35)</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Concept Explanation]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Applying the exact
+inverse rules on Gold (1H to 15M) demonstrates how buy-side liquidity sweeps
+trigger rapid distribution toward the CRT Low.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【概念解釋】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>將完全對稱的反向規則應用於黃金（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時轉</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> 15 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>分鐘），展示買方流動性掃蕩如何引發價格迅速朝</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>低點派發下跌。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Steps / Workflow]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>1. Mark a strong bullish
+1H candle on XAU/USD as the CRT range.<br>
+2. Watch the next 1H candle spike above CRT High and close back inside.<br>
+3. Drop to 15M: confirm consolidation (Accumulation) and upside sweep
+(Manipulation).<br>
+4. Enter short on the 15M confirmation close; place SL above manipulation high
+and TP at 1H CRT Low.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【關鍵步驟</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>操作流程】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1. </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>在黃金</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時圖標記一根強勢看漲</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線作為</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>區間。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+2. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>觀察下一根</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 1 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線衝破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點後收盤跌回區間內。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'><br>
+3. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>切換至</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 15 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>分鐘圖：確認橫盤整理（吸籌）與向上掃蕩（操縱）。</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+4. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>於</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 15 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>分鐘確認收盤時做空進場；停損設於操縱高點上方，停利設於</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>低點。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Terms]: </span></b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3250'>Buy-Side Liquidity (</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>買方流動性</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>), Short
+Entry (</span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>空單進場</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>),
+Invalidation High (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>失效高點</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【重要公式</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>專有名詞】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Buy-Side Liquidity (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>買方流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Short Entry
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>空單進場</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'>)</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Invalidation High (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>失效高點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Pitfalls &amp; Notes]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Do not be fooled by a
+strong bullish CRT candle into assuming the trend must continue up; once CRT
+High is swept and rejected, bias flips bearish.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【常見誤區</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>注意事項】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>不要因為基準</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線本身是強勢陽線就預設行情必然續漲；一旦</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點被掃蕩並遭拒絕，短線偏見即轉為看跌。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2874A6'>Module 5: Filtering A-Plus
+Setups with Supply &amp; Demand Zones (00:06:36 - 00:09:39)<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2874A6'>模組五：結合供給與需求區過濾</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2874A6'> A </span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#2874A6'>級高品質型態</span></b><b><span lang=EN-US style='font-size:11.0pt;
+line-height:115%;color:#2874A6'> (00:06:36 - 00:09:39)</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Concept Explanation]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Combining CRT with
+higher-timeframe institutional Supply or Demand zones eliminates low-probability
+trades and creates high-conviction confluence.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【概念解釋】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>將</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>與高週期機構供給區或需求區結合，能有效剔除低勝率雜訊，建立高確信度的多重佐證交易。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Steps / Workflow]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>1. Identify a clear
+institutional zone on the HTF (e.g., Drop-Base-Drop Supply Zone on NZD/USD
+Daily).<br>
+2. Wait for price to retest the zone and form a CRT candle inside it.<br>
+3. Confirm a Buy-Side Liquidity Sweep above CRT High inside the supply zone.<br>
+4. Drop to 1H to execute the PO3 short setup, placing SL safely above both the
+manipulation high and the Supply Zone.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【關鍵步驟</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>操作流程】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1. </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>在高週期圖表辨識清晰的機構區域（如</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> NZD/USD </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>日線的「下跌</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>-</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>盤整</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>-</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>下跌」供給區）。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'><br>
+2. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>等待價格回測該區域並在區內形成</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>基準</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+3. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>確認價格在供給區內向上掃蕩</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點並收回。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'><br>
+4. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>切換至</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 1 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時圖執行</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> PO3 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>做空型態，將停損安全地設於操縱高點與供給區雙重上方。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Terms]: </span></b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3250'>A-Plus Setup (A </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3250'>級高品質型態</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>), Supply
+Zone (</span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1E3250'>供給區</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>),
+Drop-Base-Drop (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>下跌</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>-</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>盤整</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>-</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>下跌型態</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>), Confluence (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>多重佐證</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【重要公式</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>專有名詞】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>A-Plus Setup (A </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>級高品質型態</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Supply Zone
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>供給區</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'>)</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Drop-Base-Drop (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>下跌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>-</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>盤整</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>-</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>下跌型態</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Confluence (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>多重佐證</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Pitfalls &amp; Notes]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Avoid trading CRT setups
+formed in 'no-man's-land' (middle of nowhere without HTF structure), as they
+lack institutional backing.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【常見誤區</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>注意事項】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>避免交易形成於「三不管地帶」（缺乏高週期結構支撐的半空中）的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>型態，因為這類訊號缺乏機構訂單流背書。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2874A6'>Module 6: Demand Zone
+Evaluation, Stop Placement &amp; Risk Discipline (00:09:40 - 00:12:52)<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2874A6'>模組六：需求區品質評估、停損邏輯與風控紀律</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2874A6'> (00:09:40 -
+00:12:52)</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Concept Explanation]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Evaluating zone strength
+and anchoring stop losses beyond structural invalidation points ensures
+survival even when confluence setups fail.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【概念解釋】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>評估區域強度並將停損錨定在結構失效點之外，能確保即使在多重佐證型態失效時，交易者依然能保全本金。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Steps / Workflow]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>1. Evaluate Demand Zone
+quality on AUD/USD 1H: verify strong, fast departure candles that broke prior
+resistance.<br>
+2. Wait for price to retest the Demand Zone and sweep the CRT Low.<br>
+3. Drop to 15M, confirm PO3 manipulation rejection, and enter long on candle
+close.<br>
+4. Place SL strictly below the Demand Zone (structural invalidation) and TP at
+CRT High; apply disciplined position sizing.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【關鍵步驟</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>操作流程】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1. </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>評估</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> AUD/USD 1 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時圖需求區品質：確認起漲</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線具備強勁、快速的脫離動能，且成功突破前期阻力位。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+2. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>等待價格回測需求區並向下掃蕩</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>低點。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+3. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>切換至</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 15 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>分鐘圖，確認</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> PO3 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>操縱階段遭拒絕並於</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線收盤做多進場。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'><br>
+4. </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>將停損嚴格設於需求區下方（結構完全失效點），停利設於</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點，並執行嚴謹的部位規模控管。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Key Terms]: </span></b><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3250'>Demand Zone (</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1E3250'>需求區</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>), Structural
+Invalidation Point (</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1E3250'>結構失效點</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>), Position Sizing (</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1E3250'>部位規模控管</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【重要公式</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>專有名詞】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>Demand Zone (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>需求區</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>Structural
+Invalidation Point (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>結構失效點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'>Position Sizing (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>部位規模控管</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>[Pitfalls &amp; Notes]: </span></b><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3250'>Placing a stop loss too
+tight inside the Demand Zone risks premature wick-outs; placing it below the
+entire zone means both the CRT and Demand Zone must fail to stop you out.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>【常見誤區</span></b><b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#143C6E'>/</span></b><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>注意事項】：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>將停損設在需求區內部過窄的位置容易被影線提前掃出；設在整個需求區下方，意味著必須</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>與需求區雙雙失效才會觸發停損，邏輯更為嚴密。</span></p>
+
+<div style='border:none;border-bottom:solid #1B4F72 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B4F72'>6. Practical Action Items<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#1B4F72'>6. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#1B4F72'>實操行動清單</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Action 1 — Standardize Timeframe Pairing: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Configure
+your charting layout with two primary multi-timeframe pairs: Daily + 1-Hour for
+swing setups, and 1-Hour + 15-Minute for intraday setups.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>Action 1 — Standardize
+Timeframe Pairing: </span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>行動一</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> — </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>標準化時間週期配對：在看盤軟體設定兩組核心多週期配對：「日線＋</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>1</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>小時線」用於波段交易，「</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>1</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>小時線＋</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>15</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>分鐘線」用於日內交易。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Action 2 — Practice Marking CRT Boundaries &amp; Sweeps: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Open
+historical charts and manually mark the CRT High and CRT Low of 20 impulsive
+HTF candles, noting how often price sweeps one side before traveling to the
+opposite side.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>Action 2 — Practice
+Marking CRT Boundaries &amp; Sweeps: </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>行動二</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>練習標記</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>邊界與掃蕩：打開歷史圖表，手動標記</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> 20 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>根強勢高週期</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線的</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高點與低點，統計價格掃蕩一側後抵達另一側的頻率。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Action 3 — Pre-Mark High-Quality Supply &amp; Demand Zones: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Before
+looking for CRT patterns, map out fresh HTF Supply (Drop-Base-Drop) and Demand
+zones that broke prior structure, and set price alerts at those zones.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>Action 3 — Pre-Mark
+High-Quality Supply &amp; Demand Zones: </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>行動三</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>預先標記高品質供需區：在尋找</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>型態前，先在高週期圖上標出曾突破前高／前低的新鮮供給區與需求區，並在該區域設定價格警報。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Action 4 — Enforce Confirmation-Close Entry Discipline: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Commit to
+entering trades strictly after the LTF confirmation candle closes back inside
+the CRT range—never enter on an unclosed wick during the Manipulation phase.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>Action 4 — Enforce
+Confirmation-Close Entry Discipline: </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>行動四</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>嚴格執行確認收盤進場紀律：規定自己必須等待低週期確認</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線「正式收盤回到</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>區間內」才進場，絕不在操縱階段未收盤的影線波動中搶進。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Action 5 — Apply Structural Stop Loss &amp; Fixed Risk Sizing: </span></b><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3250'>Calculate
+position size before every trade so that placing your stop loss beyond the
+Manipulation extreme or Supply/Demand zone risks no more than 1%–2% of account
+equity.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#143C6E'>Action 5 — Apply
+Structural Stop Loss &amp; Fixed Risk Sizing: </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>行動五</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> — </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>採用結構停損與固定風險倉位：每筆交易前先計算部位規模，確保將停損設於操縱極值或供需區外側時，單筆最大虧損不超過總資金的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 1%–2%</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>。</span></p>
+
+<div style='border:none;border-bottom:solid #1B4F72 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B4F72'>7. Concept Self-Assessment (Quiz &amp; Review)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#1B4F72'>7. </span></b><b><span lang=EN-US style='font-size:13.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#1B4F72'>觀念自我檢測</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Question: </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Q1: In Candle Range Theory, what is the primary directional
+expectation after price sweeps above the CRT High and closes back inside the
+CRT range?</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>問題：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>題目</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 1</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>：在蠟燭區間理論中，當價格向上掃蕩</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>高點並收盤跌回</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>區間內後，主要的方向預期為何？</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>A) Immediate continuation above the CRT High<br>
+B) Sideways consolidation for the next 10 candles<br>
+C) A potential move toward the opposite boundary (CRT Low)<br>
+D) Complete invalidation of the higher timeframe chart</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>A) </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>立即延續漲勢突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>高點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>接下來</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> 10 </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>根</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>線維持橫盤整理</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>價格可能朝向區間另一側邊界（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>低點）移動</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>高時間週期圖表完全失效</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Question: </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Q2: Which sequence accurately describes the three phases of the
+Lower Timeframe Power of Three (PO3) model?</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>問題：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>題目</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 2</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>：下列哪個順序正確描述了低時間週期三階段模型（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'>Power of Three, PO3</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）的三個階段？</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>A) Distribution -&gt; Accumulation -&gt; Manipulation<br>
+B) Accumulation -&gt; Manipulation -&gt; Distribution<br>
+C) Manipulation -&gt; Distribution -&gt; Accumulation<br>
+D) Accumulation -&gt; Distribution -&gt; Manipulation</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>A) </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>派發</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>吸籌</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>操縱</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>吸籌</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>操縱</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>派發</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>操縱</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>派發</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>吸籌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>吸籌</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>派發</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'> -&gt; </span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>操縱</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Question: </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Q3: If you identify a valid CRT setup on the Daily chart, which
+lower timeframe does the speaker recommend dropping down to for entry
+confirmation?</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>問題：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>題目</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 3</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>：如果你在日線圖上辨識出一個有效的</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>型態，講者建議切換到哪個低時間週期尋找進場確認？</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>A) 1-Minute chart<br>
+B) 5-Minute chart<br>
+C) 1-Hour chart<br>
+D) Weekly chart</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>A) 1 </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>分鐘圖</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+B) 5 </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3C3C3C'>分鐘圖</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+C) 1 </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3C3C3C'>小時圖</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>週線圖</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Question: </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Q4: How do you transform a standard CRT pattern into an 'A-Plus
+Setup' according to the video?</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>問題：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>題目</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 4</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>：根據影片內容，如何將普通的</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>型態升級為「</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'>A </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>級高品質型態（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'>A-Plus Setup</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>）」？</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>A) Trade every CRT candle that forms during Asian session<br>
+B) Combine a bearish CRT with a Supply Zone, or a bullish CRT with a Demand
+Zone<br>
+C) Use a 10-pip fixed stop loss regardless of market structure<br>
+D) Enter before the liquidity sweep occurs</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>A) </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>交易亞洲盤時段形成的每一根</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT K </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>線</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>將看跌</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>與供給區結合，或將看漲</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;color:#3C3C3C'> CRT </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>與需求區結合</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>無視市場結構，一律使用固定</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 10 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>點停損</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;color:#3C3C3C'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>在流動性掃蕩發生前提前進場</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#143C6E'>Question: </span></b><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>Q5: Why does the speaker prefer placing the stop loss below the
+entire Demand Zone in a bullish confluence setup?</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#143C6E'>問題：</span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3C3C3C'>題目</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> 5</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>：在看漲多重佐證型態中，為什麼講者傾向將停損設在整個需求區的下方？</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3250'>A) To maximize leverage<br>
+B) Because if price breaks through the Demand Zone, both the CRT setup and the
+Demand Zone have failed (clear invalidation)<br>
+C) Because Demand Zones never get retested<br>
+D) To avoid paying spread fees</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#3C3C3C'>A) </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3C3C3C'>為了最大化槓桿倍數</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>因為若價格完全跌破需求區，代表</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'> CRT </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3C3C3C'>型態與需求區雙雙失效（提供明確的交易失效點）</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;color:#3C3C3C'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>因為需求區永遠不會被回測</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;color:#3C3C3C'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3C3C3C'>為了避免支付點差費用</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#282828'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#2874A6'>Answer Key (Scroll down
+only after completing the quiz)<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2874A6'>參考答案區（請完成自我檢測後再向下查閱）</span></b></p>
+
+<p class=MsoNormal><span lang=EN-US><br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#969696'>Q1 Answer: C<br>
+</span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#969696'>題目</span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;color:#969696'> 1 </span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'>C — </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>掃蕩</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'> CRT </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>高點（買方流動性掃蕩）並收回區間內後，目標即為區間另一側的</span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;color:#969696'> CRT </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>低點。</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#969696'>Q2 Answer: B<br>
+</span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#969696'>題目</span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;color:#969696'> 2 </span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'>B — PO3 </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>的標準順序為：吸籌（</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'>Accumulation </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>盤整）</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'>-&gt; </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>操縱（</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'>Manipulation </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>假突破掃蕩）</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'>-&gt; </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>派發（</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'>Distribution </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>單邊加速）。</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#969696'>Q3 Answer: C<br>
+</span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#969696'>題目</span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;color:#969696'> 3 </span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'>C — </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>日線級別的</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'> CRT </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>搭配</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'> 1 </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>小時圖尋找進場；</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'>1 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>小時級別的</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'> CRT </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>則搭配</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'> 15 </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>分鐘圖。</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#969696'>Q4 Answer: B<br>
+</span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#969696'>題目</span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;color:#969696'> 4 </span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'>B — </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>透過將看跌</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'> CRT </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>疊加於供給區、看漲</span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;color:#969696'> CRT </span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;font-family:"MS Mincho",serif;color:#969696'>疊加於需求區，建立機構級多重佐證（</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'>Confluence</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>）以篩選</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'> A </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>級型態。</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#969696'>Q5 Answer: B<br>
+</span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#969696'>題目</span><span lang=EN-US style='font-size:
+9.5pt;line-height:115%;color:#969696'> 5 </span><span lang=EN-US
+style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+115%;color:#969696'>B — </span><span lang=EN-US style='font-size:9.5pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#969696'>將停損設於需求區外側代表若該位置被跌破，支撑做多的兩大核心理由（</span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;color:#969696'>CRT </span><span
+lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#969696'>與需求區）皆已失效，是最具邏輯的止損點。</span></p>
+
+</div>
+
+</body>
+
+</html>

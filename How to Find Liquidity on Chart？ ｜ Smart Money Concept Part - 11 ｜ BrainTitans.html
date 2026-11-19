@@ -1,0 +1,856 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Gothic";
+	panose-1:2 11 6 9 7 2 5 8 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.0pt;
+	font-family:"Calibri",sans-serif;}
+h1
+	{mso-style-link:"標題 1 字元";
+	margin-top:24.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:14.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#365F91;}
+h2
+	{mso-style-link:"標題 2 字元";
+	margin-top:10.0pt;
+	margin-right:0cm;
+	margin-bottom:0cm;
+	margin-left:0cm;
+	line-height:115%;
+	page-break-after:avoid;
+	font-size:13.0pt;
+	font-family:"Calibri",sans-serif;
+	color:#4F81BD;}
+span.1
+	{mso-style-name:"標題 1 字元";
+	mso-style-link:"標題 1";
+	font-family:"Calibri",sans-serif;
+	color:#365F91;
+	font-weight:bold;}
+span.2
+	{mso-style-name:"標題 2 字元";
+	mso-style-link:"標題 2";
+	font-family:"Calibri",sans-serif;
+	color:#4F81BD;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:72.0pt 90.0pt 72.0pt 90.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal><span lang=EN-US>Deep Learning Notes: How to Find Liquidity
+on Chart</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>深度學習筆記：如何在圖表上辨識流動性</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Source: BrainTitans, Smart Money Concept
+Part 11; user-supplied bilingual SRT, approximately 10:27. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>來源：</span><span
+lang=EN-US>BrainTitans</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>，《</span><span
+lang=EN-US>Smart Money Concept Part 11</span><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif'>》；使用者提供之雙語</span><span lang=EN-US> SRT</span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>，片長約</span><span lang=EN-US>
+10 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>分</span><span
+lang=EN-US> 27 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>秒。</span><span
+lang=EN-US>[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Source limits: No video URL or chart images
+were supplied. Timestamp links below navigate to source excerpts inside this
+document, not to an invented video address.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>來源限制：未提供影片網址或圖表畫面。下列時間戳記連結導向本文件末端的原文定位，不虛構影片網址。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Editorial convention: Speaker claims,
+inferred models, and suggested practice are distinguished. Chart shapes do not
+directly reveal actual stop orders or institutional intent.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>編輯原則：區分講者主張、歸納模型與延伸練習；僅憑圖形無法直接觀測實際停損委託或機構意圖。</span></p>
+
+<h1><span lang=EN-US>Executive Summary</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>一、核心總結</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>The lesson explains liquidity through order
+matching and inferred clusters of stop orders. It maps potential buy-side
+liquidity above highs and sell-side liquidity below lows, then applies this
+framework to ranges, declining trends, and a Nifty 50 five-minute example. Its
+practical message is to locate likely order clusters before trading and
+distinguish sustained breakouts from brief sweeps. External liquidity sits
+beyond a selected range; internal liquidity lies within it. These are the
+speaker’s chart-reading heuristics, not verified order-book measurements or
+guaranteed forecasts. Learners should practice annotation, record competing
+scenarios, and test outcomes rather than chase an apparent breakout. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>本片以買賣撮合及停損委託的推估分布，說明如何辨識圖表上的流動性。講者從等高、等低與下降趨勢切入，解釋高點上方的買方流動性、低點下方的賣方流動性，以及空頭回補可能造成的推升；再以</span><span
+lang=EN-US> Nifty 50 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>五分鐘圖區分區間內外的流動性。核心做法是先標記潛在訂單聚集區，再觀察價格突破後能否維持，避免將短暫掃單誤認為趨勢延續。這些內容屬圖表推論，並非委託簿實測或獲利保證；應搭配情境紀錄與回放練習驗證。</span><span
+lang=EN-US>[file:1]</span></p>
+
+<h1><span lang=EN-US>Key Concepts and Definitions</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>二、知識地圖與核心概念</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>[01:12] Order matching / Pending orders: A
+trade needs matching counterparties; unmatched quantity remains unfilled under
+the example’s assumptions. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[01:12] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>訂單撮合／未成交委託：成交需要對手方；範例中未匹配的數量留待成交。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[02:10] Liquidity / Illiquidity:
+Availability of executable counterparties; the lesson uses chart zones as
+proxies. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[02:10] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>流動性／流動性不足：可供成交的對手方供給；本片以圖表區域作為推估線索。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[00:34] Smart Money Concepts (SMC) / Smart
+Money: The speaker’s framework for interpreting price through liquidity and
+inferred large-player behavior. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[00:34] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>聰明錢概念／聰明錢：講者以流動性及推測大型參與者行為解讀價格的框架。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[02:53] Liquidity pools: Potential
+concentrations of orders inferred from chart structure. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[02:53] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>流動性池：由圖表結構推估的潛在訂單聚集區。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:01] Equal Highs (EQH) / Equal Lows
+(EQL): Repeated highs or lows near similar prices. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:01] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>等高點／等低點：價格多次在相近位置形成高點或低點。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:05] Rejection / Support / Resistance:
+Failure to extend through a zone; lower support and upper resistance structure
+the example range. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:05] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>價格拒絕／支撐／阻力：價格未能穿越某區；下方支撐與上方阻力構成範例區間。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:13] Stop Loss / Buy Stop / Sell Stop:
+Short-position exits require buying; long-position exits require selling.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:13] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>停損／買進停止單／賣出停止單：空單出場需買回，多單出場需賣出。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:22] Buy-side Liquidity (BSL) /
+Sell-side Liquidity (SSL): Potential buy triggers above highs and sell triggers
+below lows in this lesson. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:22] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>買方／賣方流動性：本片指高點上方潛在買進觸發單、低點下方潛在賣出觸發單。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[04:00] Price Imbalance / Supply and
+Demand: The speaker explains rapid movement through unequal buying and selling
+pressure. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[04:00] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>價格不平衡／供需：講者用買賣壓力失衡解釋快速移動；不等同直接量測人數。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[04:02] No Trading Zone / Discount Pricing:
+Speaker-designated avoidance area and preference for cheaper buying locations;
+no numerical threshold is supplied. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[04:02] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>非交易區／折價區：講者建議迴避的區域與偏低買點；未提供量化門檻。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[04:48] Breakout / Breakout candle:
+Movement beyond a marked boundary; close and persistence are observation clues.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[04:48] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>突破／突破</span><span lang=EN-US> K </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒：價格穿越已標記邊界；收盤與維持情況是觀察線索。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[05:07] Liquidity Sweep / Grab / Fake
+Breakout: Brief penetration and reversal used to interpret possible stop
+activation. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[05:07] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>流動性掃蕩／掠取／假突破：短暫穿越後反轉，用以推測停損可能觸發。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[05:13] Stop Loss Hunting / Institutional
+Traders / FOMO: The speaker’s trap narrative; FOMO means fear of missing out.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[05:13] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>停損獵殺／機構交易者／錯失恐懼：講者對陷阱的敘事；不能由圖形直接證明操控。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[05:59] Bearish Trend / Lower Highs / Lower
+Lows: A declining structure with progressively lower highs and lows. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[05:59] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>空頭趨勢／降低的高點／降低的低點：高低點逐步下移的結構。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[06:09] Swing High / Swing Low / Trailing
+Stop: Local turning points and stops adjusted as a trade develops. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[06:09] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>波段高點／波段低點／移動停損：局部轉折與隨交易發展調整的停損。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[07:41] Short Covering: Buying to close
+short positions, potentially adding upward pressure. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[07:41] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>空頭回補：買回以結束空單，可能增加向上壓力。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[07:48] Trendline Liquidity: Potential
+order clustering around a trendline and associated swing points. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[07:48] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>趨勢線流動性：趨勢線與相關波段點附近的潛在委託聚集。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[08:31] Nifty 50 / Five-minute timeframe /
+Range: The index and five-minute consolidation chart used in the example.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[08:31] Nifty 50</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>／五分鐘週期／盤整區間：案例使用的指數及五分鐘整理圖。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[08:43] External Liquidity / Internal
+Liquidity: Potential orders outside the selected major range versus within
+intermediate swings. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[08:43] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>外部／內部流動性：所選主要區間外的潛在訂單，相對於區間內次級波段附近的訂單。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[09:08] Upper Wick / Impulsive Expansion:
+An upper candle shadow and a rapid directional move described in the case.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>[09:08] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>上影線／脈衝擴張：案例中的</span><span lang=EN-US> K </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒上方影線與快速方向性移動。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<h1><span lang=EN-US>Text Knowledge Map</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>三、知識架構圖解</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Liquidity reading → execution requires
+counterparties [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>流動性判讀</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>成交需要對手方</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ Matching → partial execution → unfilled
+remainder [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>撮合</span><span lang=EN-US> → </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>部分成交</span><span lang=EN-US>
+→ </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>剩餘未成交量</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ Position logic → short exit buys; long
+exit sells [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>部位邏輯</span><span lang=EN-US> → </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>空單出場買回；多單出場賣出</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ Structures → EQH/EQL; declining swings;
+trendlines [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>結構辨識</span><span lang=EN-US> → </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>等高／等低；下降波段；趨勢線</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ Relative location → external boundaries
+versus internal swings [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>├─ </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>相對位置</span><span lang=EN-US> → </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>外部邊界與內部次級波段</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>└─ Response → sustained breakout OR sweep
+and reversal → review [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>└─ </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>價格反應</span><span lang=EN-US> → </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>維持突破或掃蕩反轉</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>檢討</span><span
+lang=EN-US> [file:1]</span></p>
+
+<h1><span lang=EN-US>Mental Models and Logic</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>四、底層邏輯與思維模型</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>1. Counterparty constraint: ask what
+executable opposite-side quantity is available, rather than treating a
+submitted order as a completed trade. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>對手方約束：先問有多少可成交的反向數量，不把送出委託等同完成交易。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2. Position reversal: infer the exit
+direction from the original position; short exits buy, long exits sell.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>部位反向：由原持倉推導出場方向；空單買回，多單賣出。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3. Incentive-based inference: imagine where
+a trader entering at a visible level might place protection; treat the result
+as a hypothesis. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>誘因推估：設想在明顯價位進場者可能把保護單放在哪裡；結論只是待驗證假說。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4. State dependence: declining prices may
+clear earlier lower stops while leaving higher short stops; the speaker infers
+an asymmetry, not a measured inventory. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>狀態依賴：下跌可能觸發下方先前停損、留下上方空單停損；這是講者推估的不對稱，不是實測存量。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5. Competing scenarios: a crossed boundary
+can lead either to continuation or rejection; location alone does not settle
+direction. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>競爭情境：越過邊界後可能延續，也可能遭拒反轉；僅知道位置不足以決定方向。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>6. Reference-frame model: internal and
+external require a specified range and timeframe before classification.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>6. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>參照框架：先固定區間與時間週期，才有內部、外部的分類意義。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<h1><span lang=EN-US>Detailed Learning Modules</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>五、詳細重點拆解</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Matching and liquidity [01:04–02:49]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>撮合與流動性基礎</span><span
+lang=EN-US> [01:04–02:49]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a href="#t0104"><span style='color:windowtext;
+text-decoration:none'>[01:04] — Internal transcript locator / </span><span
+style='font-family:"微軟正黑體",sans-serif;color:windowtext;text-decoration:none'>文件內逐字稿定位</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Concept: The lesson starts with incomplete
+matching as a liquidity illustration. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【概念解釋】影片以無法全部撮合說明流動性不足。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Workflow: Identify side and size → compare
+executable opposite quantity → separate filled and unfilled portions.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】辨識方向與數量</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>比較反向可成交量</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>區分已成交與未成交。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Terms / formulas: Example: 1,000 offered,
+800 matched, 200 remaining; no predictive equation is supplied. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】範例：賣出</span><span
+lang=EN-US> 1,000 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>單位、撮合</span><span
+lang=EN-US> 800</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>、剩餘</span><span
+lang=EN-US> 200</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>；未提出價格預測公式。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Cautions: The remainder staying pending
+assumes an order type that permits it; a price chart is not an order book.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】剩餘量留單須以委託類型允許為前提；價格圖不等於委託簿。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Equal levels and exit direction
+[03:01–03:58]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>等高等低與停損方向</span><span
+lang=EN-US> [03:01–03:58]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a href="#t0301"><span style='color:windowtext;
+text-decoration:none'>[03:01] — Internal transcript locator / </span><span
+style='font-family:"微軟正黑體",sans-serif;color:windowtext;text-decoration:none'>文件內逐字稿定位</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Concept: Repeated boundaries provide a map
+of plausible protective exits. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【概念解釋】反覆測試的邊界可用來推估保護性出場位置。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Workflow: Mark repeated highs and lows →
+identify likely short/long entries → label upper BSL and lower SSL.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】標出重複高低點</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>推估空多進場者</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>註記上方</span><span
+lang=EN-US> BSL</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>、下方</span><span
+lang=EN-US> SSL</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Terms / formulas: EQH, EQL, Buy Stop, Sell
+Stop; short exit → buy, long exit → sell. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】等高、等低、買進停止單、賣出停止單；空單出場</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>買回，多單出場</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>賣出。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Cautions: Not every trader uses the same
+stop; potential clusters are not visible confirmed quantities.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】不是所有人都使用相同停損；潛在聚集不等於可見且確認的數量。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Imbalance and trade location [03:58–04:48]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>不平衡與交易位置</span><span
+lang=EN-US> [03:58–04:48]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a href="#t0358"><span style='color:windowtext;
+text-decoration:none'>[03:58] — Internal transcript locator / </span><span
+style='font-family:"微軟正黑體",sans-serif;color:windowtext;text-decoration:none'>文件內逐字稿定位</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Concept: The speaker connects rapid
+movement with supply-demand imbalance and discourages chasing expensive
+entries. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【概念解釋】講者把快速移動連結至供需不平衡，反對在偏高位置追價。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Workflow: Define the range → compare the
+candidate entry with its boundaries → avoid unclear middle entries.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】定義區間</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>比較候選進場點與邊界</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>迴避定位不清的中段進場。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Terms / formulas: Price Imbalance, No
+Trading Zone, Discount Pricing; no midpoint formula or FVG rules are taught.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】價格不平衡、非交易區、折價區；未教導中位數公式或</span><span
+lang=EN-US> FVG </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>規則。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Cautions: Do not generalize that every
+range middle is an imbalance or that cheap-looking prices must rebound.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】不要推論所有區間中段都屬不平衡，也不要認定看似便宜就必然反彈。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Breakout versus sweep [04:48–05:35]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>突破延續與掃蕩反轉</span><span
+lang=EN-US> [04:48–05:35]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a href="#t0448"><span style='color:windowtext;
+text-decoration:none'>[04:48] — Internal transcript locator / </span><span
+style='font-family:"微軟正黑體",sans-serif;color:windowtext;text-decoration:none'>文件內逐字稿定位</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Concept: A break above clustered stops may
+extend or quickly reverse. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【概念解釋】突破停損聚集區後，可能延續，也可能迅速反轉。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Workflow: Mark boundary → observe candle
+close and persistence → contrast continuation with return inside the range.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】標記邊界</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>觀察收盤與維持</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>對照延續及回到區間兩種路徑。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Terms / formulas: Breakout candle,
+Liquidity Sweep, Fake Breakout, Stop Loss Hunting. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】突破</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒、流動性掃蕩、假突破、停損獵殺。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Cautions: The lesson gives no quantified
+duration, success rate, entry rule, or validated probability.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】逐字稿未提供量化維持時間、成功率、完整進場規則或驗證過的機率。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Downtrend and short covering [05:35–08:26]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>下降趨勢與空頭回補</span><span
+lang=EN-US> [05:35–08:26]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a href="#t0535"><span style='color:windowtext;
+text-decoration:none'>[05:35] — Internal transcript locator / </span><span
+style='font-family:"微軟正黑體",sans-serif;color:windowtext;text-decoration:none'>文件內逐字稿定位</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Concept: The speaker infers accumulated
+short stops above falling swing highs and possible buying when they trigger.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【概念解釋】講者推測下降波段高點上方累積空單停損，觸發時可能出現買回壓力。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Workflow: Identify lower highs/lows → mark
+higher stop zones → draw descending trendline → observe upward break and
+swing-high close.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】辨識高低點下移</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>標記上方停損區</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>畫下降趨勢線</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>觀察向上突破與波段高點上方收盤。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Terms / formulas: Bearish Trend, Swing
+High, Trailing Stop, Short Covering, Trendline Liquidity. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】空頭趨勢、波段高點、移動停損、空頭回補、趨勢線流動性。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Cautions: Do not assume all lower liquidity
+is exhausted or treat a trendline break as proof of reversal.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】不要假設下方流動性已全部耗盡，也不要把突破趨勢線當成反轉證明。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Internal and external liquidity
+[08:31–10:15]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>內外部流動性與案例</span><span
+lang=EN-US> [08:31–10:15]</span></p>
+
+<p class=MsoNormal><span lang=EN-US><a href="#t0831"><span style='color:windowtext;
+text-decoration:none'>[08:31] — Internal transcript locator / </span><span
+style='font-family:"微軟正黑體",sans-serif;color:windowtext;text-decoration:none'>文件內逐字稿定位</span></a></span></p>
+
+<p class=MsoNormal><span lang=EN-US>Concept: The Nifty 50 example describes an
+upper boundary sweep followed by a downward move through other inferred pools.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【概念解釋】</span><span
+lang=EN-US>Nifty 50 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>案例描述上方邊界掃蕩，之後向下穿越其他推估流動性區。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Workflow: Fix main range → mark outer
+boundaries and inner swings → annotate upper wick → trace downward sequence
+without inventing exact prices.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【關鍵步驟／操作流程】固定主要區間</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>標記外側邊界與內部波段</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>註記上影線</span><span
+lang=EN-US> → </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>追蹤下行順序，不補造精確價格。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Terms / formulas: External/Internal
+Liquidity, External BSL/SSL, Upper Wick; 3:00 PM is chart time, not video time.
+[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【重要公式／專有名詞】外部／內部流動性、外部買方／賣方流動性、上影線；下午三點是圖表時間，不是影片時間。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Cautions: The narration discusses both
+lower external liquidity and internal stops; no image is supplied to verify
+their exact ordering or size.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>【常見誤區／注意事項】旁白同時提及下方外部流動性與內部停損；未提供圖像，無法核對其精確順序與規模。</span></p>
+
+<h1><span lang=EN-US>Five Immediate Action Items</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>六、實操行動清單</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>The following are editorial practice
+suggestions, not trading instructions or a strategy validated by the video.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>以下為編者延伸的學習練習，不是實盤交易指令，也不是影片已驗證的策略。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1. Choose one chart and one timeframe;
+record the instrument, date, and range before labeling liquidity.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>選一張圖與一個週期，先記錄標的、日期與區間，再開始標記流動性。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2. Annotate five EQH/EQL or swing examples;
+write “short exit buys” above highs and “long exit sells” below lows.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>找五組等高等低或波段範例；高點上方寫「空單出場買回」，低點下方寫「多單出場賣出」。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3. Replay ten boundary tests with future
+candles hidden; record both continuation and sweep scenarios before revealing
+outcomes.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>遮住未來</span><span lang=EN-US> K </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒回放十次邊界測試；揭曉前先寫延續與掃蕩兩種情境。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4. On one range chart, use two colors for
+internal and external pools; separately mark observed candles and inferred
+stops.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>在一張區間圖用兩色區分內外部流動性，並分開註記實際</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒與推測停損。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5. Create a review log with timestamp,
+level, scenario, observed outcome, and uncertainty; complete it in simulation
+before considering live use.</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>建立含時間、價位、情境、實際結果與不確定性的複盤表，先以模擬方式完成，再考慮實盤應用。</span></p>
+
+<h1><span lang=EN-US>Quiz and Review</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>七、觀念自我檢測</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>Q1. A short position is stopped out. Which
+order direction closes it? A Buy; B Sell; C Neither.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>第</span><span
+lang=EN-US>1</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>題：空單觸發停損，出場方向為何？</span><span
+lang=EN-US>A </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>買進；</span><span
+lang=EN-US>B </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>賣出；</span><span
+lang=EN-US>C </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>皆非。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Q2. Where does this lesson infer BSL around
+EQH? A Below lows; B Above equal highs; C Only at the range midpoint.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>第</span><span
+lang=EN-US>2</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>題：依本片架構，等高附近的</span><span
+lang=EN-US> BSL </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>通常推估在哪裡？</span><span
+lang=EN-US>A </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>低點下方；</span><span
+lang=EN-US>B </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>等高上方；</span><span
+lang=EN-US>C </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>只有區間中點。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Q3. Can one candle exceeding a high prove
+continuation? Explain two competing outcomes.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>第</span><span
+lang=EN-US>3</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>題：單根</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒越過前高能否證明延續？請說明兩種競爭情境。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Q4. Before classifying liquidity as
+internal or external, what must you specify? A Main range and timeframe; B Only
+candle color; C An institution’s name.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>第</span><span
+lang=EN-US>4</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>題：分類內外部流動性前必須先指定什麼？</span><span
+lang=EN-US>A </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>主要區間與週期；</span><span
+lang=EN-US>B </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>只看</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒顏色；</span><span
+lang=EN-US>C </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>機構名稱。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Q5. Explain how a downward trendline break
+could combine short covering and new breakout buying, and name one inference
+limit.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>第</span><span
+lang=EN-US>5</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>題：說明向上突破下降趨勢線，如何同時出現空頭回補與突破買盤，並指出一項推論限制。</span></p>
+
+<h1><span lang=EN-US>Source Locators and Data Quality</span></h1>
+
+<h2><span lang=EN-US style='font-family:"MS Gothic"'>原文定位與資料品質</span></h2>
+
+<p class=MsoNormal><span lang=EN-US>All substantive source references point to
+the supplied SRT [file:1]. Excerpts below are brief locators, not a
+reconstruction of the transcript.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>所有內容來源均為所附</span><span
+lang=EN-US> SRT [file:1]</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>。下列僅提供簡短定位摘句，不重製逐字稿。</span></p>
+
+<p class=MsoNormal><a name=t0104><span lang=EN-US>[01:04] how liquidity works
+[file:1]</span></a></p>
+
+<p class=MsoNormal><span lang=EN-US>[01:04] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>流動性的運作</span><span lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><a name=t0301><span lang=EN-US>[03:01] Equal Highs and Equal
+Lows [file:1]</span></a></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:01] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>等高點與等低點</span><span lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><a name=t0358><span lang=EN-US>[03:58] between these two
+boundaries [file:1]</span></a></p>
+
+<p class=MsoNormal><span lang=EN-US>[03:58] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>兩個邊界之間</span><span lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><a name=t0448><span lang=EN-US>[04:48] breaks out above this
+high area [file:1]</span></a></p>
+
+<p class=MsoNormal><span lang=EN-US>[04:48] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>突破上方高點區域</span><span lang=EN-US>
+[file:1]</span></p>
+
+<p class=MsoNormal><a name=t0535><span lang=EN-US>[05:35] the next key chart condition
+[file:1]</span></a></p>
+
+<p class=MsoNormal><span lang=EN-US>[05:35] </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>下一種關鍵圖表結構</span><span lang=EN-US>
+[file:1]</span></p>
+
+<p class=MsoNormal><a name=t0831><span lang=EN-US>[08:31] Nifty 50 5-minute
+timeframe chart [file:1]</span></a></p>
+
+<p class=MsoNormal><span lang=EN-US>[08:31] Nifty 50 </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>五分鐘圖</span><span lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>Timestamp anomalies: Cue 31 runs
+00:03:08,160 → 00:03:01,160; cue 74 starts 00:03:38,240 despite appearing after
+00:05:35,640. These original errors are not silently repaired. Module 5 uses
+the preceding valid 05:35 locator. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>時間異常：第</span><span
+lang=EN-US> 31 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>段為</span><span
+lang=EN-US> 00:03:08,160 → 00:03:01,160</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>，終點早於起點；第</span><span lang=EN-US> 74 </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif'>段雖接在</span><span lang=EN-US>
+00:05:35,640 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>後，起點卻為</span><span
+lang=EN-US> 00:03:38,240</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>。保留並揭露原始錯誤，不默改；第五模組採前一有效</span><span
+lang=EN-US> 05:35 </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>作定位。</span><span
+lang=EN-US>[file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>No profitability guarantee, tested
+probability, precise trade entry, position size, or complete risk-management
+system is established by this transcript. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>逐字稿未建立獲利保證、經驗證機率、精確進場條件、部位大小或完整風險管理系統。</span><span
+lang=EN-US>[file:1]</span></p>
+
+<span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<h1><span lang=EN-US>Answers — expand this heading in Word / </span><span
+lang=EN-US style='font-family:"MS Gothic"'>參考答案</span><span lang=EN-US>——</span><span
+lang=EN-US style='font-family:"MS Gothic"'>請在</span><span lang=EN-US> Word </span><span
+lang=EN-US style='font-family:"MS Gothic"'>展開此標題</span></h1>
+
+<p class=MsoNormal><span lang=EN-US>This final section is marked collapsed by
+default where supported; other viewers may display it expanded.</span></p>
+
+<p class=MsoNormal><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>本末端章節已設定預設折疊；不支援的檢視器可能直接展開。</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1. A. Buying closes a short; the original
+short entry does not make the exit a sell. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>1. A</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>。空單以買回出場；不能因原始方向是做空，就把停損誤認為賣單。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2. B. The speaker locates likely short
+stops above equal highs; this is an inferred cluster. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>2. B</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>。講者將潛在空單停損置於等高上方；這是推估的聚集區。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3. No. Price can hold above and extend, or
+penetrate briefly and return inside; the transcript provides no quantified
+confirmation threshold. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>3. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>不能。價格可站穩後延伸，也可短暫越界後回到區間；逐字稿未提供量化確認門檻。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4. A. The same level can change
+classification if the selected range or timeframe changes. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>4. A</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>。所選區間或週期不同，同一價位的分類也可能不同。</span><span
+lang=EN-US> [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5. Short exits add buying and new breakout
+longs may add buying too; candles alone cannot verify the order mix, stop
+inventory, or institutional intent. [file:1]</span></p>
+
+<p class=MsoNormal><span lang=EN-US>5. </span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif'>空單出場增加買回，突破追多者也可能買進；單憑</span><span
+lang=EN-US> K </span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif'>棒無法證明訂單組成、停損存量或機構意圖。</span><span
+lang=EN-US> [file:1]</span></p>
+
+</div>
+
+</body>
+
+</html>

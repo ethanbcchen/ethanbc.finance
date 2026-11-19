@@ -1,0 +1,1493 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#222222;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 61.2pt 57.6pt 61.2pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#1B365D;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal align=center style='margin-top:10.0pt;text-align:center'><b><span
+  lang=EN-US style='font-size:16.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:white'>ICT Concepts Deep Study Notes: Buyside &amp; Sellside Liquidity<br>
+  </span></b><b><span lang=EN-US style='font-size:14.0pt;line-height:115%;
+  color:#D9E6F2'>ICT </span></b><b><span lang=EN-US style='font-size:14.0pt;
+  line-height:115%;font-family:"MS Mincho",serif;color:#D9E6F2'>交易概念深度學習筆記：買方流動性與賣方流動性</span></b></p>
+  </td>
+ </tr>
+</table>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#1B365D'>一、核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>This video systematically
+breaks down the foundational mechanics of Buyside Liquidity (BSL) and Sellside
+Liquidity (SSL) within the Inner Circle Trader (ICT) methodology. The core
+premise rests on retail trader psychology: traders placing long positions
+position their stop-loss orders (Sell Stops) beneath Swing Lows, whereas short
+sellers place their stop-loss orders (Buy Stops) above Swing Highs.
+Institutional participants, termed Smart Money, actively target these clusters
+of resting stop orders to pair large institutional orders. Liquidity is
+categorized into two primary structural formations: single prominent Old
+Highs/Lows and clustered Relatively Equal Highs/Lows (EQH/EQL). To translate
+theory into actionable chart execution, traders must consistently mark three
+critical multi-timeframe liquidity tiers: Previous Week's High/Low (PWH/PWL),
+Previous Day's High/Low (PDH/PDL), and Session Highs/Lows (Asia and London).
+Ultimately, these liquidity pools serve either as a magnetic Draw on Liquidity
+(DOL) propelling price expansion, or as reversal catalysts when swept and
+followed by market Displacement and entry via a Fair Value Gap (FVG).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>本教學影片系統性地拆解了</span><span
+lang=EN-US style='color:#1F1F1F'> ICT</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>（</span><span lang=EN-US style='color:#1F1F1F'>Inner
+Circle Trader</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>，內圈交易者）交易體系中「買方流動性（</span><span lang=EN-US style='color:#1F1F1F'>Buyside
+Liquidity, BSL</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）」與「賣方流動性（</span><span lang=EN-US style='color:#1F1F1F'>Sellside
+Liquidity, SSL</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）」的底層運作機制。其核心建立在散戶交易心理之上：做多者習慣將止損單（賣出止損單</span><span lang=EN-US
+style='color:#1F1F1F'> Sell Stops</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）設在擺動低點（</span><span lang=EN-US
+style='color:#1F1F1F'>Swing Low</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）下方，而做空者則將止損單（買入止損單</span><span lang=EN-US style='color:#1F1F1F'>
+Buy Stops</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）設在擺動高點（</span><span lang=EN-US style='color:#1F1F1F'>Swing High</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）上方。機構大資金（聰明錢</span><span
+lang=EN-US style='color:#1F1F1F'> Smart Money</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）會主動獵取這些停留止損單的區域，以完成大額訂單的流動性配對。流動性在圖表上主要呈現為兩種結構型態：單一突出的「舊高點與舊低點（</span><span
+lang=EN-US style='color:#1F1F1F'>Old Highs/Lows</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」，以及密集聚集的「相對等高點與等低點（</span><span
+lang=EN-US style='color:#1F1F1F'>Relatively Equal Highs/Lows, EQH/EQL</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」。為了將理論轉化為實戰框架，交易者必須在圖表上固定標記三個關鍵時間週期的流動性水平：前週高低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PWH/PWL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）、前日高低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PDH/PDL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>），以及交易時段高低點（亞洲盤與倫敦盤）。最終，這些流動性池在實務上具備雙重功能：既可作為吸引價格推進的「流動性牽引目標（</span><span
+lang=EN-US style='color:#1F1F1F'>Draw on Liquidity, DOL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」，亦可在被掃蕩（</span><span
+lang=EN-US style='color:#1F1F1F'>Sweep</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）並伴隨強勢「位移（</span><span lang=EN-US
+style='color:#1F1F1F'>Displacement</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）」與「公允價值缺口（</span><span lang=EN-US
+style='color:#1F1F1F'>Fair Value Gap, FVG</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」回踩後，成為高勝率反轉交易的觸發點。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#1B365D'>二、知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:00:30] Swing Low (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>擺動低點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>): A three-bar price
+formation consisting of a central low flanked by a higher low on the left and a
+higher low on the right.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>由三根</span><span
+lang=EN-US style='color:#1F1F1F'>K</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>線組成的價格結構，中間為最低點，且其左側與右側各有一個更高的低點（</span><span
+lang=EN-US style='color:#1F1F1F'>Higher Low</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:00:45] Swing High (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>擺動高點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>): A three-bar price
+formation consisting of a central high flanked by a lower high on the left and
+a lower high on the right.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>由三根</span><span
+lang=EN-US style='color:#1F1F1F'>K</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>線組成的價格結構，中間為最高點，且其左側與右側各有一個更低的高點（</span><span
+lang=EN-US style='color:#1F1F1F'>Lower High</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:01:00 - 00:01:21] Sellside
+Liquidity (SSL / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3B5978'>賣方流動性</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>): Clusters of resting Sell Stop orders placed by long-biased
+retail traders beneath Swing Lows, targeted by Smart Money to pair buy orders.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>停留在擺動低點下方的「賣出止損單（</span><span
+lang=EN-US style='color:#1F1F1F'>Sell Stops</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」集合（來自多單的止損），是聰明錢（</span><span
+lang=EN-US style='color:#1F1F1F'>Smart Money</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）用來配對買單的目標區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:01:00 - 00:01:21] Buyside
+Liquidity (BSL / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3B5978'>買方流動性</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>): Clusters of resting Buy Stop orders placed by short-biased
+retail traders above Swing Highs, targeted by Smart Money to pair sell orders.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>停留在擺動高點上方的「買入止損單（</span><span
+lang=EN-US style='color:#1F1F1F'>Buy Stops</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」集合（來自空單的止損），是聰明錢用來配對賣單的目標區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:04:47] Relatively Equal
+Highs &amp; Lows (EQH &amp; EQL / </span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3B5978'>相對等高點與等低點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>): Two or more distinct swing points positioned at nearly
+identical or closely clustered price levels, creating concentrated pools of
+retail stop orders.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>兩個或多個彼此高度相近、聚集在同一水平帶的擺動高點或低點，形成散戶止損單高度集中的流動性池。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:04:58] Old Highs &amp; Old
+Lows (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>舊高點與舊低點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>): A single, isolated, prominent historical swing high or swing
+low standing out clearly on the price chart.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>圖表上單一獨立、清晰突出的歷史擺動高點或擺動低點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:05:19] Draw on Liquidity
+(DOL / </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>流動性牽引目標</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>): An unmitigated pool of Buyside or Sellside liquidity toward
+which price algorithmically gravitates to fulfill institutional order pairing.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>尚未被獵取的買方或賣方流動性池，價格會像磁鐵般被吸引並推進至該處以完成機構訂單配對。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:05:37] Fair Value Gap (FVG
+/ </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3B5978'>公允價值缺口</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>): A three-candle price imbalance or inefficiency where wicks do
+not overlap, serving as an institutional retracement and entry zone after a
+liquidity sweep.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>由三根</span><span
+lang=EN-US style='color:#1F1F1F'>K</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>線構成的價格失衡區（上下影線未重疊的缺口），在流動性被掃蕩後作為機構回踩測試與精準進場的區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>[00:07:00] Displacement (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>位移</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'> / </span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>強勢動能</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>): An energetic, impulsive
+price move characterized by large-bodied candles showing clear institutional
+commitment and directional intent.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>伴隨大實體</span><span
+lang=EN-US style='color:#1F1F1F'>K</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>線的強勁單邊價格衝擊波，代表機構大資金的明確介入與方向性意圖。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>3. Knowledge Architecture Mind Map (Text Hierarchy)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#1B365D'>三、知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>1. Structural Foundation: Swing
+Points (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>結構基礎：擺動點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>一、結構基礎：擺動點（</span><span
+lang=EN-US style='color:#1F1F1F'>Swing Points</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   ├── Swing High: Central high
++ Lower High (Left) + Lower High (Right) -&gt; Resting Buy Stops (BSL)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>擺動高點：中間高點</span><span
+lang=EN-US style='color:#1F1F1F'> + </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>左側更低高點</span><span lang=EN-US
+style='color:#1F1F1F'> + </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>右側更低高點</span><span lang=EN-US style='color:#1F1F1F'> → </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>上方停留買入止損單（</span><span
+lang=EN-US style='color:#1F1F1F'>BSL </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>買方流動性）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   └── Swing Low: Central low +
+Higher Low (Left) + Higher Low (Right) -&gt; Resting Sell Stops (SSL)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>擺動低點：中間低點</span><span
+lang=EN-US style='color:#1F1F1F'> + </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>左側更高低點</span><span lang=EN-US
+style='color:#1F1F1F'> + </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>右側更高低點</span><span lang=EN-US style='color:#1F1F1F'> → </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>下方停留賣出止損單（</span><span
+lang=EN-US style='color:#1F1F1F'>SSL </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>賣方流動性）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>2. Structural Classification of
+Liquidity (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>流動性的結構分類</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>二、流動性的結構分類</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   ├── Old Highs / Old Lows:
+Single, isolated prominent swing points</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>舊高點</span><span lang=EN-US
+style='color:#1F1F1F'> / </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>舊低點：單一、獨立且明顯突出的擺動高低點</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   └── Relatively Equal Highs /
+Lows (EQH/EQL): Multiple clustered swing points at similar price levels</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>相對等高點</span><span
+lang=EN-US style='color:#1F1F1F'> / </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>等低點：多個聚集在相近價格水平的擺動高低點</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>3. Multi-Timeframe Mandatory
+Chart Markings (</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3B5978'>必標的多時間週期流動性水平</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>三、圖表必標的多時間週期流動性水平</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   ├── Macro Tier: Previous
+Week's High &amp; Low (PWH / PWL)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>宏觀層級：前週高點與低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PWH / PWL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   ├── Daily Tier: Previous
+Day's High &amp; Low (PDH / PDL)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>日內層級：前日高點與低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PDH / PDL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   └── Intraday Session Tier:
+Asia Session High/Low &amp; London Session High/Low</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>盤中時段層級：亞洲盤高低點</span><span
+lang=EN-US style='color:#1F1F1F'> </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>＆</span><span lang=EN-US style='color:#1F1F1F'>
+</span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>倫敦盤高低點</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>4. Practical Execution
+Framework (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>實戰應用與交易執行框架</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>四、實戰應用與交易執行框架</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   ├── Function A — Draw on
+Liquidity (DOL): Target unmitigated liquidity pools for take-profit / expansion</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   ├── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>功能</span><span lang=EN-US
+style='color:#1F1F1F'> A — </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>流動性牽引目標（</span><span lang=EN-US style='color:#1F1F1F'>DOL</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）：將未獵取的流動性池設為價格擴張與止盈目標</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>   └── Function B — Reversal
+Framing: Liquidity Sweep -&gt; Displacement -&gt; 5M FVG Retracement -&gt;
+Target Opposite Liquidity</span></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>   └── </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>功能</span><span lang=EN-US
+style='color:#1F1F1F'> B — </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>反轉行情建構：流動性掃蕩（</span><span lang=EN-US style='color:#1F1F1F'>Sweep</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）</span><span
+lang=EN-US style='color:#1F1F1F'>→ </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>強勢位移（</span><span lang=EN-US style='color:
+#1F1F1F'>Displacement</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）</span><span lang=EN-US style='color:#1F1F1F'>→ 5</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>分鐘</span><span
+lang=EN-US style='color:#1F1F1F'> FVG </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>回踩進場</span><span lang=EN-US style='color:#1F1F1F'>
+→ </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>瞄準反向流動性</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>4. Mental Models &amp; Underlying Logic (Why &amp; How)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#1B365D'>四、底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Step 1: Order Pairing Mechanics
+(Why Smart Money Hunts Stops): Institutional algorithms cannot execute massive
+positions without sufficient counterparty liquidity. Because retail traders
+predictably cluster stop-loss orders just beyond obvious Swing Highs and Swing
+Lows, Smart Money engineers price moves toward these levels to absorb retail
+stop orders and fill institutional positions.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>第一步：訂單配對機制（為何聰明錢獵殺止損）</span><span
+lang=EN-US style='color:#1F1F1F'>—— </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>機構演算法若缺乏足夠的對手盤流動性，便無法執行大額倉位。由於散戶習慣將止損單集中設在明顯的擺動高點上方與擺動低點下方，聰明錢會引導價格觸及這些區域，藉此吸收散戶止損單以完成自身大單的配對建倉。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Step 2: Liquidity State
+Tracking (Dynamic Migration of Pools): Liquidity is dynamic rather than static.
+Once an existing Swing High or Low is swept (taken out), that specific
+liquidity pool is neutralized, and the trader's focus must immediately shift to
+the newly formed outer swing points or remaining untouched pools.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>第二步：流動性狀態追蹤（動態轉移思維）</span><span
+lang=EN-US style='color:#1F1F1F'>—— </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>流動性並非靜止不變。一旦既有的擺動高點或低點被獵取（</span><span
+lang=EN-US style='color:#1F1F1F'>Taken Out</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>），該處的流動性池即告失效，交易者必須立即將注意力轉移至新形成的區間外側擺動點，或其他尚未被觸及的流動性池。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Step 3: Top-Down Timeframe
+Hierarchy (From Macro to Session Narrative): The speaker structures daily chart
+analysis from higher-timeframe reference points down to intraday sessions:
+marking PWH/PWL first, then PDH/PDL, and finally Asia/London session extremes.
+Once session highs and lows are exhausted, price naturally seeks the next
+higher-tier liquidity pool (e.g., PDH/PDL).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>第三步：由上而下的時間週期層級（從宏觀到盤中敘事）</span><span
+lang=EN-US style='color:#1F1F1F'>—— </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>講者遵循由大週期到小週期的分析邏輯：先標出前週高低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PWH/PWL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>），再標出前日高低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PDH/PDL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>），最後標出亞洲盤與倫敦盤高低點。當盤中時段的流動性皆被掃蕩完畢後，價格自然會向更高層級的流動性目標（如前日高低點）推進。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Step 4: Confirmation Filter —
+Sweep vs. Breakout (Displacement &amp; FVG): Taking out a liquidity level alone
+is not an automatic entry signal. The analyst evaluates whether price shows
+genuine Displacement beyond the level (continuation) or rejects the level with
+Displacement in the opposite direction, confirming an institutional reversal
+via a 5-minute Fair Value Gap (FVG).</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>第四步：確認過濾器</span><span
+lang=EN-US style='color:#1F1F1F'> — </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>真突破與假突破掃蕩（位移與</span><span lang=EN-US
+style='color:#1F1F1F'> FVG </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>驗證）</span><span lang=EN-US style='color:#1F1F1F'>—— </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>單純獵取流動性水平並非直接進場訊號。分析者必須觀察價格突破該水平後，是出現同向的強勢位移（延續走勢），還是遭拒絕並產生反向強勢位移，進而透過回踩</span><span
+lang=EN-US style='color:#1F1F1F'> 5 </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>分鐘公允價值缺口（</span><span lang=EN-US
+style='color:#1F1F1F'>FVG</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）確認機構級反轉。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>5. Detailed Breakdown by Core Modules (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#1B365D'>五、詳細重點拆解（核心主題模組）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 1: Swing Points &amp; Stop-Loss Psychology [00:00:00 -
+00:01:37]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組一：擺動點定義與止損心理學</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:00:00 -
+00:01:37]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Concept Explanation: Swing
+points are structural turning points on a chart where retail stop-loss orders
+accumulate, forming Buyside Liquidity (BSL) and Sellside Liquidity (SSL).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【概念解釋】：擺動點是圖表上的結構轉折點，也是散戶止損單密集停留之處，從而形成買方流動性（</span><span
+lang=EN-US style='color:#1F1F1F'>BSL</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）與賣方流動性（</span><span lang=EN-US
+style='color:#1F1F1F'>SSL</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Operational Steps: (1)
+Identify a Swing Low by locating a candle low with a higher low immediately to
+its left and right. (2) Identify a Swing High by locating a candle high with a
+lower high immediately to its left and right. (3) Map Sell Stops beneath Swing
+Lows (SSL) and Buy Stops above Swing Highs (BSL).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【關鍵步驟</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>操作流程】：</span><span lang=EN-US style='color:#1F1F1F'>(1) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>尋找左側與右側各有一個更高低點的</span><span
+lang=EN-US style='color:#1F1F1F'>K</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>線低點，確認為擺動低點；</span><span lang=EN-US
+style='color:#1F1F1F'>(2) </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>尋找左側與右側各有一個更低高點的</span><span lang=EN-US style='color:#1F1F1F'>K</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>線高點，確認為擺動高點；</span><span
+lang=EN-US style='color:#1F1F1F'>(3) </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>將擺動低點下方標記為賣出止損區（</span><span lang=EN-US
+style='color:#1F1F1F'>SSL</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>），擺動高點上方標記為買入止損區（</span><span lang=EN-US style='color:#1F1F1F'>BSL</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Terms: Swing High (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>擺動高點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Swing Low (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>擺動低點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Sell Stops (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>賣出止損單</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Buy Stops (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>買入止損單</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Smart Money (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>聰明錢</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【重要公式</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>專有名詞】：</span><span lang=EN-US style='color:#1F1F1F'>Swing High</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>（擺動高點）、</span><span
+lang=EN-US style='color:#1F1F1F'>Swing Low</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（擺動低點）、</span><span
+lang=EN-US style='color:#1F1F1F'>Sell Stops</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（賣出止損單）、</span><span
+lang=EN-US style='color:#1F1F1F'>Buy Stops</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（買入止損單）、</span><span
+lang=EN-US style='color:#1F1F1F'>Smart Money</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（聰明錢）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Common Pitfalls: Treating
+every minor intraday wiggle as significant liquidity; instead, prioritize
+obvious swing points located on the outer boundaries of a price range.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【常見誤區</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>注意事項】：切勿將盤中所有微小的波動都當作重要流動性，應優先專注於價格區間「外側」最明顯突出的高低點。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 2: Dynamic Tracking of Swing Liquidity on 4H Charts
+[00:01:37 - 00:04:33]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組二：四小時圖表上的流動性動態追蹤演練</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:01:37 -
+00:04:33]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Concept Explanation: As price
+evolves across a 4-hour timeframe, liquidity levels continuously shift as old
+swing points get swept and new swing points form.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【概念解釋】：隨著四小時（</span><span lang=EN-US
+style='color:#1F1F1F'>4H</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）圖表走勢推進，舊的擺動點被獵取、新的擺動點不斷生成，流動性水平呈現動態轉移的循環。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Operational Steps: (1)
+Mark initial obvious outer Swing Highs and Lows on the 4H chart. (2) Once price
+trades through a Swing High, remove focus from that swept level and wait for a
+new lower high to form on the right side to confirm the next BSL. (3) When a
+new low fails to break a prior low, group them together as an active SSL
+target.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【關鍵步驟</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>操作流程】：</span><span lang=EN-US style='color:#1F1F1F'>(1) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>先在四小時圖上標出區間外側最明顯的擺動高低點；</span><span
+lang=EN-US style='color:#1F1F1F'>(2) </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>一旦價格突破某個擺動高點，立即解除對該舊高點的關注，等待右側形成新的更低高點以確認下一個</span><span
+lang=EN-US style='color:#1F1F1F'> BSL</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>；</span><span lang=EN-US style='color:#1F1F1F'>(3)
+</span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>當新低點未能跌破前低時，將兩者合併視為有效的</span><span
+lang=EN-US style='color:#1F1F1F'> SSL </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>目標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Terms: Four-Hour Chart (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>四小時圖表</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Outer Range Highs/Lows
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3B5978'>區間外側高低點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), Liquidity Sweep / Take Out (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>獵取流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【重要公式</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>專有名詞】：</span><span lang=EN-US style='color:#1F1F1F'>Four-Hour
+Chart</span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>（四小時圖表）、</span><span
+lang=EN-US style='color:#1F1F1F'>Outer Range Highs/Lows</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（區間外側高低點）、</span><span
+lang=EN-US style='color:#1F1F1F'>Take Out</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（獵取</span><span lang=EN-US
+style='color:#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>掃蕩）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Common Pitfalls: Continuing
+to rely on a liquidity level that has already been swept, or prematurely
+marking a swing point before the right-side confirmation candle closes.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【常見誤區</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>注意事項】：切勿繼續執著於已被獵取過的舊流動性位置，也不要在右側確認</span><span lang=EN-US
+style='color:#1F1F1F'>K</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>線尚未收盤前就過早認定擺動點已成立。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 3: Old Highs/Lows vs. Relatively Equal Highs/Lows
+[00:04:34 - 00:05:11]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組三：舊高低點與相對等高低點的結構辨識</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:04:34 -
+00:05:11]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Concept Explanation:
+Liquidity manifests in two distinct visual patterns on price charts: isolated
+single swing extremes and horizontally aligned multiple swing points.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【概念解釋】：流動性在價格圖表上主要呈現兩種視覺型態：單一孤立的擺動極值，以及水平對齊的多重擺動點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Operational Steps: (1)
+Scan for single, prominent swing peaks or troughs standing alone without nearby
+resistance/support—label these as Old Highs or Old Lows. (2) Scan for two or
+more swing highs or lows clustered at roughly the same price level—label these
+as Relatively Equal Highs (EQH) or Relatively Equal Lows (EQL).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【關鍵步驟</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>操作流程】：</span><span lang=EN-US style='color:#1F1F1F'>(1) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>掃描圖表中單獨突出、周圍無相近阻力的單一擺動波峰或波谷，標記為「舊高點（</span><span
+lang=EN-US style='color:#1F1F1F'>Old High</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」或「舊低點（</span><span
+lang=EN-US style='color:#1F1F1F'>Old Low</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」；</span><span lang=EN-US
+style='color:#1F1F1F'>(2) </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>掃描兩個以上聚集在幾乎相同價格水平的擺動高點或低點，標記為「相對等高點（</span><span lang=EN-US
+style='color:#1F1F1F'>EQH</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）」或「相對等低點（</span><span lang=EN-US style='color:#1F1F1F'>EQL</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Terms: Old Highs and Old
+Lows (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>舊高點與舊低點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), Relatively Equal Highs (EQH / </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>相對等高點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Relatively Equal Lows
+(EQL / </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>相對等低點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【重要公式</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>專有名詞】：</span><span lang=EN-US style='color:#1F1F1F'>Old Highs
+&amp; Old Lows</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>（舊高點與舊低點）、</span><span lang=EN-US style='color:#1F1F1F'>Relatively
+Equal Highs/Lows</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>（相對等高點</span><span lang=EN-US style='color:#1F1F1F'>/</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>等低點）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Common Pitfalls: Expecting
+Equal Highs or Equal Lows to act as impenetrable 'double top' or 'double
+bottom' support/resistance; in ICT logic, they act as high-probability magnets
+for stop hunts.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【常見誤區</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>注意事項】：切勿以傳統技術分析的「雙重頂</span><span lang=EN-US style='color:#1F1F1F'>/</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>雙重底」思維將等高點或等低點視為堅固的支撐阻力；在</span><span
+lang=EN-US style='color:#1F1F1F'> ICT </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>邏輯中，它們反而是吸引機構獵殺止損的強大磁鐵。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 4: Mandatory Multi-Timeframe Liquidity Levels [00:05:12 -
+00:06:22]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組四：圖表必標的三層級時間週期流動性水平</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:05:12 -
+00:06:22]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Concept Explanation: To
+eliminate guesswork, traders should systematically mark three standardized
+time-based liquidity tiers on their charts to serve as Draws on Liquidity or
+reversal zones.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【概念解釋】：為避免主觀猜測，交易者應在圖表上系統性地標記三個標準化的時間基準流動性層級，作為流動性牽引目標（</span><span
+lang=EN-US style='color:#1F1F1F'>DOL</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）或反轉觀察區。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Operational Steps: (1)
+Mark Previous Week's High and Low (PWH/PWL)—e.g., identifying a Tuesday low and
+Thursday high from the prior week. (2) Mark Previous Day's High and Low
+(PDH/PDL). (3) Mark Session Highs and Lows, specifically the Asia Session
+High/Low and London Session High/Low.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【關鍵步驟</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>操作流程】：</span><span lang=EN-US style='color:#1F1F1F'>(1) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>標出「前週高點與低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PWH/PWL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」（例如前一週的週二低點與週四高點）；</span><span
+lang=EN-US style='color:#1F1F1F'>(2) </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>標出「前日高點與低點（</span><span lang=EN-US
+style='color:#1F1F1F'>PDH/PDL</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）」；</span><span lang=EN-US style='color:#1F1F1F'>(3) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>標出「交易時段高低點（</span><span
+lang=EN-US style='color:#1F1F1F'>Session Highs/Lows</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」，特別是亞洲盤高低點與倫敦盤高低點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Terms: Previous Week's
+High/Low (PWH/PWL / </span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"MS Mincho",serif;color:#3B5978'>前週高低點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), Previous Day High/Low (PDH/PDL / </span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>前日高低點</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Session Highs and Lows
+(</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3B5978'>交易時段高低點</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), Narrative (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3B5978'>市場敘事</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【重要公式</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>專有名詞】：</span><span lang=EN-US style='color:#1F1F1F'>Previous
+Week's High/Low</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>（前週高低點）、</span><span lang=EN-US style='color:#1F1F1F'>Previous
+Day High/Low</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>（前日高低點）、</span><span lang=EN-US style='color:#1F1F1F'>Session
+Highs/Lows</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>（交易時段高低點）、</span><span lang=EN-US style='color:#1F1F1F'>Narrative</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>（市場敘事）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Common Pitfalls: Cluttering
+the chart with dozens of arbitrary trendlines while neglecting objective, time-anchored
+highs and lows (weekly, daily, and session boundaries).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【常見誤區</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>注意事項】：避免在圖表上畫滿主觀隨意的趨勢線，卻忽略了具備客觀時間錨點（週、日、交易時段邊界）的核心高低點。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 5: Intraday Session Reversal Case Study (New York Open)
+[00:06:23 - 00:07:48]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組五：盤中時段反轉實戰案例（紐約開盤獵殺流動性）</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:06:23 -
+00:07:48]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Concept Explanation:
+Untouched Asia and London session highs/lows provide a complete intraday
+roadmap for framing high-probability New York session reversals.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【概念解釋】：尚未被觸及的亞洲盤與倫敦盤高低點，能為紐約盤的高勝率反轉交易提供完整的盤中路徑圖。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Operational Steps: (1)
+Observe prior session liquidity: Asia low is already swept, while Asia high,
+London high, and London low (forming equal lows) remain intact. (2) Into the
+New York open, wait for price to rally above Midnight Open and sweep both
+London high and Asia high. (3) Wait for bearish Displacement downward (do not
+enter without displacement). (4) Enter short on a retracement into the 5-minute
+Fair Value Gap (FVG) where candle bodies respect the gap, targeting the
+untouched London session equal lows.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【關鍵步驟</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>操作流程】：</span><span lang=EN-US style='color:#1F1F1F'>(1) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>盤點前期流動性：亞洲盤低點已被獵取，但亞洲盤高點、倫敦盤高點以及倫敦盤低點（形成相對等低點）仍完好無損；</span><span
+lang=EN-US style='color:#1F1F1F'>(2) </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>進入紐約開盤時段，等待價格向上突破午夜開盤價（</span><span
+lang=EN-US style='color:#1F1F1F'>Midnight Open</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）並同時掃蕩倫敦盤高點與亞洲盤高點；</span><span
+lang=EN-US style='color:#1F1F1F'>(3) </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>耐心等待向下的強勢「位移（</span><span lang=EN-US
+style='color:#1F1F1F'>Displacement</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）」出現；</span><span lang=EN-US style='color:
+#1F1F1F'>(4) </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>當價格回踩</span><span lang=EN-US style='color:#1F1F1F'> 5 </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>分鐘公允價值缺口（</span><span
+lang=EN-US style='color:#1F1F1F'>FVG</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）且實體</span><span lang=EN-US style='color:#1F1F1F'>K</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>線收盤均未突破缺口時進場做空，止盈目標鎖定下方的倫敦盤等低點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Terms: New York Open (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>紐約開盤</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Midnight Open (</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>午夜開盤價</span><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#3B5978'>), Break of Structure (BOS
+/ </span><span lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:
+"MS Mincho",serif;color:#3B5978'>市場結構破壞</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), Displacement (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3B5978'>位移</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), 5-Minute Fair Value Gap (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#3B5978'>五分鐘公允價值缺口</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#3B5978'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【重要公式</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>專有名詞】：</span><span lang=EN-US style='color:#1F1F1F'>New York
+Open</span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>（紐約開盤）、</span><span
+lang=EN-US style='color:#1F1F1F'>Midnight Open</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（午夜開盤價）、</span><span
+lang=EN-US style='color:#1F1F1F'>Break of Structure</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（市場結構破壞）、</span><span
+lang=EN-US style='color:#1F1F1F'>Displacement</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（位移）、</span><span
+lang=EN-US style='color:#1F1F1F'>5-Minute FVG</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>（五分鐘公允價值缺口）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Common Pitfalls: Shorting
+immediately when London/Asia highs are breached before seeing bearish
+Displacement, or holding past the primary opposing liquidity target (London
+session low).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【常見誤區</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>注意事項】：切勿在價格剛突破倫敦</span><span lang=EN-US style='color:#1F1F1F'>/</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>亞洲盤高點、尚未出現向下位移時就盲目摸頂做空；同時應在觸及主要反向流動性目標（倫敦盤低點）時及時獲利了結。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>Module 6: Sequential Liquidity Exhaustion &amp; Expansion to PDH
+[00:07:49 - 00:09:19]<br>
+</span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#2B547E'>模組六：流動性逐級消耗與向前日高點擴張案例</span></b><b><span
+lang=EN-US style='font-size:11.0pt;line-height:115%;color:#2B547E'> [00:07:49 -
+00:09:19]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Concept Explanation: When
+both sides of intraday session liquidity (Asia and London) are swept without
+sustained downside displacement, price shifts its Draw on Liquidity toward
+higher-timeframe targets such as Previous Day High (PDH).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【概念解釋】：當盤中交易時段（亞洲盤與倫敦盤）的上下兩側流動性皆被掃蕩，且下方缺乏延續性的向下位移時，價格會將流動性牽引目標轉向更高週期的「前日高點（</span><span
+lang=EN-US style='color:#1F1F1F'>PDH</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Operational Steps: (1)
+Mark PDH and PDL before the session begins. (2) Observe Asia high getting
+swept, followed by London session sweeping both London low and Asia low without
+bearish displacement below the lows. (3) Identify bullish Displacement upward
+and enter long on the 5-minute FVG retracement. (4) Take initial targets at
+London session high; once price bases above Midnight Open and sweeps internal
+lows, hold/target the remaining unmitigated PDH, where strong displacement over
+PDH confirms continued expansion.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【關鍵步驟</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>操作流程】：</span><span lang=EN-US style='color:#1F1F1F'>(1) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>開盤前先標記前日高點（</span><span
+lang=EN-US style='color:#1F1F1F'>PDH</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）與前日低點（</span><span lang=EN-US
+style='color:#1F1F1F'>PDL</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）；</span><span lang=EN-US style='color:#1F1F1F'>(2) </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>觀察亞洲盤高點先被獵取，隨後倫敦盤向下掃蕩倫敦盤低點與亞洲盤低點，但下方並無真正的向下位移；</span><span
+lang=EN-US style='color:#1F1F1F'>(3) </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>確認出現向上的強勢位移後，於</span><span lang=EN-US
+style='color:#1F1F1F'> 5 </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>分鐘</span><span lang=EN-US style='color:#1F1F1F'> FVG </span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>回踩處進場做多；</span><span
+lang=EN-US style='color:#1F1F1F'>(4) </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>先以倫敦盤高點為第一目標，待價格在午夜開盤價上方盤整並掃蕩內部低點後，由於時段高低點皆已清空，將最終目標鎖定尚未觸及的</span><span
+lang=EN-US style='color:#1F1F1F'> PDH</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>，價格隨後以強勢位移突破</span><span lang=EN-US
+style='color:#1F1F1F'> PDH </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>並持續走高。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Key Terms: Liquidity
+Exhaustion (</span><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#3B5978'>流動性消耗完畢</span><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), Internal Low Sweep (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"MS Mincho",serif;color:#3B5978'>內部低點掃蕩</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>), Expansion (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"MS Mincho",serif;color:#3B5978'>價格擴張</span><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#3B5978'>).</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【重要公式</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>專有名詞】：</span><span lang=EN-US style='color:#1F1F1F'>Liquidity
+Exhaustion</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>（流動性消耗）、</span><span lang=EN-US style='color:#1F1F1F'>Internal
+Low Sweep</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>（內部低點掃蕩）、</span><span lang=EN-US style='color:#1F1F1F'>Expansion</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>（價格擴張）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>• Common Pitfalls: Failing to
+look at higher-timeframe liquidity (PDH/PDL) after intraday session highs and
+lows have already been cleared, causing traders to miss the primary daily
+expansion leg.</span></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>  </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>【常見誤區</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>注意事項】：當盤中時段的高低點都已被獵取完畢後，若忘記向上尋找更高層級的流動性目標（如</span><span
+lang=EN-US style='color:#1F1F1F'> PDH/PDL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>），便會錯失當日最主要的趨勢擴張波段。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>6. Practical Action Items Checklist<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#1B365D'>六、實操行動清單（</span></b><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>Action Items</span></b><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"MS Mincho",serif;
+color:#1B365D'>）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>1. Perform Daily Pre-Market
+Liquidity Mapping: Before every trading session, open your chart and draw
+horizontal levels for Previous Week's High/Low (PWH/PWL) and Previous Day's
+High/Low (PDH/PDL).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>1. </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>執行每日盤前流動性地圖標記：在每個交易日開盤前，打開圖表並精準畫出「前週高低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PWH/PWL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」與「前日高低點（</span><span
+lang=EN-US style='color:#1F1F1F'>PDH/PDL</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」的水平線。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>2. Mark Asia and London Session
+Extremes Before New York Open: At the conclusion of the London session (or
+prior to the New York open), box out or mark the exact Asia Session High/Low
+and London Session High/Low to identify which pools remain untouched.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>2. </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>紐約開盤前標定亞洲盤與倫敦盤極值：在紐約開盤前，明確標記出當日亞洲盤高低點與倫敦盤高低點，盤點哪些流動性池已被獵取、哪些仍完好無損。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>3. Conduct a 4-Hour Swing Point
+&amp; EQH/EQL Audit: Switch to the 4-hour timeframe and practice labeling only
+outer-range Swing Highs/Lows (verified by 3-bar left/right rules) and
+clustering Relatively Equal Highs/Lows (EQH/EQL).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>3. </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>進行四小時級別擺動點與等高低點盤點：切換至</span><span lang=EN-US
+style='color:#1F1F1F'> 4 </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>小時圖表，嚴格依據「左右兩側各一高</span><span lang=EN-US style='color:#1F1F1F'>/</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>低點」的規則，僅標記區間外側的明顯擺動點以及相對等高點</span><span
+lang=EN-US style='color:#1F1F1F'>/</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>等低點（</span><span lang=EN-US style='color:#1F1F1F'>EQH/EQL</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>4. Enforce the 'Sweep +
+Displacement + 5M FVG' Entry Rule: Do not fade a breakout immediately. Wait for
+a liquidity level to be swept, confirm an opposite-direction Displacement move
+on the 5-minute chart, and place limit/market entries only upon a retracement
+into the resulting 5M Fair Value Gap.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>4. </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>嚴格執行「掃蕩</span><span lang=EN-US
+style='color:#1F1F1F'> + </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>位移</span><span lang=EN-US style='color:#1F1F1F'> + 5</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>分鐘</span><span
+lang=EN-US style='color:#1F1F1F'> FVG</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>」進場鐵律：絕不在價格剛突破高低點時立刻逆勢摸頂抄底；必須等待流動性被掃蕩後，在</span><span
+lang=EN-US style='color:#1F1F1F'> 5 </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>分鐘圖上確認出現反向強勢「位移（</span><span lang=EN-US
+style='color:#1F1F1F'>Displacement</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）」，並於回踩</span><span lang=EN-US
+style='color:#1F1F1F'> 5 </span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>分鐘公允價值缺口（</span><span lang=EN-US style='color:#1F1F1F'>FVG</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）時才執行進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>5. Set Take-Profit Targets at Opposing
+Unmitigated Liquidity Pools: Align your risk-to-reward by setting take-profit
+targets directly at the nearest untouched opposing liquidity pool (e.g.,
+targeting London Equal Lows after sweeping Asia/London Highs, or targeting PDH
+once session highs/lows are cleared).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F1F1F'>5. </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>將止盈目標設定在反向未獵取的流動性池：將止盈點直接設在最近一個尚未被觸及的反向流動性池（例如：掃蕩亞洲</span><span
+lang=EN-US style='color:#1F1F1F'>/</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>倫敦盤高點後，將目標設在倫敦盤等低點；若時段高低點皆已清空，則將目標推進至前日高點</span><span
+lang=EN-US style='color:#1F1F1F'> PDH</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1B365D'>7. Concept Self-Assessment (Quiz &amp; Review)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#1B365D'>七、觀念自我檢測（單選題測驗）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Q1. According to the video,
+what strictly defines a valid Swing Low on a price chart?<br>
+A) A low that breaks below the previous day's low with high volume.<br>
+B) A central low flanked by a higher low to its left and a higher low to its
+right.<br>
+C) Two equal lows forming a double-bottom support pattern.<br>
+D) Any candle low that closes inside a 5-minute Fair Value Gap.</span></p>
+
+<p class=MsoNormal style='margin-bottom:8.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>問題</span><span
+lang=EN-US style='color:#1F1F1F'> 1</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>：根據影片內容，圖表上一個有效的「擺動低點（</span><span lang=EN-US
+style='color:#1F1F1F'>Swing Low</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）」其嚴格定義為何？</span><span lang=EN-US style='color:#1F1F1F'><br>
+A) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>伴隨高成交量跌破前日低點的低點。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+B) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>中間為低點，且其左側有一個更高的低點、右側也有一個更高的低點。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+C) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>兩個高度相等的低點所構成的雙重底支撐型態。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+D) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>任何收盤在</span><span
+lang=EN-US style='color:#1F1F1F'> 5 </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>分鐘公允價值缺口內的</span><span lang=EN-US
+style='color:#1F1F1F'>K</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>線低點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Q2. Why does Smart Money target
+the area directly beneath a Swing Low?<br>
+A) Because short sellers place their take-profit orders there.<br>
+B) Because retail long traders cluster their Sell Stop orders there, allowing
+Smart Money to pair buy orders.<br>
+C) Because moving averages always act as magnetic support at swing lows.<br>
+D) Because market makers are required to close all positions at swing lows.</span></p>
+
+<p class=MsoNormal style='margin-bottom:8.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>問題</span><span
+lang=EN-US style='color:#1F1F1F'> 2</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>：為什麼聰明錢（</span><span lang=EN-US
+style='color:#1F1F1F'>Smart Money</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>）會鎖定擺動低點正下方的區域作為目標？</span><span lang=EN-US
+style='color:#1F1F1F'><br>
+A) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>因為做空者將止盈單設在那裡。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+B) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>因為做多的散戶將「賣出止損單（</span><span
+lang=EN-US style='color:#1F1F1F'>Sell Stops</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」集中在該處，讓聰明錢得以藉此配對買單。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+C) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>因為移動平均線總是在擺動低點提供磁吸支撐。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+D) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>因為造市商被規定必須在擺動低點平掉所有倉位。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Q3. How do 'Old Highs/Lows' differ
+structurally from 'Relatively Equal Highs/Lows'?<br>
+A) Old Highs/Lows only occur on weekly charts, while Equal Highs/Lows only
+occur on 5-minute charts.<br>
+B) Old Highs/Lows are isolated single prominent swing points, whereas Equal
+Highs/Lows consist of multiple swing points clustered near the same price
+level.<br>
+C) Old Highs/Lows represent Buyside Liquidity, whereas Equal Highs/Lows
+represent Sellside Liquidity.<br>
+D) Old Highs/Lows cannot be used as a Draw on Liquidity.</span></p>
+
+<p class=MsoNormal style='margin-bottom:8.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>問題</span><span
+lang=EN-US style='color:#1F1F1F'> 3</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>：「舊高點</span><span lang=EN-US style='color:
+#1F1F1F'>/</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>舊低點（</span><span lang=EN-US style='color:#1F1F1F'>Old Highs/Lows</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」與「相對等高點</span><span
+lang=EN-US style='color:#1F1F1F'>/</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>等低點（</span><span lang=EN-US style='color:#1F1F1F'>Relatively
+Equal Highs/Lows</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）」在結構上有何差異？</span><span lang=EN-US style='color:#1F1F1F'><br>
+A) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>舊高低點僅出現在週線圖，而等高低點僅出現在</span><span
+lang=EN-US style='color:#1F1F1F'> 5 </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>分鐘圖。</span><span lang=EN-US style='color:#1F1F1F'><br>
+B) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>舊高低點是單一孤立且突出的擺動點；而等高低點是由多個聚集在相近價格水平的擺動點所組成。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+C) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>舊高低點代表買方流動性，而等高低點代表賣方流動性。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+D) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>舊高低點不能作為流動性牽引目標（</span><span
+lang=EN-US style='color:#1F1F1F'>Draw on Liquidity</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Q4. In the New York Open
+reversal case study [00:06:23 - 00:07:48], what confirmed the short entry after
+London and Asia highs were swept?<br>
+A) Immediate market sell order the exact second London high was touched.<br>
+B) Waiting for a golden cross on the 4-hour chart.<br>
+C) Bearish Displacement downward followed by a retracement into a 5-minute Fair
+Value Gap (FVG) with no candle body closing inside it.<br>
+D) Price breaking above the Previous Week's High.</span></p>
+
+<p class=MsoNormal style='margin-bottom:8.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>問題</span><span
+lang=EN-US style='color:#1F1F1F'> 4</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>：在紐約開盤反轉實戰案例</span><span lang=EN-US
+style='color:#1F1F1F'> [00:06:23 - 00:07:48] </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>中，當倫敦盤與亞洲盤高點被掃蕩後，是什麼訊號確認了做空進場？</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+A) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>在價格觸及倫敦盤高點的同一秒立即市價做空。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+B) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>等待四小時圖表出現黃金交叉。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+C) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>出現向下的強勢「位移（</span><span
+lang=EN-US style='color:#1F1F1F'>Displacement</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）」，隨後回踩進</span><span
+lang=EN-US style='color:#1F1F1F'> 5 </span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>分鐘公允價值缺口（</span><span lang=EN-US
+style='color:#1F1F1F'>FVG</span><span lang=EN-US style='font-family:"MS Mincho",serif;
+color:#1F1F1F'>）且沒有實體</span><span lang=EN-US style='color:#1F1F1F'>K</span><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>線收盤在缺口內部。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+D) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>價格向上突破前週高點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#3B5978'>Q5. In the second intraday case
+study [00:07:49 - 00:09:19], once both Asia and London session highs and lows
+were already swept, where did price look next for its Draw on Liquidity?<br>
+A) Back to the Asia session midpoint.<br>
+B) Previous Day High (PDH).<br>
+C) Previous Month Low.<br>
+D) It stopped moving for the rest of the week.</span></p>
+
+<p class=MsoNormal style='margin-bottom:8.0pt;line-height:120%'><span
+lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>問題</span><span
+lang=EN-US style='color:#1F1F1F'> 5</span><span lang=EN-US style='font-family:
+"MS Mincho",serif;color:#1F1F1F'>：在第二個盤中實戰案例</span><span lang=EN-US
+style='color:#1F1F1F'> [00:07:49 - 00:09:19] </span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>中，當亞洲盤與倫敦盤的高低點都已經被掃蕩完畢後，價格接下來會將哪裡視為下一個流動性牽引目標？</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+A) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>回到亞洲盤的中軸線。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+B) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>前日高點（</span><span
+lang=EN-US style='color:#1F1F1F'>Previous Day High, PDH</span><span lang=EN-US
+style='font-family:"MS Mincho",serif;color:#1F1F1F'>）。</span><span lang=EN-US
+style='color:#1F1F1F'><br>
+C) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>前月低點。</span><span
+lang=EN-US style='color:#1F1F1F'><br>
+D) </span><span lang=EN-US style='font-family:"MS Mincho",serif;color:#1F1F1F'>本週剩餘時間停止波動。</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#222222'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:12.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.0pt;line-height:
+115%;color:#666666'>▼ Answer Key &amp; Explanations (Self-Check Section —
+Scroll Down to Reveal)<br>
+▼ </span></b><b><span lang=EN-US style='font-size:11.0pt;line-height:115%;
+font-family:"MS Mincho",serif;color:#666666'>自我檢測參考答案與解析（向下捲動檢視隱藏解答）</span></b></p>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#F2F4F7;padding:
+  0cm 5.4pt 0cm 5.4pt'>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+  4.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#4A5568'>Q1 Answer: B — A Swing
+  Low is defined by a central low with a higher low on the left and a higher
+  low on the right [00:00:30].<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+  "MS Mincho",serif;color:#2D3748'>第</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;color:#2D3748'> 1 </span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>題答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#2D3748'>B — </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;font-family:"MS Mincho",serif;color:#2D3748'>擺動低點（</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2D3748'>Swing Low</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>）的定義為中間一個低點，且其左側與右側各有一個更高的低點</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#2D3748'> [00:00:30]</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>。</span></p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+  4.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#4A5568'>Q2 Answer: B — Long
+  traders place Sell Stop orders beneath Swing Lows (Sellside Liquidity), which
+  Smart Money targets to pair institutional buy orders [00:01:00 - 00:01:37].<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+  "MS Mincho",serif;color:#2D3748'>第</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;color:#2D3748'> 2 </span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>題答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#2D3748'>B — </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;font-family:"MS Mincho",serif;color:#2D3748'>做多交易者會將賣出止損單（</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2D3748'>Sell Stops</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>）設在擺動低點下方（即賣方流動性</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;color:#2D3748'> SSL</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"MS Mincho",serif;color:#2D3748'>），聰明錢會獵取此處以完成大額買單的配對</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2D3748'> [00:01:00
+  - 00:01:37]</span><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+  font-family:"MS Mincho",serif;color:#2D3748'>。</span></p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+  4.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#4A5568'>Q3 Answer: B — Old
+  Highs/Lows are isolated single swing points, while Relatively Equal
+  Highs/Lows are multiple swing points clustered near the same level [00:04:47
+  - 00:05:11].<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+  "MS Mincho",serif;color:#2D3748'>第</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;color:#2D3748'> 3 </span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>題答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#2D3748'>B — </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;font-family:"MS Mincho",serif;color:#2D3748'>舊高低點是單一突出的擺動點，而相對等高低點則是多個聚集在相近價格水平的擺動點</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2D3748'> [00:04:47
+  - 00:05:11]</span><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+  font-family:"MS Mincho",serif;color:#2D3748'>。</span></p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+  4.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#4A5568'>Q4 Answer: C — After
+  sweeping Asia and London highs, bearish Displacement followed by a respected
+  5-minute FVG retracement confirmed the short setup targeting London equal
+  lows [00:07:00 - 00:07:30].<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+  "MS Mincho",serif;color:#2D3748'>第</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;color:#2D3748'> 4 </span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>題答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#2D3748'>C — </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;font-family:"MS Mincho",serif;color:#2D3748'>在掃蕩亞洲盤與倫敦盤高點後，出現向下的強勢位移（</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2D3748'>Displacement</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>），並回踩獲得尊重的</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;color:#2D3748'> 5 </span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"MS Mincho",serif;color:#2D3748'>分鐘公允價值缺口（</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2D3748'>FVG</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>），確認了瞄準倫敦盤等低點的做空進場</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;color:#2D3748'> [00:07:00 - 00:07:30]</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>。</span></p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+  4.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#4A5568'>Q5 Answer: B — Once
+  intraday session highs and lows (Asia &amp; London) were exhausted, price expanded
+  higher to target the untouched Previous Day High (PDH) [00:08:39 - 00:09:10].<br>
+  </span><span lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:
+  "MS Mincho",serif;color:#2D3748'>第</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;color:#2D3748'> 5 </span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>題答案：</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#2D3748'>B — </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;font-family:"MS Mincho",serif;color:#2D3748'>一旦盤中交易時段（亞洲盤與倫敦盤）的高低點皆被清空，價格便向上擴張，將目標鎖定尚未被觸及的前日高點（</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#2D3748'>PDH</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>）</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#2D3748'>[00:08:39 - 00:09:10]</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"MS Mincho",serif;
+  color:#2D3748'>。</span></p>
+  </td>
+ </tr>
+</table>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

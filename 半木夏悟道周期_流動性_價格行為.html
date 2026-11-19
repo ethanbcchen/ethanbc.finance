@@ -1,0 +1,1213 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:Cambria;
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"\@Microsoft JhengHei";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@MS Mincho";
+	panose-1:2 2 6 9 4 2 5 8 3 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:11.0pt;
+	font-family:Cambria;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:Cambria;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><b><span
+lang=EN-US style='font-size:16.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#102A43'>Deep Learning Study Notes: Banmuxia's Ultimate Trading System
+(Cycle, Liquidity &amp; Price Action)<br>
+</span></b><b><span lang=EN-US style='font-size:15.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#102A43'>深度學習筆記：半木夏終極交易系統（週期、流動性與價格行為）</span></b></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>1. 核心總結 (Executive Summary)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>This study note deconstructs
+the evolved trading system of legendary crypto trader Banmuxia (半木夏), who
+turned 10,000 RMB into nearly 50 million RMB. Over two years, his methodology
+shifted from relying heavily on single technical indicators like MACD to a
+comprehensive, top-down framework integrating Market Cycles (週期), Macro &amp;
+On-Chain Liquidity (流動性), and Price Action Technical Analysis (價格行為技術分析). The
+core philosophy is 'trading with the major trend' (順大勢而為): first, use Moving
+Averages (MA30, MA120, MA256) and sentiment extremes to identify the exact
+stage among eight market cycle phases; second, track macro capital inflows and
+outflows via the Federal Reserve Balance Sheet, the US Treasury General Account
+(TGA), major catalysts, exchange order books, and on-chain whale wallets;
+third, execute precise entries, stop-losses, and take-profits using structural
+support/resistance (POC, Fibonacci, MA), chart patterns (convergence, head and
+shoulders), and custom MACD divergence (13, 34). Ultimately, sustainable
+profitability requires strict risk management—cutting losses decisively to stay
+proactive, avoiding shorting in bull markets, and utilizing funding rate
+arbitrage during high-volatility consolidation.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>本學習筆記深度拆解傳奇加密貨幣交易員「半木夏」從一萬本金滾動至近五千萬資產的進化版交易體系。在兩年時間內，他的策略從早期高度依賴單一技術指標（如半神
+MACD），蛻變為結合「市場週期 (Market Cycle)」、「宏觀與鏈上流動性 (Liquidity)」以及「價格行為技術分析 (Price
+Action)」的全方位由上而下（Top-Down）決策框架。其核心哲學在於「順大勢而為」：首先，透過三條核心移動平均線（MA30、MA120、MA256）與市場情緒極值，精準定位當前處於八大週期中的哪一階段；其次，透過聯準會資產負債表、美國財政部
+TGA 帳戶、重大催化劑、交易所訂單簿及鏈上巨鯨地址，監控驅動價格波動的真實資金流向；最後，回歸圖表技術面，結合關鍵結構位（POC、斐波那契、均線）、價格形態（收斂結構、頭肩形態）與改良參數的
+MACD 背離（13, 34）尋找高勝率入場點。最終，交易的本質是「市場出招、交易者接招」，唯有果斷止損以掌握主動權、在牛市中堅持不輕易做空並善用資金費率套利，方能實現長期穩健複利。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>2. 知識地圖與核心概念 (Key Concepts &amp;
+Definitions)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [01:10] Eight-Phase Market
+Cycle (市場八大週期): A granular division of market trends into Bear Market (熊市),
+Late Bear (熊末), Bear Rally (熊反), Early Bull (牛初), Bull Market (牛市), Late Bull (牛末),
+Bull Pullback (牛調), and Early Bear (熊初).</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [01:10] Eight-Phase Market Cycle (市場八大週期)：將市場趨勢精細劃分為「熊市、熊末、熊反、牛初、牛市、牛末、牛調、熊初」八個階段，用以界定大勢方向與操作策略。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [01:30] Triple Moving Average
+System (三均線系統: MA30, MA120, MA256): Three daily Moving Averages (MA - 移動平均線)
+with periods 30, 120, and 256 used to objectively determine bull/bear
+alignment, trend reversals, and pullback support strength.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [01:30] Triple Moving Average System (三均線系統: MA30, MA120,
+MA256)：設定參數為 30、120、256 的三條日線級別移動平均線（MA），用於客觀判定多空排列、趨勢轉折點以及回調支撐的強弱程度。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [02:22] Bad News Stress Test
+(利空試金石): A market phenomenon in Early Bull (牛初) where asset prices remain
+resilient despite negative news, proving strong underlying
+institutional/smart-money buying.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [02:22] Bad News Stress Test (利空試金石)：牛市初期的典型特徵：市場分歧巨大且頻傳負面消息，但幣價卻異常堅挺，驗證背後有大資金正在持續承接買入。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [03:40] Federal Reserve
+Balance Sheet (聯準會資產負債表): A macro liquidity indicator tracking the Fed's
+financial assets and liabilities; expansion injects USD liquidity into markets,
+while contraction drains liquidity.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [03:40] Federal Reserve Balance Sheet (聯準會資產負債表)：記錄聯準會金融資產與負債規模的宏觀指標；擴表代表向市場注入美元流動性，縮表則代表從市場抽離資金。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [04:15] Treasury General
+Account / TGA (美國財政部一般帳戶): The US federal government's cash operating account;
+a declining TGA balance means fiscal spending is injecting liquidity into
+financial markets, while a rising balance drains it.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [04:15] Treasury General Account / TGA (美國財政部一般帳戶)：聯邦政府的現金帳戶餘額；TGA
+餘額下降代表財政部正在向市場投放資金（增加流動性），餘額上升則代表抽水或減少市場美元。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [07:05] Point of Control /
+POC (控制點 / 最密集成交區線): The price level with the highest traded volume within a
+Fixed Range Volume Profile (固定成交量分布圖), acting as a major structural support or
+resistance on first retest.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [07:05] Point of Control / POC (控制點 / 最密集成交區線)：透過「固定成交量分布圖
+(Fixed Range Volume Profile)」找出的成交量最集中價格線，價格首次觸及時往往會產生強烈的支撐或阻力效應。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [07:47] Fibonacci Retracement
+&amp; Extension (斐波那契回撤與擴展): Technical levels (specifically 0.382 and 0.5 for
+pullbacks) drawn from trend origin to swing high to project retracement support
+and profit-taking targets.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [07:47] Fibonacci Retracement &amp; Extension (斐波那契回撤與擴展)：連接重要趨勢起點與階段高點所繪製的比例線，回撤主要關注
+0.382 與 0.5 區域尋找買點，擴展則用於設定止盈目標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [08:35] Banshen MACD
+Divergence (半神 MACD 背離: 13, 34): A customized MACD (Moving Average Convergence
+Divergence - 指數平滑異同移動平均線) using fast line 13 and slow line 34 on 1H/4H charts
+to spot momentum exhaustion via histogram shifts.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [08:35] Banshen MACD Divergence (半神 MACD 背離: 13, 34)：將快線設為 13、慢線設為
+34 的改良版 MACD 指標，在 1 小時或 4 小時級別觀察價格與指標連續背離，並於第 2 或第 3 波峰「實柱轉虛柱」時入場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>• [09:38] Funding Rate
+Arbitrage (資金費率套利 / 開套保): A delta-neutral hedging strategy used during risky or
+choppy bull market phases to collect high perpetual contract funding fees
+(sometimes exceeding 100% APR) without directional exposure.</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>• [09:38] Funding Rate Arbitrage (資金費率套利 / 開套保)：在牛市高風險或劇烈震盪階段，透過現貨與合約對沖（開套保）鎖定方向性風險，專門賺取極端多頭市場中高達年化
+100% 以上的永續合約資金費率。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>3. Knowledge Architecture Diagram (Text Mind Map)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>3. 知識架構圖解（文字版 Mind Map）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Banmuxia's Ultimate Trading
+System (半木夏終極交易系統)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:3.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>半木夏終極交易系統架構總覽</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F3A60'>├── Pillar 1: Market Cycle
+Identification (支柱一：大勢週期定位)</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt;line-height:120%'><b><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>├── 支柱一：大勢週期定位（順大勢而為）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   ├── 8 Stages: Bear -&gt;
+Late Bear -&gt; Bear Rally -&gt; Early Bull -&gt; Bull -&gt; Late Bull -&gt;
+Bull Pullback -&gt; Early Bear</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 八大階段：熊市
+→ 熊末 → 熊反 → 牛初 → 牛市 → 牛末 → 牛調 → 熊初</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   ├── Moving Average Filter:
+Daily MA30, MA120, MA256 (Bearish vs. Bullish Alignment)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 均線過濾器：日線
+MA30、MA120、MA256（空頭排列 vs. 多頭排列）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   └── Sentiment &amp; Top
+Signals: Extreme greed, unanimous social media, high liquidation, round numbers
+(e.g., $100k)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   └── 情緒與見頂信號：情緒極端一致、排斥異見、爆倉量劇增、整數關口（如
+10 萬）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F3A60'>├── Pillar 2: Market
+Liquidity Monitoring (支柱二：市場流動性監控)</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt;line-height:120%'><b><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>├── 支柱二：市場流動性監控（資金驅動核心）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   ├── Macro Drivers: Fed
+Balance Sheet, US Treasury TGA Balance, Major Catalysts (ETH ETF, Halving, Rate
+Cuts)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 宏觀驅動因子：聯準會資產負債表、美國財政部
+TGA 帳戶、重大事件（以太坊 ETF、減半、降息）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   └── Micro &amp; On-Chain
+Tools: Exchanges (Volume/OI/Orderbook), Block Explorers (Whale
+Wallets/Institutions), Regulatory Reports</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   └── 微觀與鏈上工具：交易所（交易量/持倉量/深度）、區塊鏈瀏覽器（巨鯨/貝萊德/富達動向）、監管報告</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F3A60'>├── Pillar 3: Price Action
+&amp; Technical Execution (支柱三：價格行為與技術入場)</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt;line-height:120%'><b><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>├── 支柱三：價格行為與技術入場（圖表落地）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   ├── Structure: High-Volume
+Nodes (POC), Key Swing Highs/Lows, Daily MAs, Fibonacci (0.382 / 0.5)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 市場結構：密集成交區（POC）、標誌性高低點、日線均線支撐、斐波那契回撤（0.382
+/ 0.5）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   ├── Chart Patterns: Uptrend
+Continuation Convergence (收斂結構), Head &amp; Shoulders Neckline Breakout/Retest
+(頭肩形態)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   ├── 價格形態：上漲中繼收斂結構、普通與複合頭肩形態（突破或回踩頸線入場）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>│   └── Momentum Indicator:
+Banshen MACD (13, 34) 1H/4H Multi-Peak Divergence (Histogram Solid-to-Hollow)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>│   └── 動能指標：半神
+MACD (13, 34) 1H/4H 連續背離（第 2/3 波峰實柱轉虛柱收盤入場）</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:14.4pt'><b><span lang=EN-US style='font-size:10.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1F3A60'>└── Pillar 4: Risk
+Management &amp; Position Strategy (支柱四：風控與倉位管理)</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:14.4pt;line-height:120%'><b><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>└── 支柱四：風控與倉位管理（保住利潤）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>    ├── Stop-Loss Discipline:
+Cut losses decisively to retain initiative; calculate re-entry spread cost</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>    ├── 止損紀律：果斷止損以掌握主動權，計算止損後重新接回的試錯差價成本</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>    ├── Take-Profit Rules:
+Fibonacci extensions, prior key resistance, or 4H MA20 breakdown &gt; 2%</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>    ├── 止盈規則：斐波那契擴展位、前期關鍵阻力區，或跌破
+4 小時級別 MA20 超過 2%</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:28.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>    └── Bull Market Taboo &amp;
+Hedge: Never short in a bull market; use hedging for Funding Rate Arbitrage
+(&gt;100% APR)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:28.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>    └── 牛市鐵律與對沖：牛市只賣出不做空；震盪高危期開套保賺取高額資金費率</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>4. Mental Models &amp; Logic (Why &amp; How)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>4. 底層邏輯與思維模型 (Mental Models &amp;
+Logic)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>1. First-Principles Causal
+Chain (第一性原理因果鏈：資金 → 價格 → K線 → 指標)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>1. 第一性原理因果鏈：資金流動 → 買賣行為 → 價格與K線 → 技術指標</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Banmuxia de-emphasized pure
+technical indicators because indicators are lagging derivatives. True causality
+flows from macro/institutional liquidity (buying and selling power) to price
+formation, which creates candlesticks, and finally generates chart patterns and
+indicators. Therefore, liquidity analysis must precede technical entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>半木夏之所以淡化對單一技術指標的依賴，是因為指標本質上是滯後的衍生品。市場運行的底層因果鏈為：「宏觀與大資金流動性」驅動「買賣行為」，進而形成「價格與
+K 線」，最後才衍生出「形態與指標」。因此，分析必須先看資金流動性，再用技術分析找入場點。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>2. Top-Down Probabilistic
+Filtering (由上而下的概率過濾模型)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>2. 由上而下的三層概率過濾模型（週期定方向 → 流動性定強度 → 技術定點位）</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Instead of predicting random
+short-term fluctuations, the system filters trades through three concentric
+layers: (1) Cycle determines directional bias (long-only in bull phases); (2)
+Liquidity confirms whether enough capital exists to sustain a major trend; (3)
+Technicals pinpoint high risk-reward entry/exit coordinates.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>不盲目預測短期隨機波動，而是透過三層漏斗過濾交易機會：(1)
+週期決定大方向（牛市只做多不做空）；(2) 流動性確認是否有足夠資金推動大級別行情；(3) 技術分析負責在圖表上精確定位高盈虧比的買賣點位。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>3. Asymmetric Risk &amp; Active
+Initiative Model (非對稱風險與主動權思維)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>3. 試錯成本計算與「主動權」思維模型</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Holding a losing position traps
+capital and forces passive decision-making. By cutting losses immediately upon
+structural breakdown, a trader preserves capital and psychological clarity,
+treating the small stop-loss as a calculated 'trial-and-error fee' to re-enter
+once key support is reclaimed.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>扛單被套會讓交易者陷入徹底的被動，喪失後續操作空間。果斷止損雖然會產生小額虧損，但能瞬間拿回資金與心態的主動權；只要事前計算好「止損後重新站穩再接回的差價」，止損就只是可控的試錯成本。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>4. Contrarian Sentiment &amp;
+Structural Resilience Test (逆向情緒與結構抗壓測試)</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>4. 逆向情緒觀察與「利空抗壓測試」思維</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Markets top out when consensus
+becomes dangerously uniform and retail euphoria peaks (e.g., extreme long/short
+ratios and hostility toward bears). Conversely, true bull markets are validated
+not by good news, but by how strongly prices hold up against bad news.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>當市場輿論高度一致、排斥任何看空聲音且多空比極端失衡時，往往是牛市見頂的信號；反之，真正的牛市初期並非靠利好推動，而是靠「利空出盡卻跌不下去」的盤面抗壓性來驗證主力資金的存在。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>5. Detailed Breakdown by Core Modules (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>5. 詳細重點拆解（保留原始時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'> Module 1: System Evolution &amp; The Primacy of Trend [00:00 -
+01:10]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#0F2C59'> 模組一：交易系統的演進與「順大勢」核心原則 [00:00 - 01:10]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Concept Explanation] Banmuxia
+transitioned from his famous 'Banshen MACD' system to a holistic framework
+combining Cycle, Liquidity, and Technical Analysis, achieving over 400x returns
+(10k to ~50M RMB) by prioritizing macro trends over isolated indicators.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】半木夏從兩年前廣為人知的「半神
+MACD」進化為結合「週期、流動性、技術分析」的終極交易系統，憑藉公開實盤超過 400 倍利潤（1 萬本金至近 5 千萬），印證了「順大勢而為」在交易結果中的首要地位。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Steps / Workflow] 1. Shift
+focus from single-indicator signals to multi-dimensional market context. 2.
+Define 'Major Trend' (大勢) strictly as the overarching Market Cycle before
+looking at any lower-timeframe entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟/操作流程】1. 淡化對單一技術指標的盲從，建立多維度市場分析視角。2.
+在觀察任何小週期買點前，先將「大勢」定義為當前所處的市場大週期。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Formulas / Terms] Banshen
+MACD (半神 MACD), Market Cycle (市場週期), Liquidity (流動性), Price Action (價格行為).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式/專有名詞】半神
+MACD、市場週期 (Market Cycle)、流動性 (Liquidity)、價格行為 (Price Action)。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Common Pitfalls / Warnings]
+Relying solely on technical indicators without understanding macro cycles and
+capital flows leads to frequent stop-outs during choppy or counter-trend
+phases.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區/注意事項】脫離宏觀週期與資金流動性，單純機械套用技術指標，極易在震盪市或逆勢行情中頻繁止損。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'> Module 2: Eight-Phase Cycle &amp; Triple MA Identification
+[01:10 - 02:45]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#0F2C59'> 模組二：市場八大週期劃分與三均線判定法 [01:10 - 02:45]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Concept Explanation] The
+market cycle is divided into 8 phases: Bear, Late Bear, Bear Rally, Early Bull,
+Bull, Late Bull, Bull Pullback, and Early Bear. Three daily Moving Averages
+(MA30, MA120, MA256) objectively define transitions between these phases.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】市場週期細分為「熊市、熊末、熊反、牛初、牛市、牛末、牛調、熊初」八個階段，並透過日線級別的三條移動平均線（MA30、MA120、MA256）客觀界定各階段的轉換邊界。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Steps / Workflow] 1. Bear
+Market: Price stays below downward-sloping MA30 &lt; MA120 &lt; MA256. 2. Bear
+Rally: MAs turn upward and price breaks above MA256. 3. Early Bull
+Confirmation: Price pulls back after a large Bear Rally; if the pullback fails
+to push price back below the key MA boundary (e.g., MA256), Early Bull is
+confirmed. 4. Entry on Breakout: If missed during early divergence, enter when
+price breaks the next key resistance into the main Bull phase.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟/操作流程】1. 熊市確認：價格長時間位於自上而下空頭排列（MA30
+&lt; MA120 &lt; MA256）的三均線下方。2. 熊反啟動：均線開始拐頭向上，且價格反彈突破 MA256。3. 牛初確認：較大幅度的熊反後必有大回調，若回調無法將價格壓回關鍵均線（如
+MA256）下方，即確立「牛初」到來。4. 突破入場：若在市場分歧階段未上車，可等待突破下一個關鍵阻力位（牛初轉牛市）時擇機入場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Formulas / Terms] MA30 /
+MA120 / MA256 (30/120/256日移動平均線), Bullish Alignment (多頭排列: MA30 &gt; MA120 &gt;
+MA256), Bearish Alignment (空頭排列), Bad News Stress Test (利空試金石).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式/專有名詞】日線
+MA30 / MA120 / MA256、多頭排列 (Bullish Alignment)、空頭排列 (Bearish Alignment)、利空試金石。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Common Pitfalls / Warnings]
+Mistaking a Bear Rally (熊反) for a full Bull Market without waiting for the
+post-rally pullback test; panicking out of Early Bull positions due to negative
+news when price action remains resilient.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區/注意事項】未經回調測試就將「熊反」誤判為「牛市」而盲目追高；或在「牛初」分歧期被利空消息嚇出場，忽略了幣價抗跌背後的資金承接信號。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'> Module 3: Late Bull Market Top Signals &amp; Sentiment Extremes
+[02:45 - 03:20]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#0F2C59'> 模組三：牛市末期見頂特徵與情緒極值預警 [02:45 - 03:20]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Concept Explanation]
+Recognizing Late Bull (牛末) signals is critical to locking in profits.
+Historical Bitcoin tops consistently exhibit extreme sentiment uniformity,
+soaring volatility/liquidations, and psychological resistance near major round
+milestones.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】精準識別「牛市末期
+(Late Bull)」信號是決定利潤能否真正落袋的關鍵。比特幣歷次見頂前皆會出現情緒指標極端化、社群言論高度一致、波動率與爆倉量劇增等異常現象。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Steps / Workflow] 1.
+Monitor sentiment indicators and Long/Short ratios for extreme readings. 2.
+Observe social media: when bullish consensus becomes unanimous and dissenting
+bearish voices are aggressively attacked, treat it as a warning. 3. Stay
+disciplined when price surges rapidly toward major psychological milestones
+(e.g., $100,000) with widening volatility.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟/操作流程】1. 監控各類市場情緒指標與多空人數比是否出現極端偏離。2.
+觀察媒體與社群輿論：當看多言論異常一致、任何反對聲音都遭到圍攻時，提高警覺。3. 當行情斜率明顯陡峭、波動與爆倉量放大並快速衝擊標誌性整數關口（如 10 萬美元）時，保持冷靜切勿上頭。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Formulas / Terms]
+Long/Short Ratio (多空人數比), Liquidation Volume (爆倉量), Market Slope (行情斜率),
+Psychological Milestone (標誌性整數關口).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式/專有名詞】多空人數比
+(Long/Short Ratio)、爆倉量 (Liquidation Volume)、行情斜率、標誌性整數關口。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Common Pitfalls / Warnings]
+Succumbing to FOMO (Fear Of Missing Out) during parabolic moves near round
+numbers, forgetting that bull markets never go straight 'to the moon' without
+major corrections.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區/注意事項】在行情加速衝擊整數關口時陷入
+FOMO 情緒盲目加倉，忘記牛市不可能一口氣衝出地球，導致利潤大幅回吐。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'> Module 4: Macro Liquidity Drivers (Fed, TGA &amp; Catalysts)
+[03:20 - 04:55]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#0F2C59'> 模組四：宏觀流動性三大核心驅動因子 [03:20 - 04:55]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Concept Explanation] Liquidity
+is the primary engine of large price swings. Long-term macro liquidity depends
+on three pillars: the Federal Reserve Balance Sheet, the US Treasury General
+Account (TGA), and major structural market catalysts.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】流動性才是影響市場大級別走勢的最核心變量。長期宏觀層面需重點追蹤三大方向：聯準會資產負債表規模、美國財政部
+TGA 帳戶餘額，以及重大市場事件。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Steps / Workflow] 1. Track
+Fed Balance Sheet: Expansion (buying assets during crises) injects USD and
+boosts liquidity; contraction (selling assets) drains USD. 2. Track US Treasury
+TGA Balance: Falling TGA balance means the government is spending cash into the
+market (+liquidity); rising TGA means accumulating cash (-liquidity). 3.
+Monitor Major Catalysts: Spot Ethereum ETFs, Bitcoin Halving, and Fed Rate
+Cuts.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟/操作流程】1. 追蹤聯準會資產負債表：總規模大幅增加（擴表應對危機）代表美元大規模流入市場；大幅減少（縮表拋售科目）代表市場美元減少。2.
+追蹤美國財政部 TGA 帳戶：餘額下降說明財政部正直接向市場注入資金；餘額增加則代表財政抽水、市場流動性減少。3. 關注重大催化事件：以太坊 ETF、比特幣減半、聯準會降息週期等。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Formulas / Terms] Federal
+Reserve Balance Sheet (聯準會資產負債表), Treasury General Account / TGA (美國財政部一般帳戶),
+Quantitative Easing/Tightening (擴表/縮表), Bitcoin Halving (比特幣減半).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式/專有名詞】聯準會資產負債表
+(Fed Balance Sheet)、美國財政部 TGA 帳戶 (Treasury General Account)、擴表/縮表、比特幣減半。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Common Pitfalls / Warnings]
+Focusing exclusively on crypto-native news while ignoring US dollar macro
+liquidity (Fed &amp; TGA), which dictates global risk-asset capital
+availability.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區/注意事項】只盯著幣圈內部消息，卻忽略了決定全球風險資產資金池水位的美元宏觀流動性（聯準會與
+TGA 帳戶）。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'> Module 5: Micro &amp; On-Chain Liquidity Monitoring Tools
+[04:55 - 06:35]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#0F2C59'> 模組五：微觀與鏈上流動性實戰監控工具 [04:55 - 06:35]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Concept Explanation] To
+pinpoint exact timing of capital inflows and outflows, combine three practical
+monitoring channels: Exchange Order Books/Derivatives data, Blockchain
+Explorers/On-Chain Analytics, and Regulatory Investigation Reports.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】要掌握大資金流入流出的具體時機，需結合三大實戰工具進行交叉驗證：交易所盤口數據、區塊鏈瀏覽器與鏈上分析平台，以及監管機構調查報告。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Steps / Workflow] 1.
+Exchange Metrics: Watch for rising 24H Volume + Open Interest (持倉量), narrowing
+Bid-Ask Spread (買賣盤價差), and thickening Order Book Depth (訂單深度) near current
+price. 2. On-Chain Tracking: Use OKX Explorer, Glassnode, or CryptoQuant to
+track whale addresses and institutional flows (Grayscale, Fidelity, BlackRock);
+massive inflows to whale wallets = bullish, massive transfers into exchanges =
+potential sell-off. 3. Regulatory Reports: Review official reports on illicit
+flows, cross-border capital, and real BTC usage.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟/操作流程】1. 交易所數據：觀察
+24 小時交易量與持倉量連續累積增加、買賣盤價差持續縮小、當前價格附近掛單深度明顯加厚，即為資金持續流入的良性流動性表現。2. 鏈上與機構追蹤：利用 OKX 區塊鏈瀏覽器、Glassnode、CryptoQuant
+監控巨鯨地址與灰度（Grayscale）、富達（Fidelity）、貝萊德（BlackRock）的增減持；大額轉入冷錢包為流入，多次轉出並匯集流入交易所則為潛在大規模流出。3.
+監管報告：查閱監管機構對黑市、跨境資金流動與比特幣真實使用情況的統計報告。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Formulas / Terms] Open
+Interest / OI (持倉量), Bid-Ask Spread (訂單價差), Order Book Depth (訂單深度), Glassnode
+/ CryptoQuant (鏈上數據平台), BlackRock / Fidelity / Grayscale (貝萊德/富達/灰度).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式/專有名詞】持倉量
+(Open Interest)、訂單價差 (Bid-Ask Spread)、訂單深度 (Order Book Depth)、Glassnode /
+CryptoQuant、貝萊德 / 富達 / 灰度。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Common Pitfalls / Warnings]
+Relying on a single metric; true liquidity verification requires
+cross-referencing exchange order book depth with on-chain whale/ETF wallet
+movements.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區/注意事項】僅看單一成交量指標；真正的流動性監控需要將交易所盤口深度與鏈上巨鯨、現貨
+ETF 機構的增減持動向進行多維度驗證。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'> Module 6: Price Action Technicals — Structure, Patterns &amp;
+Banshen MACD [06:35 - 08:56]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#0F2C59'> 模組六：價格行為技術分析——結構、形態與半神 MACD [06:35 - 08:56]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Concept Explanation] Once
+cycle and liquidity align, technical analysis identifies exact chart execution
+points through three pillars: Market Structure (POC, Key Highs/Lows, Daily MAs,
+Fibonacci), Chart Patterns (Convergence, Head &amp; Shoulders), and Banshen
+MACD Divergence (13, 34).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】在確認週期與流動性後，透過圖表技術分析尋找具體入場位置，核心聚焦於三大板塊：「結構」、「形態」與「指標」。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Steps / Workflow] 1.
+Structure: Mark high-volume zones and find the POC (Point of Control) via Fixed
+Range Volume Profile for first-touch bounces; mark high-volume long-wick
+highs/lows; gauge pullback health via Daily MA30 (normal), MA120 (medium-term),
+and MA256 (danger zone); draw Fibonacci from trend start to high and watch
+0.382–0.5. 2. Patterns: Look for tight or slightly downward-sloping Convergence
+structures (收斂形態) as low-risk bull continuations; enter Head &amp; Shoulders (頭肩形態)
+on Neckline (頸線) breakout or retest. 3. Indicator: Set MACD to (13, 34); on
+1H/4H charts, when price and MACD show pronounced consecutive divergence, enter
+at the candle close where the 2nd or 3rd histogram peak turns from solid to
+hollow (實柱轉虛柱).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟/操作流程】1. 結構
+(Structure)：用固定成交量分布圖找出最密集成交的 POC 線（首次觸及具強支撐/阻力）；標記帶長上影線放量的前高或巨量堆積波段低點；用日線 MA30（正常回踩）、MA120（中線回踩）、MA256（持續震盪則牛市危險）評估強弱；連接趨勢起點與高點，關注斐波那契
+0.382 與 0.5 回撤位。2. 形態 (Patterns)：大漲後出現平穩或微幅下降的「收斂結構」是高勝率、低風險的牛市中繼；「頭肩形態」（普通或複合）於突破或回踩頸線時入場。3.
+指標 (Indicator)：將 MACD 參數設為快線 13、慢線 34，在 1 小時或 4 小時級別出現連續且懸殊的背離時，於第 2 波峰或第 3 波峰「實柱轉虛柱」所對應的
+K 線收盤價入場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Formulas / Terms] Fixed
+Range Volume Profile (固定成交量分布圖), Point of Control / POC (控制點), Fibonacci 0.382
+/ 0.5 (斐波那契回撤位), Convergence Pattern (收斂結構), Head &amp; Shoulders Neckline (頭肩形態頸線),
+MACD (13, 34) Solid-to-Hollow Histogram (實柱轉虛柱).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式/專有名詞】固定成交量分布圖、POC
+控制點、斐波那契 0.382/0.5、收斂結構、頭肩形態頸線、MACD (13, 34) 實柱轉虛柱。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Common Pitfalls / Warnings]
+Entering before the candle closes on a MACD histogram shift, or ignoring
+higher-timeframe MA256 structural deterioration when buying lower-timeframe
+divergences.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區/注意事項】在
+MACD 柱狀體尚未收盤確認「實柱轉虛柱」前搶跑入場，或在日線價格已跌破 MA256 轉弱時仍盲目抄底小週期背離。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm;page-break-after:avoid;background:#EDF2F8'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#0F2C59'> Module 7: Execution Discipline — Stop-Loss, Take-Profit &amp;
+Bull Market Rules [08:56 - 10:15]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#0F2C59'> 模組七：交易執行紀律——果斷止損、止盈與牛市操作鐵律 [08:56 - 10:15]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Concept Explanation] Superior
+analysis fails without strict execution. Traders must cut losses decisively to
+retain initiative, scale out using objective triggers, never short a bull
+market, and exploit funding rate arbitrage during high-risk consolidation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【概念解釋】再精準的分析也必須仰賴嚴格的交易計劃執行。核心紀律包含：果斷止損掌握主動權、客觀規則止盈、牛市堅決不做空，以及高危震盪期利用套保賺取資金費率。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Steps / Workflow] 1.
+Stop-Loss: Exit immediately when key support/channel breaks; calculate the
+spread cost to re-enter once reclaimed rather than holding a losing bag. 2.
+Take-Profit: Target Fibonacci extensions, prior major resistance zones, or
+exit/deleverage if BTC closes &gt;2% below the 4H MA20. 3. Bull Market Rule:
+Only sell/reduce spot or longs—never open directional shorts; during
+dangerous/choppy phases, open delta-neutral hedges (套保) to earn perpetual
+funding rates (&gt;100% APR in peak bull runs).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【關鍵步驟/操作流程】1. 果斷止損：跌破關鍵位或通道（如
+4 小時維加斯通道）立即止損以佔據主動權，事先計算止損後重新站穩再接回的試錯差價，絕不死扛被套。2. 明確止盈：參考斐波那契擴展位、前期重要關鍵阻力區，或規定當比特幣跌破
+4 小時級別 MA20 超過 2% 時獲利賣出或降低槓桿。3. 牛市鐵律：牛市可以賣出，但盡量絕不做空；在行情危險或無序震盪時，透過「開套保」對沖風險並賺取高達年化
+100% 以上的資金費率套利。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Key Formulas / Terms] Vegas
+Channel (維加斯通道), Trial-and-Error Spread Cost (試錯差價), 4H MA20 Breakdown &gt; 2%
+(跌破4小時MA20超2%), Delta-Neutral Hedging (開套保), Funding Rate Arbitrage (資金費率套利).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【重要公式/專有名詞】維加斯通道、試錯差價、跌破
+4 小時 MA20 超過 2%、開套保、資金費率套利。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>[Common Pitfalls / Warnings]
+Refusing to take a small stop-loss out of ego, getting trapped in a deep
+drawdown, or attempting to short bull market tops instead of simply taking
+profit or hedging.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>【常見誤區/注意事項】因不願認賠而拒絕執行小額止損導致深套被動，或在牛市主升浪中逆勢摸頂做空，而非選擇獲利了結或開立中性套保。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>6. Action Items (Immediate Execution Checklist)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>6. 實操行動清單（Action Items）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>1. Configure the Triple MA
+&amp; Banshen MACD Chart Template:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>1. 建立標準化看盤圖表模板（三均線 + 改良 MACD）：</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Open TradingView, add three
+Simple/Exponential Moving Averages on the Daily chart with lengths 30, 120, and
+256 to classify the current market cycle, and set a custom MACD indicator with
+Fast Length = 13 and Slow Length = 34 for 1H/4H divergence entries.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>打開看盤軟體，在日線圖上添加參數為
+30、120、256 的三條移動平均線以界定市場週期；同時將 MACD 指標快線設為 13、慢線設為 34，作為 1 小時與 4 小時級別尋找背離買點的標準配置。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>2. Build a Weekly Macro &amp;
+On-Chain Liquidity Dashboard:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>2. 建立每週宏觀與鏈上流動性追蹤清單：</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Bookmark the Federal Reserve
+Balance Sheet (FRED: WALCL), US Treasury TGA balance data, and on-chain
+platforms (Glassnode, CryptoQuant, or OKX Explorer) to review weekly net dollar
+liquidity and institutional ETF/whale wallet flows every Monday.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>將聯準會資產負債表、美國財政部
+TGA 帳戶餘額數據，以及 Glassnode、CryptoQuant 或 OKX 區塊鏈瀏覽器加入書籤，每週固定檢視美元淨流動性變化與大型機構、巨鯨地址的資金進出動向。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>3. Map Key Structural Zones
+Before Any Trade:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>3. 交易前強制標記「三大結構位」（POC、斐波那契、關鍵高低點）：</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Before placing an order, apply
+the Fixed Range Volume Profile to mark the Point of Control (POC), draw
+Fibonacci retracements (0.382 and 0.5) on the active swing, and highlight
+high-volume rejection highs/lows so entries occur strictly at structural
+support.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>在任何下單動作前，先使用「固定成交量分布圖」標出密集成交區（POC
+線），拉出當前波段的斐波那契 0.382 與 0.5 回撤位，並標記帶量長影線的標誌性高低點，確保只在關鍵結構支撐附近進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>4. Enforce the '4H MA20 -2%
+Rule' &amp; Pre-Calculate Re-Entry Spreads:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>4. 執行「4 小時 MA20 跌破 2% 減倉/止盈」與止損試錯計算：</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Write a pre-trade rule:
+automatically reduce leverage or take profit if price closes more than 2% below
+the 4H MA20, and always calculate the exact price spread needed to re-enter if
+a stop-loss is triggered and later reclaimed.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>制定書面風控紀律：一旦價格跌破
+4 小時級別 MA20 超過 2%，立即執行獲利賣出或降槓桿；同時在每次設置止損時，預先計算「被止損後若價格重新站回關鍵位再接回」的差價成本，杜絕情緒化扛單。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>5. Replace Bull-Market Shorting
+with Delta-Neutral Funding Arbitrage:</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>5. 戒除牛市摸頂做空習慣，改用「套保」賺取資金費率：</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Audit your trading journal to
+eliminate directional short trades during confirmed bull cycles; instead,
+practice setting up a spot-long + perpetual-short hedge during overheated,
+high-funding-rate consolidation phases.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.5pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#2B2B2B'>檢視過往交易紀錄，在確認處於牛市週期時徹底刪除「逆勢做空」策略；當市場進入高風險劇烈震盪且永續合約資金費率飆升時，改以「現貨多單
++ 合約空單」開立套保，穩健賺取高額資金費率。</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>7. Concept Self-Assessment (Quiz &amp; Review)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>7. 觀念自我檢測 (Quiz &amp; Review)</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Q1. According to Banmuxia's
+Eight-Phase Market Cycle framework, how do you confirm that the market has
+transitioned from a Bear Rally (熊反) into an Early Bull (牛初) phase?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>Q1. 根據半木夏的市場八大週期框架，如何確認市場已從「熊反（熊市反彈）」正式進入「牛初（牛市初期）」階段？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#333333'>A) When MACD golden crosses on
+the 15-minute chart. / 當 15 分鐘級別 MACD 出現黃金交叉時。<br>
+B) When a major pullback after the Bear Rally fails to push the price back
+below the key bull/bear moving average boundary (e.g., MA256). / 當大幅度熊反之後出現大回調，但該回調無法將價格重新壓回關鍵牛熊分界均線（如
+MA256）下方時。<br>
+C) When social media sentiment becomes 100% bullish with zero dissenting
+opinions. / 當社群媒體言論達到 100% 一致看多且完全沒有反對聲音時。<br>
+D) When the Federal Reserve drastically shrinks its balance sheet. / 當聯準會大幅縮減其資產負債表規模時。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Q2. How does a decrease in the
+US Treasury General Account (TGA) balance affect financial market liquidity?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>Q2. 美國財政部一般帳戶（TGA）餘額「下降」，會對金融市場的流動性產生什麼影響？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#333333'>A) It drains US dollars from the
+market, reducing liquidity. / 它會從市場抽離美元，導致流動性減少。<br>
+B) It has no impact on global financial markets or crypto. / 它對全球金融市場與加密貨幣沒有任何影響。<br>
+C) It indicates the US Treasury is spending cash directly into the market,
+increasing liquidity. / 它說明美國財政部正在直接向市場注入資金，從而增加市場流動性。<br>
+D) It forces perpetual contract funding rates to turn negative. / 它會迫使永續合約的資金費率轉為負值。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Q3. When using the customized
+'Banshen MACD' (13, 34) on a 1H or 4H chart during a clear divergence, what is
+the exact trigger for entering a trade?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>Q3. 在 1 小時或 4 小時級別使用參數為 (13, 34) 的「半神 MACD」觀察到連續背離時，具體的入場信號是什麼？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#333333'>A) Entering immediately when the
+histogram reaches its highest solid peak. / 當指標柱狀體達到最高實柱峰值時立即市價追入。<br>
+B) Entering at the candle close corresponding to the 2nd or 3rd histogram peak
+turning from solid to hollow (實柱轉虛柱). / 在第 2 波峰或第 3 波峰出現「實柱轉虛柱」所對應的那根 K 線收盤價入場。<br>
+C) Waiting for the daily MA30 to cross below the daily MA256. / 等待日線 MA30 向下跌破日線
+MA256 時入場。<br>
+D) Entering only when the order book bid-ask spread widens significantly. / 僅在交易所買賣盤訂單價差大幅擴大時入場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Q4. Why does Banmuxia emphasize
+cutting stop-losses decisively rather than holding onto a losing position?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>Q4. 為什麼半木夏強調止損必須果斷，而不是扛單等待回本？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#333333'>A) Because stop-losses guarantee
+a profit on every single trade. / 因為止損能保證每一筆交易都實現獲利。<br>
+B) Because cutting losses preserves active initiative, allowing you to treat
+the small loss as a calculated spread cost and re-enter once price reclaims key
+structure. / 因為果斷止損能佔據交易主動權，將小額止損視為可計算的「重新接回差價（試錯成本）」，待價格重新站穩關鍵位後再從容開回。<br>
+C) Because exchanges reward traders with lower fees when they hit stop-losses.
+/ 因為觸發止損時交易所會給予手續費減免獎勵。<br>
+D) Because technical analysis structures never fail twice in a row. / 因為技術分析的結構支撐永遠不會連續失效兩次。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1F3A60'>Q5. During a dangerous or
+choppy phase within a bull market, what does Banmuxia recommend instead of
+opening directional short positions?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:2.0pt;line-height:120%'><b><span
+lang=EN-US style='font-size:10.5pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#2B2B2B'>Q5. 在牛市行情出現危險或無序劇烈震盪時，半木夏建議採取什麼策略來取代「直接做空」？</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:14.4pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#333333'>A) Going all-in with 100x
+leverage on altcoins. / 使用 100 倍槓桿全倉買入山寨幣。<br>
+B) Opening delta-neutral hedges (開套保) to capture high perpetual contract
+funding rates without directional risk. / 透過「開套保」進行對沖，在規避方向性風險的同時賺取牛市中極為可觀的資金費率套利。<br>
+C) Ignoring all stop-losses until the bear market ends. / 忽略所有止損線，一直持有到熊市結束。<br>
+D) Trading exclusively on 1-minute candlestick charts. / 僅在 1 分鐘 K 線圖上進行高頻交易。</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;line-height:115%;font-family:Cambria'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1F4E79 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1F4E79'>Answer Key (Spoiler-Shielded / Light Text — Highlight to Reveal)<br>
+</span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#1F4E79'>參考答案區（防劇透淺色隱藏設計——反白選取即可檢視）</span></b></p>
+
+</div>
+
+<p class=MsoNormal><i><span lang=EN-US style='font-size:9.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#666666'>Tip: The answers below are
+formatted in ultra-light gray text to prevent accidental spoilers during
+review. Select/highlight the text block below to view the answers.<br>
+提示：下方答案已設定為極淺灰色防劇透格式，複習測驗完畢後，請用滑鼠反白選取下方區域即可顯示完整答案。</span></i></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#F2F2F2'>Q1 Answer: B</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#F2F2F2'>Q1 答案：B（大幅熊反後的回調若無法將價格壓回 MA256 等關鍵分界均線下方，即確認牛初到來；利空不跌也是牛初試金石。）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#F2F2F2'>Q2 Answer: C</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#F2F2F2'>Q2 答案：C（TGA 帳戶餘額下降代表美國財政部正在花錢向市場投放美元資金，直接增加金融市場流動性。）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#F2F2F2'>Q3 Answer: B</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#F2F2F2'>Q3 答案：B（在 1H/4H 級別出現連續且懸殊的 MACD (13, 34) 背離時，於第 2 或第 3 波峰「實柱轉虛柱」對應的
+K 線收盤價入場。）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#F2F2F2'>Q4 Answer: B</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#F2F2F2'>Q4 答案：B（果斷止損能避免深套被動，將止損視為「重新站穩後接回的差價成本」，從而始終掌握操作主動權。）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#F2F2F2'>Q5 Answer: B</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#F2F2F2'>Q5 答案：B（牛市鐵律為「可以賣出、盡量不做空」；行情危險或亂震時可透過開套保賺取高達年化 100% 以上的資金費率套利。）</span></p>
+
+</div>
+
+</body>
+
+</html>

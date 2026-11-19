@@ -1,0 +1,2284 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<title>半木夏新版 MACD 三段背離 學習筆記</title>
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:新細明體;
+	panose-1:2 2 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"\@PMingLiU";
+	panose-1:2 2 5 0 0 0 0 0 0 0;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@Microsoft JhengHei";
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+h1
+	{margin-top:18.0pt;
+	margin-right:0cm;
+	margin-bottom:6.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	border:none;
+	padding:0cm;
+	font-size:15.0pt;
+	font-family:"Arial",sans-serif;
+	color:#1F3864;}
+h2
+	{margin-top:14.0pt;
+	margin-right:0cm;
+	margin-bottom:5.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:12.5pt;
+	font-family:"Arial",sans-serif;
+	color:#2E75B6;}
+h3
+	{margin-top:8.0pt;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;
+	color:#404040;}
+p.MsoTitle, li.MsoTitle, div.MsoTitle
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:2.0pt;
+	margin-left:0cm;
+	page-break-after:avoid;
+	font-size:20.0pt;
+	font-family:"Arial",sans-serif;
+	color:#1F3864;
+	font-weight:bold;}
+p.MsoListParagraph, li.MsoListParagraph, div.MsoListParagraph
+	{margin:0cm;
+	font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Arial",sans-serif;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:595.3pt 841.9pt;
+	margin:65.0pt 65.0pt 65.0pt 65.0pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW link="#0563C1" vlink="#954F72" style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoTitle><span lang=EN-US>Banmuxia’s New MACD Three-Segment Divergence</span></p>
+
+<p class=MsoTitle style='margin-bottom:6.0pt'><span style='font-family:"微軟正黑體",sans-serif'>半木夏新版</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>三段背離｜深度學習筆記</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>Source:
+video transcript (.srt), about 8 min 45 sec. Format: one English line, followed
+by its Traditional Chinese translation.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+style='font-family:"微軟正黑體",sans-serif'>來源：教學影片逐字稿（</span><span lang=EN-US>.srt</span><span
+style='font-family:"微軟正黑體",sans-serif'>），長度約</span><span lang=EN-US> 8 </span><span
+style='font-family:"微軟正黑體",sans-serif'>分</span><span lang=EN-US> 45 </span><span
+style='font-family:"微軟正黑體",sans-serif'>秒。格式：一行英文、下一行對應繁體中文。</span></p>
+
+<div style='border:none;border-left:solid #BFBFBF 1.5pt;padding:0cm 0cm 0cm 8.0pt;
+margin-left:10.0pt;margin-right:0cm'>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;border:none;padding:0cm'><i><span style='font-size:9.5pt;
+font-family:"微軟正黑體",sans-serif;color:#7F7F7F'>逐字稿為語音辨識（簡體、含大量錯字）。專有名詞與數字已依上下文還原；標示〔推測〕者為筆記者依語意推定，建議對照影片確認。影片未提供網址，時間戳記以</span></i><i><span
+lang=EN-US style='font-size:9.5pt;color:#7F7F7F'> [hh:mm:ss] </span></i><i><span
+style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#7F7F7F'>標示。</span></i></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;border:none;padding:0cm'><i><span lang=EN-US style='font-size:
+9.5pt;color:#7F7F7F'>Disclaimer: the speaker states this is an entertainment
+program and not investment advice [00:08:36]. </span></i><i><span
+style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;color:#7F7F7F'>本筆記僅為學習整理，不構成任何投資建議。</span></i></p>
+
+</div>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>1. Executive Summary</span><span style='font-family:"微軟正黑體",sans-serif'>｜核心總結</span></h1>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>Banmuxia
+returns with a three-step framework (cycle, liquidity expectation, technical
+patterns) and an Elliott-wave-improved MACD three-segment divergence: three
+price extremes with the histogram shrinking twice signal fading momentum. Enter
+on the daily close once the shrink is confirmed, stop at the third extreme, and
+treat the setup as valid for about 15–50 candles on daily or 4-hour charts.
+Macro view: Bitcoin’s four-year cycle has entered an early bear phase, but
+liquidity will improve; price likely pulls back to about 84k (0.382
+retracement), ranges, then follows the US-stock AI bubble toward about 240k.
+Gold is in a correction within a long bull market, and the AI bubble will
+burst, so plan profit-taking early.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><span
+style='font-family:"微軟正黑體",sans-serif'>本影片整理半木夏復出後公開的行情分析框架：依序以「週期、流動性預期、技術形態」三步驟判斷市場，並結合波浪理論改良</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>三段背離。三段背離指價格連續出現三個高（低）點，同時</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>柱狀圖連續兩次縮短，代表漲（跌）勢能遞減；於第三個極值後柱體確認縮短的日線收盤入場，止損設在第三個波峰（谷），有效期約</span><span
+lang=EN-US> 15–50 </span><span style='font-family:"微軟正黑體",sans-serif'>根</span><span
+lang=EN-US> K </span><span style='font-family:"微軟正黑體",sans-serif'>線，適用日線與</span><span
+lang=EN-US> 4 </span><span style='font-family:"微軟正黑體",sans-serif'>小時。宏觀結論：比特幣四年週期已進入熊市初期，但流動性將逐步改善，價格先回調至約</span><span
+lang=EN-US> 8.4 </span><span style='font-family:"微軟正黑體",sans-serif'>萬美元（</span><span
+lang=EN-US>0.382 </span><span style='font-family:"微軟正黑體",sans-serif'>回撤）並震盪，再隨美股</span><span
+lang=EN-US> AI </span><span style='font-family:"微軟正黑體",sans-serif'>泡沫上看約</span><span
+lang=EN-US> 24 </span><span style='font-family:"微軟正黑體",sans-serif'>萬；黃金屬長期牛市中的回調；</span><span
+lang=EN-US>AI </span><span style='font-family:"微軟正黑體",sans-serif'>泡沫終將破裂，須預先規劃停利。</span></p>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>2. Key Concepts &amp; Definitions</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜知識地圖與核心概念</span></h1>
+
+</div>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:56] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[MACD (Moving Average Convergence Divergence)]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: a momentum
+indicator; the video uses the most common parameters: fast 12, slow 26, signal
+smoothing 9.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[MACD</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>（指數平滑異同移動平均線）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：動能指標；本影片採最常用參數：快線</span><span
+lang=EN-US> 12</span><span style='font-family:"微軟正黑體",sans-serif'>、慢線</span><span
+lang=EN-US> 26</span><span style='font-family:"微軟正黑體",sans-serif'>、平滑週期</span><span
+lang=EN-US> 9</span><span style='font-family:"微軟正黑體",sans-serif'>。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:07] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Histogram]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: the bar chart of
+MACD; its bar length shows momentum strength and its color shows direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[Histogram</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>（柱狀圖）</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：</span><span lang=EN-US>MACD </span><span
+style='font-family:"微軟正黑體",sans-serif'>的柱體圖；柱體長短代表動能強弱，顏色代表方向。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:02] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Top Divergence]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: price makes three
+successive highs while the histogram’s green bars shrink twice in a row.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>頂背離（</span></b><b><span lang=EN-US>Top
+Divergence</span></b><b><span style='font-family:"微軟正黑體",sans-serif'>）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：價格依次出現三個高點，同時</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>柱狀圖的綠柱連續兩次縮短。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:16] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Bottom Divergence]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: price makes three
+successive lows while the histogram’s red bars shrink twice in a row.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>底背離（</span></b><b><span lang=EN-US>Bottom
+Divergence</span></b><b><span style='font-family:"微軟正黑體",sans-serif'>）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：價格依次出現三個低點，同時</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>柱狀圖的紅柱連續兩次縮短。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:19] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Three-Segment Divergence]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: two
+consecutive momentum weakenings across three price legs; suggests a likely
+trend reversal.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>三段背離</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：三段價格走勢中動能連續兩次減弱，暗示趨勢可能反轉。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:27] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Opposite-Color Bar Rule]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: a bar of
+the opposite color must appear (or come very close) between segments, otherwise
+it is not counted as a separate rise or fall.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>反色柱間隔規則</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：各段柱體之間必須出現（或非常接近出現）相反顏色的柱體，否則不算一段獨立的上漲或下跌。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:44] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Ignore Threshold (indicator setting)]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>:
+opposite-color bar changes below this value are ignored; 0 restores the earlier
+strict consecutive-divergence logic. The exact parameter name is garbled in the
+transcript.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>忽略閾值（指標參數）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：小於此值的反色柱變化會被忽略；設為</span><span
+lang=EN-US> 0 </span><span style='font-family:"微軟正黑體",sans-serif'>即回到先前的連續背離判定。參數名稱於逐字稿中辨識不清。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:19] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Stop Loss]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: top divergence short:
+the third swing high; bottom divergence long: the third swing low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>止損（</span></b><b><span lang=EN-US>Stop
+Loss</span></b><b><span style='font-family:"微軟正黑體",sans-serif'>）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：頂背離做空以第三個波峰高點為止損；底背離做多以第三個波谷低點為止損。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:46] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Validity Period]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: a setup stays
+effective for about 15–50 candles of its own timeframe.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>有效期</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：訊號約在其所屬級別的</span><span lang=EN-US>
+15–50 </span><span style='font-family:"微軟正黑體",sans-serif'>根</span><span
+lang=EN-US> K </span><span style='font-family:"微軟正黑體",sans-serif'>線內有效。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:16] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Elliott Wave Theory]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: a
+framework that reads price as repeating wave structures; used here to define
+what counts as a segment.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>艾略特波浪理論（</span></b><b><span lang=EN-US>Elliott
+Wave Theory</span></b><b><span style='font-family:"微軟正黑體",sans-serif'>）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：把價格視為重複波浪結構的分析框架；本影片用來界定何謂「一段」走勢。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:40] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Five-Wave Impulse]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: three trend legs plus
+two corrections form one complete five-wave move.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>五浪驅動（</span></b><b><span lang=EN-US>Impulse
+Wave</span></b><b><span style='font-family:"微軟正黑體",sans-serif'>）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：三段順勢走勢加上兩次調整，構成一組完整的五浪結構。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:48] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Wave 4 / Alternation]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: when wave
+2 is a steep correction, wave 4 tends to be sideways; used to explain Bitcoin’s
+expected months of ranging.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>四浪與交替原則</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：二浪若為陡直調整，四浪傾向橫向整理；用來解釋比特幣未來數月的橫盤。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:48] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Four-Year Cycle (Bitcoin)]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: the
+halving-linked bull-bear rhythm; the speaker believes it has ended and an early
+bear phase has begun.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>比特幣四年週期</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：與減半相關的牛熊節奏；講者認為已結束並進入熊市初期。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:21] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Debt Cycle]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: the US stock cycle is
+essentially the US debt cycle; judged to be in a late but unfinished stage.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>債務週期</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：美股週期基本等同美國債務週期；判斷處於後期但尚未結束。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:11] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Monetary System Transition]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: the shift
+from the old to a new monetary system; gold keeps rising until this cycle ends.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>新舊貨幣體系轉換</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：舊貨幣體系轉向新體系的大週期；此週期結束前黃金會持續上漲。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:50] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Liquidity Expectation]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>:
+expectations about US dollar liquidity (focused on the US only).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>流動性預期</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：對美元流動性狀況的預期（僅關注美國）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:00] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[SOFR (Secured Overnight Financing Rate)]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: an
+overnight funding-rate gauge of market liquidity stress; reported at COVID-era
+levels. The transcript reads “SOFIRP”</span><span style='font-size:10.5pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#44546A'>〔推測為</span><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'> SOFR </span><span
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#44546A'>相關指標〕</span><span lang=EN-US style='font-size:10.5pt;line-height:
+115%;color:#44546A'>.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[SOFR</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>（擔保隔夜融資利率）</span></b><b><span
+lang=EN-US>]</span></b><span style='font-family:"微軟正黑體",sans-serif'>：衡量資金市場緊張程度的指標；據稱已達新冠時期水準。逐字稿原文為「</span><span
+lang=EN-US>SOFIRP</span><span style='font-family:"微軟正黑體",sans-serif'>」〔推測為</span><span
+lang=EN-US> SOFR </span><span style='font-family:"微軟正黑體",sans-serif'>相關指標〕。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:21] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[QT / Balance-Sheet Expansion]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: the Fed
+stops shrinking its balance sheet (quantitative tightening) and likely starts
+expanding it again.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>縮表／擴表</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：聯準會停止縮表（</span><span lang=EN-US>Quantitative
+Tightening</span><span style='font-family:"微軟正黑體",sans-serif'>），並很可能重新擴表。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:31] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Fibonacci Retracement (0.382)]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: a
+retracement level used to estimate pullback depth; 84k is 0.382 of the 15k–126k
+rise.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>斐波那契回調（</span></b><b><span lang=EN-US>0.382</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>）</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：用於估算回調深度的位置；</span><span lang=EN-US>8.4
+</span><span style='font-family:"微軟正黑體",sans-serif'>萬是</span><span lang=EN-US>
+1.5 </span><span style='font-family:"微軟正黑體",sans-serif'>萬至</span><span
+lang=EN-US> 12.6 </span><span style='font-family:"微軟正黑體",sans-serif'>萬這波漲幅的</span><span
+lang=EN-US> 0.382 </span><span style='font-family:"微軟正黑體",sans-serif'>回調位。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:38] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Diminishing Cycle Gains]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: each
+cycle’s rise shrinks (about 18x, then 8x, next about 3x), linked to Fibonacci
+numbers.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>週期漲幅遞減</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：每個週期的漲幅遞減（約</span><span lang=EN-US> 18 </span><span
+style='font-family:"微軟正黑體",sans-serif'>倍、</span><span lang=EN-US>8 </span><span
+style='font-family:"微軟正黑體",sans-serif'>倍，下一次約</span><span lang=EN-US> 3 </span><span
+style='font-family:"微軟正黑體",sans-serif'>倍），並與斐波那契數列相關。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:35] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[AI Bubble]</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: excess investment and
+valuation driven by fear of missing a technological revolution.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[AI </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>泡沫</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：因害怕錯過技術革命而造成的過度投資與估值膨脹。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:08:10] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Bubble Exit Indicators]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>:
+record-size M&amp;A, inflation rising with Fed-tightening expectations, and
+extreme surges in AI stocks.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>泡沫逃頂指標</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：天價併購、通膨升溫與聯準會收緊預期、</span><span
+lang=EN-US>AI </span><span style='font-family:"微軟正黑體",sans-serif'>相關股票極度狂漲。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:56] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>[Altcoin Surge at Cycle End]</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>:
+historically, old-generation altcoins spike when a Bitcoin bull market ends;
+cited as support for the cycle-end view.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>[</span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>老牌山寨幣暴拉</span></b><b><span lang=EN-US>]</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：歷史上比特幣牛市結束時，老牌山寨幣常出現一波暴拉；被引為週期結束的佐證。</span></p>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>3. Knowledge Structure (Text Mind Map)</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜知識架構圖解</span></h1>
+
+</div>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:00] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Banmuxia market analysis framework</span></b></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>半木夏行情分析框架</span></b></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:56] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Tool: improved MACD three-segment divergence</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>工具：改良版</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>三段背離</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Definition: three price extremes + histogram shrinks twice</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>定義：三個價格極值＋柱體連續縮短兩次</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Counting rule: opposite-color bar between segments</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>計段規則：各段之間需有反色柱</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:02] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Trade rules: entry, stop, next-day check,
+validity</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>交易規則：入場、止損、隔日檢查、有效期</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:50] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Timeframes: daily, 4H (not 1H); why three
+segments</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>時間框架：日線、</span><span
+lang=EN-US>4H</span><span style='font-family:"微軟正黑體",sans-serif'>（不建議</span><span
+lang=EN-US> 1H</span><span style='font-family:"微軟正黑體",sans-serif'>）；為何是三段</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:48] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Step 1: Cycle analysis</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>步驟一：週期分析</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Bitcoin: four-year cycle over, early bear</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>比特幣：四年週期結束、熊市初期</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Gold: monetary-system transition, long bull</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>黃金：貨幣體系轉換、長期牛市</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>US stocks: debt cycle late stage; AI bubble ahead</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>美股：債務週期後期；</span><span
+lang=EN-US>AI </span><span style='font-family:"微軟正黑體",sans-serif'>泡沫將至</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:50] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Step 2: Liquidity expectation (US only)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>步驟二：流動性預期（僅看美國）</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Now: tight (shutdown, QT, SOFR stress)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>現況：緊張（政府關門、縮表、</span><span
+lang=EN-US>SOFR </span><span style='font-family:"微軟正黑體",sans-serif'>壓力）</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Next: QT ends, balance sheet expands; big easing later</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>之後：停止縮表、重新擴表；更大放水在後</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:46] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Step 3: Technical analysis</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>步驟三：技術分析</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Elliott waves: Bitcoin in large wave 4</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>波浪：比特幣處於大級別四浪</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Fibonacci: 0.382 retracement and diminishing cycle gains</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>斐波那契：</span><span
+lang=EN-US>0.382 </span><span style='font-family:"微軟正黑體",sans-serif'>回調與週期漲幅遞減</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:54.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>–<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:16] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Conclusions and forecasts</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:54.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>結論與預測</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Bitcoin: about 84k, range, then about 240k</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>比特幣：約</span><span
+lang=EN-US> 8.4 </span><span style='font-family:"微軟正黑體",sans-serif'>萬</span><span
+lang=EN-US> → </span><span style='font-family:"微軟正黑體",sans-serif'>震盪</span><span
+lang=EN-US> → </span><span style='font-family:"微軟正黑體",sans-serif'>約</span><span
+lang=EN-US> 24 </span><span style='font-family:"微軟正黑體",sans-serif'>萬</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:07:00] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Gold: buy zone below 3,750 (extreme 3,100)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>黃金：</span><span
+lang=EN-US>3,750 </span><span style='font-family:"微軟正黑體",sans-serif'>以下為買入區（極端</span><span
+lang=EN-US> 3,100</span><span style='font-family:"微軟正黑體",sans-serif'>）</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:07:38] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>US stocks: dips are opportunities; AI bubble
+will burst</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>美股：回調是買點；</span><span
+lang=EN-US>AI </span><span style='font-family:"微軟正黑體",sans-serif'>泡沫終將破裂</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:81.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:08:10] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Exit plan: three signals, staged profit-taking</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:81.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>逃頂規劃：三大訊號、分批停利</span></p>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>4. Mental Models &amp; Logic</span><span style='font-family:
+"微軟正黑體",sans-serif'>｜底層邏輯與思維模型</span></h1>
+
+</div>
+
+<h3><span lang=EN-US>How the speaker analyzes a problem</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜講者如何分析問題</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Top-down funnel</span></b><span lang=EN-US style='font-size:
+10.5pt;line-height:115%;color:#44546A'>: cycle sets direction, liquidity sets
+timing, technicals set entry and exit levels.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>由上而下的漏斗</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：週期決定方向、流動性決定時機、技術形態決定進出場位置。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:14] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Momentum-versus-price test</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: price
+pushes to new extremes while momentum shrinks, so the move is losing strength;
+two consecutive weakenings imply likely reversal.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>動能對價格檢驗</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：價格創新高（低）但動能縮減，代表走勢力道衰退；連續兩次減弱即暗示可能反轉。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:37] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Wave theory as a filter</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: three legs
+plus two corrections equal a full five-wave move, so a three-segment signal
+marks a high-probability completion.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>以波浪理論作為過濾器</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：三段走勢加兩次調整即完整五浪，因此三段背離代表走勢完成的機率較高。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:29] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Probability over frequency trade-off</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: more
+segments are even more reliable in theory but too rare (daily three-segment
+appears only 1–2 times a year).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>機率與頻率的取捨</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：更多段的背離理論上更可靠但太罕見（日線三段平均一年僅一兩次）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:03] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Alternation principle</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: a steep
+wave 2 implies a sideways wave 4, which anticipates months of ranging.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>交替原則</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：二浪陡直，則四浪傾向橫向，因此預期數月橫盤。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:31] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Fibonacci as target engine</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: 0.382
+retracement for the bottom; diminishing cycle multiples (about 18x, 8x, 3x) for
+the next top.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>以斐波那契推導目標</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：用</span><span lang=EN-US> 0.382 </span><span
+style='font-family:"微軟正黑體",sans-serif'>回調推估底部；用遞減的週期倍數（約</span><span
+lang=EN-US> 18</span><span style='font-family:"微軟正黑體",sans-serif'>、</span><span
+lang=EN-US>8</span><span style='font-family:"微軟正黑體",sans-serif'>、</span><span
+lang=EN-US>3 </span><span style='font-family:"微軟正黑體",sans-serif'>倍）推估下個高點。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:38] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Technology-bubble template</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: new
+technology, then fear of missing out, then over-investment, then low early
+returns, then bubble; it bursts when the Fed tightens against inflation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>技術泡沫模板</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：新技術</span><span lang=EN-US>→</span><span
+style='font-family:"微軟正黑體",sans-serif'>害怕錯過</span><span lang=EN-US>→</span><span
+style='font-family:"微軟正黑體",sans-serif'>過度投資</span><span lang=EN-US>→</span><span
+style='font-family:"微軟正黑體",sans-serif'>早期回報低</span><span lang=EN-US>→</span><span
+style='font-family:"微軟正黑體",sans-serif'>形成泡沫；當聯準會因通膨收緊時破裂。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:40] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Layered time scenarios</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: near term
+choppy, mid term mildly up, long term strongly up.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>分層時間情境</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：近期震盪、中期小幅上行、遠期看大漲。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:19] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Risk control built into the setup</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>: fixed stop
+at the third extreme, a next-day confirmation exit, and an expiry window.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>把風控內建於策略</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：以第三極值設止損、隔日確認不成立即離場、並設有效期限。</span></p>
+
+<h3><span lang=EN-US>Reasoning chain for the Bitcoin forecast</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜比特幣預測的推導鏈</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:05] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Cycle: four-year cycle ended, but AI bubble can
+truncate the bear.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>週期：四年週期結束，但</span><span
+lang=EN-US> AI </span><span style='font-family:"微軟正黑體",sans-serif'>泡沫可能縮短熊市。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:11] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Liquidity: improving, no support for a deep
+drop.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>流動性：持續改善，不支持深度下跌。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:31] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Technical: wave-4 sideways correction, with a
+bottom near the 0.382 level (about 84k).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>技術：四浪橫向調整，底部落在</span><span
+lang=EN-US> 0.382 </span><span style='font-family:"微軟正黑體",sans-serif'>位（約</span><span
+lang=EN-US> 8.4 </span><span style='font-family:"微軟正黑體",sans-serif'>萬）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:56] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Target: bottom times about 3 gives roughly
+240k, launched with the US-stock bubble.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>目標：底部乘以約</span><span
+lang=EN-US> 3 </span><span style='font-family:"微軟正黑體",sans-serif'>倍得約</span><span
+lang=EN-US> 24 </span><span style='font-family:"微軟正黑體",sans-serif'>萬，隨美股泡沫啟動。</span></p>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>5. Detailed Breakdown</span><span style='font-family:"微軟正黑體",sans-serif'>｜詳細重點拆解</span></h1>
+
+</div>
+
+<h2><span lang=EN-US>Module 1 — Background &amp; Framework</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜模組一：背景與分析框架</span><span lang=EN-US> 
+[00:00:00–00:00:54]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:00] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Banmuxia (</span><span style='font-size:10.5pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#44546A'>半木夏</span><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>) retired in
+2023 and has now returned to share a framework of cycle, liquidity expectation
+and technical patterns.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>半木夏於</span><span
+lang=EN-US> 2023 </span><span style='font-family:"微軟正黑體",sans-serif'>年隱退，現已回歸，公開「週期＋流動性預期＋技術形態」的分析框架。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:14] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>During the hiatus he studied Elliott Wave
+Theory for over a year and merged it into the framework, making cycle questions
+clearer.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>隱退期間他研究波浪理論一年多，並整合進框架，使週期層面的問題更清晰。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:26] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>He claims forecast accuracy above 66%
+(transcript reads “660”</span><span style='font-size:10.5pt;line-height:115%;
+font-family:"微軟正黑體",sans-serif;color:#44546A'>〔推測〕</span><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>) and shares his
+two-year outlook.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>他稱依此框架的預測準確率超過</span><span
+lang=EN-US> 66%</span><span style='font-family:"微軟正黑體",sans-serif'>（逐字稿為「</span><span
+lang=EN-US>660</span><span style='font-family:"微軟正黑體",sans-serif'>」〔推測〕），並分享未來兩年的預測。</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:48] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Order of analysis: 1) cycle, 2) liquidity
+expectation, 3) technical patterns (detailed in Modules 5–7).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>分析順序：</span><span
+lang=EN-US>1) </span><span style='font-family:"微軟正黑體",sans-serif'>週期、</span><span
+lang=EN-US>2) </span><span style='font-family:"微軟正黑體",sans-serif'>流動性預期、</span><span
+lang=EN-US>3) </span><span style='font-family:"微軟正黑體",sans-serif'>技術形態（詳見模組</span><span
+lang=EN-US> 5–7</span><span style='font-family:"微軟正黑體",sans-serif'>）。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Elliott Wave Theory; Three-Segment Divergence (see Section 2).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>艾略特波浪理論、三段背離（見第</span><span
+lang=EN-US> 2 </span><span style='font-family:"微軟正黑體",sans-serif'>節）。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:08:36] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The 66% accuracy is self-reported and cannot be
+verified from the video; the program also states no investment advice.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span lang=EN-US>66% </span><span
+style='font-family:"微軟正黑體",sans-serif'>準確率為講者自述，無法由影片驗證；節目亦聲明不構成投資建議。</span></p>
+
+<h2><span lang=EN-US>Module 2 — Definition &amp; Indicator Setup</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜模組二：定義與指標設定</span><span lang=EN-US> 
+[00:00:56–00:02:01]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:00:56] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Parameters: fast 12, slow 26, signal 9.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>參數：快線</span><span
+lang=EN-US> 12</span><span style='font-family:"微軟正黑體",sans-serif'>、慢線</span><span
+lang=EN-US> 26</span><span style='font-family:"微軟正黑體",sans-serif'>、平滑</span><span
+lang=EN-US> 9</span><span style='font-family:"微軟正黑體",sans-serif'>。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:02] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Top divergence: three higher highs in price
+with the green bars shrinking twice.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>頂背離：價格三個高點，綠柱連續縮短兩次。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:16] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Bottom divergence: three lower lows in price
+with the red bars shrinking twice.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>底背離：價格三個低點，紅柱連續縮短兩次。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:27] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Improvement from wave theory: segments must be
+separated by an opposite-color bar.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>波浪理論帶來的改良：各段之間必須有反色柱隔開。</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Set MACD to 12 / 26 / 9.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>將</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>設為</span><span
+lang=EN-US> 12</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>26</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>9</span><span style='font-family:"微軟正黑體",sans-serif'>。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Mark three successive price highs (or lows).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>標出三個依次出現的價格高點（或低點）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Check that the histogram bars shrink at each of the last two
+segments.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>確認最後兩段的柱體逐段縮短。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Confirm an opposite-color bar sits between segments (or very
+close).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>確認各段之間有反色柱（或非常接近）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:39] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Optionally use the Banmuxia MACD indicator’s
+auto-marking and tune its threshold by asset.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>可使用半木夏</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>指標的自動標記，並依品種調整閾值。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:53] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Histogram; ignore threshold (0 = earlier strict
+consecutive-divergence status; larger = more flexible filtering).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span lang=EN-US>Histogram</span><span
+style='font-family:"微軟正黑體",sans-serif'>（柱狀圖）；忽略閾值（</span><span lang=EN-US>0</span><span
+style='font-family:"微軟正黑體",sans-serif'>＝先前的連續背離判定；數值越大，過濾越寬鬆）〔推測〕。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:33] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Without an opposite-color bar, adjacent bars
+are not counted as separate rises or falls.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>若沒有反色柱，相鄰柱體不能算作各自獨立的上漲或下跌。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:01:48] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The threshold value differs by asset; adjust it
+using the chart on the right-hand side.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>閾值因品種而異，需依右側圖表自行調整。</span></p>
+
+<h2><span lang=EN-US>Module 3 — Trading Rules</span><span style='font-family:
+"微軟正黑體",sans-serif'>｜模組三：交易規則</span><span lang=EN-US>  [00:02:02–00:02:50]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:04] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The signal triggers after the third extreme
+forms and the shrinking bar is confirmed; entry is taken at the daily close.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>訊號在第三個極值出現且柱體縮短確認後觸發，於日線收盤入場。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:07] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Taiwan time 08:00 equals the UTC daily candle
+close, so the “8 a.m.” in the video matches a UTC+8 chart.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>台灣時間</span><span
+lang=EN-US> 08:00 </span><span style='font-family:"微軟正黑體",sans-serif'>即</span><span
+lang=EN-US> UTC </span><span style='font-family:"微軟正黑體",sans-serif'>日線收盤，因此影片中的「早上</span><span
+lang=EN-US> 8 </span><span style='font-family:"微軟正黑體",sans-serif'>點」對應</span><span
+lang=EN-US> UTC+8 </span><span style='font-family:"微軟正黑體",sans-serif'>的日線。〔筆記者註〕</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:04] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Entry</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: top divergence goes
+short, bottom divergence goes long, at the 8:00 daily close once shrinking is
+confirmed.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>入場</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：頂背離做空、底背離做多，於柱體縮短確認當日早上</span><span
+lang=EN-US> 8 </span><span style='font-family:"微軟正黑體",sans-serif'>點日線收盤進場。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:19] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Stop loss</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: short at the third
+swing high; long at the third swing low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>止損</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：做空設在第三個波峰高點；做多設在第三個波谷低點。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:28] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Next-day check</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: if the next daily
+close shows no further shrinking, exit (the exact wording is garbled; read as
+exit</span><span style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#44546A'>〔推測〕</span><span lang=EN-US style='font-size:10.5pt;line-height:
+115%;color:#44546A'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>隔日檢查</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：若隔日收盤柱體未繼續縮短，則離場（原文辨識不清，解讀為離場〔推測〕）。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:41] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Take profit</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: set by wave theory or
+other technical patterns according to the market.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>停利</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：依行情走勢，以波浪理論或其他技術形態判斷。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:46] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Validity</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: about 15–50 candles
+of the matching timeframe, for example 15–50 days on the daily chart.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>有效期</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：約為對應級別的</span><span lang=EN-US> 15–50 </span><span
+style='font-family:"微軟正黑體",sans-serif'>根</span><span lang=EN-US> K </span><span
+style='font-family:"微軟正黑體",sans-serif'>線，例如日線約</span><span lang=EN-US> 15–50 </span><span
+style='font-family:"微軟正黑體",sans-serif'>天。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:53] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Expected duration ≈ 15–50 × candle length.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>預期持續時間</span><span
+lang=EN-US> ≈ 15–50 × </span><span style='font-family:"微軟正黑體",sans-serif'>單根</span><span
+lang=EN-US> K </span><span style='font-family:"微軟正黑體",sans-serif'>線時長。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:28] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The next-day confirmation is described as very
+important; skipping it weakens the rule.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>講者強調隔日確認非常重要；省略會削弱規則。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:46] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The signal has an expiry; do not hold it
+indefinitely.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>訊號有時效，不應無限期持有。</span></p>
+
+<h2><span lang=EN-US>Module 4 — Timeframes &amp; Why Three Segments</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜模組四：時間框架與為何是三段</span><span lang=EN-US> 
+[00:02:50–00:03:47]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:10] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>A divergence means the corresponding price
+momentum is weakening: a top divergence is fading upward momentum, a bottom
+divergence is fading downward momentum.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>背離代表對應的價格勢能在減弱：頂背離是上漲勢能減弱，底背離是下跌勢能減弱。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:19] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Two consecutive weakenings suggest the trend
+may reverse.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>連續兩次勢能減弱，意味價格趨勢可能逆轉。</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:02:57] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Use daily and 4-hour charts.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>使用日線與</span><span
+lang=EN-US> 4 </span><span style='font-family:"微軟正黑體",sans-serif'>小時級別。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:26] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Why three, not four or five: higher counts are
+too rare, and three legs plus two corrections form a complete five-wave move
+that often completes.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>為何三段而非四、五段：更多段機率太低；三段加兩次調整構成完整五浪，完成機率大。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:34] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>3 trend legs + 2 corrections = 5-wave impulse;
+daily three-segment divergence appears about 1–2 times per year.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span lang=EN-US>3 </span><span
+style='font-family:"微軟正黑體",sans-serif'>段順勢＋</span><span lang=EN-US>2 </span><span
+style='font-family:"微軟正黑體",sans-serif'>次調整＝五浪驅動；日線三段背離平均每年約出現</span><span
+lang=EN-US> 1–2 </span><span style='font-family:"微軟正黑體",sans-serif'>次。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:00] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The 1-hour chart gives only 15–50 hours (1–2
+days) of validity; uncertainty is high, though short-term traders may still try
+it.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span lang=EN-US>1 </span><span
+style='font-family:"微軟正黑體",sans-serif'>小時級別有效期僅</span><span lang=EN-US> 15–50 </span><span
+style='font-family:"微軟正黑體",sans-serif'>小時（</span><span lang=EN-US>1–2 </span><span
+style='font-family:"微軟正黑體",sans-serif'>天），不確定性高；短線交易員可自行嘗試。</span></p>
+
+<h2><span lang=EN-US>Module 5 — Step 1: Cycle Analysis</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜模組五：步驟一</span> <span style='font-family:
+"微軟正黑體",sans-serif'>週期分析</span><span lang=EN-US>  [00:03:48–00:04:49]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:03:51] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Bitcoin</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: the traditional
+four-year cycle has ended and an early bear phase has begun; a surge in old
+altcoins supports this because it happened at past bull-market ends.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>比特幣</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：傳統四年週期已結束，進入熊市初期；老牌山寨幣暴拉印證此點，因過去牛市結束時也曾出現。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:05] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>This bear cycle may be sharply shortened by the
+US-stock AI bubble.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>這次熊市週期可能被美股</span><span
+lang=EN-US> AI </span><span style='font-family:"微軟正黑體",sans-serif'>泡沫大幅縮短。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:11] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Gold</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: in a large cycle of
+old-to-new monetary system transition; it keeps rising until that ends, and can
+be held about 10 years after this pullback.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>黃金</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：處於新舊貨幣體系轉換的大週期；轉換結束前持續上漲，此輪回調後可長線持有約</span><span
+lang=EN-US> 10 </span><span style='font-family:"微軟正黑體",sans-serif'>年。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:21] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>US stocks</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: the cycle is the US
+debt cycle, which is in a late stage but not finished; overheating indicators
+have not signaled yet, though some signs exist.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>美股</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：週期即美國債務週期，已進入後期但未結束；過熱指標尚未出現訊號，但已有一些跡象。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:35] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>AI</span></b><span lang=EN-US style='font-size:
+10.5pt;line-height:115%;color:#44546A'>: this technology revolution will almost
+certainly produce a bubble because investors fear missing out, leading to
+excessive capex and heavy government borrowing and storytelling.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>AI</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：這次技術革命幾乎必然產生泡沫，因害怕錯過機會導致過度資本支出、政府大舉借債與講故事。</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Judge each asset’s cycle separately (Bitcoin, gold, US stocks),
+then overlay the AI-bubble theme.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>分別判斷各資產的週期（比特幣、黃金、美股），再疊加</span><span
+lang=EN-US> AI </span><span style='font-family:"微軟正黑體",sans-serif'>泡沫主題。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Four-year cycle; debt cycle; monetary system transition.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>四年週期；債務週期；新舊貨幣體系轉換。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:11] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>“Early bear” does not imply a deep decline in
+this cycle; the speaker later argues liquidity and cycle analysis do not
+support a deep fall.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>「熊市初期」不代表本輪必然深跌；講者後續論證週期與流動性並不支持深度下跌。</span></p>
+
+<h2><span lang=EN-US>Module 6 — Step 2: Liquidity Expectation</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜模組六：步驟二</span> <span style='font-family:
+"微軟正黑體",sans-serif'>流動性預期</span><span lang=EN-US>  [00:04:50–00:05:45]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:52] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Only US liquidity is tracked.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>只看美國的流動性狀況。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:04:55] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Currently very tight because of the government
+shutdown and ongoing balance-sheet reduction; the funding-rate indicator is at
+COVID-era levels, which partly explains the recent drop in US stocks and
+Bitcoin.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>目前非常緊張，原因是政府關門與持續縮表；資金利率指標已達新冠時期水準，可能是近期美股與比特幣下跌的部分原因。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:10] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The shutdown ending improves conditions and
+triggered a fast rebound, but it is only an improvement and not enough for a
+continued bull market.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>政府停擺結束改善了流動性並引發快速反彈，但這只是改善，構不成延續牛市的條件。</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:21] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Stage 1: the Fed stops QT (around December</span><span
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#44546A'>〔推測〕</span><span lang=EN-US style='font-size:10.5pt;line-height:
+115%;color:#44546A'>) and likely resumes expansion; liquidity normalizes, like
+October 2019.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>階段一：聯準會停止縮表（約</span><span
+lang=EN-US> 12 </span><span style='font-family:"微軟正黑體",sans-serif'>月〔推測〕）並可能重啟擴表，流動性回歸正常，類似</span><span
+lang=EN-US> 2019 </span><span style='font-family:"微軟正黑體",sans-serif'>年</span><span
+lang=EN-US> 10 </span><span style='font-family:"微軟正黑體",sans-serif'>月。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:33] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Stage 2: a real large-scale easing may come
+around May next year after Trump takes control of the Fed, like March 2020.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>階段二：真正的大放水可能要到明年</span><span
+lang=EN-US> 5 </span><span style='font-family:"微軟正黑體",sans-serif'>月，川普掌控聯準會之後，類似</span><span
+lang=EN-US> 2020 </span><span style='font-family:"微軟正黑體",sans-serif'>年</span><span
+lang=EN-US> 3 </span><span style='font-family:"微軟正黑體",sans-serif'>月。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:40] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Conclusion: near term choppy, mid term mild
+upside, long term the basis for a big rally.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>結論：近期震盪、中期小幅上行、遠期是大漲的基礎。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>SOFR; QT (quantitative tightening); balance-sheet expansion.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span lang=EN-US>SOFR</span><span
+style='font-family:"微軟正黑體",sans-serif'>；</span><span lang=EN-US>QT</span><span
+style='font-family:"微軟正黑體",sans-serif'>（縮表）；擴表。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:30] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Do not mistake “liquidity returning to normal”
+for “big easing”; the speaker separates the two stages.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>不要把「流動性回歸正常」誤認為「大放水」；講者將兩階段明確區分。</span></p>
+
+<h2><span lang=EN-US>Module 7 — Step 3: Bitcoin Technical Analysis</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜模組七：步驟三</span> <span style='font-family:
+"微軟正黑體",sans-serif'>比特幣技術分析</span><span lang=EN-US>  [00:05:46–00:07:00]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:05:48] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Bitcoin is in a large-degree wave 4 correction.
+Many analysts count wave 1 from Bitcoin’s inception; the speaker uses the 12
+March 2020 low as wave-1 start because it does not affect later analysis.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>比特幣處於大級別四浪調整。主流看法從比特幣誕生起算一浪；講者以</span><span
+lang=EN-US> 2020 </span><span style='font-family:"微軟正黑體",sans-serif'>年</span><span
+lang=EN-US> 3 </span><span style='font-family:"微軟正黑體",sans-serif'>月</span><span
+lang=EN-US> 12 </span><span style='font-family:"微軟正黑體",sans-serif'>日低點作為一浪起點，因為不影響後續分析。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:03] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Wave 2 was a steep correction, so wave 4 is
+likely sideways, which explains several months of ranging.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>二浪為陡直調整，因此四浪傾向橫向，這就是未來數月橫盤的原因。</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:22] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Forecast path: gradual drop to about 84k,
+several months of complex oscillation, then (late 2026 / early 2027</span><span
+style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#44546A'>〔依影片時間推測〕</span><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>) follow the US-stock bubble up to about 240k.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>預測路徑：逐步跌至約</span><span
+lang=EN-US> 8.4 </span><span style='font-family:"微軟正黑體",sans-serif'>萬，經歷數個月複雜震盪，之後（約</span><span
+lang=EN-US> 2026 </span><span style='font-family:"微軟正黑體",sans-serif'>年底至</span><span
+lang=EN-US> 2027 </span><span style='font-family:"微軟正黑體",sans-serif'>年初〔依影片時間推測〕）隨美股泡沫上看約</span><span
+lang=EN-US> 24 </span><span style='font-family:"微軟正黑體",sans-serif'>萬。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:31] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Why 84k: it is the 0.382 retracement of the
+15k–126k rise.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>為何是</span><span
+lang=EN-US> 8.4 </span><span style='font-family:"微軟正黑體",sans-serif'>萬：它是</span><span
+lang=EN-US> 1.5 </span><span style='font-family:"微軟正黑體",sans-serif'>萬至</span><span
+lang=EN-US> 12.6 </span><span style='font-family:"微軟正黑體",sans-serif'>萬這波上漲的</span><span
+lang=EN-US> 0.382 </span><span style='font-family:"微軟正黑體",sans-serif'>回調位。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:37] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Why 240k: cycle gains diminish; the last two
+cycles were about 18x (2020 low to 2021 high) and about 8x (15k to 126k); by
+Fibonacci logic the next is about 3x, so a bottom near 80k supports a top near
+240k.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>為何是</span><span
+lang=EN-US> 24 </span><span style='font-family:"微軟正黑體",sans-serif'>萬：週期漲幅遞減，前兩個週期約</span><span
+lang=EN-US> 18 </span><span style='font-family:"微軟正黑體",sans-serif'>倍（</span><span
+lang=EN-US>2020 </span><span style='font-family:"微軟正黑體",sans-serif'>低點至</span><span
+lang=EN-US> 2021 </span><span style='font-family:"微軟正黑體",sans-serif'>高點）與約</span><span
+lang=EN-US> 8 </span><span style='font-family:"微軟正黑體",sans-serif'>倍（</span><span
+lang=EN-US>1.5 </span><span style='font-family:"微軟正黑體",sans-serif'>萬至</span><span
+lang=EN-US> 12.6 </span><span style='font-family:"微軟正黑體",sans-serif'>萬）；依斐波那契關係下次約</span><span
+lang=EN-US> 3 </span><span style='font-family:"微軟正黑體",sans-serif'>倍，因此底部在</span><span
+lang=EN-US> 8 </span><span style='font-family:"微軟正黑體",sans-serif'>萬附近時，頂部約為</span><span
+lang=EN-US> 24 </span><span style='font-family:"微軟正黑體",sans-serif'>萬。〔數字依上下文還原〕</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:07:00] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The next cycle will likely move fast because it
+launches together with the US-stock bubble.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>下一輪週期很可能走得很快，因為會與美股泡沫一同啟動。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Retracement level = high − 0.382 × (high − low) = 126k − 0.382 ×
+(126k − 15k) ≈ 83.6k.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>回調位</span>
+<span style='font-family:"微軟正黑體",sans-serif'>＝</span> <span style='font-family:
+"微軟正黑體",sans-serif'>高點</span><span lang=EN-US> − 0.382 ×</span><span
+style='font-family:"微軟正黑體",sans-serif'>（高點</span><span lang=EN-US> − </span><span
+style='font-family:"微軟正黑體",sans-serif'>低點）＝</span><span lang=EN-US> 12.6 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬</span><span lang=EN-US> − 0.382 ×</span><span
+style='font-family:"微軟正黑體",sans-serif'>（</span><span lang=EN-US>12.6 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬</span><span lang=EN-US> − 1.5 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬）</span><span lang=EN-US>≈ 8.36 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬。〔筆記者驗算〕</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Target ≈ bottom × 3 ≈ 84k × 3 ≈ 250k (video states about 240k).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>目標</span><span
+lang=EN-US> ≈ </span><span style='font-family:"微軟正黑體",sans-serif'>底部</span><span
+lang=EN-US> × 3 ≈ 8.4 </span><span style='font-family:"微軟正黑體",sans-serif'>萬</span><span
+lang=EN-US> × 3 ≈ 25 </span><span style='font-family:"微軟正黑體",sans-serif'>萬（影片稱約</span><span
+lang=EN-US> 24 </span><span style='font-family:"微軟正黑體",sans-serif'>萬）。〔筆記者驗算〕</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:06:56] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>The 240k target is conditional on a bottom near
+80k; it is a scenario, not a certainty.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span lang=EN-US>24 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬的目標以底部約</span><span lang=EN-US> 8 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬為前提，屬於情境推演而非確定結果。</span></p>
+
+<h2><span lang=EN-US>Module 8 — Gold, US Stocks &amp; the AI Bubble</span><span
+style='font-family:"微軟正黑體",sans-serif'>｜模組八：黃金、美股與</span><span lang=EN-US> AI </span><span
+style='font-family:"微軟正黑體",sans-serif'>泡沫</span><span lang=EN-US> 
+[00:07:00–00:08:35]</span></h2>
+
+<h3><span lang=EN-US>Concept Explanation</span><span style='font-family:"微軟正黑體",sans-serif'>｜概念解釋</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:07:06] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Gold</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: a correction inside a
+10-year bull market; such a large-degree correction cannot finish in two or
+three weeks, but continued central-bank buying limits the depth.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>黃金</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：處於</span><span lang=EN-US> 10 </span><span
+style='font-family:"微軟正黑體",sans-serif'>年牛市中的回調；這種級別的回調難在兩三週內完成，但新興國家央行持續買入使跌幅有限。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:07:38] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>US stocks</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: pullback magnitude is
+the most uncertain, but since the upcycle is far from over, dips are buying
+opportunities.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>美股</span></b><span
+style='font-family:"微軟正黑體",sans-serif'>：回調幅度最不確定，但上行週期遠未結束，因此回調就是買入機會。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:07:45] </span></b><b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>AI bubble</span></b><span lang=EN-US
+style='font-size:10.5pt;line-height:115%;color:#44546A'>: it will surely come
+and surely burst; firms rush into heavy borrowing and large M&amp;A, and early
+returns on capital are low; cracks appear, and if the Fed tightens because of
+inflation from excess liquidity, the bubble pops.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span lang=EN-US>AI </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>泡沫</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>：一定會來也一定會破；企業因怕錯失機會而大舉借貸與併購，早期資本回報偏低；出現裂痕後，若聯準會因過度流動性導致通膨而收緊，泡沫便會破裂。</span></p>
+
+<h3><span lang=EN-US>Key Steps</span><span style='font-family:"微軟正黑體",sans-serif'>｜關鍵步驟／操作流程</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:07:23] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Gold levels (figures restored from “310 / 335 /
+375”</span><span style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#44546A'>〔推測，單位為千美元〕</span><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>): extreme target near 3,100 (0.382
+retracement); more likely 3,350–3,750; buy below 3,750 if you fear missing the
+next 10-year rise.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>黃金價位（由「</span><span
+lang=EN-US>310</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>335</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>375</span><span style='font-family:"微軟正黑體",sans-serif'>」還原〔推測為</span><span
+lang=EN-US> 3,100</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>3,350</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>3,750 </span><span style='font-family:"微軟正黑體",sans-serif'>美元〕）：極端目標約</span><span
+lang=EN-US> 3,100</span><span style='font-family:"微軟正黑體",sans-serif'>（</span><span
+lang=EN-US>0.382 </span><span style='font-family:"微軟正黑體",sans-serif'>回調）；更可能落在</span><span
+lang=EN-US> 3,350–3,750</span><span style='font-family:"微軟正黑體",sans-serif'>；若怕錯過下一個十年上漲，</span><span
+lang=EN-US>3,750 </span><span style='font-family:"微軟正黑體",sans-serif'>以下可直接買入。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:08:10] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Monitor three exit indicators: 1) record-size
+M&amp;A, 2) rising inflation with strong expectations of Fed tightening, 3)
+extreme surges in AI-related stocks.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>監控三個逃頂指標：</span><span
+lang=EN-US>1) </span><span style='font-family:"微軟正黑體",sans-serif'>天價併購；</span><span
+lang=EN-US>2) </span><span style='font-family:"微軟正黑體",sans-serif'>通膨升溫、聯準會收緊預期變大；</span><span
+lang=EN-US>3) AI </span><span style='font-family:"微軟正黑體",sans-serif'>相關股票暴漲不止。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:08:29] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>When signals appear, enjoy the bubble while
+preparing a profit-taking plan.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>訊號出現時，一邊享受泡沫、一邊做好停利計畫。</span></p>
+
+<h3><span lang=EN-US>Formulas &amp; Terms</span><span style='font-family:"微軟正黑體",sans-serif'>｜重要公式／專有名詞</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Gold 0.382 retracement ≈ 3,100; buy zone &lt; 3,750; bubble top
+signals (M&amp;A, inflation/Fed, AI stock surge).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>黃金</span><span
+lang=EN-US> 0.382 </span><span style='font-family:"微軟正黑體",sans-serif'>回調</span><span
+lang=EN-US> ≈ 3,100</span><span style='font-family:"微軟正黑體",sans-serif'>；買入區</span><span
+lang=EN-US> &lt; 3,750</span><span style='font-family:"微軟正黑體",sans-serif'>；泡沫逃頂訊號（併購、通膨／聯準會、</span><span
+lang=EN-US>AI </span><span style='font-family:"微軟正黑體",sans-serif'>股暴漲）。</span></p>
+
+<h3><span lang=EN-US>Common Pitfalls</span><span style='font-family:"微軟正黑體",sans-serif'>｜常見誤區／注意事項</span></h3>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:08:25] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Seeing the three signals is not a command to
+sell everything at once.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>看到三個訊號並不代表要立刻全部賣出。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+color:#1F4E79'>[00:08:31] </span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>Do not assume a bubble can be timed precisely;
+the speaker frames it as preparing a plan, not predicting the top.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><span style='font-family:"微軟正黑體",sans-serif'>不要以為能精準預測泡沫頂部；講者的重點是預先規劃，而非預測頂點。</span></p>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>6. Action Items</span><span style='font-family:"微軟正黑體",sans-serif'>｜實操行動清單</span></h1>
+
+</div>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Action 1</span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>: Open daily and 4-hour charts, set MACD to 12
+/ 26 / 9, and add the Banmuxia MACD indicator with auto-marking; tune the
+threshold for each asset you trade.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>行動</span></b><b><span
+lang=EN-US> 1</span></b><span style='font-family:"微軟正黑體",sans-serif'>：開啟日線與</span><span
+lang=EN-US> 4 </span><span style='font-family:"微軟正黑體",sans-serif'>小時圖，將</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>設為</span><span
+lang=EN-US> 12</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>26</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>9</span><span style='font-family:"微軟正黑體",sans-serif'>，加入半木夏</span><span
+lang=EN-US> MACD </span><span style='font-family:"微軟正黑體",sans-serif'>指標的自動標記，並依你交易的品種調整閾值。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Action 2</span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>: Backtest the past 3–5 years of Bitcoin: mark
+every three-segment divergence, check the opposite-color bar rule, and record
+whether the move lasted 15–50 candles.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>行動</span></b><b><span
+lang=EN-US> 2</span></b><span style='font-family:"微軟正黑體",sans-serif'>：回測比特幣過去</span><span
+lang=EN-US> 3–5 </span><span style='font-family:"微軟正黑體",sans-serif'>年：標出所有三段背離、檢查反色柱規則，並記錄走勢是否持續</span><span
+lang=EN-US> 15–50 </span><span style='font-family:"微軟正黑體",sans-serif'>根</span><span
+lang=EN-US> K </span><span style='font-family:"微軟正黑體",sans-serif'>線。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Action 3</span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>: Write a one-page trade checklist: entry at
+the 8:00 daily close, stop at the third extreme, next-day shrink check, expiry
+window; then paper-trade before using real money.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>行動</span></b><b><span
+lang=EN-US> 3</span></b><span style='font-family:"微軟正黑體",sans-serif'>：寫一頁交易檢核表：早上</span><span
+lang=EN-US> 8 </span><span style='font-family:"微軟正黑體",sans-serif'>點日線收盤入場、第三極值止損、隔日縮短檢查、有效期；先用模擬單練習再投入真金。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Action 4</span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>: Build a weekly three-step dashboard (cycle,
+US liquidity, technical wave count) and set price alerts at about 84k for
+Bitcoin and 3,750 / 3,350 / 3,100 for gold.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>行動</span></b><b><span
+lang=EN-US> 4</span></b><span style='font-family:"微軟正黑體",sans-serif'>：建立每週三步驟儀表板（週期、美國流動性、技術波浪計數），並設定價格提醒：比特幣約</span><span
+lang=EN-US> 8.4 </span><span style='font-family:"微軟正黑體",sans-serif'>萬、黃金</span><span
+lang=EN-US> 3,750</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>3,350</span><span style='font-family:"微軟正黑體",sans-serif'>／</span><span
+lang=EN-US>3,100</span><span style='font-family:"微軟正黑體",sans-serif'>。</span></p>
+
+<p class=MsoListParagraph style='margin-top:4.0pt;margin-right:0cm;margin-bottom:
+0cm;margin-left:27.0pt;margin-bottom:.0001pt;text-indent:-13.5pt;line-height:
+115%;page-break-after:avoid'><span lang=EN-US>•<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'>Action 5</span></b><span lang=EN-US style='font-size:10.5pt;
+line-height:115%;color:#44546A'>: Draft a staged profit-taking plan in advance
+and track the three bubble-exit indicators (record M&amp;A, inflation and
+Fed-tightening expectations, AI-stock surges).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:27.0pt;line-height:120%'><b><span style='font-family:"微軟正黑體",sans-serif'>行動</span></b><b><span
+lang=EN-US> 5</span></b><span style='font-family:"微軟正黑體",sans-serif'>：預先擬定分批停利計畫，並追蹤三個逃頂指標（天價併購、通膨與聯準會收緊預期、</span><span
+lang=EN-US>AI </span><span style='font-family:"微軟正黑體",sans-serif'>股暴漲）。</span></p>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>7. Quiz &amp; Review</span><span style='font-family:"微軟正黑體",sans-serif'>｜觀念自我檢測</span></h1>
+
+</div>
+
+<p class=MsoNormal style='margin-top:8.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>Q1.</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'> Which
+description matches a top divergence in this video?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><b><span
+style='font-family:"微軟正黑體",sans-serif'>第</span></b><b><span lang=EN-US> 1 </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>題</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>　依影片，下列何者符合「頂背離」的定義？</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>A.
+Two price highs with the histogram growing</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>A. </span><span
+style='font-family:"微軟正黑體",sans-serif'>兩個價格高點，柱體增長</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>B.
+Three price highs with green bars shrinking twice in a row</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>B. </span><span
+style='font-family:"微軟正黑體",sans-serif'>三個價格高點，綠柱連續縮短兩次</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>C.
+Three price lows with red bars shrinking twice</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>C. </span><span
+style='font-family:"微軟正黑體",sans-serif'>三個價格低點，紅柱縮短兩次</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>D.
+Any single high above the previous high</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>D. </span><span
+style='font-family:"微軟正黑體",sans-serif'>任何一個高於前高的單一高點</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>Q2.</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'> Where is
+the stop loss for a short entered on a top divergence?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><b><span
+style='font-family:"微軟正黑體",sans-serif'>第</span></b><b><span lang=EN-US> 2 </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>題</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>　頂背離做空時，止損應設在哪裡？</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>A.
+The first swing high</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>A. </span><span
+style='font-family:"微軟正黑體",sans-serif'>第一個波峰高點</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>B.
+The third swing high</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>B. </span><span
+style='font-family:"微軟正黑體",sans-serif'>第三個波峰高點</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>C.
+The 0.382 retracement level</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>C. 0.382 </span><span
+style='font-family:"微軟正黑體",sans-serif'>回調位</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>D.
+No stop is needed</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>D. </span><span
+style='font-family:"微軟正黑體",sans-serif'>不需要止損</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>Q3.</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'> Why does
+the speaker choose three segments rather than four or five?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><b><span
+style='font-family:"微軟正黑體",sans-serif'>第</span></b><b><span lang=EN-US> 3 </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>題</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>　為什麼講者選擇三段背離，而不是四段或五段？</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>A.
+Three segments are always 100% accurate</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>A. </span><span
+style='font-family:"微軟正黑體",sans-serif'>三段永遠</span><span lang=EN-US> 100% </span><span
+style='font-family:"微軟正黑體",sans-serif'>準確</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>B.
+More segments are too rare, and three legs plus two corrections form a complete
+five-wave move</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>B. </span><span
+style='font-family:"微軟正黑體",sans-serif'>更多段太罕見，且三段加兩次調整構成完整五浪</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>C.
+The MACD cannot display more than three segments</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>C. MACD </span><span
+style='font-family:"微軟正黑體",sans-serif'>無法顯示超過三段</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>D.
+Four or five segments only work on the 1-hour chart</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>D. </span><span
+style='font-family:"微軟正黑體",sans-serif'>四、五段只適用於</span><span lang=EN-US> 1 </span><span
+style='font-family:"微軟正黑體",sans-serif'>小時圖</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>Q4.</span></b><span
+lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'> How is the
+Bitcoin bottom target of about 84k derived?</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><b><span
+style='font-family:"微軟正黑體",sans-serif'>第</span></b><b><span lang=EN-US> 4 </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>題</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>　比特幣約</span><span lang=EN-US> 8.4 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬的底部目標是如何推得的？</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>A.
+It is 0.382 of the 15k–126k rise, used as a retracement level</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>A. </span><span
+style='font-family:"微軟正黑體",sans-serif'>它是</span><span lang=EN-US> 1.5 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬至</span><span lang=EN-US> 12.6 </span><span
+style='font-family:"微軟正黑體",sans-serif'>萬漲幅的</span><span lang=EN-US> 0.382 </span><span
+style='font-family:"微軟正黑體",sans-serif'>回調位</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>B.
+It is half of the all-time high</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>B. </span><span
+style='font-family:"微軟正黑體",sans-serif'>它是歷史高點的一半</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>C.
+It equals the 2020 low times 18</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>C. </span><span
+style='font-family:"微軟正黑體",sans-serif'>它等於</span><span lang=EN-US> 2020 </span><span
+style='font-family:"微軟正黑體",sans-serif'>年低點的</span><span lang=EN-US> 18 </span><span
+style='font-family:"微軟正黑體",sans-serif'>倍</span></p>
+
+<p class=MsoNormal style='margin-top:1.0pt;line-height:115%;page-break-after:
+avoid'><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>D.
+It comes from the 1-hour divergence signal</span></p>
+
+<p class=MsoNormal style='line-height:120%'><span lang=EN-US>D. </span><span
+style='font-family:"微軟正黑體",sans-serif'>它來自</span><span lang=EN-US> 1 </span><span
+style='font-family:"微軟正黑體",sans-serif'>小時圖背離訊號</span></p>
+
+<p class=MsoNormal style='margin-top:8.0pt;line-height:115%;page-break-after:
+avoid'><b><span lang=EN-US style='font-size:10.5pt;line-height:115%;color:#44546A'>Q5
+(Think).</span></b><span lang=EN-US style='font-size:10.5pt;line-height:115%;
+color:#44546A'> List the three indicators the speaker uses to watch for an
+AI-bubble top, and explain how he suggests acting when they appear.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:120%'><b><span
+style='font-family:"微軟正黑體",sans-serif'>第</span></b><b><span lang=EN-US> 5 </span></b><b><span
+style='font-family:"微軟正黑體",sans-serif'>題（思考題）</span></b><span style='font-family:
+"微軟正黑體",sans-serif'>　列出講者用來觀察</span><span lang=EN-US> AI </span><span
+style='font-family:"微軟正黑體",sans-serif'>泡沫頂部的三個指標，並說明出現時他建議如何應對。</span></p>
+
+<span lang=EN-US style='font-size:11.0pt;font-family:"Arial",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1F3864 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<h1><span lang=EN-US>Answer Key</span><span style='font-family:"微軟正黑體",sans-serif'>｜參考答案</span></h1>
+
+</div>
+
+<div style='border:none;border-left:solid #BFBFBF 1.5pt;padding:0cm 0cm 0cm 8.0pt;
+margin-left:10.0pt;margin-right:0cm'>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm;border:none;padding:0cm'><i><span lang=EN-US style='font-size:
+9.5pt;color:#7F7F7F'>Select (highlight) the dark blocks below to reveal the
+answers. </span></i><i><span style='font-size:9.5pt;font-family:"微軟正黑體",sans-serif;
+color:#7F7F7F'>選取（反白）下方黑色區塊即可顯示答案。</span></i></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.5pt;color:#262626;
+background:#262626'>Q1: B </span><span style='font-size:10.5pt;font-family:
+"微軟正黑體",sans-serif;color:#262626;background:#262626'>三個價格高點，綠柱連續縮短兩次。</span><span
+lang=EN-US style='font-size:10.5pt;color:#262626;background:#262626'>(Three
+highs, green bars shrink twice.)</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.5pt;color:#262626;
+background:#262626'>Q2: B </span><span style='font-size:10.5pt;font-family:
+"微軟正黑體",sans-serif;color:#262626;background:#262626'>第三個波峰高點。</span><span
+lang=EN-US style='font-size:10.5pt;color:#262626;background:#262626'>(The third
+swing high.)</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.5pt;color:#262626;
+background:#262626'>Q3: B </span><span style='font-size:10.5pt;font-family:
+"微軟正黑體",sans-serif;color:#262626;background:#262626'>更多段太罕見；三段加兩次調整即完整五浪，完成機率大。</span><span
+lang=EN-US style='font-size:10.5pt;color:#262626;background:#262626'>(Rarity
+plus the five-wave structure.)</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.5pt;color:#262626;
+background:#262626'>Q4: A 1.5 </span><span style='font-size:10.5pt;font-family:
+"微軟正黑體",sans-serif;color:#262626;background:#262626'>萬至</span><span lang=EN-US
+style='font-size:10.5pt;color:#262626;background:#262626'> 12.6 </span><span
+style='font-size:10.5pt;font-family:"微軟正黑體",sans-serif;color:#262626;
+background:#262626'>萬漲幅的</span><span lang=EN-US style='font-size:10.5pt;
+color:#262626;background:#262626'> 0.382 </span><span style='font-size:10.5pt;
+font-family:"微軟正黑體",sans-serif;color:#262626;background:#262626'>回調位。</span><span
+lang=EN-US style='font-size:10.5pt;color:#262626;background:#262626'>(0.382
+retracement of the 15k–126k rise.)</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:3.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.5pt;color:#262626;
+background:#262626'>Q5: 1) </span><span style='font-size:10.5pt;font-family:
+"微軟正黑體",sans-serif;color:#262626;background:#262626'>天價併購；</span><span
+lang=EN-US style='font-size:10.5pt;color:#262626;background:#262626'>2) </span><span
+style='font-size:10.5pt;font-family:"微軟正黑體",sans-serif;color:#262626;
+background:#262626'>通膨升溫且聯準會收緊預期變大；</span><span lang=EN-US style='font-size:
+10.5pt;color:#262626;background:#262626'>3) AI </span><span style='font-size:
+10.5pt;font-family:"微軟正黑體",sans-serif;color:#262626;background:#262626'>相關股票極度狂漲。出現時不必立即全部賣出，而是一邊享受泡沫、一邊做好停利計畫。</span><span
+lang=EN-US style='font-size:10.5pt;color:#262626;background:#262626'>(Record
+M&amp;A; inflation plus Fed-tightening expectations; extreme AI-stock surges.
+Do not sell everything at once: enjoy the bubble while preparing a
+profit-taking plan.)</span></p>
+
+</div>
+
+</body>
+
+</html>

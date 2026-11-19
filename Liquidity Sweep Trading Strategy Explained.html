@@ -1,0 +1,1736 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"Calibri",sans-serif;
+	color:#2B2B2B;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 61.2pt 57.6pt 61.2pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#1B365D;padding:
+  9.0pt 11.0pt 9.0pt 11.0pt'>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><b><span lang=EN-US
+  style='font-size:15.0pt;line-height:115%;color:white'>DEEP LEARNING STUDY
+  NOTES: LIQUIDITY SWEEP TRADING STRATEGY</span></b></p>
+  <p class=MsoNormal style='margin-bottom:0cm'><b><span lang=EN-US
+  style='font-size:12.0pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#D0E2F5'>高結構化深度學習筆記：流動性獵取交易策略完整解析（雙語對照版）</span></b></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>1. Executive
+Summary  |  </span></b><b><span lang=EN-US style='font-size:12.5pt;line-height:
+115%;font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>This tutorial
+demystifies institutional liquidity trading by resolving two core challenges:
+identifying targeted liquidity levels and distinguishing between trend
+continuations and reversals.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>本教學影片透過解決兩大核心難題，系統性拆解機構級流動性（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'>Liquidity</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）交易邏輯：精準識別價格的目標流動性水位，以及區分趨勢延續（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'>Continuation</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）與反轉（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Reversal</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>The framework is built
+upon five progressive pillars: differentiating External Range Liquidity (ERL,
+swing highs/lows) from Internal Range Liquidity (IRL, Fair Value Gaps), reading
+Order Flow via Break of Structure (BOS) and Change of Character (CHoCH),
+understanding how IRL fuels ERL attacks, distinguishing Liquidity Runs from
+Liquidity Sweeps, and executing Top-Down Multi-Timeframe Analysis.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>整套架構建立在五大漸進式支柱之上：區分外部區間流動性（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'>ERL</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>，波段高低點）與內部區間流動性（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>IRL</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>，公允價值缺口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）、透過結構突破（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>BOS</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）與特性改變（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>CHoCH</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）判讀訂單流（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>Order Flow</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）、理解</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> IRL </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>如何作為動能推動價格攻擊</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> ERL</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、分辨流動性延伸（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>Liquidity Run</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）與流動性獵取（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>Liquidity Sweep</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>），以及執行由上而下的多時間框架分析（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'>Top-Down Analysis</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>Ultimately, traders
+should never enter blindly upon a sweep; instead, they must align
+higher-timeframe directional bias with lower-timeframe structural confirmation
+and high-probability Silver Bullet entries.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>最終結論指出，交易者絕不應僅憑單一掃蕩動作盲目進場，而必須將大週期方向偏見與小週期結構反轉確認相結合，並利用高勝率的「銀彈（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>Silver
+Bullet</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#5A6577'>）」缺口進行精準切入。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>2. Key
+Concepts &amp; Definitions  |  </span></b><b><span lang=EN-US style='font-size:
+12.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>知識地圖與核心概念</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:00:26]
+Liquidity (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>流動性</span></b><b><span lang=EN-US style='color:#2C5E8A'>): </span></b><span
+lang=EN-US style='color:#222222'>Chart zones containing concentrated unfilled
+orders or stop-loss orders that act as price magnets.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>圖表中聚集大量未成交訂單（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>Unfilled Orders</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）或止損單（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>Stop Losses</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）的區域，如同磁鐵般吸引價格前往觸發。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:00:36]
+External Range Liquidity / ERL (</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>外部區間流動性</span></b><b><span
+lang=EN-US style='color:#2C5E8A'>): </span></b><span lang=EN-US
+style='color:#222222'>Previous swing highs (Buy-Side Liquidity) or swing lows
+(Sell-Side Liquidity) sitting outside the current price range.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>位於當前價格區間外側的前波段高點（買方流動性</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'> BSL</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）或前波段低點（賣方流動性</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> SSL</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>），是決定趨勢延續或反轉的關鍵轉折點。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:00:57]
+Internal Range Liquidity / IRL (</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>內部區間流動性</span></b><b><span
+lang=EN-US style='color:#2C5E8A'>): </span></b><span lang=EN-US
+style='color:#222222'>Fair Value Gaps (FVG) located inside a price leg that
+serve as fuel or support/resistance to propel price toward ERL.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>位於價格波段內部的公允價值缺口（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>FVG</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>），充當推動價格攻擊外部高低點的「燃料」與支撐阻力區。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:01:20] Order
+Flow (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>訂單流</span></b><b><span lang=EN-US style='color:#2C5E8A'>): </span></b><span
+lang=EN-US style='color:#222222'>The dominant institutional directional
+momentum (bullish or bearish) determined by which side of liquidity price is
+actively pushing through.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>由機構資金主導的市場方向動能（看漲或看跌），取決於價格正在強勢突破買方或賣方流動性。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:01:34] Break
+of Structure / BOS (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>結構突破</span></b><b><span lang=EN-US style='color:#2C5E8A'>): </span></b><span
+lang=EN-US style='color:#222222'>Price pushing through an aligned ERL level,
+confirming the continuation of the existing trend.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>價格順勢突破同方向的外部流動性水位，用以確認當前市場趨勢正在延續。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:01:34] Change
+of Character / CHoCH (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>特性改變</span></b><b><span lang=EN-US style='color:#2C5E8A'>): </span></b><span
+lang=EN-US style='color:#222222'>The first structural break against the
+prevailing trend (e.g., forming a lower low in an uptrend), signaling a
+potential order flow shift.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>價格首度跌破或突破逆向關鍵結構（例如上升趨勢中出現更低的低點），發出訂單流可能反轉的第一道警訊。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:06:33]
+Liquidity Run (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>流動性延伸</span></b><b><span lang=EN-US style='color:#2C5E8A'> / </span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>真突破</span></b><b><span
+lang=EN-US style='color:#2C5E8A'>): </span></b><span lang=EN-US
+style='color:#222222'>A continuation move where price breaks an ERL level and
+forms a new FVG during or after the breakout to sustain the trend.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>趨勢延續型態：價格突破外部流動性水位，並在突破當下或之後於外側形成新的</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>，提供後續回踩支撐。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:06:33]
+Liquidity Sweep (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>流動性獵取</span></b><b><span lang=EN-US style='color:#2C5E8A'> / </span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>假突破掃蕩</span></b><b><span
+lang=EN-US style='color:#2C5E8A'>): </span></b><span lang=EN-US
+style='color:#222222'>A reversal trap where price pierces an ERL level to
+trigger stops but fails to hold, disrespecting prior IRL and shifting
+structure.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>反轉誘多</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>/</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>誘空陷阱：價格刺穿外部流動性觸發止損後無法站穩，隨後跌破內部</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>並引發結構反轉。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:09:50]
+Top-Down Analysis (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>由上而下多週期分析</span></b><b><span lang=EN-US style='color:#2C5E8A'>):
+</span></b><span lang=EN-US style='color:#222222'>Analyzing higher timeframes
+(Weekly/4H) first to establish macro bias before dropping to lower timeframes
+(15M) for entry confirmation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>先從大時間框架（如週線、</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>4</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>小時圖）確立宏觀方向偏見，再切換至小時間框架（如</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>15</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>分鐘圖）尋找結構反轉與進場點。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><b><span lang=EN-US style='color:#2C5E8A'>[00:11:17] Silver
+Bullet (</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>銀彈缺口</span></b><b><span lang=EN-US style='color:#2C5E8A'>): </span></b><span
+lang=EN-US style='color:#222222'>The very first Fair Value Gap formed
+immediately after a confirmed lower-timeframe trend reversal, offering the
+highest-probability entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>中文定義：</span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>在小時間框架確認趨勢反轉（完成</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> Sweep + CHoCH + BOS</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）後所形成的第一個</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>，具備最高進場勝率。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>3. Knowledge
+Architecture (Text Mind Map)  |  </span></b><b><span lang=EN-US
+style='font-size:12.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>知識架構圖解（文字版）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>1. Core Trading
+Challenges (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>核心交易難題</span><span lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>1. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>交易者面臨的兩大核心痛點</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>1.1 Identifying
+Target Liquidity (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>識別目標水位</span><span lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>1.1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>判斷價格究竟正在瞄準哪一個流動性水位</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>1.2 Continuation vs.
+Reversal (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>延續或反轉</span><span lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>1.2 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>判讀價格抵達目標後將延續趨勢或反轉（需進階市場結構知識）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>2. Dual Forms of
+Liquidity (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>流動性的雙重型態</span><span lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>2. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>流動性的兩種表現形式與互動機制</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>2.1 External Range
+Liquidity (ERL - Swing High/Low)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>2.1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>外部區間流動性：前波段高點（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>BSL</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）與前波段低點（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>SSL</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>2.2 Internal Range
+Liquidity (IRL - Fair Value Gaps)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>2.2 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>內部區間流動性：公允價值缺口（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>），提供攻擊</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> ERL </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>的燃料</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>3. Market Structure
+&amp; Order Flow (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>市場結構與訂單流</span><span lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>3. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>市場結構與機構訂單流判讀</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>3.1 Trend
+Continuation via BOS (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>透過</span><span lang=EN-US style='color:#222222'> BOS </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#222222'>確認延續</span><span
+lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>3.1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>上升趨勢突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> BSL</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、下降趨勢跌破</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> SSL</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>，確認原趨勢延續</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>3.2 Reversal Warning
+via CHoCH (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>透過</span><span lang=EN-US style='color:#222222'> CHoCH </span><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#222222'>預警反轉</span><span
+lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>3.2 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>反向突破關鍵高低點發出初級反轉訊號，但需防範假突破掃蕩</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>4. Liquidity Attack
+Outcomes (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>流動性攻擊的兩種結果</span><span lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>4. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>價格觸及外部流動性後的兩大結局</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>4.1 Liquidity Run:
+Breakout + New FVG Formed Outside</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>4.1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>流動性延伸：實體收破且在突破處或外側生成新的同向</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>4.2 Liquidity Sweep:
+Wick Rejection or IRL Disrespected + CHoCH + BOS</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>4.2 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>流動性獵取：影線假突破，或收破後回跌摧毀舊</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>並完成</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> CHoCH </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>與</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='color:#222222'>5. Multi-Timeframe
+Execution (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>多時間框架實戰執行</span><span lang=EN-US style='color:#222222'>)</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>5. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>由上而下的實戰交易執行流程</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>5.1 HTF Macro Bias
+(Weekly / 4H ERL &amp; IRL Mapping)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>5.1 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>大週期定調（週線</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/4H</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）：標記大級別訂單流與目標</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>區間</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='color:#222222'>5.2 LTF Confirmation
+(15M Sweep -&gt; CHoCH -&gt; BOS -&gt; Silver Bullet Entry)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:18.0pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>5.2 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>小週期確認（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>15M</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）：等待價格進入大週期</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>後完成反轉並於</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> Silver
+Bullet </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#5A6577'>進場</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>4. Mental
+Models &amp; Underlying Logic  |  </span></b><b><span lang=EN-US
+style='font-size:12.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Model 1: The
+Fuel-and-Target Engine (IRL -&gt; ERL Cycle)<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>思維模型一：燃料與目標引擎（內部驅動外部循環）</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Price moves
+algorithmically from internal imbalances (IRL/FVG) to external liquidity pools
+(ERL/Swing Points). Impulse legs leave behind FVGs; retracements tap those FVGs
+to gather unfilled orders as fuel to attack the next swing high or low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>價格在演算法驅動下，遵循「從內部失衡區（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>IRL/FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）流向外部流動性池（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>ERL/</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>波段高低點）」的循環。強勢推動浪會留下</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>，隨後的回調進入</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>吸收未成交訂單作為燃料，進而發動下一波對外部高低點的攻擊。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Model 2: Validation
+Over Prediction (Structure Confirmation Rule)<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>思維模型二：驗證重於預測（結構確認法則）</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Never trade solely
+on a touch of an external swing point or a single CHoCH, because a CHoCH itself
+can be a liquidity sweep. True directional shift requires a three-step
+sequence: (1) Disrespect of opposing IRL, (2) CHoCH, and (3) Creation of a new
+FVG leading to a confirmed BOS.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>絕不單憑價格觸及波段高低點或單一</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> CHoCH </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>就逆勢進場，因為單一</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> CHoCH </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>本身往往只是流動性掃蕩。真正的趨勢反轉必須滿足三部曲：（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'>1</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）原趨勢的內部</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>失效被貫穿、（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>2</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）出現特性改變</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> CHoCH</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>、（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>3</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）反向波段生成新</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>並推動結構突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Model 3: Fractal
+Timeframe Alignment (Macro Overrides Micro)<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>思維模型三：分形時間框架校準（大週期統御小週期）</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Lower timeframe
+trends are merely pullbacks within higher timeframe legs. A 4H bullish setup
+can fail abruptly if price has simultaneously tapped a Weekly bearish FVG.
+Always anchor profit targets and holding duration to the highest structural
+timeframe.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>小時間框架的趨勢往往只是大時間框架波段中的一次回調。若價格在</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> 4 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>小時圖看似看漲，但同時已觸及週線級別的看跌</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'> FVG</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>，小週期多單將面臨反轉風險。停利目標與持倉週期必須服從最高級別的市場結構。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>5. Detailed
+Module Breakdown  |  </span></b><b><span lang=EN-US style='font-size:12.5pt;
+line-height:115%;font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>詳細重點拆解（附原始時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Module 1: Understanding
+the Two Forms of Liquidity [00:00:00 - 00:01:15]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>模組一：理解流動性的兩種型態</span></b><b><span lang=EN-US style='color:#2C5E8A'>
+[00:00:00 - 00:01:15]</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Liquidity represents
+clusters of stop-loss orders and pending orders. It divides into External Range
+Liquidity (ERL: swing highs/lows) and Internal Range Liquidity (IRL: Fair Value
+Gaps).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【概念解釋】流動性是市場中止損單與掛單的集中區，分為外部區間流動性（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>ERL</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>，即波段高低點）與內部區間流動性（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>IRL</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>，即公允價值缺口</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>1. Mark previous
+swing highs and lows as ERL targets. 2. Identify Fair Value Gaps inside the
+impulsive price leg as IRL fuel zones. 3. Observe price interaction between IRL
+and ERL to forecast direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>操作流程】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>1. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>標記前波段高點與低點作為</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> ERL </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>目標。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>2. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>在強勢推動波段內部尋找</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>作為</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> IRL </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>燃料區。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>3. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>觀察價格如何在</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> IRL </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>與</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> ERL </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>之間互動以預測後續方向。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Terms: External
+Range Liquidity (ERL), Internal Range Liquidity (IRL), Fair Value Gap (FVG),
+Swing High/Low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>專有名詞】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>External Range Liquidity (ERL </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>外部區間流動性</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>Internal
+Range Liquidity (IRL </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>內部區間流動性</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Fair Value Gap (FVG </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>公允價值缺口</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Pitfall: Focusing
+exclusively on swing highs/lows while ignoring internal FVGs that actually
+provide the momentum for breakouts.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>注意事項】只盯著外部波段高低點，卻忽略內部</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>才是提供突破動能的核心支撐</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>/</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>阻力。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Module 2: Reading Order
+Flow via BOS and CHoCH [00:01:15 - 00:04:33]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>模組二：透過</span></b><b><span lang=EN-US style='color:#2C5E8A'> BOS </span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>與</span></b><b><span
+lang=EN-US style='color:#2C5E8A'> CHoCH </span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>判讀訂單流</span></b><b><span
+lang=EN-US style='color:#2C5E8A'> [00:01:15 - 00:04:33]</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Order flow indicates
+institutional direction. A Break of Structure (BOS) confirms trend continuation
+by running aligned liquidity, whereas a Change of Character (CHoCH) warns of a
+potential reversal.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【概念解釋】訂單流代表機構資金主導的方向。結構突破（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>BOS</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）透過獵取同向流動性確認趨勢延續；特性改變（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'>CHoCH</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）則透過跌破</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>/</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>突破逆向關鍵位預警反轉。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>1. Identify which
+liquidity was recently swept (BSL = Bullish Flow; SSL = Bearish Flow). 2. Set
+the aligned swing point as the BOS level and the opposing swing point as the
+CHoCH level. 3. If CHoCH occurs, wait for a subsequent BOS in the new direction
+before flipping bias.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>操作流程】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>1. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>確認近期被突破的是買方流動性（看漲訂單流）或賣方流動性（看跌訂單流）。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>2. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>將順勢端設為</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> BOS </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>水位，逆勢端設為</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> CHoCH </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>水位。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>3. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>一旦觸發</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> CHoCH</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>，必須等待新方向的</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> BOS </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>確認後才正式切換多空偏見。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Terms: Buy-Side
+Liquidity (BSL), Sell-Side Liquidity (SSL), Break of Structure (BOS), Change of
+Character (CHoCH).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>專有名詞】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Buy-Side Liquidity (BSL </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>買方流動性</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>Sell-Side
+Liquidity (SSL </span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>賣方流動性</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>BOS (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>結構突破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>CHoCH (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>特性改變</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Pitfall: Flipping
+trading bias immediately upon the first CHoCH, which often turns out to be a
+mere liquidity sweep before trend resumption.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>注意事項】看到第一個</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> CHoCH </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>就急著反手做單</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>——</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>該動作極可能只是一次針對前低</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>前高的流動性掃蕩，隨後原趨勢仍會繼續。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Module 3: The Synergy Between
+IRL and ERL [00:04:33 - 00:06:29]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>模組三：內部與外部區間流動性的協同機制</span></b><b><span lang=EN-US
+style='color:#2C5E8A'> [00:04:33 - 00:06:29]</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Healthy trends
+sustain themselves when impulsive legs create FVGs (IRL) that subsequently hold
+during pullbacks to propel price through opposing swing points (ERL).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【概念解釋】健康的趨勢運作模式為：推動浪留下</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>IRL</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>），價格回調測試該</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>獲得支撐後，再度發力突破外部波段高低點（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'>ERL</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>1. Confirm trend
+direction via BOS. 2. Locate the bullish/bearish FVG within the latest
+impulsive leg. 3. Anticipate price retracing into the FVG and expanding toward
+the external BSL/SSL. 4. Watch for FVG disrespect as an early reversal warning.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>操作流程】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>1. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>透過</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>確認當前趨勢。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>2. </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>在最新推動浪中標出看漲或看跌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>3. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>預期價格回踩該</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>後向外部</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> BSL/SSL </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>擴張。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>4. </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>密切觀察</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>是否被實體貫穿失效（早期反轉訊號）。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Terms: Impulsive
+Move (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#222222'>推動浪</span><span
+lang=EN-US style='color:#222222'>), Retracement (</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#222222'>回調</span><span lang=EN-US
+style='color:#222222'>), Disrespected FVG (</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#222222'>失效</span><span lang=EN-US
+style='color:#222222'>/</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>被貫穿的公允價值缺口</span><span lang=EN-US style='color:#222222'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>專有名詞】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Impulsive Move (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>推動浪</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Retracement (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>回調修正</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Disrespected FVG (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>被破壞失效的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Pitfall: Ignoring
+when an internal FVG gets completely violated; FVG disrespect is the earliest
+clue that price is heading toward the CHoCH level.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>注意事項】忽視內部</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>被實體突破的現象；一旦</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> IRL </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>遭破壞，代表價格極可能正準備攻擊</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> CHoCH </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>水位引發全面反轉。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Module 4: Liquidity
+Runs vs. Liquidity Sweeps [00:06:29 - 00:09:36]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>模組四：精準區分流動性延伸（</span></b><b><span lang=EN-US style='color:#2C5E8A'>Run</span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>）與獵取（</span></b><b><span
+lang=EN-US style='color:#2C5E8A'>Sweep</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>）</span></b><b><span
+lang=EN-US style='color:#2C5E8A'> [00:06:29 - 00:09:36]</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>A Liquidity Run
+signals continuation by generating new IRL at or beyond the broken ERL. A
+Liquidity Sweep signals reversal either via immediate rejection (wick fakeout)
+or post-breakout failure that invalidates prior IRL.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【概念解釋】流動性延伸（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>Run</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）在突破</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> ERL </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>的同時或之後於外側建立新</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> IRL </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>以延續趨勢；流動性獵取（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>Sweep</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）則表現為無法收破的影線假突破，或雖收破但隨即回跌摧毀舊</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> IRL </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>並轉向。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>For a Run: Wait for
+candle close beyond ERL + new FVG formed overlapping or beyond the ERL level.
+For a Sweep: Look for wick rejection OR candle close followed by prior FVG
+disrespect + CHoCH + new opposing FVG + BOS.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>操作流程】判斷</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> Run</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>：確認實體收破</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> ERL</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>，且在突破處或外側生成新</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>（不可使用突破前已存在的舊</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）。判斷</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> Sweep</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>：觀察影線拒絕，或收破後回跌貫穿舊</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>觸發</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> CHoCH -&gt; </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>生成反向新</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>完成</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> BOS</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Terms: Liquidity Run
+(</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#222222'>流動性延伸</span><span
+lang=EN-US style='color:#222222'>), Liquidity Sweep (</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#222222'>流動性獵取</span><span
+lang=EN-US style='color:#222222'>), Fakeout (</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#222222'>假突破</span><span
+lang=EN-US style='color:#222222'>), Post-Breakout FVG (</span><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#222222'>突破後缺口</span><span
+lang=EN-US style='color:#222222'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>專有名詞】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Liquidity Run (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>流動性延伸</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Liquidity Sweep (</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>流動性獵取</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>)</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Fakeout (</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>假突破誘多</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>誘空</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Pitfall: Using an
+FVG formed *before* the breakout to validate a Liquidity Run; valid
+continuation requires fresh IRL created *during or after* the breakout.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>注意事項】誤用突破「之前」就存在的</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>來驗證</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> Liquidity
+Run——</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#5A6577'>有效的趨勢延續必須在突破「當下或之後」創造出全新的內部</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Module 5: Top-Down
+Multi-Timeframe Execution &amp; Silver Bullet [00:09:36 - 00:12:28]<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>模組五：由上而下多週期分析與「銀彈」進場法</span></b><b><span lang=EN-US
+style='color:#2C5E8A'> [00:09:36 - 00:12:28]</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Aligning
+higher-timeframe (Weekly/4H) order flow with lower-timeframe (15M) reversal
+confirmation ensures high-probability trades and prevents trading against macro
+resistance.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【概念解釋】將大週期（週線</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/4H</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）訂單流與小週期（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>15M</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）反轉確認相結合，既能提升進場精準度，又能避免在宏觀阻力位逆勢操作。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>1. Analyze
+Weekly/HTF structure first to ensure no major opposing FVG blocks the move. 2.
+On 4H, identify bullish BOS and mark the 4H FVG pullback zone. 3. Drop to 15M
+when price enters the 4H FVG; wait for 15M Sweep -&gt; FVG disrespect -&gt;
+CHoCH -&gt; BOS. 4. Enter on the first FVG after 15M BOS (Silver Bullet) and
+target 4H BSL.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【關鍵步驟</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>操作流程】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>1. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>先檢視週線等最高週期，確認前方無大級別反向</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>阻擋。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>2. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>在</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> 4H </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>圖確認看漲</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> BOS </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>並標出回調</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>區間。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>3. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>當價格進入</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> 4H FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>時切換至</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> 15M </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>圖，等待完成「掃蕩</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> -&gt; </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>舊</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>失效</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> -&gt; CHoCH
+-&gt; </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#5A6577'>順向</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>」。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>4. </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>在</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> 15M BOS </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>後的第一個</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> FVG</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>Silver
+Bullet</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#5A6577'>）進場，目標看向</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'> 4H </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>外部流動性。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Terms: Top-Down
+Analysis (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>由上而下分析</span><span lang=EN-US style='color:#222222'>), Silver
+Bullet FVG (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>銀彈公允價值缺口</span><span lang=EN-US style='color:#222222'>),
+Multi-Timeframe Alignment (</span><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#222222'>多時間框架共振</span><span lang=EN-US style='color:#222222'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【重要公式</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>專有名詞】</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Top-Down Analysis (</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>由上而下分析</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>)</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>、</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>Silver
+Bullet (</span><span lang=EN-US style='font-size:10.0pt;line-height:120%;
+font-family:"微軟正黑體",sans-serif;color:#5A6577'>銀彈缺口：反轉</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>後的首個高勝率</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> FVG)</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Pitfall: Blindly
+setting limit orders on a 4H FVG without waiting for 15M reversal confirmation,
+or over-holding a 4H long directly into a Weekly bearish FVG.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>【常見誤區</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>/</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>注意事項】價格剛觸及</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> 4H FVG </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>就盲目掛單進場而未等</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> 15M </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>結構反轉確認，或是忽略週線看跌</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>阻力而過度長抱</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> 4H </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>多單。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>6. Actionable
+Implementation Checklist  |  </span></b><b><span lang=EN-US style='font-size:
+12.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>實操行動清單</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Action 1: Map Dual
+Liquidity Zones Before Every Session<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>行動一：每次看盤前標記雙重流動性區域</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Open your clean
+chart and explicitly label External Range Liquidity (previous swing highs/lows)
+in one color and Internal Range Liquidity (unmitigated Fair Value Gaps) in
+another.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>打開乾淨的圖表，用不同顏色明確標記出外部區間流動性（前波段高低點</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> ERL</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）與內部區間流動性（未回補的公允價值缺口</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'> IRL/FVG</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Action 2: Enforce the
+'Top-Down First' Routine (Weekly -&gt; 4H -&gt; 15M)<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>行動二：嚴格執行「由上而下」看盤順序（週線</span></b><b><span lang=EN-US
+style='color:#2C5E8A'> -&gt; 4</span></b><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>小時</span></b><b><span lang=EN-US
+style='color:#2C5E8A'> -&gt; 15</span></b><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>分鐘）</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Never open a
+15-minute chart first. Start on the Weekly and 4-Hour charts to identify
+dominant order flow and ensure your trade is not running directly into a
+higher-timeframe opposing FVG.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>切勿直接從</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> 15 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>分鐘圖開始交易；務必先從週線與</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> 4 </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>小時圖確認主導訂單流，確保你的交易方向不會迎面撞上大週期的反向</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Action 3: Apply the
+Post-Breakout FVG Filter on Swing Breakouts<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>行動三：在突破波段高低點時套用「突破後</span></b><b><span lang=EN-US
+style='color:#2C5E8A'> FVG </span></b><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>過濾器」</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>When price breaks a
+swing high or low, pause and verify whether a new FVG forms during or beyond
+the breakout. Without a post-breakout FVG, treat the move as a potential
+Liquidity Sweep rather than a Run.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>當價格突破前高或前低時，先暫停並檢查突破當下或外側是否形成新的</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>；若無新</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> FVG </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>支撐，應將其視為潛在的流動性獵取（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>Sweep</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）而非真突破（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>Run</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Action 4: Wait for the
+4-Step Reversal Confirmation Before Entering<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>行動四：進場前耐心等待「反轉四部曲」完整確認</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>When price taps a
+higher-timeframe FVG, drop to the 15M chart and require all four steps before
+clicking buy/sell: (1) Liquidity Sweep, (2) Opposing FVG disrespected, (3)
+CHoCH, and (4) Aligned BOS.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>當價格進入大週期</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>後，切換至</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> 15 </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>分鐘圖並要求滿足四個條件才進場：（</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'>1</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）完成流動性掃蕩、（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>2</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）反向</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>失效、（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>3</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）出現</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> CHoCH</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>、（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>4</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）完成順向</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Action 5: Execute
+Entries Exclusively on the 'Silver Bullet' FVG<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>行動五：專注於「銀彈（</span></b><b><span lang=EN-US style='color:#2C5E8A'>Silver
+Bullet</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>）」缺口執行精準進場</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>After the
+lower-timeframe reversal BOS completes, place your entry at the very first FVG
+created by that BOS leg, setting your stop below the sweep low/high and
+targeting the opposing HTF liquidity pool.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>在小週期反轉</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>確認後，將進場點精準設定在該</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> BOS </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>波段所產生的第一個</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>（</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'>Silver Bullet</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>），止損設於掃蕩高低點外側，停利目標鎖定大週期對向流動性池。</span></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+6.0pt;margin-left:0cm;page-break-after:avoid;border:none;padding:0cm'><b><span
+lang=EN-US style='font-size:13.0pt;line-height:115%;color:#1B365D'>7.
+Self-Assessment Quiz &amp; Review  |  </span></b><b><span lang=EN-US
+style='font-size:12.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>觀念自我檢測</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Q1 (Multiple Choice):
+According to the video, what is Internal Range Liquidity (IRL) and what role
+does it play?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>第一題（單選題）：根據影片內容，什麼是「內部區間流動性（</span></b><b><span lang=EN-US
+style='color:#2C5E8A'>IRL</span></b><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>）」，它在市場中扮演什麼角色？</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>A) Previous swing
+highs/lows that act as final profit targets.<br>
+B) Fair Value Gaps (FVGs) inside a price swing that act as fuel to attack
+External Range Liquidity.<br>
+C) Retail trendlines used to trigger stop losses.<br>
+D) Weekly support levels that never break.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>A) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>作為最終停利目標的前波段高低點。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>位於價格波段內部的公允價值缺口（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'>FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>），充當推動價格攻擊外部區間流動性的「燃料」。</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>用於觸發散戶止損的趨勢線。</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>永遠不會被跌破的週線級別支撐位。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Q2 (Multiple Choice):
+How do you validate a true 'Liquidity Run' (trend continuation) after price
+breaks above a swing high?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>第二題（單選題）：當價格向上突破前波段高點後，如何驗證這是一次真正的「流動性延伸（</span></b><b><span
+lang=EN-US style='color:#2C5E8A'>Liquidity Run</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>）」？</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>A) By checking if a
+bullish FVG existed below the swing high prior to the breakout.<br>
+B) By entering immediately as soon as the wick touches the swing high.<br>
+C) By confirming a candle close above the high AND the creation of a new
+bullish FVG overlapping or above that level.<br>
+D) By waiting for a Change of Character (CHoCH) to the downside.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>A) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>檢查突破前在波段高點下方是否已存在看漲</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>只要影線一觸及波段高點就立即追多進場。</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>確認</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'> K </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>線實體收在該高點上方，且在該水位重疊處或上方形成「新的」看漲</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'> FVG</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>。</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>等待價格向下出現特性改變（</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'>CHoCH</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Q3 (Multiple Choice):
+Why should a trader avoid flipping their bias to bearish immediately after
+seeing a single Change of Character (CHoCH) in an uptrend?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>第三題（單選題）：為什麼交易者在上升趨勢中看到單一「特性改變（</span></b><b><span lang=EN-US
+style='color:#2C5E8A'>CHoCH</span></b><b><span lang=EN-US style='font-family:
+"微軟正黑體",sans-serif;color:#2C5E8A'>）」時，不應立即將交易偏見轉為看跌？</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>A) Because CHoCH
+only applies to cryptocurrency markets.<br>
+B) Because a single CHoCH could merely be a Liquidity Sweep before the uptrend
+resumes; a subsequent BOS is needed for confirmation.<br>
+C) Because CHoCH always signals a strong trend continuation.<br>
+D) Because you must wait at least 30 candles before taking any action.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>A) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>因為</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'> CHoCH </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>僅適用於加密貨幣市場。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>因為單一</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'> CHoCH </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>可能只是原上升趨勢恢復前的一次流動性獵取（</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'>Sweep</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>），仍需等待後續的</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'> BOS </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>才能確認反轉。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>因為</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;color:#5A6577'> CHoCH </span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>永遠代表強烈的趨勢延續。</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>因為必須至少等待</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'> 30 </span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>根</span><span lang=EN-US style='font-size:10.0pt;line-height:
+120%;color:#5A6577'> K </span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>線才能採取行動。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Q4 (Multiple Choice):
+What is defined as the 'Silver Bullet' entry setup in the multi-timeframe
+strategy?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>第四題（單選題）：在多時間框架交易策略中，什麼被定義為「銀彈（</span></b><b><span lang=EN-US
+style='color:#2C5E8A'>Silver Bullet</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>）」進場型態？</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>A) Any Fair Value
+Gap found on the Weekly chart.<br>
+B) The first Fair Value Gap formed immediately after a confirmed
+lower-timeframe trend reversal (BOS).<br>
+C) Entering at the exact tip of a liquidity sweep wick without confirmation.<br>
+D) Trading breakouts during low-volume Asian sessions.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>A) </span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>在週線圖上找到的任何公允價值缺口。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'><br>
+B) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>在小時間框架確認趨勢反轉（完成</span><span lang=EN-US
+style='font-size:10.0pt;line-height:120%;color:#5A6577'> BOS</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;
+color:#5A6577'>）後所形成的第一個公允價值缺口（</span><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;color:#5A6577'>FVG</span><span lang=EN-US style='font-size:
+10.0pt;line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'><br>
+C) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>在沒有任何確認的情況下，直接於掃蕩影線的最尖端進場。</span><span
+lang=EN-US style='font-size:10.0pt;line-height:120%;color:#5A6577'><br>
+D) </span><span lang=EN-US style='font-size:10.0pt;line-height:120%;font-family:
+"微軟正黑體",sans-serif;color:#5A6577'>在低成交量的亞洲盤時段交易突破。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;color:#1B365D'>Q5 (Reflective
+Scenario): Suppose your 4-Hour chart shows a clean bullish BOS and price pulls
+back into a 4H bullish FVG, giving a 15M Silver Bullet buy signal. However, the
+Weekly chart shows price just tapped a major Weekly bearish FVG. How should
+this affect your trade management?<br>
+</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>第五題（思考題）：假設你的</span></b><b><span lang=EN-US style='color:#2C5E8A'>
+4 </span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>小時圖出現完美的看漲</span></b><b><span lang=EN-US style='color:#2C5E8A'>
+BOS</span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+color:#2C5E8A'>，價格回調進入</span></b><b><span lang=EN-US style='color:#2C5E8A'> 4H </span></b><b><span
+lang=EN-US style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>看漲</span></b><b><span
+lang=EN-US style='color:#2C5E8A'> FVG </span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>且</span></b><b><span
+lang=EN-US style='color:#2C5E8A'> 15 </span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>分鐘圖也給出銀彈買入訊號；但此時週線圖顯示價格剛觸及一個重大的週線看跌</span></b><b><span
+lang=EN-US style='color:#2C5E8A'> FVG</span></b><b><span lang=EN-US
+style='font-family:"微軟正黑體",sans-serif;color:#2C5E8A'>。這應該如何影響你的交易管理決策？</span></b></p>
+
+<p class=MsoNormal style='margin-top:4.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='color:#222222'>Think about
+timeframe hierarchy, realistic take-profit targets, and holding duration before
+checking the answer key below.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='font-size:10.0pt;
+line-height:120%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>在查看下方解答前，請從時間框架層級、合理停利目標與持倉週期三個維度進行思考。</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2B2B2B'><br clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#F2F5F9;padding:
+  8.0pt 10.0pt 8.0pt 10.0pt'>
+  <p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+  style='font-size:12.0pt;line-height:115%;color:#1B365D'>ANSWER KEY &amp;
+  EXPLANATIONS  |  </span></b><b><span lang=EN-US style='font-size:12.0pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#1B365D'>自我檢測參考解答與解析（折疊頁）</span></b></p>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='color:#2C5E8A'>Q1 Answer:
+  B  /  </span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+  color:#2C5E8A'>第一題答案：</span></b><b><span lang=EN-US style='color:#2C5E8A'>B</span></b></p>
+  <p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#222222'>Internal Range
+  Liquidity (IRL) refers to Fair Value Gaps within a price swing that serve as
+  support/resistance fuel to propel price toward External Range Liquidity
+  (swing highs/lows).</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>內部區間流動性（</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;color:#5A6577'>IRL</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）指的是價格波段內部的公允價值缺口（</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#5A6577'>FVG</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>），它充當支撐與阻力燃料，推動價格去攻擊外部區間流動性（波段高低點）。</span></p>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='color:#2C5E8A'>Q2 Answer:
+  C  /  </span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+  color:#2C5E8A'>第二題答案：</span></b><b><span lang=EN-US style='color:#2C5E8A'>C</span></b></p>
+  <p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#222222'>A true Liquidity Run
+  requires a candle close beyond the ERL plus a fresh FVG created during or
+  after the breakout—not an old FVG formed prior to the breakout.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>真正的流動性延伸（</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;color:#5A6577'>Run</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）需要實體收在</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#5A6577'> ERL </span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>之外，並且在突破當下或之後形成新的</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;color:#5A6577'> FVG</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>（不可使用突破前就已存在的舊</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;color:#5A6577'> FVG</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）。</span></p>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='color:#2C5E8A'>Q3 Answer:
+  B  /  </span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+  color:#2C5E8A'>第三題答案：</span></b><b><span lang=EN-US style='color:#2C5E8A'>B</span></b></p>
+  <p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#222222'>A single CHoCH can
+  easily be a Liquidity Sweep of a prior low before continuing higher. Traders
+  must wait for price to break the newly established BOS level to confirm a
+  true trend reversal.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>單一</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#5A6577'> CHoCH </span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>很可能是對前低的流動性掃蕩，隨後仍會繼續上漲；交易者必須等待價格突破新建立的</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#5A6577'> BOS </span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>水位，才能確認真正的趨勢反轉。</span></p>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='color:#2C5E8A'>Q4 Answer:
+  B  /  </span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+  color:#2C5E8A'>第四題答案：</span></b><b><span lang=EN-US style='color:#2C5E8A'>B</span></b></p>
+  <p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#222222'>The Silver Bullet is
+  the very first Fair Value Gap formed immediately after a confirmed
+  lower-timeframe reversal BOS, offering the highest probability entry.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>銀彈（</span><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;color:#5A6577'>Silver Bullet</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）是指在小時間框架確認反轉</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;color:#5A6577'> BOS </span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>之後立即形成的第一個</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;color:#5A6577'> FVG</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>，具備最高的進場勝率。</span></p>
+  <p class=MsoNormal style='margin-top:6.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><b><span lang=EN-US style='color:#2C5E8A'>Q5 Answer:
+  Prioritize the Weekly Bearish Structure (Treat 4H Long as a Short-Term Scalp
+  or Stand Aside)  /  </span></b><b><span lang=EN-US style='font-family:"微軟正黑體",sans-serif;
+  color:#2C5E8A'>第五題答案：優先服從週線看跌結構（將</span></b><b><span lang=EN-US
+  style='color:#2C5E8A'> 4H </span></b><b><span lang=EN-US style='font-family:
+  "微軟正黑體",sans-serif;color:#2C5E8A'>多單視為短線操作或觀望）</span></b></p>
+  <p class=MsoNormal style='margin-bottom:1.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#222222'>Higher timeframes
+  always govern lower timeframes. Because price has entered a Weekly bearish
+  FVG, a macro reversal to the downside is probable. You should either avoid
+  the long altogether or take quick profits at the nearest 4H Buy-Side
+  Liquidity rather than holding for an extended swing target.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>大時間框架永遠統御小時間框架。由於價格已進入週線看跌</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#5A6577'> FVG</span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>，宏觀層面極可能向下反轉；因此你應該選擇觀望不做多，或者僅在最近的</span><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#5A6577'> 4 </span><span
+  lang=EN-US style='font-size:9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;
+  color:#5A6577'>小時買方流動性（</span><span lang=EN-US style='font-size:9.5pt;
+  line-height:115%;color:#5A6577'>BSL</span><span lang=EN-US style='font-size:
+  9.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif;color:#5A6577'>）快速獲利了結，切勿長抱波段。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>

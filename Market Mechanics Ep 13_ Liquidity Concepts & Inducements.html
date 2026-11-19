@@ -1,0 +1,933 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 57.6pt 57.6pt 57.6pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<p class=MsoNormal align=center style='margin-bottom:12.0pt;text-align:center'><b><span
+lang=EN-US style='font-size:16.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Deep Learning Study Notes: Market Mechanics Ep 13<br>
+Liquidity Concepts &amp; Inducements<br>
+</span></b><b><span lang=EN-US style='font-size:15.0pt;line-height:115%;
+color:#0F172A'>深度學習筆記：市場力學第 13 集 — 流動性概念與誘餌機制</span></b></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>1. Executive Summary<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>1. 核心總結</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>This lesson demystifies why retail traders frequently get
+stopped out right before price moves in their anticipated direction. The core
+premise is that financial markets do not move randomly; they seek Liquidity (</span><span
+lang=EN-US style='color:#1E3A8A'>流動性</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>)—clusters of resting stop losses and
+pending breakout orders—as the essential fuel to fill large institutional
+positions. By understanding where Buy-side Liquidity (</span><span lang=EN-US
+style='color:#1E3A8A'>買方流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>) and Sell-side Liquidity (</span><span lang=EN-US
+style='color:#1E3A8A'>賣方流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>) reside (such as above swing highs, below swing lows, equal
+highs/lows, trendlines, and obvious support/resistance levels), traders can
+shift from a retail mindset to an institutional perspective. Furthermore, the
+lesson introduces Liquidity Zones (</span><span lang=EN-US style='color:#1E3A8A'>流動性區域</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>)—high-probability
+Points of Interest (POI, </span><span lang=EN-US style='color:#1E3A8A'>興趣點</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>) that have
+previously swept liquidity—and Inducement (</span><span lang=EN-US
+style='color:#1E3A8A'>誘餌</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), which refers to deceptive price structures engineered by
+Smart Money (</span><span lang=EN-US style='color:#1E3A8A'>聰明錢</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>) to bait
+premature entries. Ultimately, mastering the distinction between the bait
+(inducement) and the target (liquidity), and waiting patiently for a Liquidity
+Sweep (</span><span lang=EN-US style='color:#1E3A8A'>流動性掠奪</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>) prior to
+execution, dramatically reduces unnecessary losses and enhances trading
+precision.</span></p>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;line-height:120%'><span
+lang=EN-US style='color:#1F2937'>本課程深入剖析為何散戶交易者經常在價格朝預期方向發動前夕遭到止損掃出場。核心論點在於金融市場絕非隨機波動，而是持續尋找「流動性（Liquidity）」——即密集停泊的止損單與突破掛單——作為機構填補龐大倉位所需的關鍵燃料。透過識別「買方流動性（Buy-side
+Liquidity）」與「賣方流動性（Sell-side Liquidity）」的聚集處（如波段高低點、雙頂/雙底、趨勢線及顯眼的支撐阻力位），交易者能從散戶思維躍升至機構視角。此外，課程進一步闡述「流動性區域（Liquidity
+Zones）」（即曾執行過流動性掠奪的高勝率興趣點 POI），以及「誘餌（Inducement）」（聰明錢為誘騙散戶過早進場而刻意營造的陷阱結構）。最終結論指出：唯有清晰分辨「釣餌（誘餌）」與「目標（流動性）」，並耐心等待「流動性掠奪（Liquidity
+Sweep）」完成後再行進場，方能大幅降低無謂虧損並建立高勝率交易系統。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>2. Key Concepts &amp; Definitions (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>2. 知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:02:03] Liquidity (</span><span lang=EN-US style='color:#1E3A8A'>流動性</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>): Clusters of
+resting orders in the market, including stop losses, breakout stop orders, and
+pending orders, which act as the primary fuel driving price movement.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:02:03]
+**Liquidity（流動性）**：市場中停泊聚集的各類訂單（包含止損單、突破追單及預設掛單），是推動價格產生大幅波動的核心燃料。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:03:28] Liquidity Sweep (</span><span lang=EN-US
+style='color:#1E3A8A'>流動性掠奪</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>): The deliberate price action where Smart Money pushes price
+past an obvious high or low to trigger resting stop losses and pending orders
+before reversing in the true intended direction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:03:28]
+**Liquidity Sweep（流動性掠奪）**：聰明錢刻意將價格推過顯眼的高點或低點，觸發並吸收停泊的止損單與突破掛單後，隨即反轉邁向真實目標方向的市場行為。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:07:31] Buy-side Liquidity (BSL, </span><span lang=EN-US
+style='color:#1E3A8A'>買方流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>): Resting orders located above key highs, consisting of
+short-sellers' stop losses (buy-to-cover orders) and breakout buyers' Buy Stop
+orders.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:07:31]
+**Buy-side Liquidity（BSL，買方流動性）**：聚集於關鍵高點上方的訂單群，由空單持有者的買入平倉止損單，以及突破交易者的追多買單（Buy
+Stop）所組成。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:08:18] Sell-side Liquidity (SSL, </span><span lang=EN-US
+style='color:#1E3A8A'>賣方流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>): Resting orders located below key lows, consisting of
+long-traders' stop losses (sell-to-close orders) and breakout sellers' Sell
+Stop orders.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:08:18]
+**Sell-side Liquidity（SSL，賣方流動性）**：聚集於關鍵低點下方的訂單群，由多單持有者的賣出平倉止損單，以及突破交易者的追空賣單（Sell
+Stop）所組成。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:18:35] Liquidity Zone (</span><span lang=EN-US
+style='color:#1E3A8A'>流動性區域</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>): A high-probability Point of Interest (POI, </span><span
+lang=EN-US style='color:#1E3A8A'>興趣點</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>)—such as an Order Block (</span><span
+lang=EN-US style='color:#1E3A8A'>訂單塊</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>) or Supply/Demand Zone (</span><span
+lang=EN-US style='color:#1E3A8A'>供需區</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>)—that has actively swept liquidity prior
+to initiating a structural move.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:18:35]
+**Liquidity Zone（流動性區域）**：在發動結構性行情前，曾主動執行過流動性掠奪的高勝率興趣點（POI），例如經過洗盤驗證的訂單塊（Order
+Block）或供需區（Supply/Demand Zone）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:21:41] Inducement (IDM, </span><span lang=EN-US
+style='color:#1E3A8A'>誘餌</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>): A deceptive price pattern or minor structure engineered by
+institutions near key POIs to tempt retail traders into entering prematurely
+and placing exposed stop losses.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:21:41]
+**Inducement（IDM，誘餌）**：機構在關鍵興趣點（POI）周邊刻意營造的誘惑性型態或次級結構，旨在勾引散戶過早進場並將止損暴露在易被獵取的位置。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:15:49] Market Structure Shift (MSS, </span><span lang=EN-US
+style='color:#1E3A8A'>市場結構轉變</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>) &amp; Break of Structure (BOS, </span><span lang=EN-US
+style='color:#1E3A8A'>結構突破</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>): Price breaking a key structural high or low with body
+displacement, confirming true directional intent after a liquidity sweep.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:15:49]
+**Market Structure Shift（MSS，市場結構轉變）與 Break of Structure（BOS，結構突破）**：價格以實體動能打破關鍵結構高低點，用以在流動性掠奪後確認真實趨勢反轉或延續的依據。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[00:28:16] Premium &amp; Discount Pricing (</span><span
+lang=EN-US style='color:#1E3A8A'>溢價區與折價區</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3A8A'>): Dividing a dealing
+range into upper (Premium, optimal for selling) and lower (Discount, optimal
+for buying) halves to filter out low-probability zones.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>[00:28:16]
+**Premium &amp; Discount Pricing（溢價區與折價區）**：將交易區間劃分為上半部（溢價區，適合高勝率做空）與下半部（折價區，適合高勝率做多），用以過濾無效的次級供需區域。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>3. Knowledge Architecture (Text-Based Mind Map)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>3. 知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Market Mechanics: Liquidity &amp; Inducement</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>市場力學：流動性與誘餌機制</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>├── 1. Core Essence of Liquidity (</span><span lang=EN-US
+style='color:#1E3A8A'>流動性本質</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>├── 1.
+流動性本質：訂單聚集處（止損單 + 突破掛單）＝ 市場推動燃料</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>│   ├── Buy-side Liquidity (BSL): Above Swing Highs, Strong
+Highs, Double Tops, Resistance</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>│  
+├── 買方流動性（BSL）：位於波段高點、強高點、雙頂、阻力位上方</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>│   └── Sell-side Liquidity (SSL): Below Swing Lows, Strong
+Lows, Double Bottoms, Support, Trendlines</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>│  
+└── 賣方流動性（SSL）：位於波段低點、強低點、雙底、支撐位、趨勢線下方</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>├── 2. Institutional Logic (</span><span lang=EN-US
+style='color:#1E3A8A'>機構底層邏輯</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>├──
+2. 機構底層邏輯：龐大倉位（如 10 億美元）無法直接撮合 ➔ 製造誘餌引散戶進場 ➔ 掠奪流動性完成建倉</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>├── 3. Liquidity Sweep Dynamics (</span><span lang=EN-US
+style='color:#1E3A8A'>流動性掠奪特徵</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>├──
+3. 流動性掠奪特徵：刺穿前高/前低 ➔ 觸發止損與追單 ➔ 形成 V 型反轉 ➔ 需配合 MSS 確認大趨勢反轉</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>├── 4. Liquidity Zones (</span><span lang=EN-US
+style='color:#1E3A8A'>高勝率流動性區域</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>├──
+4. 高勝率流動性區域：POI（訂單塊 / 供需區）＋ 流動性掠奪 ＝ 機構重倉防守的高共振區</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:7.2pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>└── 5. Inducement Traps &amp; Filtering (</span><span
+lang=EN-US style='color:#1E3A8A'>誘餌陷阱與過濾機制</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3A8A'>)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:7.2pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>└──
+5. 誘餌陷阱與過濾機制：誘餌（釣餌）吸引早鳥進場 ➔ 累積流動性（目標） ➔ 結合溢價/折價區篩選最高勝率 POI</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>4. Mental Models &amp; Underlying Logic (Why &amp; How)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>4. 底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>1. The 'Fuel &amp; Order Matching' Model (Why Institutions
+Manipulate Price): Large institutions executing $1B+ orders cannot find a
+single counterparty. Therefore, they engineer price movements to trigger retail
+stop losses and breakout orders, harvesting concentrated liquidity to fill
+their positions at optimal prices.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>1.
+**「燃料與訂單撮合」模型（為何機構需要操縱價格）**：大型機構執行十億美元級別的訂單時，市場上不存在單一對手盤能直接承接。因此，機構必須引導價格去觸發散戶的止損單與突破掛單，透過「採集濃縮流動性」來完成自身龐大倉位的撮合。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>2. The 'Predator vs. Herd' Perspective Shift (How to View
+Charts): Retail traders rely on textbook patterns (trendlines, double
+tops/bottoms, obvious support/resistance) and place stops right behind them.
+Professional traders invert this lens: wherever retail consensus places stops,
+that exact price point is treated as a target magnet rather than a safe haven.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>2.
+**「掠食者 vs. 羊群」視角轉換模型（如何看懂圖表）**：散戶依賴教科書型態（趨勢線、雙頂底、顯眼支撐阻力）並將止損緊貼其後；專業交易者則徹底反轉視角——凡是散戶共識集中擺放止損之處，皆被視為磁吸價格的「獵殺目標」，而非安全屏障。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>3. The 'Bait-Target-Execution' Sequence (How Inducement
+Operates): The market operates in a strict causal chain: (Step A) Create an
+Inducement structure (the bait) near a POI -&gt; (Step B) Retail traders enter
+early and stack stops (building the target liquidity) -&gt; (Step C) Price
+executes a Liquidity Sweep -&gt; (Step D) True directional expansion begins.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>3.
+**「釣餌—目標—執行」因果鏈模型（誘餌如何運作）**：市場遵循嚴格的因果序列：（步驟 A）在 POI 附近製造誘餌結構（釣餌） ➔ （步驟 B）散戶過早進場並堆疊止損（形成目標流動性）
+➔ （步驟 C）價格發動流動性掠奪 ➔ （步驟 D）真正的單邊主升/主跌行情啟動。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>4. Multi-Confluence Filtering Model (How to Select
+High-Probability Zones): Never trade a raw Supply/Demand zone or Order Block in
+isolation. Validate a zone through three filters: (1) Did it sweep prior
+liquidity? (2) Did it cause a Break of Structure (BOS)? (3) Does it sit in the
+correct Premium (for shorts) or Discount (for longs) pricing zone?</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>4.
+**多重共振過濾模型（如何篩選高勝率區域）**：絕不孤立交易單純的供需區或訂單塊。必須透過三重濾網驗證：（1）該區域是否曾掠奪過流動性？（2）是否引發了有效的結構突破（BOS）？（3）是否位於正確的溢價區（做空）或折價區（做多）？</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>5. Detailed Breakdown of Core Modules (With Timestamps)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>5. 詳細重點拆解（核心模組）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1D4ED8'>Module 1: The Essence of
+Liquidity &amp; Common Resting Areas [00:02:03 - 00:07:31]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#0F172A'>模組一：流動性的本質與常見聚集區域 [00:02:03 - 00:07:31]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Concept Explanation] Liquidity is defined as resting orders
+(stop losses and pending breakout orders) that serve as fuel for price
+movement. Any unmitigated or unswept high/low holds untapped liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【概念解釋】流動性即市場中停泊的訂單（止損單與突破掛單），是推動價格運行的燃料。任何尚未被價格穿越或測試過的高低點背後，都潛藏著未被採集的流動性。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Identification Steps] Scan charts from left to right to
+mark: (1) Swing Highs/Lows, (2) Strong Highs/Lows, (3) Equal Highs/Lows (Double
+Tops/Bottoms), (4) Trendlines, and (5) Obvious Support/Resistance levels.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【關鍵步驟/操作流程】由左至右掃描圖表並標記五大流動性溫床：（1）波段高低點、（2）強高低點、（3）等高/等低點（雙頂/雙底）、（4）趨勢線外緣、（5）顯眼的支撐與阻力位。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Terms] Resting Orders (</span><span lang=EN-US
+style='color:#1E3A8A'>停泊掛單</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), Untapped Liquidity (</span><span lang=EN-US style='color:
+#1E3A8A'>未採集流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), Strong High/Low (</span><span lang=EN-US style='color:#1E3A8A'>強高點</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>/</span><span
+lang=EN-US style='color:#1E3A8A'>強低點</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【重要公式/專有名詞】Resting
+Orders（停泊掛單）、Untapped Liquidity（未採集流動性）、Strong High/Low（強高點/強低點）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Common Pitfalls] Placing your stop loss directly above/below
+obvious retail patterns. Remember: if you cannot spot the liquidity on the
+chart, you are the liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【常見誤區/注意事項】切勿將止損直接設在顯眼的傳統型態後方。銘記核心法則：如果你在圖表上找不到流動性，那麼你本身就是被獵取的流動性。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1D4ED8'>Module 2: Buy-side
+Liquidity (BSL) vs. Sell-side Liquidity (SSL) [00:07:31 - 00:10:08]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#0F172A'>模組二：買方流動性（BSL）與賣方流動性（SSL）的雙向運作 [00:07:31 - 00:10:08]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Concept Explanation] BSL sits above highs (short stop losses +
+Buy Stop orders), while SSL sits below lows (long stop losses + Sell Stop
+orders). Smart money sweeps BSL before dropping and sweeps SSL before rallying.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【概念解釋】買方流動性位於高點上方（空單止損＋追多買單），賣方流動性位於低點下方（多單止損＋追空賣單）。聰明錢在下跌前先上掃
+BSL，在上漲前先下掃 SSL。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Operational Workflow] (1) Determine directional bias. (2)
+For short setups, wait patiently for price to run above a key high and sweep
+BSL. (3) For long setups, wait for price to drop below a key low and sweep SSL
+before seeking entry triggers.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【關鍵步驟/操作流程】（1）確立交易方向偏見；（2）若欲做空，必須耐心等待價格向上衝過關鍵高點掠奪
+BSL；（3）若欲做多，必須等待價格向下刺穿關鍵低點掠奪 SSL 後，再尋找進場訊號。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Terms] Buy-side Liquidity (BSL, </span><span lang=EN-US
+style='color:#1E3A8A'>買方流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), Sell-side Liquidity (SSL, </span><span lang=EN-US
+style='color:#1E3A8A'>賣方流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), Buy Stop / Sell Stop (</span><span lang=EN-US
+style='color:#1E3A8A'>突破買單</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>/</span><span lang=EN-US style='color:#1E3A8A'>賣單</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【重要公式/專有名詞】Buy-side
+Liquidity（BSL，買方流動性）、Sell-side Liquidity（SSL，賣方流動性）、Buy Stop / Sell Stop（突破追單）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Common Pitfalls] Entering trades prematurely before the
+opposing liquidity pool has been swept, resulting in getting stopped out by the
+sweep itself.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【常見誤區/注意事項】在對應的流動性池尚未被清掃前便搶先下單，導致自身部位直接成為流動性掠奪過程中的祭品。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1D4ED8'>Module 3: Institutional
+Logic &amp; Liquidity Sweep Characteristics [00:10:08 - 00:18:35]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#0F172A'>模組三：機構建倉邏輯與流動性掠奪的盤面特徵 [00:10:08 - 00:18:35]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Concept Explanation] Institutions require massive counterparty
+volume to fill orders without severe slippage. A Liquidity Sweep often
+manifests as a sharp V-shaped reversal where aggressive breakout momentum
+immediately fails and snaps back.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【概念解釋】機構需要龐大的對手盤成交量才能在不造成嚴重滑價的情況下完成建倉。流動性掠奪在盤面上常表現為急促的「V
+型反轉」，即突破動能瞬間衰竭並反向猛烈收回。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Identification Steps] (1) Observe price piercing a prior
+high/low. (2) Look for an immediate, aggressive V-shaped rejection. (3) Confirm
+structural intent by waiting for a Market Structure Shift (MSS) before
+committing to a full trend reversal.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【關鍵步驟/操作流程】（1）觀察價格刺穿前高或前低；（2）確認是否出現迅速且凌厲的
+V 型反向收回；（3）若要確認大趨勢反轉，需進一步等待價格實體打破關鍵結構高低點（MSS）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Terms] V-shaped Reaction (V </span><span lang=EN-US
+style='color:#1E3A8A'>型反轉反應</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), Market Structure Shift (MSS, </span><span lang=EN-US
+style='color:#1E3A8A'>市場結構轉變</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), Counterparty Liquidity (</span><span lang=EN-US
+style='color:#1E3A8A'>對手盤流動性</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【重要公式/專有名詞】V-shaped
+Reaction（V 型反轉反應）、Market Structure Shift（MSS，市場結構轉變）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Common Pitfalls] Assuming every single liquidity sweep
+automatically reverses the macro trend. Without a structural break (MSS), a
+sweep may only trigger a temporary retracement or trend continuation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【常見誤區/注意事項】誤以為每次流動性掠奪都必然導致大級別趨勢反轉。若缺乏後續的結構轉變（MSS）確認，掠奪可能僅引發短線回檔或順勢延續。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1D4ED8'>Module 4: Liquidity Zones
+(High-Probability POIs) [00:18:35 - 00:21:41]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#0F172A'>模組四：流動性區域（高勝率機構興趣點） [00:18:35 - 00:21:41]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Concept Explanation] A Liquidity Zone is formed when a standard
+Point of Interest (Order Block or Supply/Demand Zone) actively sweeps liquidity
+during its creation, proving institutional sponsorship.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【概念解釋】當標準的興趣點（訂單塊或供需區）在形成過程中主動執行了流動性掠奪，便升級為「流動性區域」，這是機構重倉介入與防守的明確鐵證。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Operational Formula] POI (Order Block / Supply &amp; Demand
+Zone) + Liquidity Sweep + Break of Structure (BOS) = High-Probability Liquidity
+Zone. Wait for price to return and mitigate this zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【關鍵步驟/操作流程】高勝率公式：POI（訂單塊／供需區）＋
+流動性掠奪 ＋ 結構突破（BOS）＝ 高勝率流動性區域。操作上只需耐心等待價格日後回踩（Mitigate）該區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Formula / Terms] Liquidity Zone = POI + Liquidity Sweep;
+Point of Interest (POI, </span><span lang=EN-US style='color:#1E3A8A'>興趣點</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>), Order
+Block (OB, </span><span lang=EN-US style='color:#1E3A8A'>訂單塊</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>), Mitigation
+(</span><span lang=EN-US style='color:#1E3A8A'>回踩緩解</span><span lang=EN-US
+style='font-family:"Calibri",sans-serif;color:#1E3A8A'>/</span><span
+lang=EN-US style='color:#1E3A8A'>訂單回補</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【重要公式/專有名詞】核心公式：Liquidity
+Zone ＝ POI ＋ Liquidity Sweep；Point of Interest（POI，興趣點）、Order Block（OB，訂單塊）、Mitigation（回踩緩解）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Common Pitfalls] Treating all Order Blocks or Supply/Demand
+zones equally. Zones that failed to sweep liquidity prior to moving are
+significantly weaker and often get blown through.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【常見誤區/注意事項】將所有訂單塊或供需區一視同仁。未曾掠奪過流動性的普通區域防守力道薄弱，極易在價格回測時被直接貫穿。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1D4ED8'>Module 5: Inducement
+Mechanisms &amp; Trap Avoidance [00:21:41 - 00:28:16]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#0F172A'>模組五：誘餌（Inducement）運作機制與陷阱規避 [00:21:41 - 00:28:16]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Concept Explanation] Inducement is the bait created by the
+market (such as a double top/bottom near a POI) to entice early entries,
+whereas Liquidity is the resulting cluster of stop losses targeted by Smart
+Money.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【概念解釋】誘餌是市場刻意製造的釣餌型態（例如在
+POI 附近形成雙頂或雙底），用以勾引散戶過早進場；而隨之堆積的止損單，則是聰明錢鎖定的流動性目標。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Identification Steps] (1) Identify your primary POI. (2)
+Spot retail patterns forming just ahead of the POI (the Inducement). (3)
+Refrain from entering on the first reaction; allow price to sweep the
+inducement into your true POI.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【關鍵步驟/操作流程】（1）標定核心高勝率
+POI；（2）觀察 POI 前方是否出現吸引散戶的顯眼型態（誘餌）；（3）克制在第一波反應進場的衝動，放任價格掃穿誘餌並觸及真正的 POI 後再行動。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Terms] Inducement (IDM, </span><span lang=EN-US
+style='color:#1E3A8A'>誘餌</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>/</span><span lang=EN-US style='color:#1E3A8A'>釣餌</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>), Bait vs.
+Target (</span><span lang=EN-US style='color:#1E3A8A'>釣餌與目標</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>), Early
+Entry Trap (</span><span lang=EN-US style='color:#1E3A8A'>過早進場陷阱</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【重要公式/專有名詞】Inducement（IDM，誘餌）、Bait
+vs. Target（釣餌與目標的二元關係）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Common Pitfalls] Mistaking an inducement pattern for a
+confirmed reversal signal, or failing to look left on the chart to see if
+liquidity was already swept during the initial leg.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【常見誤區/注意事項】將誘餌型態誤判為確立的反轉訊號而提前重倉；此外，若拉回過程未見掃盤，務必向圖表左側檢視，確認流動性是否已在結構起漲/起跌初期便已清掃完畢。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+3.0pt;margin-left:0cm'><b><span lang=EN-US style='font-size:11.5pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#1D4ED8'>Module 6: Multi-Confluence
+Case Study (Premium/Discount &amp; LTF Refinement) [00:28:16 - 00:32:46]<br>
+</span></b><b><span lang=EN-US style='font-size:11.5pt;line-height:115%;
+color:#0F172A'>模組六：綜合實戰案例（溢價/折價區過濾與低週期精準進場） [00:28:16 - 00:32:46]</span></b></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Concept Explanation] Combining dealing range pricing (Premium
+vs. Discount), Liquidity Sweeps, Fair Value Gaps (FVG), and Lower Timeframe
+(LTF) sweeps creates an institutional-grade execution framework.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【概念解釋】將交易區間定價（溢價區
+vs. 折價區）、流動性掠奪、公允價值缺口（FVG）以及低時間週期（LTF）微觀掃盤相結合，可構建出機構級的高勝率執行框架。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Operational Workflow] (1) Define the bearish dealing range
+(Swing High to Swing Low). (2) Ignore Supply Zones in Discount pricing (Zone 2)
+that still hold un-swept liquidity above them. (3) Wait for price to sweep
+liquidity into the Premium Supply Zone (Zone 1) and form an FVG. (4) Drop to
+LTF (e.g., 5m) to catch a minor BSL sweep for entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【關鍵步驟/操作流程】（1）界定空頭交易區間（波段高點至低點）；（2）忽略位於折價區且上方仍殘留流動性的無效供給區（區域
+2）；（3）等待價格向上清掃流動性並進入溢價區的高勝率供給區（區域 1），同時形成 FVG；（4）切換至低時間週期（如 5 分鐘圖），捕捉微觀高點 BSL 掠奪後進場。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Key Terms] Premium Pricing (</span><span lang=EN-US
+style='color:#1E3A8A'>溢價區</span><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>), Discount Pricing (</span><span lang=EN-US style='color:#1E3A8A'>折價區</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>), Fair Value
+Gap / Imbalance (FVG, </span><span lang=EN-US style='color:#1E3A8A'>公允價值缺口</span><span
+lang=EN-US style='font-family:"Calibri",sans-serif;color:#1E3A8A'>/</span><span
+lang=EN-US style='color:#1E3A8A'>失衡區</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>), Lower Timeframe (LTF, </span><span
+lang=EN-US style='color:#1E3A8A'>低時間週期</span><span lang=EN-US style='font-family:
+"Calibri",sans-serif;color:#1E3A8A'>).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:4.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【重要公式/專有名詞】Premium
+Pricing（溢價區）、Discount Pricing（折價區）、Fair Value Gap（FVG，失衡區）、Lower Timeframe（LTF，低時間週期）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>[Common Pitfalls] Selling in Discount pricing or buying in
+Premium pricing simply because a lower-grade zone shows an initial reaction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>【常見誤區/注意事項】僅因次級區域出現微弱的初步反應，便在折價區盲目追空或在溢價區盲目追多，違背機構定價原則。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>6. Practical Action Items<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>6. 實操行動清單</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>1. Conduct a 'Liquidity Mapping' Drill on 10 Historical Charts:
+Open your charting platform, hide current price action, and explicitly label
+BSL above obvious swing highs/double tops and SSL below swing lows/trendlines.
+Fast-forward to observe how price magnetically sweeps these zones.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>1.
+**執行 10 張歷史圖表的「流動性標註」訓練**：打開看盤軟體並遮蔽後續走勢，明確標出顯眼波段高點／雙頂上方的 BSL，以及波段低點／趨勢線下方的 SSL，隨後逐根播放
+K 棒，觀察價格如何像磁鐵般精準清掃這些區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>2. Audit Your Past 20 Stopped-Out Trades: Review your trading
+journal and check whether your stop losses were placed right behind obvious
+retail highs, lows, or trendlines. Redesign your stop placement to sit beyond a
+validated Liquidity Zone rather than inside retail liquidity pools.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>2.
+**複盤過去 20 筆被打止損的虧損交易**：檢視交易日誌，確認止損是否緊貼在顯眼的散戶高低點或趨勢線後方。重新調整止損邏輯，將止損設在「經過流動性掠奪驗證的流動性區域」之外，而非暴露在散戶止損池中。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>3. Implement the 'No Sweep, No Entry' Rule: Add a mandatory
+pre-trade checklist item: before entering any POI (Order Block or Supply/Demand
+zone), verify that an adjacent Inducement or minor swing point has been swept
+first.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>3.
+**嚴格執行「無掠奪、不進場」鐵律**：在進場前檢查清單中加入強制條件——在任何興趣點（訂單塊或供需區）下單前，必須親眼確認其前方的誘餌結構或次級波段高低點已經遭到刺穿清掃。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>4. Filter POIs Using Premium/Discount &amp; Liquidity
+Confluence: Draw a Fibonacci retracement (0 to 1, highlighting the 0.5
+equilibrium) across your active dealing range. Delete all Supply Zones in the
+Discount half and all Demand Zones in the Premium half, keeping only those that
+swept liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>4.
+**結合「溢價／折價區」與流動性雙重濾網篩選 POI**：在當前交易區間拉出斐波那契回撤（標記 0.5 中軸線），果斷刪除位於折價區的所有供給區，以及位於溢價區的所有需求區，僅保留具備「流動性掠奪」履歷的頂級區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>5. Practice Multi-Timeframe Refinement (HTF Zone + LTF Sweep):
+When price enters a Higher Timeframe (e.g., 1H/4H) Liquidity Zone, drop down to
+the 5-minute chart and wait for a micro Liquidity Sweep + V-shaped displacement
+before executing your entry.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>5.
+**練習多時間週期共振進場（大週期區域＋小週期掠奪）**：當價格抵達高時間週期（如 1 小時或 4 小時圖）的流動性區域時，切換至 5 分鐘圖，耐心等待微觀層級的流動性掠奪與
+V 型反向動能出現後再行扣下扳機。</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>7. Concept Self-Assessment (Quiz &amp; Review)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>7. 觀念自我檢測</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Q1 (Multiple Choice): What is the primary reason large
+institutions engineer a Liquidity Sweep before initiating a major directional
+move?<br>
+A) To randomly test retail indicators<br>
+B) To harvest resting stop losses and pending orders as counterparty fuel to
+fill large positions<br>
+C) To comply with exchange volume regulations<br>
+D) To keep price within a tight sideways range permanently</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>Q1（單選題）：大型機構在發動主要單邊行情前，刻意製造「流動性掠奪（Liquidity
+Sweep）」的核心原因為何？<br>
+A) 隨機測試散戶技術指標的靈敏度<br>
+B) 採集停泊的止損單與突破掛單作為對手盤燃料，以完成龐大倉位的撮合<br>
+C) 為了符合交易所的最低成交量規範<br>
+D) 為了讓價格永遠維持在狹幅盤整區間內</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Q2 (Multiple Choice): Which of the following best describes the
+relationship between 'Inducement' and 'Liquidity'?<br>
+A) They are completely unrelated concepts<br>
+B) Liquidity is the bait structure, while Inducement is the final take-profit
+target<br>
+C) Inducement is the deceptive pattern (the bait) created to entice early
+entries, while Liquidity is the resulting cluster of orders (the target)<br>
+D) Inducement only occurs in bullish markets, whereas Liquidity only occurs in
+bearish markets</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>Q2（單選題）：下列何者最精準地描述了「誘餌（Inducement）」與「流動性（Liquidity）」之間的關係？<br>
+A) 兩者是完全無關的獨立概念<br>
+B) 流動性是釣餌型態，而誘餌是最終的止盈目標<br>
+C) 誘餌是為吸引散戶過早進場而製造的陷阱型態（釣餌），流動性則是隨之聚集的訂單群（獵殺目標）<br>
+D) 誘餌僅出現於牛市，而流動性僅出現於熊市</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Q3 (Multiple Choice): According to the lesson, what upgrades an
+ordinary Order Block or Supply/Demand Zone into a high-probability 'Liquidity
+Zone'?<br>
+A) Having at least three touches by price<br>
+B) Being located directly on a retail trendline<br>
+C) Actively sweeping liquidity prior to breaking structure<br>
+D) Forming during low-volume weekend hours</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>Q3（單選題）：根據課程內容，什麼條件能將一個普通的訂單塊（Order
+Block）或供需區升級為高勝率的「流動性區域（Liquidity Zone）」？<br>
+A) 價格至少觸碰並反彈三次以上<br>
+B) 剛好位於傳統散戶趨勢線的上方<br>
+C) 在引發結構突破之前，曾主動執行過流動性掠奪<br>
+D) 在週末低成交量時段形成</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Q4 (Multiple Choice): In a bearish dealing range, why should a
+trader avoid selling at a Supply Zone located in the Discount pricing area
+(Zone 2) when a higher Supply Zone exists in Premium pricing (Zone 1)?<br>
+A) Discount zones always reverse the macro trend permanently<br>
+B) Zone 2 sits in unfavorable pricing and has un-swept Buy-side Liquidity
+resting above it, acting as inducement<br>
+C) Sell orders cannot be executed in Discount areas<br>
+D) Zone 1 never gets mitigated in bearish trends</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>Q4（單選題）：在空頭交易區間中，當溢價區存在高勝率供給區（區域
+1）時，為何交易者應避免在位於折價區的次級供給區（區域 2）做空？<br>
+A) 折價區總是會永久扭轉宏觀趨勢<br>
+B) 區域 2 處於不利的定價區間，且其上方仍堆積著未被清掃的買方流動性，本質上只是誘餌<br>
+C) 系統無法在折價區執行賣出掛單<br>
+D) 空頭趨勢中價格永遠不會回踩區域 1</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Q5 (Reflective Question): If a price pullback toward your Demand
+Zone does NOT show an obvious liquidity sweep during the pullback leg itself,
+where should you look on the chart to verify if liquidity was already
+harvested?</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:6.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#1F2937'>Q5（思考題）：如果價格在拉回測試你的需求區（Demand
+Zone）的過程中，並未出現明顯的流動性掠奪動作，你應該在圖表的哪個位置進行檢視，以確認流動性是否早已被採集完畢？</span></p>
+
+<span lang=EN-US style='font-size:10.5pt;line-height:115%;font-family:"微軟正黑體",sans-serif'><br
+clear=all style='page-break-before:always'>
+</span>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+<div style='border:none;border-bottom:solid #1E3A8A 1.5pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+4.0pt;margin-left:0cm;border:none;padding:0cm'><b><span lang=EN-US
+style='font-size:13.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#1E3A8A'>Answer Key (Scroll Down / Folded Reference Section)<br>
+</span></b><b><span lang=EN-US style='font-size:13.0pt;line-height:115%;
+color:#0F172A'>參考解答區（請先完成自我檢測後再行核對）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#94A3B8'>Q1 Answer: B — Institutions need massive counterparty volume to
+fill large orders; sweeping retail stop losses and breakout orders provides
+that exact liquidity fuel.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#94A3B8'>Q1 解答：B
+— 機構需要龐大的對手盤成交量來填補大額訂單；掃蕩散戶的止損單與突破掛單正是提供此類流動性燃料的關鍵手段。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#94A3B8'>Q2 Answer: C — Inducement is the structural bait (e.g., double
+top/bottom) designed to lure early entries, creating the concentrated pool of
+Liquidity (the target) that Smart Money subsequently sweeps.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#94A3B8'>Q2 解答：C
+— 誘餌是旨在勾引散戶過早進場的結構釣餌（如雙頂/雙底），進而創造出濃縮的流動性池（獵殺目標）供聰明錢後續清掃。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#94A3B8'>Q3 Answer: C — A POI (Order Block or Supply/Demand Zone) that
+swept liquidity prior to breaking structure demonstrates institutional commitment
+and forms a high-probability Liquidity Zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#94A3B8'>Q3 解答：C
+— 在打破結構前曾主動掠奪流動性的興趣點（訂單塊或供需區），證明了機構的實質介入，從而構成高勝率的流動性區域。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#94A3B8'>Q4 Answer: B — Selling in Discount pricing offers poor
+risk-to-reward, and the un-swept Buy-side Liquidity resting above Zone 2 serves
+as fuel for price to push higher into the Premium Liquidity Zone (Zone 1).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#94A3B8'>Q4 解答：B
+— 在折價區做空不僅盈虧比不佳，且區域 2 上方殘留的未清掃買方流動性會成為燃料，推動價格繼續上衝並測試溢價區的流動性區域（區域 1）。</span></p>
+
+<p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:10.8pt'><span lang=EN-US style='font-family:"Calibri",sans-serif;
+color:#94A3B8'>Q5 Answer: Look to the left of the chart at the origin of the
+structural leg. Often, price had already swept a prior historical swing low
+when initiating the impulse move, meaning the fuel was already collected before
+the pullback began.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:10.8pt;line-height:120%'><span lang=EN-US style='color:#94A3B8'>Q5 解答：應將視線移向「圖表左側」的結構起漲初期。價格往往早在發動初始衝擊波時，就已經向下刺穿並清掃了更早之前的歷史波段低點，這代表燃料在拉回開始前便已採集完畢。</span></p>
+
+</div>
+
+</body>
+
+</html>

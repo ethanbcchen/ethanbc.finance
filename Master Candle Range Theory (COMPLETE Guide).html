@@ -1,0 +1,1255 @@
+<html>
+
+<head>
+<meta http-equiv=Content-Type content="text/html; charset=utf-8">
+<meta name=Generator content="Microsoft Word 15 (filtered)">
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Courier;
+	panose-1:2 7 4 9 2 2 5 2 4 4;}
+@font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:微軟正黑體;
+	panose-1:2 11 6 4 3 5 4 4 2 4;}
+@font-face
+	{font-family:"\@微軟正黑體";}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin-top:0cm;
+	margin-right:0cm;
+	margin-bottom:10.0pt;
+	margin-left:0cm;
+	line-height:115%;
+	font-size:10.5pt;
+	font-family:"微軟正黑體",sans-serif;
+	color:#1E293B;}
+.MsoChpDefault
+	{font-size:11.0pt;
+	font-family:"Cambria",serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:612.0pt 792.0pt;
+	margin:57.6pt 61.2pt 57.6pt 61.2pt;}
+div.WordSection1
+	{page:WordSection1;}
+ /* List Definitions */
+ ol
+	{margin-bottom:0cm;}
+ul
+	{margin-bottom:0cm;}
+-->
+</style>
+
+</head>
+
+<body lang=ZH-TW style='word-wrap:break-word'>
+
+<div class=WordSection1>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#1B365D;padding:
+  9.0pt 11.0pt 9.0pt 11.0pt'>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><b><span lang=EN-US
+  style='font-size:14.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#93C5FD'>DEEP LEARNING STUDY NOTES: CANDLESTICK RANGE THEORY (CRT)</span></b></p>
+  <p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+  style='font-size:16.0pt;line-height:115%;color:white'>深度學習筆記：K 線區間理論（Candlestick
+  Range Theory, CRT）完整實戰指南</span></b></p>
+  <p class=MsoNormal style='margin-bottom:2.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#E2E8F0'>Source: Master Candle Range Theory (COMPLETE Guide) | Speaker:
+  Brett Gold | Format: Line-by-Line Bilingual</span></p>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#E2E8F0'>來源：Master Candle Range
+  Theory 完整指南 | 講者：Brett Gold | 排版：英中逐行對照深度筆記</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>1. EXECUTIVE SUMMARY</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;color:#1B365D'>1. 核心總結</span></b></p>
+
+</div>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#F1F5F9;padding:
+  7.0pt 9.0pt 7.0pt 9.0pt'>
+  <p class=MsoNormal style='margin-bottom:0cm'><span lang=EN-US>&nbsp;</span></p>
+  <p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#475569'>Most retail traders fail
+  because they memorize superficial candlestick patterns and treat every bar
+  equally. Candlestick Range Theory (CRT) shifts the perspective from static
+  shapes to institutional Order Flow and Liquidity Boundaries. Every
+  candlestick establishes a governing price range defined by its High and Low.
+  Rather than applying CRT to every random bar, traders must isolate specific
+  CRT candles forming at Higher Time Frame Points of Interest (HTF POI),
+  Premium/Discount zones, pullback endings, or Liquidity Zones. The core
+  mechanism relies on the Accumulation, Manipulation, and Distribution (AMD)
+  cycle: waiting patiently until price sweeps one side of the CRT range
+  (Manipulation) and rejects back inside, signaling a Liquidity Sweep. Traders
+  then drop to a Lower Time Frame (LTF) to execute either an Aggressive Entry
+  (immediately upon V-shaped rejection) or a Conservative Entry (waiting for
+  retracement into an Imbalance/FVG or Liquidation Candle zone), placing
+  stop-losses strictly beyond the Liquidation Candle to target the opposing
+  range boundary. Ultimately, CRT is only effective when paired with Daily
+  Bias, Market Mechanics, and strict A+ setup selection.</span></p>
+  <p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+  lang=EN-US>大多數散戶交易者之所以持續虧損，是因為過度死記硬背表面的 K 線型態，並將每根 K 線視為同等重要。K 線區間理論（Candlestick
+  Range Theory, CRT）將交易視角從靜態圖形轉向機構訂單流（Order Flow）與流動性邊界（Liquidity Boundaries）。每根
+  K 線的高點與低點皆構成一個主導價格運行的區間，但實戰中絕不能盲目套用，而必須鎖定出現在高時區關注區域（HTF POI）、溢價與折價區、回調末端或流動性區域的關鍵
+  CRT K 線。其核心運作遵循「累積、操盤、派發（AMD）」週期：交易者需耐心等待價格獵取並掃蕩 CRT 區間的某一側（操盤階段），隨後迅速收回區間內部形成有效流動性掃蕩（Liquidity
+  Sweep）。確認掃蕩後，切換至低時區（LTF）執行「激進進場」（V 型反轉確認後立即進場）或「保守進場」（等待價格回調填補不平衡缺口 FVG 或清算 K
+  線區域），並將止損嚴格設於清算 K 線極值之外，目標直指區間對向端點。最終，唯有結合每日偏向（Daily Bias）、市場機械結構（Market
+  Mechanics）與嚴格篩選 A+ 級別交易機會，CRT 才能發揮最大威力。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>2. KEY CONCEPTS &amp; DEFINITIONS (WITH TIMESTAMPS)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;color:#1B365D'>2. 知識地圖與核心概念（附時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:02:18] [Candlestick Range
+Theory (CRT)]: </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#475569'>A price-action framework
+that treats the High and Low of a significant candlestick as liquidity
+boundaries to determine whether price will reverse or continue.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:02:18]
+[K 線區間理論 (CRT)]：</span></b><span lang=EN-US>一種價格行為分析框架，將關鍵 K 線的高點與低點視為流動性邊界，藉此判斷價格即將反轉或延續趨勢。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:03:35] [Fractal View
+(Multi-Timeframe Alignment)]: </span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>The
+structural relationship where a single Higher Time Frame (HTF) candlestick
+breaks down into a complete price-action swing cycle on a Lower Time Frame
+(LTF).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:03:35]
+[分形視角 / 多時區聯動]：</span></b><span lang=EN-US>單一根高時區（HTF）K 線在切換至低時區（LTF）放大檢視時，會展開為完整波段結構的市場分形特性。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:04:07] [Liquidity
+Boundaries]: </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#475569'>The High and Low extremes
+of a CRT candle where stop orders rest; price revisits these boundaries either
+to accept beyond them or reject back inside.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:04:07]
+[流動性邊界]：</span></b><span lang=EN-US>CRT K 線的最高點與最低點極值處（止損單聚集區），價格重新測試邊界時會選擇「接受突破」或「拒絕反轉」。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:04:20] [Order Flow &amp;
+AMD Cycle]: </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#475569'>Institutional delivery
+cycle consisting of Accumulation (stacking orders), Manipulation (sweeping
+liquidity via false breakout), and Distribution (true directional move).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:04:20]
+[訂單流與 AMD 週期]：</span></b><span lang=EN-US>機構資金運作的三階段循環：累積（Accumulation，建倉吸籌）、操盤（Manipulation，假突破掠奪流動性）與派發（Distribution，真實趨勢行情）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:05:27] [Liquidity Sweep /
+Liquidity Grab]: </span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>A false
+breakout beyond the CRT High or Low that triggers stop orders and swiftly
+closes back inside the range with a V-shaped reaction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:05:27]
+[流動性掃蕩 / 流動性獵取]：</span></b><span lang=EN-US>價格刺破 CRT 高點或低點觸發止損單後，迅速以 V 型反轉收回區間內部的假突破現象，代表操盤階段完成。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:06:48] [Higher Time Frame
+Point of Interest (HTF POI)]: </span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>Key
+institutional price zones—such as Supply/Demand zones, Order Blocks,
+Support/Resistance, and prior Swing Highs/Lows—where valid CRT candles form.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:06:48]
+[高時區關注區域 (HTF POI)]：</span></b><span lang=EN-US>機構重點關注的關鍵價格區域（如供需區、訂單塊、支撐阻力位、前期波段高低點），是尋找有效
+CRT K 線的首要前提。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:07:17] [Premium &amp;
+Discount Zones]: </span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>Relative
+valuation areas within a swing range; bullish CRT setups are sought in Discount
+(uptrend), while bearish CRT setups are sought in Premium (downtrend).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:07:17]
+[溢價區與折價區]：</span></b><span lang=EN-US>波段區間內的相對高低估區域；上升趨勢中應在折價區（Discount）尋找看漲
+CRT，下降趨勢則在溢價區（Premium）尋找看跌 CRT。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:12:41] [Liquidation Candle
+&amp; Protected High/Low]: </span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>The specific
+LTF candle that executes the liquidity sweep; its extreme forms a Protected
+High/Low that invalidates the trade if broken, making it the optimal stop-loss
+anchor.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:12:41]
+[清算 K 線與受保護高低點]：</span></b><span lang=EN-US>在低時區實際完成流動性掃蕩的那根 K 線；其極值會成為「受保護高/低點」，一旦被突破即代表交易邏輯失效，是最佳的止損參考位。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:15:10] [Imbalance / Fair
+Value Gap (FVG)]: </span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>A three-candle
+price gap between the previous candle's high and the next candle's low caused
+by impulsive institutional momentum, serving as a conservative retracement
+entry zone.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:15:10]
+[不平衡區 / 公允價值缺口 (FVG)]：</span></b><span lang=EN-US>由強勢機構動能造成的連續三根 K 線價格缺口（前一根高點與後一根低點未重疊處），作為保守型進場模型的回調掛單區。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[00:22:41] [Market Mechanics
+&amp; Daily Bias]: </span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>Foundational
+top-down context (directional bias, key levels, liquidity mapping) required to
+filter CRT setups so traders only execute A+ probability trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>[00:22:41]
+[市場機械結構與每日偏向]：</span></b><span lang=EN-US>決定大方向偏見（Daily Bias）、關鍵位與流動性地圖的底層市場運作邏輯，是篩選出
+A+ 級別高勝率 CRT 交易的必要前提。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>3. KNOWLEDGE ARCHITECTURE (TEXT-BASED MIND MAP)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;color:#1B365D'>3. 知識架構圖解（文字版心智圖）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>■ Master Candlestick Range
+Theory (CRT)</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><span
+lang=EN-US>■ 精通 K 線區間理論（CRT）核心架構</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>▸ 1. Paradigm Shift (Mindset)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US>▸ 一、思維範式轉移（交易心態）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Reject retail pattern
+memorization (treating all bars equally)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 摒棄散戶死記硬背 K 線型態（平等對待每根 K
+線的誤區）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Adopt institutional Order
+Flow (reading High/Low as Liquidity Boundaries)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 建立機構訂單流視角（將單根 K 線高低點視為流動性邊界）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>▸ 2. Location Filtering (Where
+to Spot CRT Candles)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US>▸ 二、位置篩選原則（何處尋找有效 CRT K 線）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Higher Time Frame Points of
+Interest (Supply/Demand, Order Blocks, Key S/R)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 高時區關注區域（供需區、訂單塊、關鍵支撐阻力位）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Premium &amp; Discount
+Alignment (Buy in Discount / Sell in Premium)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 溢價與折價區順勢配合（折價區做多、溢價區做空）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ End of Pullbacks &amp;
+Liquidity Zones (Equal Highs/Lows, Prior Session Extremes)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 回調結構末端與顯著流動性區域（等高/等低點、前時段高低點）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>▸ 3. Core Execution Mechanics
+(AMD &amp; Multi-Timeframe)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US>▸ 三、核心執行機制（AMD 週期與多時區聯動）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Step 1: Mark HTF CRT Range
+(High &amp; Low) -&gt; Wait patiently (Do Nothing)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 步驟 1：標記高時區 CRT 區間高低點 → 嚴格空倉等待（不提前進場）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Step 2: Manipulation Phase
+-&gt; Price sweeps CRT High or Low</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 步驟 2：操盤階段 → 價格刺穿並掃蕩 CRT
+高點或低點</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Step 3: Drop to LTF (e.g.,
+15m -&gt; 5m) -&gt; Confirm V-shaped rejection</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 步驟 3：切換至低時區（如 15m 切 5m）→
+確認 V 型快速收回拒絕</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>▸ 4. Dual Entry &amp; Risk
+Management Models</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US>▸ 四、雙軌進場與風控模型</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Aggressive Entry: Enter
+immediately after LTF sweep + strong displacement candle</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 激進型進場：低時區掃蕩並出現強勢反向 K 線後立即市價進場</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Conservative Entry: Wait for
+retracement into Imbalance (FVG) or Liquidation Zone</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 保守型進場：等待價格回調填補不平衡缺口（FVG）或清算
+K 線供需區</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Stop-Loss &amp; Take-Profit:
+SL beyond Liquidation Candle (Protected High/Low); TP at opposing CRT boundary
+(or 2R–3R)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 止損與止盈：止損設於清算 K 線極值外（受保護高低點）；止盈看向區間對向端點（或
+2R–3R）</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>▸ 5. System Integration (Edge
+Optimization)</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><span lang=EN-US>▸ 五、系統整合與優勢優化</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:36.0pt'><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>◦ Combine CRT with Daily Bias
+&amp; Market Mechanics -&gt; Trade only A+ setups</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:36.0pt;line-height:125%'><span lang=EN-US>◦ 結合每日偏向與市場機械結構 → 堅持「重質不重量」，只做
+A+ 級別機會</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>4. MENTAL MODELS &amp; UNDERLYING LOGIC</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;color:#1B365D'>4. 底層邏輯與思維模型</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>1. Asymmetric Information &amp;
+Institutional Liquidity Engineering (Why): </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Large institutions cannot fill massive orders without
+counterparty liquidity. They deliberately engineer false breakouts beyond
+obvious candlestick highs/lows (Manipulation) to trigger retail stop-losses and
+breakout orders, harvesting liquidity before driving price toward the true
+objective (Distribution).</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>1. 資訊不對稱與機構流動性工程（為何如此運作）： </span></b><span
+lang=EN-US>大型機構若沒有足夠的對手盤流動性，便無法成交巨額訂單。因此，機構會刻意製造突破 K 線高低點的假動作（操盤階段），觸發散戶的止損單與追價突破單，在掠奪充足流動性後才朝真實目標發動趨勢行情（派發階段）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>2. Contextual Filtering Over
+Universal Pattern Recognition (How to Filter): </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Because every timeframe contains infinite candles, applying CRT
+indiscriminately leads to analysis paralysis. The speaker uses a top-down
+filter: Location (HTF POI) comes first, Range Identification (CRT candle) comes
+second, and Trigger (LTF sweep) comes third.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>2. 情境過濾優於全圖型態辨識（如何過濾雜訊）： </span></b><span
+lang=EN-US>由於每個時區都有無數根 K 線，無差別套用 CRT 只會導致分析癱瘓。講者採用「自上而下」的過濾漏斗：第一層先看位置（高時區關注區域
+POI），第二層才標記區間（CRT 母線），第三層最後等待觸發（低時區掃蕩）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>3. Timeframe Fractality &amp;
+Structural Alignment (How to Execute): </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>A single HTF wick rejection is actually a complete liquidity
+sweep and market structure shift on the LTF. By defining the battlefield on the
+HTF (e.g., 15m/1H/4H) and executing with microscopic precision on the LTF
+(e.g., 5m/1m), traders achieve tight stop-losses and high Risk-to-Reward
+ratios.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>3. 時區分形與結構對齊（如何精準執行）： </span></b><span
+lang=EN-US>高時區的一根長影線拒絕，在低時區實際上是一個完整的流動性掃蕩與結構反轉。透過在高時區（如 15m/1H/4H）劃定戰場邊界，並在低時區（如
+5m/1m）進行顯微鏡級別的精準進場，交易者能實現極小止損與高風報酬比。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>4. Invalidation-Based Risk
+Placement &amp; Data-Driven Adaptation (How to Manage Risk): </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Stop-losses are never placed arbitrarily; they are anchored
+beyond the Liquidation Candle because breaking that extreme proves the sweep
+failed. Furthermore, choosing between aggressive and conservative entries is
+dictated strictly by backtested statistical data rather than emotion.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>4. 基於邏輯失效點的風控與數據驅動（如何管理風險）： </span></b><span
+lang=EN-US>止損絕非隨意設定，而是精準錨定在「清算 K 線」極值之外，因為一旦突破該點位即證明掃蕩邏輯失效。此外，選擇激進或保守模型完全取決於歷史回測的統計數據，而非主觀情緒。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>5. DETAILED MODULE BREAKDOWN (WITH TIMESTAMPS)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;color:#1B365D'>5. 詳細重點拆解（含原始時間戳記）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>Module 1: Critique of Retail Trading &amp; Anatomy of a CRT
+Range [00:01:19 – 00:03:15]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;color:#1B365D'>模組一：散戶交易誤區剖析與
+CRT 區間構造 [00:01:19 – 00:03:15]</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Concept Explanation] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Retail traders lose consistently because they treat every
+candlestick equally and rely on memorized candlestick names. In CRT, every single
+candle establishes a price range bounded by its High and Low, acting as key
+levers to gauge whether price respects or breaks structural levels.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【概念解釋】</span></b><span
+lang=EN-US>散戶持續虧損的主因在於平等對待每根 K 線並死記硬背型態名稱。在 CRT 理論中，每根 K 線都由其高點與低點構成一個價格區間，這兩個邊界是衡量價格究竟「尊重區間」還是「突破延續」的核心槓桿。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Steps / Workflow] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>1. Identify a significant candlestick at a key area. 2. Mark its
+exact High (CRT High) and Low (CRT Low). 3. Observe subsequent price
+interaction with these two boundaries to determine reversal vs. continuation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【關鍵步驟
+/ 操作流程】</span></b><span lang=EN-US>1. 在關鍵位置識別具有代表性的 K 線。2. 精確標記該 K 線的最高點（CRT
+High）與最低點（CRT Low）。3. 觀察後續價格與這兩條邊界的互動，判斷反轉或延續。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Terms &amp; Formulas] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Candlestick Range = [CRT Low, CRT High]; Acceptance (close
+beyond boundary = continuation) vs. Rejection (wick sweep + close inside =
+reversal).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【重要公式
+/ 專有名詞】</span></b><span lang=EN-US>K 線區間 = [CRT 低點, CRT 高點]；價格接受（收盤實體突破邊界 = 趨勢延續）vs.
+價格拒絕（影線刺破並收回區間內 = 趨勢反轉）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Common Pitfalls / Warnings] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Do not assign equal importance to every candle on the chart; 90%
+of candles are mere market noise.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【常見誤區
+/ 注意事項】</span></b><span lang=EN-US>切勿賦予圖表上每根 K 線同等的權重；市場上 90% 的 K 線都只是無意義的雜訊。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>Module 2: Fractal Timeframes &amp; The AMD Order Flow Cycle
+[00:03:15 – 00:05:51]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;color:#1B365D'>模組二：多時區分形視角與
+AMD 訂單流週期 [00:03:15 – 00:05:51]</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Concept Explanation] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Viewing an HTF candle (e.g., 4H) on an LTF (e.g., 1H/15m)
+reveals a fractal price cycle governed by Order Flow: Accumulation
+(institutions build positions), Manipulation (sweeping liquidity above CRT High
+or below CRT Low), and Distribution (true directional expansion).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【概念解釋】</span></b><span
+lang=EN-US>將高時區 K 線（如 4 小時）切換至低時區（如 1 小時或 15 分鐘）觀察，會呈現受訂單流主導的分形週期：累積（機構建倉）、操盤（掃蕩
+CRT 高點上方或低點下方的流動性）與派發（真實趨勢爆發）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Steps / Workflow] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>1. Define the macro range on HTF. 2. Wait for price to pierce
+one boundary (Manipulation phase). 3. Verify that price fails to hold beyond
+the boundary and snaps back inside with a V-shaped reaction.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【關鍵步驟
+/ 操作流程】</span></b><span lang=EN-US>1. 在高時區界定宏觀區間。2. 等待價格刺穿其中一側邊界（操盤階段）。3. 驗證價格無法站穩邊界之外，並以
+V 型反應迅速收回區間內部。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Terms &amp; Formulas] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>AMD Cycle (Accumulation -&gt; Manipulation -&gt; Distribution);
+Liquidity Sweep / Grab; False Breakout (V-shaped reaction).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【重要公式
+/ 專有名詞】</span></b><span lang=EN-US>AMD 週期（累積 → 操盤 → 派發）；Liquidity Sweep / Grab（流動性掃蕩/獵取）；False
+Breakout（假突破與 V 型反轉）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Common Pitfalls / Warnings] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Mistaking a Manipulation sweep for a genuine breakout and
+chasing price at the exact point where institutions are unloading opposing orders.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【常見誤區
+/ 注意事項】</span></b><span lang=EN-US>誤將「操盤階段的流動性掃蕩」當作真實突破而盲目追單，導致正好買在機構反向出貨的最高/最低點。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>Module 3: High-Probability Location Filtering (Where to Spot
+CRT) [00:05:56 – 00:08:40]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;color:#1B365D'>模組三：高勝率位置篩選法則（何處尋找
+CRT） [00:05:56 – 00:08:40]</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Concept Explanation] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>CRT setups appear on every chart, so traders must restrict
+analysis exclusively to high-probability structural locations where
+institutional reversals or trend continuations naturally occur.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【概念解釋】</span></b><span
+lang=EN-US>CRT 型態在任何圖表上都隨處可見，因此交易者必須將分析嚴格限制在機構容易發動反轉或趨勢延續的高勝率結構位置。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Steps / Workflow] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Filter for 4 specific zones before marking any CRT candle: (1)
+HTF POIs (Supply/Demand zones, Order Blocks, Support/Resistance, Swing
+Highs/Lows); (2) Discount zones in uptrends / Premium zones in downtrends; (3)
+The end of a trend pullback; (4) Obvious Liquidity Zones (Equal Highs/Lows,
+Prior Session Highs/Lows).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【關鍵步驟
+/ 操作流程】</span></b><span lang=EN-US>在標記任何 CRT K 線前，先過濾出以下 4 大區域：(1) 高時區關注區域（供需區、訂單塊、支撐阻力、波段高低點）；(2)
+上升趨勢的折價區 / 下降趨勢的溢價區；(3) 趨勢回調修正的末端；(4) 顯著流動性區域（等高點/等低點、前一交易時段高低點）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Terms &amp; Formulas] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>HTF POI (Point of Interest); Order Blocks (OB); Premium vs.
+Discount; Equal Highs (EQH) / Equal Lows (EQL).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【重要公式
+/ 專有名詞】</span></b><span lang=EN-US>HTF POI（高時區關注區域）；Order Blocks（訂單塊）；Premium
+&amp; Discount（溢價與折價區）；Equal Highs/Lows（等高/等低點流動性池）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Common Pitfalls / Warnings] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Trying to mark the high and low of a currently forming candle in
+the middle of nowhere, leading to overtrading and confusion.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【常見誤區
+/ 注意事項】</span></b><span lang=EN-US>在毫無結構意義的盤整區中段隨意標記正在形成的 K 線高低點，導致過度交易與判斷混亂。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>Module 4: Step-by-Step Execution &amp; The 'Wait for Sweep' Rule
+[00:08:40 – 00:11:58]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;color:#1B365D'>模組四：標準化執行步驟與「未掃蕩不降級」鐵律
+[00:08:40 – 00:11:58]</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Concept Explanation] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>CRT acts as the earliest confirmation signal of reversal at an
+HTF POI. However, patience is mandatory: the setup is inactive until price
+physically sweeps either the CRT High or CRT Low.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【概念解釋】</span></b><span
+lang=EN-US>CRT 是高時區關注區域發生反轉的最早確認訊號。然而，耐心等待是強制紀律：在價格實際掃蕩 CRT 高點或低點之前，該交易設置完全處於未啟動狀態。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Steps / Workflow] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>1. Identify price arriving at an HTF Demand/Supply zone (e.g.,
+15m chart). 2. Mark the CRT High and Low. 3. Do nothing and wait until price sweeps
+one boundary. 4. Drop to the LTF (e.g., 5m chart) ONLY AFTER the sweep occurs.
+5. Confirm opposite-side dominance (e.g., strong bullish displacement candle
+after sweeping CRT Low).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【關鍵步驟
+/ 操作流程】</span></b><span lang=EN-US>1. 確認價格抵達高時區供需區（例如 15 分鐘圖）。2. 標記 CRT 高點與低點。3.
+保持空倉等待，直到價格掃蕩其中一側邊界。4. 「僅在掃蕩發生後」才切換至低時區（例如 5 分鐘圖）。5. 確認反向動能主導（例如掃蕩低點後出現強勢看漲陽線）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Terms &amp; Formulas] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Timeframe Pairing (e.g., 15m HTF Range -&gt; 5m LTF Entry);
+Opposing Boundary Target (Buy at CRT Low -&gt; Target CRT High).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【重要公式
+/ 專有名詞】</span></b><span lang=EN-US>時區配對（如 15 分鐘高時區區間 → 5 分鐘低時區進場）；對向邊界目標法（於 CRT
+低點做多 → 目標看至 CRT 高點）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Common Pitfalls / Warnings] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>CRITICAL RULE: Never drop down to the LTF before the HTF CRT
+High or Low is taken out, as price may consolidate sideways for hours without
+sweeping liquidity.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【常見誤區
+/ 注意事項】</span></b><span lang=EN-US>核心禁忌：在 CRT 高點或低點尚未被突破掃蕩前，絕不可提前切換到低時區！因為價格可能原地橫盤整理數小時而遲遲不發生掃蕩。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>Module 5: Aggressive vs. Conservative Entry Models [00:11:58 –
+00:16:48]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;color:#1B365D'>模組五：激進型與保守型雙軌進場模型詳解
+[00:11:58 – 00:16:48]</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Concept Explanation] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Once an LTF liquidity sweep is confirmed, traders can choose
+between two execution models tailored to their risk tolerance: immediate entry
+upon confirmation (Aggressive) or waiting for a discounted pullback into an LTF
+POI (Conservative).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【概念解釋】</span></b><span
+lang=EN-US>一旦低時區確認完成流動性掃蕩，交易者可根據自身風險承受度選擇兩種執行模型：確認瞬間立即進場（激進型），或等待價格回調至低時區關注區域再掛單（保守型）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Steps / Workflow] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>• Aggressive Model: Spot V-shaped sweep + strong displacement
+candle -&gt; Enter immediately at market -&gt; Target opposing CRT boundary.<br>
+• Conservative Model: Wait for price to retrace into either (a) the Imbalance /
+Fair Value Gap (FVG) created by the displacement move, or (b) the extreme
+Liquidation Candle Supply/Demand zone -&gt; Enter upon mitigation -&gt; Target
+opposing boundary or 3R.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【關鍵步驟
+/ 操作流程】</span></b><span lang=EN-US>• 激進型模型：觀察到 V 型掃蕩＋強勢反向推進 K 線 → 立即市價進場 → 目標看向
+CRT 對向邊界。<br>
+• 保守型模型：等待價格二次回調至 (a) 推進波段創造的不平衡缺口（Imbalance / FVG），或 (b) 極端清算 K 線供需區 → 價格回補觸及時進場
+→ 目標看向對向邊界或 3R。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Terms &amp; Formulas] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Imbalance / Fair Value Gap (FVG) = Gap between Candle 1 High and
+Candle 3 Low; Mitigation (price returning to fill an imbalance/zone);
+Risk-to-Reward (3R).</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【重要公式
+/ 專有名詞】</span></b><span lang=EN-US>Imbalance / FVG（不平衡缺口 = 第 1 根 K 線高點與第 3 根 K 線低點間的價差）；Mitigation（價格回測填補缺口/訂單區）；風報酬比（3R）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Common Pitfalls / Warnings] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Entering at an FVG can sometimes be slightly aggressive if price
+decides to pull back deeper into the extreme Liquidation Candle zone; conversely,
+waiting for the extreme zone may occasionally result in missed trades.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【常見誤區
+/ 注意事項】</span></b><span lang=EN-US>在 FVG 掛單有時仍偏激進，價格可能進行更深度回調觸及極端清算 K 線區域；反之，死守極端區域則偶爾會錯失直接起飛的行情。</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>Module 6: Stop-Loss Placement Secret &amp; Protected Highs/Lows
+(NQ Case Study) [00:16:48 – 00:22:17]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;color:#1B365D'>模組六：止損設定秘訣與受保護高低點（納斯達克
+NQ 實戰） [00:16:48 – 00:22:17]</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Concept Explanation] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>In a bullish trend (e.g., NQ after a Break of Structure), a
+bearish CRT setup signals an impending pullback or reversal. Proper stop-loss
+placement is critical: the extreme of the Liquidation Candle becomes a
+'Protected High/Low' that price should not violate if the setup is valid.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【概念解釋】</span></b><span
+lang=EN-US>在上升趨勢中（如納斯達克 NQ 完成結構突破 BOS 後），看跌 CRT 預示即將展開回調或反轉。精準的止損位置至關重要：清算 K 線的極值會轉化為「受保護高點/低點」，只要交易邏輯正確，後續價格就不應再突破該點。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Steps / Workflow] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>1. Spot BOS on NQ uptrend and mark the latest candle's CRT
+High/Low. 2. Wait for upside sweep (long upper wick closing bearish on 5m). 3.
+Place Stop-Loss a few pips/ticks ABOVE the Liquidation Candle's high (NOT the
+original CRT High). 4. For conservative short, mark the entire Liquidation
+Candle as a Supply Zone and place a Sell Limit order for mitigation.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【關鍵步驟
+/ 操作流程】</span></b><span lang=EN-US>1. 觀察 NQ 上升趨勢完成 BOS 後標記最新 K 線的 CRT 高低點。2. 等待向上掃蕩（5
+分鐘圖收出長上影線看跌 K 線）。3. 將止損設在「清算 K 線最高點上方」幾個跳動點（切勿設在原 CRT 高點）。4. 若採保守做空，將整根清算 K 線標記為供給區，掛限價賣單等待回補進場。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Terms &amp; Formulas] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Break of Structure (BOS); Liquidation Candle High; Protected
+High/Low; Trade Invalidation Point.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【重要公式
+/ 專有名詞】</span></b><span lang=EN-US>Break of Structure（BOS，結構突破）；Liquidation
+Candle High（清算 K 線高點）；Protected High（受保護高點）；邏輯失效點。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Common Pitfalls / Warnings] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>TRAP WARNING: Placing your stop-loss just above the original CRT
+High instead of the Liquidation Candle High will frequently get you stopped out
+during a minor consolidation retest right before price drops to your target.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【常見誤區
+/ 注意事項】</span></b><span lang=EN-US>致命陷阱警告：若將止損設在原本的 CRT 高點上方，而非清算 K 線最高點上方，價格極易在盤整回測時精準打掉你的止損，隨後才朝你原本看對的方向大跌！</span></p>
+
+<p class=MsoNormal style='margin-top:10.0pt;margin-right:0cm;margin-bottom:
+1.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:11.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>Module 7: A+ Setup Selection &amp; System Integration [00:22:17
+– 00:24:16]</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:4.0pt;page-break-after:avoid'><b><span
+lang=EN-US style='font-size:11.5pt;line-height:115%;color:#1B365D'>模組七：A+ 級別交易篩選與市場機械結構整合
+[00:22:17 – 00:24:16]</span></b></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Concept Explanation] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>CRT is an entry trigger, not a standalone magic bullet. It only
+works when integrated with Daily Bias, liquidity mapping, and broader Market
+Mechanics, paired with strict selectivity for A+ setups.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【概念解釋】</span></b><span
+lang=EN-US>CRT 本質上是進場觸發模型，而非獨立的聖杯。它必須與每日偏向（Daily Bias）、流動性地圖及整體市場機械結構（Market
+Mechanics）相結合，並嚴格篩選 A+ 級別機會。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Steps / Workflow] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>1. Establish Daily Bias and map major liquidity pools first. 2.
+Filter out mediocre or ambiguous CRT candles. 3. Execute only '2x4 truck'
+obvious A+ setups where HTF POI, liquidity sweep, and LTF structure align
+seamlessly. 4. Track backtest data to choose between aggressive and
+conservative entries.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【關鍵步驟
+/ 操作流程】</span></b><span lang=EN-US>1. 盤前先確立每日偏向並標繪主要流動性池。2. 過濾掉模糊不清或勉強湊合的 CRT 型態。3.
+只執行「像卡車迎面撞來一樣清晰無比」的 A+ 級別機會（高時區 POI、流動性掃蕩與低時區結構完美共振）。4. 依據歷史統計數據決定採用激進或保守模型。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Key Terms &amp; Formulas] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>A+ Setup (Quality over Quantity); Daily Bias; Market Mechanics.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【重要公式
+/ 專有名詞】</span></b><span lang=EN-US>A+ Setup（頂級交易設置，重質不重量）；Daily Bias（每日方向偏向）；Market
+Mechanics（市場機械結構）。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:18.0pt;text-indent:-10.8pt'><b><span lang=EN-US style='color:#2563EB'>•
+</span></b><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>[Common Pitfalls / Warnings] </span></b><span
+lang=EN-US style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Trading CRT patterns blindly without knowing Daily Bias or how
+to identify liquidity renders the entire strategy ineffective.</span></p>
+
+<p class=MsoNormal style='margin-top:0cm;margin-right:0cm;margin-bottom:5.0pt;
+margin-left:18.0pt;line-height:125%'><b><span lang=EN-US style='color:#1B365D'>【常見誤區
+/ 注意事項】</span></b><span lang=EN-US>若不懂如何建立每日偏向（Daily Bias）或識別流動性位置而盲目套用 CRT，整套策略將完全失效。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>6. ACTIONABLE CHECKLIST (5 IMMEDIATE STEPS)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;color:#1B365D'>6. 實操行動清單（5 個可立即執行的步驟）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Action 1 — Top-Down Zone
+Pre-Filtering: </span></b><span lang=EN-US style='font-size:10.0pt;line-height:
+115%;font-family:"Calibri",sans-serif;color:#475569'>Before looking at any
+single candlestick, mark your Higher Time Frame Points of Interest (HTF
+Supply/Demand, Order Blocks, Equal Highs/Lows) and define your Daily Bias. Only
+hunt for CRT candles inside these pre-marked zones.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>行動一：建立「自上而下」的區域過濾清單： </span></b><span
+lang=EN-US>在觀察任何單根 K 線之前，先在圖表上標記出高時區關注區域（供需區、訂單塊、等高/等低點）並確立每日偏向（Daily Bias），嚴格規定自己只在這些預設區域內尋找
+CRT K 線。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Action 2 — Enforce the 'No
+Sweep, No Lower Timeframe' Rule: </span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>Once
+you mark a CRT High and Low on your HTF (e.g., 15m or 1H), set price alerts at
+both extremes and keep your chart on the HTF. Do not switch to the 5m/1m entry
+timeframe until one boundary has been physically swept.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>行動二：嚴格執行「未掃蕩不降級」鐵律： </span></b><span
+lang=EN-US>在高時區（如 15 分鐘或 1 小時）標記出 CRT 高低點後，直接在兩端設定價格警報並停留在高時區圖表；在其中一側邊界尚未被實際刺穿掃蕩前，絕對不切換至
+5 分鐘或 1 分鐘進場時區。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Action 3 — Standardize
+Stop-Loss Anchoring on the Liquidation Candle: </span></b><span lang=EN-US
+style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#475569'>Audit your past trades and update your risk rules so that every
+CRT stop-loss is placed a few ticks/pips beyond the Liquidation Candle's
+extreme (Protected High/Low), rather than the original CRT candle's high or
+low.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>行動三：將止損標準化錨定於「清算 K 線」極值之外： </span></b><span
+lang=EN-US>檢視過往交易紀錄並更新風控規則，確保每一筆 CRT 交易的止損都放置在「清算 K 線」極值（受保護高/低點）之外數個跳動點，徹底杜絕設在原
+CRT 高低點而被回測掃損的錯誤。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Action 4 — Run a 50-Trade
+Backtest Comparing Entry Models: </span></b><span lang=EN-US style='font-size:
+10.0pt;line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>Log 50
+historical CRT setups in a trading journal, recording outcomes separately for
+the Aggressive Entry (immediate V-shape confirmation) and Conservative Entry
+(FVG or Liquidation Zone mitigation) to determine which yields a higher
+expectancy for your personality.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>行動四：執行 50 筆歷史回測，對比兩種進場模型： </span></b><span
+lang=EN-US>在交易日誌中記錄 50 筆歷史 CRT 交易機會，分別統計「激進型進場」（V 型反轉確認後立即進場）與「保守型進場」（回調填補 FVG 或清算區掛單）的勝率與期望值，用數據選出最適合自己的模式。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Action 5 — Implement an A+
+Setup Grading Checklist: </span></b><span lang=EN-US style='font-size:10.0pt;
+line-height:115%;font-family:"Calibri",sans-serif;color:#475569'>Create a
+pre-trade checklist requiring alignment of at least 4 criteria (Daily Bias +
+HTF POI/Discount-Premium + Clean Liquidity Sweep + LTF Displacement). Skip any
+setup that feels forced or ambiguous.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>行動五：建立 A+ 級別交易評分檢查表： </span></b><span
+lang=EN-US>制定進場前檢查表，要求必須同時滿足至少 4 項條件（每日偏向＋高時區 POI/折溢價區＋清晰流動性掃蕩＋低時區強勢反向位移）才允許下單，果斷放棄所有勉強或模糊的交易機會。</span></p>
+
+<p class=MsoNormal style='margin-top:14.0pt;margin-right:0cm;margin-bottom:
+2.0pt;margin-left:0cm;page-break-after:avoid'><b><span lang=EN-US
+style='font-size:12.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+color:#2563EB'>7. CONCEPT SELF-ASSESSMENT (QUIZ &amp; REVIEW)</span></b></p>
+
+<div style='border:none;border-bottom:solid #1B365D 1.0pt;padding:0cm 0cm 4.0pt 0cm'>
+
+<p class=MsoNormal style='margin-bottom:6.0pt;page-break-after:avoid;
+border:none;padding:0cm'><b><span lang=EN-US style='font-size:14.0pt;
+line-height:115%;color:#1B365D'>7. 觀念自我檢測（測驗與複習）</span></b></p>
+
+</div>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Q1 (Multiple Choice — Core
+Rule): When trading CRT across two timeframes (e.g., 15m HTF and 5m LTF), at
+what exact moment should you drop down to the Lower Time Frame?<br>
+</span></b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>A) Immediately when the 15m CRT
+candle closes.<br>
+B) Only AFTER price has physically swept either the CRT High or CRT Low.<br>
+C) While the 15m candle is still forming inside the range.<br>
+D) Whenever price touches the 50% equilibrium of the CRT candle.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>第 1 題（單選題 — 核心鐵律）：當使用雙時區（如 15 分鐘高時區與 5 分鐘低時區）交易
+CRT 時，應該在哪一個確切時間點切換至低時區？<br>
+</span></b><span lang=EN-US>A) 當 15 分鐘 CRT K 線一收盤時立即切換。<br>
+B) 僅在價格實際刺穿並掃蕩 CRT 高點或低點「之後」才切換。<br>
+C) 當 15 分鐘 K 線仍在區間內部形成時。<br>
+D) 每當價格觸及 CRT K 線的 50% 中軸位置時。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Q2 (Multiple Choice — Risk
+Management): Why does the speaker strongly recommend placing your stop-loss
+beyond the Liquidation Candle extreme rather than the original CRT High/Low?<br>
+</span></b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>A) To intentionally increase
+your position size.<br>
+B) Because the Liquidation Candle extreme becomes a Protected High/Low; price
+often retests the original CRT boundary during consolidation before moving to
+the target.<br>
+C) Because brokers require wider stops on LTF charts.<br>
+D) Because the original CRT High/Low is always inside an FVG.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>第 2 題（單選題 — 風險管理）：為何講者強烈建議將止損設定在「清算 K 線」的極值之外，而非原本的
+CRT 高點或低點？<br>
+</span></b><span lang=EN-US>A) 為了刻意放大下單的倉位規模。<br>
+B) 因為清算 K 線極值已成為「受保護高/低點」；價格在朝目標運行前，常會於盤整回測時再次觸及原 CRT 邊界，設在原邊界極易被掃損。<br>
+C) 因為券商在低時區圖表上強制要求較寬的止損。<br>
+D) 因為原本的 CRT 高低點一定位於不平衡缺口（FVG）內部。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Q3 (Multiple Choice —
+Conservative Entry): In the Conservative Entry Model, what two Points of
+Interest (POIs) do you wait for price to retrace into after a liquidity sweep?<br>
+</span></b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>A) Moving Average crossover or
+RSI oversold level.<br>
+B) The Imbalance / Fair Value Gap (FVG) or the extreme Liquidation Candle Supply/Demand
+zone.<br>
+C) The opposing CRT boundary or Daily Open.<br>
+D) Previous week's close or Fibonacci 0.236 level.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>第 3 題（單選題 — 保守進場模型）：在保守型進場模型中，流動性掃蕩發生後，你應該等待價格回調至哪兩個關注區域（POI）之一再進場？<br>
+</span></b><span lang=EN-US>A) 移動平均線交叉或 RSI 超賣區。<br>
+B) 不平衡缺口（Imbalance / FVG）或極端清算 K 線所構成的供需區。<br>
+C) CRT 的對向邊界或每日開盤價。<br>
+D) 前一週收盤價或費波那契 0.236 回調位。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Q4 (Reflection / Analytical
+Question): How does the institutional AMD (Accumulation, Manipulation,
+Distribution) cycle map onto a valid CRT reversal setup?<br>
+</span></b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>Prompt: Explain which phase
+corresponds to the liquidity sweep and how you distinguish a sweep from a true
+breakout.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>第 4 題（思考題 — 底層邏輯）：機構的 AMD（累積、操盤、派發）週期是如何對應到一個有效的
+CRT 反轉交易設置中的？<br>
+</span></b><span lang=EN-US>提示：請說明哪一個階段對應流動性掃蕩，以及如何區分「有效掃蕩」與「真實突破」。</span></p>
+
+<p class=MsoNormal style='margin-top:3.0pt;margin-right:0cm;margin-bottom:1.0pt;
+margin-left:0cm'><b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#1B365D'>Q5 (Reflection / Practical
+Application): Why would applying CRT to every candlestick on a chart lead to
+losses, and what prerequisite filters must be applied first?<br>
+</span></b><span lang=EN-US style='font-size:10.0pt;line-height:115%;
+font-family:"Calibri",sans-serif;color:#475569'>Prompt: List at least three
+high-probability locations or contextual prerequisites emphasized by Brett
+Gold.</span></p>
+
+<p class=MsoNormal style='margin-bottom:5.0pt;line-height:125%'><b><span
+lang=EN-US style='color:#1B365D'>第 5 題（思考題 — 實務應用）：為什麼將 CRT 套用在圖表上的每一根 K 線會導致虧損？在尋找
+CRT 之前必須先套用哪些前置過濾條件？<br>
+</span></b><span lang=EN-US>提示：請列出 Brett Gold 在影片中強調的至少三個高勝率位置或背景前置條件。</span></p>
+
+<p class=MsoNormal style='margin-top:18.0pt'><span lang=EN-US>&nbsp;</span></p>
+
+<div align=center>
+
+<table class=MsoNormalTable border=0 cellspacing=0 cellpadding=0
+ style='border-collapse:collapse'>
+ <tr>
+  <td width=653 valign=top style='width:489.6pt;background:#E2E8F0;padding:
+  6.0pt 8.0pt 6.0pt 8.0pt'>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><b><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;font-family:"Calibri",sans-serif;
+  color:#334155'>ANSWER KEY (SPOILER SHIELD — HIGHLIGHT OR SCROLL TO REVEAL)</span></b></p>
+  <p class=MsoNormal style='margin-bottom:6.0pt'><b><span lang=EN-US
+  style='font-size:10.0pt;line-height:115%;color:#334155'>測驗參考答案區（防劇透隱蔽設計 — 選取反白或將文字顏色改為深色即可檢視）</span></b></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#E2E8F0'>Q1 Answer: B — Never
+  drop to the LTF until price has swept either the CRT High or CRT Low,
+  avoiding sideways consolidation traps.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#E2E8F0'>第 1 題答案：B — 在價格尚未實際掃蕩
+  CRT 高點或低點之前，絕不可提前切換至低時區，以避免陷入橫盤整理的陷阱。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#E2E8F0'>Q2 Answer: B — The
+  Liquidation Candle extreme acts as a Protected High/Low; placing stops at the
+  old CRT extreme risks getting wicked out during a retracement.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#E2E8F0'>第 2 題答案：B — 清算 K 線極值會成為受保護高/低點；若將止損設在舊的
+  CRT 邊界，價格回測時極易將其掃損後才朝目標前進。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#E2E8F0'>Q3 Answer: B —
+  Conservative traders wait for a retracement to mitigate either the Imbalance
+  (FVG) or the extreme Liquidation Candle Supply/Demand zone.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#E2E8F0'>第 3 題答案：B — 保守型交易者會等待價格二次回調，填補不平衡缺口（FVG）或極端清算
+  K 線所形成的供需區後再進場。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#E2E8F0'>Q4 Answer: Accumulation
+  occurs as institutions build orders near a key level; Manipulation is the
+  false breakout that sweeps the CRT High/Low to harvest stop liquidity;
+  Distribution is the true reversal move toward the opposing CRT boundary. A
+  sweep is distinguished from a true breakout by a rapid V-shaped rejection and
+  candle close back inside the CRT range.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#E2E8F0'>第 4 題答案：累積階段（Accumulation）是機構在關鍵位悄悄建倉；操盤階段（Manipulation）是刺破
+  CRT 高/低點以掠奪止損流動性的假突破；派發階段（Distribution）則是朝 CRT 對向邊界展開的真實反轉行情。區分掃蕩與真突破的關鍵在於價格是否呈現快速
+  V 型拒絕並收盤回到 CRT 區間內部。</span></p>
+  <p class=MsoNormal style='margin-top:2.0pt;margin-right:0cm;margin-bottom:
+  1.0pt;margin-left:0cm'><span lang=EN-US style='font-size:9.5pt;line-height:
+  115%;font-family:"Calibri",sans-serif;color:#E2E8F0'>Q5 Answer: Every
+  timeframe has endless candles, so trading every bar creates noise and
+  overtrading. Prerequisites include: (1) Daily Bias &amp; Market Mechanics,
+  (2) HTF Points of Interest (Supply/Demand, Order Blocks), (3) Premium/Discount
+  alignment, and (4) Obvious Liquidity Zones (Equal Highs/Lows) or pullback
+  endings.</span></p>
+  <p class=MsoNormal style='margin-bottom:4.0pt'><span lang=EN-US
+  style='font-size:9.5pt;line-height:115%;color:#E2E8F0'>第 5 題答案：每個時區都有無數根 K 線，無差別交易每根
+  K 線會陷入市場雜訊與過度交易。前置過濾條件包含：(1) 每日偏向（Daily Bias）與市場機械結構；(2) 高時區關注區域（供需區、訂單塊）；(3)
+  溢價區與折價區的順勢配合；(4) 顯著流動性區域（等高/等低點）或趨勢回調末端。</span></p>
+  </td>
+ </tr>
+</table>
+
+</div>
+
+<p class=MsoNormal><span lang=EN-US>&nbsp;</span></p>
+
+</div>
+
+</body>
+
+</html>
